@@ -1,5 +1,5 @@
 # 🤖 watsonx Agentic AI Bootcamp
-📍 Brasília, Brazil - 22/07/2025
+📍 São Paulo, Brazil - 23/06/2025
 
 
 
@@ -26,11 +26,14 @@ Então, aproveite o conteúdo, explore bastante e, sempre que possível, experim
 
 <p>
   <a href="docs/req/turma1/labs.md" target="_blank">
-    <img src="https://img.shields.io/badge/👩‍🎓👨‍🎓 TURMA01%20-blue?style=for-the-badge" alt="Grupo 1">
+    <img src="https://img.shields.io/badge/👩‍🎓👨‍🎓 JULIA%20-blue?style=for-the-badge" alt="Grupo 1">
   </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="docs/req/turma2/labs.md" target="_blank">
-    <img src="https://img.shields.io/badge/👩‍🎓👨‍🎓 TURMA02%20-green?style=for-the-badge" alt="Grupo 2">
+    <img src="https://img.shields.io/badge/👩‍🎓👨‍🎓 ANDERSON%20-green?style=for-the-badge" alt="Grupo 2">
   </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="docs/req/turma3/labs.md" target="_blank">
+    <img src="https://img.shields.io/badge/👩‍🎓👨‍🎓 JURANDIR%20-orange?style=for-the-badge" alt="Grupo 3">
+  </a>
 </p>
 
 
