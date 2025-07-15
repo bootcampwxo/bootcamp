@@ -30,7 +30,7 @@ Então, aproveite o conteúdo, explore bastante e, sempre que possível, experim
   </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-
+[SETUP INICIAL - COMEÇAR POR AQUI](usecases/setup.md)<br>
 
 
 [1. Assistente Inteligente](usecases/intelligent-assistant/README.md)<br>
@@ -43,4 +43,3 @@ A clonagem, redistribuição ou modificação não autorizada deste código é e
 
 
 
-[SETUP INICIAL - COMEÇAR POR AQUI](usecases/setup.md)<br>
