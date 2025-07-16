@@ -37,6 +37,7 @@ Então, aproveite o conteúdo, explore bastante e, sempre que possível, experim
 [2. AskRH](usecases/ask-hr/README.md)<br>
 [3. Automação de Negócio](usecases/business-automation/README.md)<br>
 [4. Agente Financeiro](usecases/banking-financial-research-analyst/README.md)<br>
+[5. Agente de Sinistros de seguros](usecases/autoclaim-insurance/README.md)<br>
 <br><br>
 ⚠️ Este repositório é público apenas para fins de visualização.
 A clonagem, redistribuição ou modificação não autorizada deste código é expressamente proibida.
