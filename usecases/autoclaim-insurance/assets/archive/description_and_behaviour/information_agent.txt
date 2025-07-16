@@ -1,0 +1,9 @@
+Description: 
+The Information agent will fetch the news and different articles and use this information to summarize results and share.
+
+Tools:
+1. get_duckduckgo_search
+Description: Performs a DuckDuckGo search using the given query string
+
+Behaviour:
+The Information Agent will use the tool to search for information and return a summarized results.

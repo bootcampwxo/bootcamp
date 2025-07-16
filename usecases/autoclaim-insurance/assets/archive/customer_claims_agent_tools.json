@@ -1,0 +1,159 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Auto Insurance Claim API",
+    "version": "1.0.0",
+    "description": "API para criar e verificar reivindicações de seguro automóvel."
+  },
+  "servers": [
+    {
+      "url": "https://insurance-app.1xw6uzli3p9g.us-south.codeengine.appdomain.cloud"
+    }
+  ],
+  "paths": {
+     "/create_claim_request": {
+      "post": {
+        "summary": "Crie uma solicitação de sinistro",
+        "description": "Envia uma nova solicitação de sinistro para uma apólice de seguro automóvel.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Nome completo do cliente"
+          },
+          {
+            "name": "estimated_cost",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            },
+            "description": "Custo estimado dos danos"
+          },
+          {
+            "name": "claim_request_details",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Detalhes do acidente ou reclamação"
+          },
+          {
+            "name": "vehicle_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Tipo de veículo (por exemplo, carro, caminhão)"
+          },
+          {
+            "name": "vehicle_details",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Detalhes adicionais do veículo (por exemplo, marca, modelo)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resposta à solicitação de reivindicação (sucesso ou falha)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Solicitação de sinistro criada com sucesso"
+                    },
+                    "customer_id": {
+                      "type": "string",
+                      "example": "60695904"
+                    },
+                    "claim_number": {
+                      "type": "string",
+                      "example": "CLM994311"
+                    },
+                    "claim_request_details": {
+                      "type": "string",
+                      "example": "Eu fui atingido por um caminhão"
+                    },
+                    "detail": {
+                      "type": "string",
+                      "example": "Informações adicionais opcionais, por exemplo, observações internas ou informações de validação"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/check_claim_status": {
+      "get": {
+        "summary": "Verifique o status do sinistro",
+        "description": "Recupera o status de um sinistro usando o nome do cliente e o número da reclamação.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Nome do cliente"
+          },
+          {
+            "name": "claim_number",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Identificador único do sinistro"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status de reivindicação recuperado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "claim_number": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "last_updated": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Sinistro não encontrado"
+          },
+          "400": {
+            "description": "Parâmetros ausentes ou inválidos"
+          }
+        }
+      }
+    }
+  }
+}
