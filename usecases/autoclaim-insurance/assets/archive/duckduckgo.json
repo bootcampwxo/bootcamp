@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "https://insurance-app.1xw6uzli3p9g.us-south.codeengine.appdomain.cloud"
+        "url": "https://auto-insurance-fetch-insert-details.1v25kydgpc85.us-east.codeengine.appdomain.cloud"
       }
     ],
     "paths": {
