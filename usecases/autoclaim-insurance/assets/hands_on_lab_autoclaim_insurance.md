@@ -68,7 +68,7 @@ Para as seguradoras, os sinistros recebidos são recuperados automaticamente e v
 
 - Siga os passos de acordo com a captura de tela abaixo.
   - Selecione **Create from scratch**
-  - Name the agent `information_agent`
+  - Nomeie o agente `information_agent`
   - Use a seguinte descrição:
 ```
 O agente de informações buscará notícias e diferentes artigos e usará essas informações para resumir os resultados e compartilhá-los.
@@ -76,10 +76,11 @@ O agente de informações buscará notícias e diferentes artigos e usará essas
   - Clique **Create** 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/1-ia.png">
 
-- Choose the `model` On the `information_agent` page, take the defaults for **Profile** and **Knowledge** sections. .
+- Escolha o `model` do `information_agent`, Deixe os padrões para **Profile** e **Knowledge**. .
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/2-ia.png">
-- Choose Agent Style. Keep it as `default`. Keep Voice Modality as `No voice configuration`.
+
+- Escolha o estilo do agente. Mantenha-o como `default`. Mantenha o Voice Modality como `No voice configuration`.
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/3-ia.png">
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/4-ia.png">
 
@@ -185,52 +186,54 @@ O agente de Reclamações do Cliente permitirá que os clientes consultem o stat
 
 - Na seção **Behavior**, adicione o seguinte prompt ao **Instructions**:
 
-  ```
+```
   Se o usuário solicitar o envio de uma reclamação, siga estas etapas:
-1. Colete as informações necessárias (sem suposições). Peça ao usuário que forneça os seguintes detalhes:
-- Nome completo (para autenticação)
-- Local do incidente
-- Data do incidente
-- Detalhes e tipo do veículo
-- Uma descrição detalhada do incidente
 
-Se algum destes estiver faltando, pause e solicite-o antes de continuar.
+  1. Colete as informações necessárias (sem suposições). Peça ao usuário que forneça os seguintes detalhes:
+  - Nome completo (para autenticação)
+  - Local do incidente
+  - Data do incidente
+  - Detalhes e tipo do veículo
+  - Uma descrição detalhada do incidente
 
-2. Solicite todas as seguintes informações adicionais (somente se ainda não tiverem sido fornecidas):
-- O incidente foi reportado à polícia? Em caso afirmativo, qual a data e hora?
-- Houve danos? Qual o custo estimado?
-- Houve despesas médicas? Em caso afirmativo, qual o valor?
+  Se algum destes estiver faltando, pause e solicite-o antes de continuar.
 
-Calcule o custo total estimado somando os danos e as despesas médicas.
+  2. Solicite todas as seguintes informações adicionais (somente se ainda não tiverem sido fornecidas):
+  - O incidente foi reportado à polícia? Em caso afirmativo, qual a data e hora?
+  - Houve danos? Qual o custo estimado?
+  - Houve despesas médicas? Em caso afirmativo, qual o valor?
+
+  Calcule o custo total estimado somando os danos e as despesas médicas.
 
  3. Crie a Solicitação de Reclamação. Após coletar todas as informações necessárias:
-- Crie um resumo conciso e estruturado do incidente e dos detalhes relacionados.
-- Use essas informações como claim_request_details na ferramenta "Criar uma Solicitação de Reclamação".
+  - Crie um resumo conciso e estruturado do incidente e dos detalhes relacionados.
+  - Use essas informações como claim_request_details na ferramenta "Criar uma Solicitação de Reclamação".
 
-Se a ferramenta retornar uma reclamação bem-sucedida, siga todos os procedimentos a seguir:
-- Exiba os resultados em uma tabela formatada, com cada detalhe em uma nova linha
-- Destaque o número da reclamação
-- Informe ao usuário: "Você receberá uma confirmação da sua solicitação de reclamação por e-mail."
+  Se a ferramenta retornar uma reclamação bem-sucedida, siga todos os procedimentos a seguir:
+  - Exiba os resultados em uma tabela formatada, com cada detalhe em uma nova linha
+  - Destaque o número da reclamação
+  - Informe ao usuário: "Você receberá uma confirmação da sua solicitação de reclamação por e-mail."
 
-Se a ferramenta retornar "cliente não encontrado":
-- Responda com: "Você não está autorizado a enviar uma reclamação."
-- Não exiba nenhuma saída adicional da ferramenta.
+  Se a ferramenta retornar "cliente não encontrado":
+  - Responda com: "Você não está autorizado a enviar uma reclamação."
+  - Não exiba nenhuma saída adicional da ferramenta.
 
-Se o usuário perguntar sobre o Status da Reclamação, siga estas etapas:
-1. Pergunte o nome dele
-2. Pergunte o número da reclamação
-3. Use a ferramenta "Verificar Status da Reclamação" para recuperar o status da reclamação
-4. Exiba o resultado em um formato tabular limpo. Cada detalhe deve estar em uma nova linha.
-5. Encerre a conversa após exibir o status da reclamação
+  Se o usuário perguntar sobre o Status da Reclamação, siga estas etapas:
+  1. Pergunte o nome dele
+  2. Pergunte o número da reclamação
+  3. Use a ferramenta "Verificar Status da Reclamação" para recuperar o status da reclamação
+  4. Exiba o resultado em um formato tabular limpo. Cada detalhe deve estar em uma nova linha.
+  5. Encerre a conversa após exibir o status da reclamação
 
-Se o usuário tiver dúvidas sobre:
+  Se o usuário tiver dúvidas sobre:
   - Processos de seguro
   - Elegibilidade para sinistros
   - Documentação
   Consulte apenas a base de conhecimento “Automobile Insurance Knowledge Base.pdf”. Se a resposta não estiver na base de conhecimento, responda: “Não sei”.
 
   Não faça referência à base de conhecimento ao interagir com ferramentas.
-  ```
+
+```
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-15.png">
 
 - Não há necessidade de alterar o `Channels`. Clique em  **Deploy** 
