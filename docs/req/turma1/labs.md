@@ -18,7 +18,8 @@ https://ibm.biz/BdeEFb
 
 3. Anote as informações abaixo ou deixe está página aberta para poder copiar os dados necessários durante a execução dos labs <br>
 
-Service Instance URL: https://us-south.ml.cloud.ibm.com/ml/v4/deployments/1ed98095-bd1a-4482-8677-003f0b5c2b09/ai_service_stream?version=2021-05-01<br>
-API KEY: KsUwXZgCfVdWGzI2bHWSjgKbKKAyLeBTqdrTTqcHx6aX<br>
+Service Instance URL necessário para o lab de Assistente Inteligente: https://us-south.ml.cloud.ibm.com/ml/v4/deployments/a6072fd6-d666-4939-9f01-a8abbf828fb7/ai_service_stream?version=2021-05-01<br>
+
+API KEY necessária para diversos labs: LDskckFu4EwViuWOD0Jiy4tDlABD7VkjnWPNFC25VLgX<br>
 
 
