@@ -120,7 +120,7 @@ O Agente de Informações usará a ferramenta para buscar informações e retorn
 
   Digite esta consulta:
 ```
-Leis de seguro contra incêndio na Califórnia
+Insurance law fires in California.   # Este é um serviço gratuito de testes que não foi traduzido para o idioma português
 ```
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/15-ia.png">
 
@@ -326,7 +326,8 @@ O agente do Processador de Reivindicações auxilia o processador de reivindica�
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-1.png">
 
-- Selecione o `model`.
+> ⚠️ **IMPORTANTE:** Selecione o `model`.  
+> **ALTERE O MODELO PARA `Llama-3-2-90b-vision-instruct`**
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-2.png">
 
@@ -426,7 +427,7 @@ Após selecionar um ID do cliente, busque os detalhes do sinistro e da apólice 
 Etapa 1. Insira a consulta básica
 
 ```
-Mostrar reivindicações em aberto
+Liste todos as reinvidicações em aberto
 ```
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/cp-flow-1.png">
 
