@@ -29,4 +29,6 @@ API KEY necessária para diversos labs: LDskckFu4EwViuWOD0Jiy4tDlABD7VkjnWPNFC25
 
  https://us-south.ml.cloud.ibm.com/ml/v4/deployments/1ed98095-bd1a-4482-8677-003f0b5c2b09/ai_service_stream?version=2021-05-01
 
+ KsUwXZgCfVdWGzI2bHWSjgKbKKAyLeBTqdrTTqcHx6aX
+
 
