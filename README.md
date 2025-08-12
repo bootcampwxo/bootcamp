@@ -1,5 +1,5 @@
 # 🤖 watsonx Agentic AI Bootcamp 
-📍 Brasília, Brazil - 22/07/2025
+📍 Banco do Brasil - 13/08/2025
 
 
 
@@ -39,7 +39,8 @@ PASSO 3: Escolha o caso de uso e mãos a obra <br>
 [2. AskRH](usecases/ask-hr/README.md)<br>
 [3. Automação de Negócio](usecases/business-automation/README.md)<br>
 [4. Agente Financeiro](usecases/banking-financial-research-analyst/README.md)<br>
-[5. Agente de Sinistros de seguros](usecases/autoclaim-insurance/README.md)<br>
+[5. Banking Backoffice](usecases/banking-backoffice/README.md)<br>
+[6. Agente de Sinistros de seguros](usecases/autoclaim-insurance/README.md)<br>
 <br><br>
 ⚠️ Este repositório é público apenas para fins de visualização.
 A clonagem, redistribuição ou modificação não autorizada deste código é expressamente proibida.
