@@ -42,7 +42,7 @@ Neste laboratório, construiremos um agente de RH no Watsonx Orchestrate, utiliz
 
 3. Clique em **Create agent +**:
 
-<img width="1000" alt="image" src="hands-on-lab-assets/step3.png">
+<img width="1000" alt="image" src="hands-on-lab-assets/step_2_v2.png">
 
 4. Selecione "Create from scratch":
 
@@ -69,7 +69,7 @@ Esta base de conhecimento aborda os benefícios dos funcionários da empresa, in
 
 Clique em  **Upload files**:
 
-<img width="1000" alt="image" src="hands-on-lab-assets/hr_step5.png">
+<img width="1000" alt="image" src="hands-on-lab-assets/step_7_v3.png">
 
 7. Clique e arraste o arquivo de Benefícios para funcionários (Arquivo "Employee-Benefits_ptbr.pdf" dentro da pasta "2. AskRH" gerada após descompactar o LABS.zip) e clique em **Upload**:
 

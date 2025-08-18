@@ -397,6 +397,15 @@ Após inserir as informações, clique em `Create`.
 
 ![alt text](images/image17.png)
 
+Altere o modelo para llama-3-405b-instruct.
+
+![alt text](images/image35.png)
+
+Para o estilo, escolheremos o estilo ReAct.
+
+![alt text](images/image36.png)
+
+
 Mencionamos acima que um agente pode colaborar com outros agentes para realizar uma tarefa específica. Você insere esses agentes colaboradores na seção `Agents`, em `Toolset`, na janela de definição do agente.
 
 ![alt text](images/image18.png)
