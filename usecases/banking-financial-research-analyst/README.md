@@ -60,4 +60,4 @@ Você pode encontrar as instruções detalhadas aqui:
 
 Demonstração em vídeo da solução:
 
-https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/3814/b8dcddde-9187-4a12-ba8f-9271573a0c30
+https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/Banking%20Financial%20Research%20Analyst.mp4

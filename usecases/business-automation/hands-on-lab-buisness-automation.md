@@ -37,6 +37,8 @@ O departamento de vendas da ABC Motor Corp, uma grande empresa automotiva, ao pr
 
 Criaremos um agente **Agente de Comparação** no Laboratório de Agentes do watsonx.ai como parte desta configuração:
 
+Para iniciar este lab você deve fazer login com seu IBM ID em https://dataplatform.cloud.ibm.com/wx/home?context=wx
+
 Na página inicial do Laboratório de Agentes, clique em Criar um agente de IA para automatizar tarefas.
 
 ![Home page](assets/agent_lab_home.png) 
@@ -152,8 +154,19 @@ Este agente foi projetado para pesquisar um produto específico e recuperar seus
 4. Após a criação do agente, altere o modelo e escolha o estilo
 ![Create Agent](assets/wxo_product_config_1.png)
 
+5. Role para baixo até a seção knowledge e clique no botão Choose knowledge.
+![Choose knowledge](assets/BAP_5_K.png)
 
-5. Após a criação do agente, navegue até a página Configuração do agente.
+6. Após clicar no botão Choose knowledge, uma janela pop-up será exibida. Selecione Upload Files e clique em Next.
+![Choose knowledge](assets/BAP_5_K_2.png)
+
+7. Em seguida, escolha a knowledge source. No nosso caso, é o Catálogo de Produtos (o arquivo "ABC_Motor_Product_Catalog_ptbr.pdf" está disponível na pasta "3. Automacao de Negocio" gerada após a descompactação do arquivo LABS.zip). Arraste e solte o arquivo na área designada.
+![Choose knowledge](assets/BAP_6_K.png)
+
+8. Após o upload do arquivo, a tela ficará como a abaixo. Clique em Next para prosseguir.
+![Next](assets/BAP_7_K.png)
+
+9. Adicione a descrição abaixo no campo Description e clique em Salvar. 
 
 Descrição:
    ```
@@ -161,11 +174,18 @@ Descrição:
    ```
    ![Knowledge](assets/product_knowledge.png)
 
-6. Role para baixo até a seção Conhecimento e, na seção Documento, clique no botão Carregar arquivo e carregue o arquivo ABC_Motor_Product_Catalog_ptbr (o arquivo "ABC_Motor_Product_Catalog_ptbr.pdf" está disponível na pasta "3. Automacao de Negocio" gerada após a descompactação do arquivo LABS.zip).
-![Upload file](assets/upload_file.png)
+10. Após concluir todas as etapas acima, sua fonte de conhecimento será adicionada e aparecerá como mostrado na imagem abaixo.
+   ![Knowledge](assets/BAP_9.png)
 
-7. Role para baixo até a seção Conjunto de ferramentas e, na seção Agentes, clique no botão Adicionar agente.
+11. Role para baixo até a seção Conjunto de ferramentas e, na seção Agentes, clique no botão Adicionar agente.
 ![Add Agent](assets/add_agent_pa.png)
+
+5. Após a criação do agente, navegue até a página Configuração do agente.
+
+
+
+
+
 
 8. No menu pop-up, selecione Importar.
 ![Add from local instance](assets/import_ca.png)

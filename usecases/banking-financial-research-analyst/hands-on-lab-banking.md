@@ -63,7 +63,7 @@ Nesta seção, você percorrerá o processo de criação de um agente de IA no w
 6- Para começar a construir agentes, você pode clicar em **Create new agent** conforme referenciado na etapa 5 ou, alternativamente, clique no menu de navegação superior esquerdo, expanda o **Build**  (anotado com seta vermelha) e selecione **Agent Builder** (indicado com um retângulo vermelho). Isso o redirecionará para a página Gerenciar agentes.
 ![wxo agent builder](images/wxo-nav-menu-agent-builder.png) 
 
-7- A página Gerenciar agentes estará inicialmente em branco, pois nenhum agente foi criado ainda. À medida que você cria mais e mais agentes de IA capazes de raciocinar e agir, a página Gerenciar agentes será preenchida com esses agentes. Clique no botão **Create agent**  (anotado com seta vermelha) para começar a construir seu primeiro agente.
+7- A página Gerenciar agentes vai mostrar todos os agentes que já foram criados. À medida que você cria mais e mais agentes de IA capazes de raciocinar e agir, a página Gerenciar agentes será preenchida com esses agentes. Observe também o botão Discover (indicado com um oval vermelho), no qual você pode clicar para explorar e descobrir o [catálogo de agentes e ferramentas pré-criados no Watsonx Orchestrat](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base?topic=discovering-catalog). Clique no botão **Create agent**  (anotado com seta vermelha) para começar a construir seu primeiro agente.
 ![wxo create agent](images/wxo-create-agent-manage-agents-empty.png) 
 
 8- Na página Criar um agente, selecione **Create from scratch**  (anotado com retângulo vermelho), forneça um **Name** e uma **Description** para o agente e clique **Create** (anotado com seta vermelha).
@@ -92,6 +92,8 @@ Após a criação do Agente de IA, nesta seção, você passará pelo processo d
 
    - Profile: A seção **Profile** contém a descrição do agente que você forneceu ao criá-lo. Você pode acessar esta seção para editar e refinar a descrição do agente conforme necessário.
 
+Observação: para obter mais detalhes, consulte a documentação [Escolhendo um estilo de raciocínio para seu agente](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base?topic=agents-choosing-reasoning-style-your-agent) para entender a diferença e como ela afeta o comportamento do agente.
+
    - Knowledge: A seção **Knowledge** é onde você pode adicionar conhecimento ao agente. Adicionar conhecimento aos agentes desempenha um papel crucial no aprimoramento de suas capacidades de conversação, fornecendo-lhes as informações necessárias para gerar respostas precisas e contextualmente relevantes para casos de uso específicos. Você pode enviar arquivos diretamente para o agente ou conectar-se a uma instância do Milvus ou Elasticsearch como um repositório de conteúdo. Por meio dessa interface de **Knowledge**, você pode habilitar seus agentes de IA para implementar o padrão de Geração Aumentada de Recuperação (RAG), um padrão de IA muito popular para fundamentar respostas em uma fonte confiável de dados, como uma base de conhecimento empresarial.
    
    *Observação: para obter mais detalhes, consulte a documentação [Adicionando conhecimento aos agentes](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-knowledge).*
@@ -108,28 +110,28 @@ Por fim, após concluir a configuração do seu agente e testar seu desempenho, 
 
 ![wxo create agent config](images/wxo-create-agent-config.png) 
 
-10- Na página de configuração do agente, revise a *Descrição* do agente na seção **Profile** e mantenha-a como está (sem necessidade de edição). Em seguida, role para baixo até a seção **Knowledge** ou clique no atalho **Knowledge** (indicado com um oval vermelho). Na seção Conhecimento, adicione uma descrição para informar o agente sobre o conteúdo do conhecimento. Para este laboratório, adicione a seguinte descrição, pois forneceremos ao agente diversos relatórios de lucros recentes de algumas empresas.
+10. Na página de configuração do agente, revise a *Descrição* do agente na seção **Profile** e mantenha-a como está (sem necessidade de edição). Em seguida, role para baixo até a seção **Knowledge** ou clique no atalho **Knowledge** (indicado com um oval vermelho). Clique no botão Choose knowledge.
+![Choose knowledge](images/BAP_5_K.png)
 
-Description: 
-```
-Este conhecimento aborda todos os detalhes sobre os relatórios de lucros das empresas de interesse. Analistas de pesquisa podem perguntar sobre quaisquer detalhes dos relatórios de lucros.
-```
+11. Após clicar no botão Choose knowledge, uma janela pop-up será exibida. Selecione Upload Files e clique em Next.
+![Choose knowledge](images/BAP_5_K_2.png)
 
-Em seguida, você precisa escolher como fornecer informações de conhecimento ao agente. O watsonx Orchestrate oferece suporte à adição de conhecimento ao agente, seja enviando arquivos diretamente pela interface do usuário ou apontando para um repositório de conteúdo (Mivlus ou ElasticSearch). A documentação [Adicionando conhecimento aos agentes](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-knowledge) fornece mais detalhes. Para este laboratório, clique em **Upload files**  (anotado com seta vermelha) para enviar arquivos PDF capturando relatórios de lucros da AMZN, META, NVDA e NFLX.
-
-![wxo agent config knowledge](images/wxo-agent-config-knowledge.png) 
-
-
-Arraste e solte os seguintes arquivos PDF para enviar ao conhecimento do agente (todos os arquivos estão na pasta "4. Agente Financeiro" gerada após a descompactação do arquivo LABS.zip)
+12. Arraste e solte os seguintes arquivos PDF para enviar ao conhecimento do agente (todos os arquivos estão na pasta "4. Agente Financeiro" gerada após a descompactação do arquivo LABS.zip) e selecione Next. A documentação [Adicionando conhecimento aos agentes](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-knowledge) fornece mais detalhes.
    - AMZN-Q4-2024-Earnings_ptBR.pdf
    - META-Q4-2024-Earnings_ptBR.pdf
    - NFLX-Q4-2024-Earnings_ptBR
    - NVDA-Q4-2024-Earnings_ptBR.pdf
 
-![wxo knowledge upload files](images/wxo-knowledge-upload-files.png) 
+![Choose knowledge](images/wxo-knowledge-upload-files.png)
 
+13. Adicione uma descrição para informar o agente sobre o conteúdo do conhecimento. Para este laboratório, adicione a seguinte descrição, pois forneceremos ao agente diversos relatórios de lucros recentes de algumas empresas.
+Description: 
+```
+Este conhecimento aborda todos os detalhes sobre os relatórios de lucros das empresas de interesse. Analistas de pesquisa podem perguntar sobre quaisquer detalhes dos relatórios de lucros.
+```
+![Choose knowledge](images/knowledge.png)
 
-11- Após o upload de todos os arquivos para a base de conhecimento, você pode começar a testar o agente para validar como ele responde a perguntas usando essa base de conhecimento. Os arquivos enviados são processados ​​e preparados para serem utilizados pelo agente. Após a conclusão do upload, teste o agente fazendo algumas perguntas, como:
+14. Após o upload de todos os arquivos para a base de conhecimento, você pode começar a testar o agente para validar como ele responde a perguntas usando essa base de conhecimento. Os arquivos enviados são processados ​​e preparados para serem utilizados pelo agente. Após a conclusão do upload, teste o agente fazendo algumas perguntas, como:
 
 ```Você pode me falar sobre os negócios da Meta?```
 
@@ -148,13 +150,13 @@ Ao revisar a arquitetura, você concluiu a parte da solução agêntica que envo
 ## Criação e configuração do agente de API financeira
 Nesta seção, você desenvolverá o Agente de API Financeira, um dos agentes colaboradores especificamente habilitado para retornar dados de mercado e definições de glossários. Neste laboratório prático, o Agente de API Financeira conta com duas ferramentas: a **Ferramenta de Dados de Mercado**, que retorna preços de ações, e a **Ferramenta de Glossário**, que utiliza a Wikipédia para retornar definições de glossários. Na prática, este agente também pode acessar outras ferramentas internas, como as de modelagem do comportamento de ações ou previsão de preços de ações; a abordagem para capacitar o agente com essas ferramentas seria a mesma.
 
-12- Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas acima para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
+15. Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas acima para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
 
-13- From the watsonx Orchestrate landing page, click **Create agent** (anotado com retângulo vermelho) para começar a desenvolver um novo agente, o Agente de API Financeira.
+16. Na página inicial do watsonx Orchestrate, clique em **Create agent** (anotado com retângulo vermelho) para começar a desenvolver um novo agente, o Agente de API Financeira.
 
 ![wxo create agent chatUI](images/wxo-create-agent.png) 
 
-14- Na página Criar um agente, selecione **Create from scratch**, provide a **Name** e uma **Description** para o agente e clique **Create** (annotated with red arrow).
+17. Na página Criar um agente, selecione **Create from scratch**, provide a **Name** e uma **Description** para o agente e clique **Create** (annotated with red arrow).
 
 Name: ```Agente API Financeiro```
 
