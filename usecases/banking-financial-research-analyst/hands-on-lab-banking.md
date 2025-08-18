@@ -111,10 +111,10 @@ Por fim, após concluir a configuração do seu agente e testar seu desempenho, 
 ![wxo create agent config](images/wxo-create-agent-config.png) 
 
 10. Na página de configuração do agente, revise a *Descrição* do agente na seção **Profile** e mantenha-a como está (sem necessidade de edição). Em seguida, role para baixo até a seção **Knowledge** ou clique no atalho **Knowledge** (indicado com um oval vermelho). Clique no botão Choose knowledge.
-![Choose knowledge](images/BAP_5_K.png)
+![Choose knowledge](../business-automation/assets/BAP_5_K.png)
 
 11. Após clicar no botão Choose knowledge, uma janela pop-up será exibida. Selecione Upload Files e clique em Next.
-![Choose knowledge](images/BAP_5_K_2.png)
+![Choose knowledge](../business-automation/assets/BAP_5_K_2.png)
 
 12. Arraste e solte os seguintes arquivos PDF para enviar ao conhecimento do agente (todos os arquivos estão na pasta "4. Agente Financeiro" gerada após a descompactação do arquivo LABS.zip) e selecione Next. A documentação [Adicionando conhecimento aos agentes](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-knowledge) fornece mais detalhes.
    - AMZN-Q4-2024-Earnings_ptBR.pdf
