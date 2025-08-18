@@ -1,0 +1,160 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Incident Log API",
+    "version": "1.0.0",
+    "description": "API for ingesting, searching, and generating synthetic incident logs"
+  },
+  "servers": [
+    {
+      "url": "https://log-agent-tools.1x5ndxhjl4on.us-south.codeengine.appdomain.cloud",
+      "description": "IBM Code Engine Deployment"
+    }
+  ],
+  "paths": {
+    "/ingest": {
+      "post": {
+        "summary": "Ingest incident data",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful ingestion"
+          },
+          "500": {
+            "description": "Error during ingestion"
+          }
+        }
+      }
+    },
+    "/search_past_similar_incidents": {
+      "post": {
+        "summary": "Search for past similar incidents",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "machine_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "error_code",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Similar incidents found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Search failed"
+          }
+        }
+      }
+    },
+    "/search_recent_changes_to_machine": {
+      "post": {
+        "summary": "Search recent changes to a machine",
+        "parameters": [
+          {
+            "name": "machine_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recent changes found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Search failed"
+          }
+        }
+      }
+    },
+    "/generate_new_incidents": {
+      "post": {
+        "summary": "Generate new incident logs using Watsonx",
+        "responses": {
+          "200": {
+            "description": "New incident generated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Log generation failed"
+          }
+        }
+      }
+    }
+  }
+}

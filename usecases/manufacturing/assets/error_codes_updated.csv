@@ -1,0 +1,49 @@
+ErrorID,Description,Severity,Category,TypicalCause,AffectedMachineTypes
+E001,Belt misalignment,Medium,Mechanical,Wear and tear,Conveyor
+E002,Motor overheating,High,Electrical,Continuous load,Conveyor
+E003,Sensor misread,Low,Sensor,Dust on lens,Conveyor
+E004,Belt tension loss,Medium,Mechanical,Loose tensioner,Conveyor
+E005,Jamming due to debris,High,Mechanical,Foreign object,Conveyor
+E006,Seal failure,High,Hydraulic,Pressure inconsistency,Packaging
+E007,Packaging misalignment,Medium,Mechanical,Guide rail shift,Packaging
+E008,Overwrapping,Low,Software,Configuration error,Packaging
+E009,Incorrect label print,High,Software,Template mismatch,Packaging
+E010,Air pressure drop,Medium,Pneumatic,Compressor fault,Packaging
+E011,Underfill,High,Sensor,Incorrect calibration,Filler
+E012,Overfill,High,Sensor,Sensor lag,Filler
+E013,Nozzle blockage,High,Mechanical,Residue accumulation,Filler
+E014,Fill head misalignment,Medium,Mechanical,Loose mounting,Filler
+E015,Flow inconsistency,Medium,Hydraulic,Valve malfunction,Filler
+E016,Label misplacement,Medium,Sensor,Optical misread,Labeler
+E017,Label roll jam,High,Mechanical,Roll tension error,Labeler
+E018,Barcode misread,Low,Sensor,Dirty scanner,Labeler
+E019,Adhesive failure,Medium,Material,Humidity impact,Labeler
+E020,Printer head failure,High,Electrical,Overheating,Labeler
+E021,Cap misalignment,Medium,Mechanical,Thread mismatch,Capping
+E022,Cap torque error,High,Sensor,Over-tightening,Capping
+E023,Feeder jam,High,Mechanical,Obstruction,Capping
+E024,Loose cap detection,Medium,Sensor,Low resistance,Capping
+E025,Cap chute blockage,Medium,Mechanical,Misaligned gate,Capping
+E026,Overheating,Critical,Thermal,Continuous use,Mixer
+E027,Load imbalance,Medium,Mechanical,Uneven ingredients,Mixer
+E028,Blade wear,Medium,Mechanical,Extended usage,Mixer
+E029,Motor stall,High,Electrical,High resistance,Mixer
+E030,Temperature sensor fault,Low,Sensor,Faulty probe,Mixer
+E031,Power surge,Critical,Electrical,Grid instability,Conveyor
+E032,PLC communication error,Critical,Software,Timeout,Packaging
+E033,Static buildup,Low,Environmental,Dry air,Labeler
+E034,Valve leak,High,Hydraulic,Seal damage,Filler
+E035,Label overwrap,Low,Mechanical,Tension misset,Labeler
+E036,Seal misplacement,Medium,Mechanical,Actuator lag,Packaging
+E037,Filler pump cavitation,High,Hydraulic,Air intake,Filler
+E038,Mixer shaft misalignment,Medium,Mechanical,Bearing wear,Mixer
+E039,Cap alignment motor fault,High,Electrical,Driver failure,Capping
+E040,Emergency stop triggered,Critical,Safety,Manual intervention,All
+E041,Network disconnect,Low,Network,Switch failure,Packaging
+E042,Conveyor speed mismatch,Medium,Electrical,Inverter delay,Conveyor
+E043,Heat sensor failure,High,Sensor,Break in circuit,Mixer
+E044,Incorrect product detection,High,Sensor,Misconfigured profile,Labeler
+E045,Label peeling error,Medium,Mechanical,Misfeed,Labeler
+E046,Cap type mismatch,High,Mechanical,Inventory error,Capping
+E047,Air leak in actuator,High,Pneumatic,Hose crack,Packaging
+E048,Mixer chamber leak,Critical,Hydraulic,Seal rupture,Mixer

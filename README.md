@@ -41,7 +41,7 @@ PASSO 2: Faça o setup inicial <br>
 
 PASSO 3: Escolha o caso de uso e mãos a obra <br>
 
-[1. Assistente Inteligente](usecases/intelligent-assistant/README.md)<br>
+[1. Assistente Inteligente para Gestão de Armazém](usecases/intelligent-assistant/README.md)<br>
 [2. AskRH](usecases/ask-hr/README.md)<br>
 [3. Automação de Negócio](usecases/business-automation/README.md)<br>
 [4. Agente Financeiro](usecases/banking-financial-research-analyst/README.md)<br>

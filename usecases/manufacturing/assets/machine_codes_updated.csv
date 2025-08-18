@@ -1,0 +1,26 @@
+MachineID,Description,MachineType,ProductionLine,MaintenanceLevel,ErrorCodes,OperationalComplexity
+M001,Primary Conveyor System,Conveyor,1,Medium,"E001, E002, E003, E004",Low
+M002,Final Packaging Unit,Packaging,1,High,"E006, E007, E008, E009",Medium
+M003,Liquid Filler Station,Filler,2,Medium,"E011, E012, E013, E014",High
+M004,Bottle Label Applicator,Labeler,2,Low,"E016, E017, E018, E019",Medium
+M005,Cap Placement Arm,Capping,3,Medium,"E021, E022, E023, E024",Medium
+M006,Mixer for Liquid Blends,Mixer,3,High,"E026, E027, E028, E029",High
+M007,Intermediate Conveyor,Conveyor,2,Low,"E001, E002, E003, E004",Low
+M008,Shrink Wrap Unit,Packaging,4,High,"E006, E007, E008, E009",Medium
+M009,Powder Filler,Filler,4,Critical,"E011, E012, E013, E014",High
+M010,High-Speed Label Printer,Labeler,1,Medium,"E016, E017, E018, E019",High
+M011,Torque-Based Capper,Capping,2,Medium,"E021, E022, E023, E024",Medium
+M012,Heated Mixer,Mixer,5,High,"E026, E027, E028, E029",High
+M013,Exit Conveyor,Conveyor,3,Low,"E001, E002, E003, E004",Low
+M014,Carton Packaging Machine,Packaging,3,High,"E006, E007, E008, E009",High
+M015,Volumetric Filler,Filler,1,Medium,"E011, E012, E013, E014",High
+M016,Dual Label Feeder,Labeler,5,Medium,"E016, E017, E018, E019",Medium
+M017,Pressure Capper,Capping,4,High,"E021, E022, E023, E024",Medium
+M018,Vertical Mixer,Mixer,1,Medium,"E026, E027, E028, E029",Medium
+M019,Sorting Conveyor,Conveyor,5,Low,"E001, E002, E003, E004",Low
+M020,Flexible Packaging Line,Packaging,2,Critical,"E006, E007, E008, E009",High
+M021,Gravity Filler,Filler,3,Low,"E011, E012, E013, E014",Medium
+M022,Inline Label Inspection,Labeler,3,Medium,"E016, E017, E018, E019",Medium
+M023,Snap-On Capper,Capping,5,Low,"E021, E022, E023, E024",Medium
+M024,Blending Mixer,Mixer,2,Medium,"E026, E027, E028, E029",High
+M025,Accumulation Conveyor,Conveyor,4,Medium,"E005, E031, E040, E042",Low

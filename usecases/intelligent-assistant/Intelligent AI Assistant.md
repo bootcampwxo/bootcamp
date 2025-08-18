@@ -91,6 +91,13 @@ Na tela seguinte, podemos inserir mais informações sobre o novo agente que est
 - `Tools` são funções que um agente pode chamar. Pode ser uma chamada de API ou uma invocação de código personalizado. Isso permite estender a capacidade do agente além daquela com a qual o LLM foi treinado.
 - `Agents` são outros agentes, dentro do watsonx Orchestrate ou em execução externa, por exemplo, em watsonx.ai, aos quais este agente pode delegar a solicitação, ou parte de uma solicitação.
 
+Além disso, você pode especificar o Modelo de Linguegem que o agente usará, bem como o "estilo" do agente. Para este agente (assim como para todos os outros abaixo), escolheremos o modelo `llama-3-405b-instruct`.
+
+![alt text](images/image35.png)
+
+Para o estilo, escolheremos o estilo ReAct.
+
+![alt text](images/image36.png)
 
 Em uma implantação de produção real, o agente Dock Status ficaria em frente a um sistema de backend corporativo existente, capaz de fornecer dados atualizados sobre os caminhões atualmente parados nas docas do armazém e monitorar os produtos e suas quantidades descarregadas.
 No entanto, neste exercício prático, simularemos esse backend simplesmente codificando os dados no campo `Behavior` do agente. O conteúdo desse campo direciona os prompts enviados ao LLM subjacente, e adicionar os dados codificados equivale a fornecer exemplos no prompt. Portanto, para simular dados provenientes de um sistema corporativo, podemos usar esta solução alternativa. Observe como as instruções fornecem informações detalhadas sobre a persona e o contexto com o qual este agente opera.
@@ -191,6 +198,10 @@ Observe como o agente está usando os dados fornecidos para formular sua respost
 Agora você pode prosseguir e implantar o agente usando o botão `Deploy` no canto superior direito da página.
 
 ![alt text](images/image8.png)
+
+Na próxima página, você pode definir quaisquer "conexões" que seu agente utilize. Isso será usado para definir credenciais e outros dados necessários para que o agente se conecte a um backend separado. Como nosso agente não possui essa dependência, podemos deixá-la em branco e simplesmente clicar em Implantar.
+
+![alt text](images/image34.png)
 
 Agora, vamos voltar para a lista de agentes na página Gerenciar agentes, clicando no link `Manage agents` no canto superior esquerdo da página.
 
