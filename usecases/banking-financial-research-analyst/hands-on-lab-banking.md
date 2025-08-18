@@ -535,7 +535,7 @@ Novamente, expanda o **Show Reasoning** e **Step 1** (indicado com setas vermelh
 53. Em seguida, tente outra pergunta para obter uma definição do glossário para o lucro diluído por ação, que foi retornada na primeira resposta.
 Pergunta:
 ```
-Você pode definir o termo financeiro do glossário "Diluted earnings per share"? 
+Você pode definir o termo financeiro do glossário "Diluted earnings per share"?  
 ```
 
 Expanda o **Show Reasoning** e observe que o agente deu 3 passos (anotados com retângulo vermelho) para recuperar a resposta para esta pergunta.

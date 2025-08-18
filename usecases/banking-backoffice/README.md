@@ -1,49 +1,49 @@
-# 🏦 Banking Automation with Agentic AI
+# 🏦  Automação Bancária com Agentic AI
 
 ![](banking-automation-banner.png)
 
 ## 🤔 The Problem
-GFM Bank is facing significant operational challenges due to its reliance on traditional, manual banking processes. Customers often endure long wait times—20 to 30 minutes to speak with a teller, and up to 45 minutes more for back-office approvals. These delays are especially problematic during peak seasons and for complex requests, such as overdraft approvals or fee reversals. Additionally, services are only available during business hours, limiting accessibility and convenience. Staff are burdened with repetitive tasks, leading to inefficiencies and inconsistent customer experiences.
+O GFM Bank está enfrentando desafios operacionais significativos devido à sua dependência de processos bancários tradicionais e manuais. Os clientes geralmente suportam longos tempos de espera: de 20 a 30 minutos para falar com um caixa e até 45 minutos a mais para aprovações de back-office. Esses atrasos são especialmente problemáticos durante as temporadas de pico e para solicitações complexas, como aprovações de cheque especial ou reversões de taxas. Além disso, os serviços estão disponíveis apenas durante o horário comercial, limitando a acessibilidade e a conveniência. A equipe está sobrecarregada com tarefas repetitivas, levando a ineficiências e experiências inconsistentes do cliente.
 
 ---
 
-## 🎯 Objective
-The **GFM Bank Agentic AI System**, powered by **Watson Orchestrate**, aims to modernize banking operations by deploying a network of intelligent, collaborative AI agents. These agents automate routine tasks, streamline complex workflows, and provide customers with fast, reliable, and 24/7 service—all while ensuring compliance with banking regulations.
+## 🎯 Objetivo
+O **GFM Bank Agentic AI System**, criado com o **Watson Orchestrate**, visa modernizar as operações bancárias implantando uma rede de agentes de IA inteligentes e colaborativos. Esses agentes automatizam tarefas rotineiras, agilizam fluxos de trabalho complexos e fornecem aos clientes um serviço rápido, confiável e 24 horas por dia, 7 dias por semana, garantindo a conformidade com os regulamentos bancários.
 
-### 💡 Key Capabilities
+### 💡 Principais Recursos
 
-* **Frictionless Customer Interactions**
+* **Interações sem atrito com o cliente**
   
-  * 24/7 AI-powered support for balance inquiries, transfers, overdraft requests, and more.
-  * Seamless conversational interface that guides users through complex banking tasks.
+  * Suporte alimentado por IA 24 horas por dia, 7 dias por semana, para consultas de saldo, transferências, solicitações de cheque especial e muito mais.
+  * Interface de conversação perfeita que orienta os usuários através de tarefas bancárias complexas.
     
-* **Intelligent Automation & Decisioning**
+* **Automação Inteligente e Tomada de Decisão**
 
-  * Automated validation of transactions and overdraft requests based on account history and policy rules.
-  * Smart routing of requests to the appropriate AI agent (e.g., Teller, Backoffice, Product Info).
+  * Validação automatizada de transações e solicitações de cheque especial com base no histórico da conta e nas regras da política.
+  * Encaminhamento inteligente de solicitações para o agente de IA apropriado (por exemplo, Teller, Backoffice, Informações do Produto).
 
-* **Enhanced Transparency & Support**
+* **Transparência e Suporte Aprimorados**
   
-  * Instant, accurate responses to customer queries using a RAG-enabled knowledge base.
-  * Clear, guided workflows that reduce confusion and improve customer confidence.
+  * Respostas instantâneas e precisas às consultas dos clientes usando uma base de conhecimento habilitada para RAG.
+  * Fluxos de trabalho claros e guiados que reduzem a confusão e melhoram a confiança do cliente.
 
 ---
 
-## 📈 Business Value
+## 📈 Valor para o Negócio
 
-### For Customers
-* Access to banking services anytime, anywhere
-* Rapid processing of transactions and approvals
-* Reduced need to visit physical branches
-* Personalized, conversational banking experience
-* Faster resolution of issues like overdrafts and fee reversals
+### Para clientes
+* Acesso a serviços bancários a qualquer hora, em qualquer lugar
+* Processamento rápido de transações e aprovações
+* Necessidade reduzida de visitar ramos físicos
+* Experiência bancária personalizada e de conversação
+* Resolução mais rápida de problemas como cheque especial e reversões de taxas
 
-### For Bank Staff & Operations
-* Significant reduction in manual workload
-* More time for staff to focus on high-value, complex customer needs
-* Automated compliance checks and decision-making
-* Improved operational efficiency and customer satisfaction
-* Scalable solution that adapts to seasonal demand and customer volume
+### Para Funcionários do banco e Operações
+* Redução significativa na carga de trabalho manual
+* Mais tempo para a equipe se concentrar nas necessidades complexas e de alto valor do cliente
+* Verificações automatizadas de conformidade e tomada de decisão
+* Melhor eficiência operacional e satisfação do cliente
+* Solução escalável que se adapta à demanda sazonal e ao volume de clientes
 ---
 
 ## 🏛 Architecture
@@ -52,6 +52,6 @@ The **GFM Bank Agentic AI System**, powered by **Watson Orchestrate**, aims to m
 
 ---
 
-## 📝 Hands-on step-by-step lab
+## 📝 Laboratório prático passo a passo
 
-Please find the step-by-step instructions [Hands-on Lab](/usecases/banking-backoffice/assets/hands_on_lab_banking_automation.md) on how you can implement this use case.
+Por favor, encontre as instruções passo a passo [Hands-on Lab](/usecases/banking-backoffice/assets/hands_on_lab_banking_automation.md) sobre como você pode implementar este caso de uso.

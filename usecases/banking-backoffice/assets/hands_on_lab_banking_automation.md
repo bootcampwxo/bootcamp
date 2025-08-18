@@ -2,10 +2,10 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [🔍 Introduction](#-introduction)
-- [📊 Banking Operations](#-banking-operations)
-  - [Current User Scenario](#current-user-scenario)
-  - [Future with Agentic AI](#future-with-agentic-ai)
+- [🔍Introdução](#-introdução)
+- [📊 Operações Bancárias](#-operações-bancárias)
+  - [Cenário do Usuário Atual](#current-user-scenario)
+  - [Futuro com IA Agentic](#future-with-agentic-ai)
 - [🏗️ Target Architecture with Agentic AI](#%EF%B8%8F-target-architecture-with-agentic-ai)
 - [🔧 Lab Instructions](#-lab-instructions)
   - [Prerequisites](#prerequisites)
@@ -30,7 +30,7 @@
 - [📚 Resources](#-resources)
 - [📄 IBM Sample Code Disclaimer](#-ibm-sample-code-disclaimer)
 
-## 🔍 Introduction
+## 🔍 Introdução
 
 Welcome to the GFM Bank Agentic AI Lab! In this hands-on workshop, you'll transform a traditional banking application into a modern, AI-powered solution using **watsonx Orchestrate**. The banking industry is undergoing rapid digital transformation, and GFM Bank is leading the way by implementing innovative AI agents to handle customer interactions.
 
@@ -50,7 +50,7 @@ In this lab, you'll build a system of collaborating AI agents that can handle ba
 - Fee reversals
 - Product information requests
 
-## 📊 Banking Operations
+## 📊 Operações Bancárias
 
 *Currently, GFM Bank relies on human tellers for basic transactions and back-office staff for approvals, leading to delays and inconsistent customer experiences in peak season.*
 
