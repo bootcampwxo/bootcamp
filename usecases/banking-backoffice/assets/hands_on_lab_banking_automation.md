@@ -149,7 +149,7 @@ Este Agente lida com operações bancárias especiais para o GFM Bank que exigem
  
     ![Back Office Agent Description](./backoffice_ag_imgs/i2.png)
 
-- Na página GFM Back Office, selecione o modelo "llama-3-405b-instruct" no menu suspenso no meio superior da página.
+- Na página Agente de Back Office do GFM Bank, selecione o modelo "llama-3-405b-instruct" no menu suspenso no meio superior da página.
 
   ![Select Model](./backoffice_ag_imgs/i15.png)
 
@@ -347,13 +347,13 @@ Este Agente auxilia os clientes com tarefas bancárias diárias, como consultas 
   Seu saldo atual é de 500 EUR.
   Seu limite de cheque especial é de 200 EUR.
 
-Transações Recentes:
+  Transações Recentes:
   | Data       | Tipo     | Total   | Descrição         |
   |------------|----------|---------|----------------------|
   | May 16     | Withdrawal | -50 EUR | ATM Withdrawal       |
   | May 15     | Deposit   | +200 EUR | Direct Deposit       |
   | May 13     | Purchase  | -30 EUR | Grocery Store        |
-    ```
+  ```
 
 - Como este agente será um agente colaborador e será invocado pelo Agente Orquestrador do GFM Bank, não queremos habilitá-lo para bate-papo direto na página inicial do bate-papo. Desatile o recurso **Show agent**.
 
