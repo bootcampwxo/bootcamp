@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>watsonx Orchestarte AI Agent</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url("https://raw.githubusercontent.com/bootcampwxo/bootcampwxo/main/agentic-bootcamp.png");
+      background-size: cover;   /* cobre toda a tela */
+      background-position: center; /* centraliza */
+      background-repeat: no-repeat; /* não repete */
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      background: rgba(0, 0, 0, 0.6); /* fundo semi-transparente para o texto */
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id=root>
+</div>
+<script>
+  window.wxOConfiguration = {
+    orchestrationID: "20240520-1149-0230-601a-ac533db16138_20250528-1749-3727-6091-a6e9a5607ebd",//"20240520-1149-0230-601a-ac533db16138:20250528-1749-3727-6091-a6e9a5607ebd", // Adds control over chat display mode (e.g., fullscreen)
+    hostURL: "https://dl.watson-orchestrate.ibm.com", // or region-specific host
+    rootElementID: "root",
+    showLauncher: false,
+    chatOptions: {
+      agentId: "597cea78-5a90-475c-ae77-61fabbde99db",//"3f9df689-a6b7-40f3-b229-885a3bf7e800",
+      agentEnvironmentId: "871efde7-0746-472a-8297-67f393f65785", //"b333bcb2-3ec2-4d76-8933-995f06626273"
+    },
+    layout: {
+//      form: "fullscreen-overlay", // Options: float | custom | fullscreen-overlay - if not specified float is default
+      form: "float", // Options: float | custom | fullscreen-overlay - if not specified float is default
+      showOrchestrateHeader: true, // Optional: shows top agent header bar
+      width: "600px", // Optional: honored when form is float only
+      height: "600px", // Optional: honored when form is float only
+    },
+  };
+
+  setTimeout(function () {
+    const script = document.createElement("script");
+    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+    script.addEventListener("load", function () {
+      wxoLoader.init();
+    });
+    document.head.appendChild(script);
+  }, 0);
+</script>
+</body>
+</html>

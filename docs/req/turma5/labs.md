@@ -1,30 +1,32 @@
-## DADOS NECESSÁRIOS PARA OS LABS 
+## DADOS NECESSÁRIOS PARA OS LABS
 
-## 1. Assistente Inteligente<br>
+Siga os passos abaixo:
 
-Service Instance URL: https://us-south.ml.cloud.ibm.com/ml/v4/deployments/bb6bdde5-fa87-43f7-9670-9ddc5de4b928/ai_service_stream?version=2021-05-01<br>
-API KEY: 232F1kgk4oqE_rduTt-HsfZIE4Ja9AgS0w0uXDxZ6QC0<br>
+1. Faça o download do aquivo LABS.zip para o seu compudador clicando no link abaixo:<br>
 
-## 2. Automação de Negócio<br>
+https://ibm.biz/BdeSej
 
-Utilizar as instruções de implementação<br>
+2. Descompacte o arquivo zip <br>
+
+- Clique com o botão direito do mouse sobre o arquivo e selecione "Extract All" ou "Extrair Tudo"
+
+<img width="1000" alt="image" src="extrair.png">
+
+- Será gerada uma estrutura de diretórios conforme figura abaixo. Cada pasta contém os arquivos necessários para os laboratórios correspondentes.
+
+<img width="1000" alt="image" src="estrutura1.png">
+
+3. Durante a execuçãodos labs, o agente irá solicitar algumas informações (Nome, número de conta, etc). Utilize o botão abaixo para solicitar as informações que você pode usar
+
+<p>
+  <a href="https://bootcampwxo.github.io/bootcampwxo/wxo_ai_agent_la1x.html" target="_blank">
+    <img src="https://img.shields.io/badge/🤖 🤖 Consulta DadosLABS%20-blue?style=for-the-badge" 
+         alt="Dados de Acesso"
+         style="transform: scale(1.5);">
+  </a>
+</p>
 
 
-## 3. AskRH<br>
 
-[📥 Baixar rh.yaml ](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/hr.yaml)<br>
-API KEY: 232F1kgk4oqE_rduTt-HsfZIE4Ja9AgS0w0uXDxZ6QC0<br>
-
-
-
-## 4. Agente Financeiro - Opcional<br>
-
-[📥 Baixar API Financeiras ](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/financial_api_openapi.json)<br>
-[📥 Baixar Web Search ](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/websearch_openapi.json)<br>
-
-[📥 Baixar Arquivo Financeiro META ](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/META-Q4-2024-Earnings_ptBR.pdf)<br>
-[📥 Baixar Arquivo Financeiro NETFLIX ](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/NFLX-Q4-2024-Earnings_ptBR.pdf)<br>
-[📥 Baixar Arquivo Financeiro NVIDIA ](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/NVDA-Q4-2024-Earnings_ptBR.pdf)<br>
-[📥 Baixar Arquivo Financeiro AMAZON ](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/AMZN-Q4-2024-Earnings_ptBR.pdf)<br>
 
 

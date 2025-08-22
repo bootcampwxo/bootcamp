@@ -16,13 +16,15 @@ https://ibm.biz/BdeEFb
 
 <img width="1000" alt="image" src="estrutura1.png">
 
-3. Anote as informações abaixo ou deixe está página aberta para poder copiar os dados necessários durante a execução dos labs <br>
+3. Durante a execuçãodos labs, o agente irá solicitar algumas informações (Nome, número de conta, etc). Utilize o botão abaixo para solicitar as informações que você pode usar
 
-Service Instance URL necessário para o lab de Assistente Inteligente:
-
-Alternativa 1:
- https://us-south.ml.cloud.ibm.com/ml/v4/deployments/6c568d48-1ab0-406b-9e06-eda6a578f144/ai_service_stream?version=2021-05-01<br>
- API KEY: KsUwXZgCfVdWGzI2bHWSjgKbKKAyLeBTqdrTTqcHx6aX<br>
+<p>
+  <a href="https://bootcampwxo.github.io/bootcampwxo/wxo_ai_agent_la1x.html" target="_blank">
+    <img src="https://img.shields.io/badge/🤖 🤖 Consulta DadosLABS%20-blue?style=for-the-badge" 
+         alt="Dados de Acesso"
+         style="transform: scale(1.5);">
+  </a>
+</p>
 
 
 
