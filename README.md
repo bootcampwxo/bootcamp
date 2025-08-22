@@ -46,7 +46,7 @@ PASSO 3: Escolha o caso de uso e mãos a obra <br>
 [3. Banking Backoffice](usecases/banking-backoffice/README.md)<br>
 [4. Order to Cash (O2C)](usecases/order-to-cash/README.md)<br>
 
-OPCIONAIS:
+OPCIONAIS<br>
 [5. Assistente Inteligente para Gestão de Armazém](usecases/intelligent-assistant/README.md)<br>
 [6. Automação de negócios para análise competitiva](usecases/business-automation/README.md)<br>
 
