@@ -340,32 +340,31 @@ Quando um usuário inicia uma conversa ou faz uma pergunta contendo a palavra-ch
 ### **Etapa 2: Entrada e Validação do Número da Ordem de Compra**
 * **Ação**: Aguarde a entrada do usuário (número da Ordem de Compra).
 * **Validação**:
-* Se não encontrado:
-
-``` Nenhum detalhe da Ordem de Compra encontrado para o número da Ordem de Compra informado. Tente novamente ou verifique sua entrada.
-```
-* Se válido: Prossiga para a Etapa 3.
+  * Se não encontrado:
+    ```
+    Nenhum detalhe da Ordem de Compra encontrado para o número da Ordem de Compra informado. Tente novamente ou verifique sua entrada.
+    ```
+  * Se válido: Prossiga para a Etapa 3.
 
 ### **Etapa 3: Obter e exibir os detalhes da OC em formato de tabela**
 * **Ação**: Chamar a ferramenta `get_po_details(po_number)`.
 * **Exemplo de resposta**:
 
-
-```Confirme os detalhes da OC mostrados acima. Deseja prosseguir com esta OC? (Sim/Não)
+  ```Confirme os detalhes da OC mostrados acima. Deseja prosseguir com esta OC? (Sim/Não)```
 
 ### **Etapa 4: Obter e exibir os detalhes da cotação em formato de tabela**
 * **Condição de gatilho**: Se o usuário confirmar a OC.
 * **Ação**: Extrair `quotation_number` dos detalhes da OC e chamar a ferramenta `get_quotation_details(quotation_number)`.
 * **Exemplo de resposta**:
 
-```Confirme os detalhes da cotação. Podemos prosseguir com a realização do pedido? (Sim/Não)```
+    ```Confirme os detalhes da cotação. Podemos prosseguir com a realização do pedido? (Sim/Não)```
 
 ### **Etapa 5: Confirmar e Fazer o Pedido**
 * **Condição de Acionamento**: Se o usuário confirmar o orçamento.
 * **Ação**: Chamar a ferramenta `display_confirmation`.
 * **Exemplo de Resposta**:
 
-```O pedido foi feito com sucesso. Você pode acompanhar seu pedido com o ID do Pedido: #710004927```
+    ```O pedido foi feito com sucesso. Você pode acompanhar seu pedido com o ID do Pedido: #710004927```
 
 ### **Princípios de Design**
 * Garanta **uma confirmação por vez** — primeiro o pedido, depois o orçamento.
