@@ -56,7 +56,7 @@ Nesta seção, você percorrerá o processo de criação de um agente de IA no w
 6. Para começar a criar agentes, clique no link **Create new agent** conforme mencionado na etapa 5, ou, alternativamente, clique no menu de navegação superior esquerdo, expanda a seção **Build** e selecione **Agent Builder**.  Isso o redirecionará para a página de gerenciamento de agentes.
 ![wxo agent builder](./images/wxo-nav-menu-agent-builder.png) 
 
-7. TA página Gerenciar agentes estará inicialmente em branco, pois nenhum agente foi criado ainda. À medida que você cria mais e mais agentes de IA capazes de raciocinar e agir, a página Gerenciar agentes será preenchida com esses agentes. Clique no botão **Create agent** para começar a criar seu primeiro agente.
+7. A página Gerenciar agentes estará inicialmente em branco, pois nenhum agente foi criado ainda. À medida que você cria mais e mais agentes de IA capazes de raciocinar e agir, a página Gerenciar agentes será preenchida com esses agentes. Clique no botão **Create agent** para começar a criar seu primeiro agente.
 ![wxo create agent](./images/wxo-create-agent-manage-agents-empty.png) 
 
 8. Na página Criar um agente, selecione **Create from scratch**, forneça um **Nome** e **Descrição** para o agente e clique em **Create**.
@@ -119,6 +119,8 @@ Você deverá ver as respostas sendo recuperadas dos documentos enviados e, em s
 
 ![wxo agent knowledge test](./images/img37.png) 
 
+**NÃO PRECISA SALVAR NEM FAZER DEPLOY NESTE MOMENTO**
+
 Neste momento, vale a pena refletir sobre o que você desenvolveu até agora. Você projetou um agente e o capacitou com uma base de conhecimento para que ele possa responder a consultas em contexto usando sua base de conhecimento. *Parabéns!!*
 
 
@@ -172,17 +174,13 @@ Para fins do Agente Order-to-Cash, você usará a opção **Import** e, em segui
 
 ![wxo tool import operations](./images/img5.png) 
 
-19. Neste ponto, você verá as duas ferramentas importadas na subseção Ferramentas, o que significa que elas estão disponíveis para o **Agente de Suporte ao Cliente** usar essas ferramentas na execução de tarefas.
+19. Neste ponto, você verá as três ferramentas importadas na subseção Ferramentas, o que significa que elas estão disponíveis para o **Agente de Suporte ao Cliente** usar essas ferramentas na execução de tarefas.
 
 20. Em seguida, role mais para baixo até a seção **Behavior** ou clique no atalho **Behavior** e adicione as seguintes instruções para orientar o agente em seu raciocínio e orquestração.
 
 Instruções de comportamento: 
 
 ```
-### **Trigger Condition**
-When a user initiates a conversation or asks a question containing the keyword
-```show me all my emails, customer service, customers list or related phrases```
-
 ### **Condição de Acionamento**
 Quando um usuário inicia uma conversa ou faz uma pergunta contendo a palavra-chave
 ```mostrar todos os meus e-mails, atendimento ao cliente, lista de clientes ou frases relacionadas```
@@ -271,7 +269,7 @@ Observe a resposta baseada nas informações retornadas pela ferramenta de e-mai
 ![wxo tool mails](./images/img7.png) 
 ![wxo tool mails](./images/img8.png) 
 
-22. Teste o **Agente de Suporte ao Cliente** mais detalhadamente selecionando order_id para obter os detalhes do pedido e depois entrar em contato com o cliente, redigir e enviar um e-mail.
+22. Digite um dos nome de clientes da lista retornada pelo Agente (Ex: Globex Ltd - Maria Gonzales) para listar os ids de pedidos. Em seguida digite um dos ids retornados pelo agente para obter os detalhes do pedido e depois entrar em contato com o cliente, redigir e enviar um e-mail.
 
 Novamente, observe a resposta e expanda o link **Show Reasoning** para rastrear o raciocínio do agente, que neste caso acionou corretamente a ferramenta **Obter detalhes do pedido**.
 
@@ -343,8 +341,8 @@ Quando um usuário inicia uma conversa ou faz uma pergunta contendo a palavra-ch
 * **Ação**: Aguarde a entrada do usuário (número da Ordem de Compra).
 * **Validação**:
 * Se não encontrado:
-```
-Nenhum detalhe da Ordem de Compra encontrado para o número da Ordem de Compra informado. Tente novamente ou verifique sua entrada.
+
+``` Nenhum detalhe da Ordem de Compra encontrado para o número da Ordem de Compra informado. Tente novamente ou verifique sua entrada.
 ```
 * Se válido: Prossiga para a Etapa 3.
 
