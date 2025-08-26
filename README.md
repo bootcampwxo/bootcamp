@@ -36,10 +36,9 @@ PASSO 1: Clique no botão abaixo para obter as informações necessárias durant
 
 
 
-PASSO 2: Faça o setup inicial <br>
-[SETUP INICIAL - COMEÇAR POR AQUI](usecases/setup.md)<br>
 
-PASSO 3: Escolha o caso de uso e mãos a obra <br>
+
+PASSO 2: Escolha o caso de uso e mãos a obra <br>
 
 [1. AskRH](usecases/ask-hr/README.md)<br>
 [2. Agente Financeiro](usecases/banking-financial-research-analyst/README.md)<br>
