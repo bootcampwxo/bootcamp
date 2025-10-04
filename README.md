@@ -1,5 +1,5 @@
 # 🤖 watsonx Agentic AI Bootcamp 
-# <img src="docs/images/BB-LOGO.png" width="40" height="40"> Banco do Brasil - 24/09/2025
+# <img src="docs/images/crist.png" width="40" height="40"> Rio de Janeiro - 26/08/2025
 
 
 
@@ -35,9 +35,6 @@ PASSO 1: Clique no botão abaixo para obter as informações necessárias durant
 </p>
 
 
-
-
-
 PASSO 2: Escolha o caso de uso e mãos a obra <br>
 
 [1. AskRH](usecases/ask-hr/README.md)<br>
@@ -46,7 +43,7 @@ PASSO 2: Escolha o caso de uso e mãos a obra <br>
 [4. Order to Cash (O2C)](usecases/order-to-cash/README.md)<br>
 
 OPCIONAIS<br>
-[5. Assistente Inteligente para Gestão de Armazém](usecases/intelligent-assistant/README.md)<br>
+[5. Agente de Sinistros de seguros](usecases/autoclaim-insurance/README.md)<br>
 [6. Automação de negócios para análise competitiva](usecases/business-automation/README.md)<br>
 
 
