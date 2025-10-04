@@ -1,5 +1,5 @@
 # 🤖 watsonx Agentic AI Bootcamp 
-# <img src="docs/images/sp.png" width="40" height="40"> São Paul - 21 e 22 de Outubro
+# <img src="docs/images/sp.png" width="40" height="40"> São Paulo - 21 e 22 de Outubro
 
 
 
