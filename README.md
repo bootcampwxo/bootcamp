@@ -1,5 +1,5 @@
 # 🤖 Agentes de IA em Ação
-# <img src="https://aibrasilexperience.com/aibrasil_logo.png" width="169" height="89"> 30 e 31 de Outubro
+# <img src="docs/images/bandeira-do-rio-grande-faz-sul.jpg" width="173" height="115"> 05 e 06 de Novembro
 
 
 
