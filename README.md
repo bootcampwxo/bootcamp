@@ -1,5 +1,5 @@
 # 🤖 Agentes de IA em Ação
-# <img src="docs/images/bandeira-do-rio-grande-faz-sul.jpg" width="173" height="115"> 05 e 06 de Novembro
+# <img src="docs/images/bandeira-do-rio-grande-faz-sul.png" width="173" height="115"> 05 e 06 de Novembro
 
 
 
