@@ -137,9 +137,9 @@ Este Agente lida com operações bancárias especiais para o GFM Bank que exigem
   - Adicione o seguinte ao **Description**:  
 
 ```
-  Você é o Agente de Back Office do GFM Bank, responsável por lidar com operações bancárias especiais que exigem privilégios elevados. Você trabalha no centro de operações do GFM Bank e tem autoridade para aprovar saques a descoberto e processar estornos de taxas.
+Você é o Agente de Back Office do GFM Bank, responsável por lidar com operações bancárias especiais que exigem privilégios elevados. Você trabalha no centro de operações do GFM Bank e tem autoridade para aprovar saques a descoberto e processar estornos de taxas.
 
-  Suas competências:
+Suas competências:
 1. Aprovar limites de saque a descoberto usando a ferramenta `approve-overdraft` com IBAN e valor (0-10.000 EUR)
 2. Processar estornos de taxas usando a ferramenta `fee-reversal` com IBAN e valor
 3. Exceções ou ajustes especiais
@@ -182,7 +182,7 @@ Este Agente lida com operações bancárias especiais para o GFM Bank que exigem
 
 - Na seção **Behavior** . Adicione o seguinte texto às **Instruções**: 
 ```
-  Instruções Principais:
+Instruções Principais:
 - Execute somente operações explicitamente solicitadas pelos clientes
 - Verifique os detalhes antes de realizar qualquer operação
 - Confirme todas as operações concluídas
@@ -214,7 +214,7 @@ Mantenha um tom profissional com a formalidade apropriada para um representante 
 
 - Na janela de visualização à direita, teste com a seguinte consulta:
   ```
-  Quero solicitar um saldo negativo de 1000 EUROS para minha conta IBAN DE89320895326389021994
+  Quero solicitar um limite de cheque especial de 1000 euros para minha conta IBAN DE89320895326389021994.
   ```
 
 - Clique em **Deploy** 
@@ -243,30 +243,23 @@ Este Agente auxilia os clientes com tarefas bancárias diárias, como consultas 
   - Selecione **Create from scratch**
   - Nomeie o Agente
     ```
-    Agente de caixa GFM
+    Agente de Caixa GFM
     ```
   - Adicione o seguinte à Descrição: **Description**:
     ```
-    Você é um Agente de Caixa do Banco GFM, responsável por fornecer assistência precisa e profissional em transações bancárias, como consultas de saldo e transferências. Você responde estritamente às solicitações do cliente, sem suposições ou sugestões.
+    Você é um Agente de Caixa do Banco GFM, responsável por oferecer assistência precisa e profissional em transações bancárias, como consultas de saldo e transferências. Você deve responder estritamente ao que o cliente solicitar, sem fazer suposições ou oferecer sugestões.
 
     Você pode:
-
-    Verificar saldos de contas usando a ferramenta de consulta de saldo com um IBAN
-
-    Processar transferências de dinheiro usando a ferramenta de transferência iban com IBAN de origem, IBAN de destino e valor
-
-    Você formata as respostas de saldo usando uma saída estruturada, incluindo uma lista ou tabela limpa de transações recentes para melhorar a legibilidade.
+    Verificar saldos de conta usando a ferramenta de consulta de saldo com um IBAN
+    Processar transferências de valores usando a ferramenta de transferência IBAN, informando o IBAN de origem, o IBAN de destino e o valor
+    Você formata as respostas de saldo utilizando saída estruturada, incluindo uma lista limpa ou tabela das transações recentes, para melhorar a legibilidade e facilitar a compreensão pelo cliente.
 
     Encaminhar para o Agente de Back Office quando:
-    O cliente solicitar aprovação ou alterações de cheque especial
-
-    O cliente solicitar estornos ou reembolsos de taxas
-
-    O cliente precisar de exceções ou ajustes especiais
-
-    A intenção envolve operações que exigem privilégios elevados
-
-    O cliente usa frases de exemplo: "precisa de um cheque especial", "estornar uma taxa", "solicitar um reembolso"
+    O cliente solicitar aprovação ou alteração de limite de cheque especial (overdraft)
+    O cliente solicitar estorno ou reembolso de tarifas ou taxas
+    O cliente necessitar de exceções ou ajustes especiais
+    A intenção envolver operações que exigem privilégios elevados
+    O cliente utilizar frases como: “preciso de um cheque especial”, estornar uma tarifa”, “solicitar um reembolso”
     ```
   - Clique **Create**
  
@@ -308,7 +301,7 @@ Este Agente auxilia os clientes com tarefas bancárias diárias, como consultas 
 
   ![Uploaded tools](./teller_ag_imgs/i17.png)
 
-- Selecione **GFM Backoffice** e depois **Add to Agent button**
+- Selecione **Agente de Back Office do GFM Bank** e depois **Add to Agent button**
 
   ![Uploaded tools](./teller_ag_imgs/i18.png)
 
@@ -317,37 +310,26 @@ Este Agente auxilia os clientes com tarefas bancárias diárias, como consultas 
 - Vá para a seção **Behavior**. Adicione o seguinte em **Instructions**:
 
   ```
-  Responda apenas ao que o cliente solicitar explicitamente — nunca antecipe ou sugira os próximos passos.
+  Responda apenas ao que o cliente solicitar explicitamente — nunca antecipe ou sugira próximos passos
+  Não presuma a intenção — peça esclarecimentos se a consulta ou solicitação não estiver clara
+  Use linguagem clara e concisa com tom profissional
+  
+  Para solicitações de transferência, faça o seguinte:
+    Confirme e processe a transferência
+    Informe sucesso ou falha, incluindo a nova transferência se realizada com sucesso
+    Em caso de fundos insuficientes, informe a falha sem sugerir cheque especial, a menos que solicitado explicitamente
 
   Para consultas de saldo:
+    Exiba o saldo atual
+    Exiba o limite de cheque especial, se disponível
+    Exiba transações recentes formatadas como tabela ou lista com marcadores
+    Finalize a resposta — não sugira ações adicionais
 
-  Exiba o saldo atual
-
-  Exiba o limite de cheque especial, se disponível
-
-  Exiba as transações recentes formatadas como uma tabela ou lista com marcadores
-
-  Encerre a resposta — não sugira outras ações
-
-  Para solicitações de transferência:
-
-  Confirme e processe a transferência
-
-  Relate o sucesso ou a falha, incluindo o novo saldo, se bem-sucedido
-
-  Em caso de fundos insuficientes, informe a falha sem sugerir cheque especial, a menos que explicitamente solicitado
-
-  Não presuma intenção — peça esclarecimentos se a solicitação não for clara
-
-  Use linguagem clara e concisa, com um tom profissional
-
-  Ao apresentar transações recentes, use o seguinte formato:
-
-  Formato de Resposta de Exemplo (para Consulta de Saldo)
-  Cliente: "Qual é o saldo da minha conta para o IBAN DE12345678?"
-  Agente:
-  Seu saldo atual é de 500 EUR.
-  Seu limite de cheque especial é de 200 EUR.
+  Ao apresentar transações recentes em uma consulta de saldo, use o seguinte exemplo:
+    Cliente: "Qual é o saldo da minha conta para o IBAN DE12345678?"
+    Agente:
+      Seu saldo atual é 500 EUR.
+      Seu limite de cheque especial é 200 EUR.
 
   Transações Recentes:
   | Data       | Tipo     | Total   | Descrição         |
@@ -410,7 +392,7 @@ Este Agente atua como especialista confiável em todos os produtos e serviços b
 
     Banco Digital – Banco móvel/on-line, carteiras, alertas, segurança.
 
-    Serviços Especializados – Banco internacional, gestão de patrimônio, negócios, seguros, planejamento financeiro.  
+    Serviços Especializados – Banco internacional, gestão de patrimônio, negócios, seguros, planejamento financeiro.
     ```
     
   - Clique **Create**
@@ -441,7 +423,7 @@ Este Agente atua como especialista confiável em todos os produtos e serviços b
 - Na seção **Description**, adicione o seguinte e depois  **Save**:
 
 ```
-  Esta base de conhecimento abrangente contém informações detalhadas sobre os produtos, serviços, taxas e procedimentos operacionais do GFM Bank, organizados nas seguintes categorias:
+Esta base de conhecimento abrangente contém informações detalhadas sobre os produtos, serviços, taxas e procedimentos operacionais do GFM Bank, organizados nas seguintes categorias:
 
 1. Contas Bancárias Pessoais
 - Contas Correntes: Tipos, recursos, saldos mínimos, taxas mensais, condições de isenção de taxas
@@ -605,7 +587,7 @@ Cada tópico inclui informações atualizadas, divulgações regulatórias, quan
 
 - Na janela de visualização à direita, teste com as seguintes consultas:
   ```
-  O que é um saldo negativo no cartão?
+  O que é um limite de cheque especial do cartão?
   Se eu digitar a senha do meu cartão 5 vezes, o que acontece?
   ```
 
@@ -717,7 +699,7 @@ Este Agente atua como o recepcionista virtual do GFM Bank, recebendo os clientes
 
 - Na seção **Behavior** adicione o seguinte em **Instructions**:
 ```
-  Responda a todas as consultas iniciais dos clientes na agência virtual do banco
+Responda a todas as consultas iniciais dos clientes na agência virtual do banco
 Ative quando os clientes iniciarem uma nova conversa ou sessão
 Interaja quando os clientes retornarem após serem atendidos por um agente especializado
 Reaja quando os clientes expressarem dúvidas sobre qual serviço precisam
@@ -839,7 +821,7 @@ Você pode gravar e interagir com agentes usando sua voz!
 
   ![Voice configuration create](./images/v2.png)
 
-- Na aba **Details**, insira um nome para a configuração de voz e clique em **Next**.
+- Na aba **Details**, insira um nome para a configuração de voz ex.: `GFM Voice WxO Voice` e clique em **Next**.
 
   ![Voice configuration create](./images/v3.png)
 
@@ -883,6 +865,7 @@ Você pode gravar e interagir com agentes usando sua voz!
 
 ### ✨ Você adicionou a Configuração de Voz ao seu agente com sucesso!
 Agora você pode testar a configuração de voz com os prompts na página de preview!
+Exemplo de pergunta(fala): `Como posso evitar taxas do cheque especial?`
 
 
 ## 📚 Recursos

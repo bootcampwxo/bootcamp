@@ -1,6 +1,5 @@
-# 🤖 watsonx Agentic AI Bootcamp 
-# <img src="docs/images/sp.png" width="40" height="40"> São Paulo - 21 e 22 de Outubro
-
+# 🤖 Agentes de IA em Ação
+# <img src="docs/images/bandeira-do-rio-grande-faz-sul.png" width="173" height="115"> 05 e 06 de Novembro
 
 
 

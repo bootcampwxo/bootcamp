@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Tavily Search API Wrapper",
+    "version": "1.0.0",
+    "description": "Um endpoint de API para repassar consultas de busca à Tavily API usando FastAPI."
+  },
+  "servers": [
+    {
+      "url": "https://auto-insurance.21pfvqjn6rrj.us-south.codeengine.appdomain.cloud"
+    }
+  ],
+  "paths": {
+    "/tavily_search": {
+      "post": {
+        "summary": "Search Tavily",
+        "description": "Envia uma consulta para a Tavily API e retorna os resultados da busca.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "example": "últimos carros elétricos",
+                    "description": "Consulta de busca para enviar à Tavily"
+                  }
+                },
+                "required": ["query"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resultados da busca recuperados com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": { "type": "string" },
+                          "url": { "type": "string", "format": "uri" },
+                          "content": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Falta a consulta no corpo da requisição"
+          },
+          "401": {
+            "description": "Não autorizado - Chave de API Tavily inválida ou ausente"
+          },
+          "500": {
+            "description": "Erro interno do servidor ou falha na Tavily API"
+          }
+        }
+      }
+    }
+  }
+}

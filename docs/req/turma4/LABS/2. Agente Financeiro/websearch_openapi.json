@@ -1,0 +1,126 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Financial AI API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://financial-analyst.21pfvqjn6rrj.us-south.codeengine.appdomain.cloud/"
+    }
+  ],
+  "paths": {
+    "/search/tavily": {
+      "post": {
+        "summary": "Obter Resultados de busca com o Tavily",
+        "description": "Obtenha resultados de pesquisa na web com o Tavily Search.\n\nArgs:\n    search_input: Um objeto contendo parâmetros de pesquisa\n        - query: A string de consulta de pesquisa\n        - num_results: Número de resultados a retornar",
+        "operationId": "get_tavily_search_results",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "title": "Query",
+                    "description": "String de pesquisa da consulta"
+                  },
+                  "num_results": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "title": "Num Results",
+                    "description": "Número de resultados principais a serem recuperados"
+                  }
+                },
+                "required": [
+                  "query",
+                  "num_results"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "title": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "total_count": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "error": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["success"]
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "loc": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "msg": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

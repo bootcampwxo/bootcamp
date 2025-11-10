@@ -1,0 +1,159 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Sinistros de Seguro Auto",
+    "version": "1.0.0",
+    "description": "API para cadastrar e consultar sinistros de seguro auto."
+  },
+  "servers": [
+    {
+      "url": "https://auto-insurance.21pfvqjn6rrj.us-south.codeengine.appdomain.cloud"
+    }
+  ],
+  "paths": {
+     "/create_claim_request": {
+      "post": {
+        "summary": "Criar uma Solicitação de Sinistro",
+        "description": "Envia uma nova solicitação de sinistro para uma apólice de seguro auto.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Nome completo do cliente"
+          },
+          {
+            "name": "estimated_cost",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            },
+            "description": "Custo estimado do dano"
+          },
+          {
+            "name": "claim_request_details",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Detalhes do acidente ou do sinistro"
+          },
+          {
+            "name": "vehicle_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Tipo de veículo (ex.: Carro, Caminhão)"
+          },
+          {
+            "name": "vehicle_details",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Detalhes adicionais do veículo (ex.: Marca, Modelo)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resposta da solicitação de sinistro (sucesso ou falha)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Solicitação de sinistro criada com sucesso"
+                    },
+                    "customer_id": {
+                      "type": "string",
+                      "example": "60695904"
+                    },
+                    "claim_number": {
+                      "type": "string",
+                      "example": "CLM994311"
+                    },
+                    "claim_request_details": {
+                      "type": "string",
+                      "example": "Fui atingido por um caminhão"
+                    },
+                    "detail": {
+                      "type": "string",
+                      "example": "Informações adicionais opcionais, como observações internas ou dados de validação"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/check_claim_status": {
+      "get": {
+        "summary": "Check Claim Status",
+        "description": "Retrieves the status of a claim using customer name and claim number.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Name of the customer"
+          },
+          {
+            "name": "claim_number",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Unique identifier of the claim"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved claim status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "claim_number": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "last_updated": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Claim not found"
+          },
+          "400": {
+            "description": "Missing or invalid parameters"
+          }
+        }
+      }
+    }
+  }
+}

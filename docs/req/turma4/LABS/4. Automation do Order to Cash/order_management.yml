@@ -1,0 +1,272 @@
+openapi: 3.0.0
+info:
+  title: Order Management
+  version: 0.1.0
+  description: Order Management
+
+tags:
+  - name: Detalhes da ordem de compra
+    description: Operações relacionadas aos detalhes do pedido
+  - name: Detalhes da cotação
+    description: Obter detalhes da cotação
+  - name: Todos detalhes da ordem de compra
+    description: Obter todas as ordens de compra
+  - name: Resultados correspondentes
+    description: Obter Resultados correspondentes
+  - name: Confirmação de exibição
+    description: Confirmação de exibição
+
+servers:
+  - url: https://order-to-cash.21pfvqjn6rrj.us-south.codeengine.appdomain.cloud
+
+paths:
+  /get_all_pos:
+    get:
+      summary: Obeter todos os Detalhes da ordem de compra
+      description: Buscar todas as ordens de compra
+      operationId: fetch_all_po_details
+      tags:
+        - Todos detalhes da ordem de compra
+      responses:
+        "200":
+          description: Resposta bem sucedida
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AllPODetails"
+
+  /po/{po_number}:
+    get:
+      summary: Obter detalhes dos pedidos 
+      description: Obter detalhes dos pedidos 
+      operationId: get_po_details_po_get
+      tags:
+        - Detalhes dos pedidos 
+      parameters:
+        - name: po_number
+          in: path
+          required: true
+          schema:
+            type: string
+            title: PO Number
+      responses:
+        "200":
+          description: Resposta bem sucedida
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PODetails"
+
+  /quotation/{quotation_number}:
+    get:
+      summary: Obter detalhes da cotação
+      description: Obter detalhes da cotação
+      operationId: get_quotation_details
+      tags:
+        - Detalhes da cotação
+      parameters:
+        - name: quotation_number
+          in: path
+          required: true
+          schema:
+            type: string
+            title: Número da cotação
+      responses:
+        "200":
+          description: Resposta bem sucedida
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QuotationDetails"
+        "422":
+          description: Erro de validação
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+
+  /matching_results/:
+    get:
+      summary: Obtenha resultados correspondentes
+      description: Obtenha resultados correspondentes
+      operationId: get_matching_results
+      tags:
+        - Resultados correspondentes
+      responses:
+        "200":
+          description: Resposta bem sucedida
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MatchingResults"
+        "422":
+          description: Erro de validação
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+
+  /display_confirmation/:
+    get:
+      summary: Confirmação de exibição
+      description: Confirmação de exibição
+      operationId: display_confirmation
+      tags:
+        - Confirmação de exibição
+      responses:
+        "200":
+          description: Resposta bem sucedida
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DisplayConfirmation"
+        "422":
+          description: Erro de validação
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+
+components:
+  schemas:
+    AllPODetails:
+      type: object
+      properties:
+        PO_Records:
+          type: array
+          items:
+            type: object
+            properties:
+              pom_id:
+                type: string
+                description: POM ID
+              po_number:
+                type: string
+                description: PO Number
+              submitted_by:
+                type: string
+                description: Submitted by
+              user_id:
+                type: string
+                description: User ID
+
+    PODetails:
+      type: object
+      properties:
+        PO_Details:
+          type: array
+          items:
+            type: object
+            properties:
+              po_date:
+                type: string
+              po_number:
+                type: string
+              payment_terms:
+                type: string
+              quote_number:
+                type: string
+              bill_to_party_name:
+                type: string
+              bill_to_party_address:
+                type: string
+              bill_to_party_gstin:
+                type: string
+              ship_to_party_name:
+                type: string
+              ship_to_party_address:
+                type: string
+              ship_to_party_gstin:
+                type: string
+              product_desc:
+                type: string
+              qty:
+                type: string
+              unit_rate:
+                type: string
+              taxable_value:
+                type: string
+              total_amount:
+                type: string
+
+    QuotationDetails:
+      type: object
+      properties:
+        Quotation_Details:
+          type: array
+          items:
+            type: object
+            properties:
+              quotation_number:
+                type: string
+              bill_to_party_name:
+                type: string
+              bill_to_party_address:
+                type: string
+              bill_to_party_gstin:
+                type: string
+              ship_to_party_name:
+                type: string
+              ship_to_party_address:
+                type: string
+              ship_to_party_gstin:
+                type: string
+              product_desc:
+                type: string
+              qty:
+                type: string
+              unit_rate:
+                type: string
+              taxable_value:
+                type: string
+              total_amount:
+                type: string
+
+    MatchingResults:
+      type: object
+      properties:
+        Validation_Details:
+          type: array
+          items:
+            type: object
+            properties:
+              entity_name:
+                type: string
+              po_details:
+                type: string
+              quotation_details:
+                type: string
+              matching_result:
+                type: string
+
+    DisplayConfirmation:
+      type: object
+      properties:
+        Confirmation_Message:
+          type: string
+
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            $ref: "#/components/schemas/ValidationError"
+
+    ValidationError:
+      type: object
+      required:
+        - loc
+        - msg
+        - type
+      properties:
+        loc:
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          type: string
+        type:
+          type: string

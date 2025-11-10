@@ -1,0 +1,53 @@
+customer_id,customer_name,phone_number,email_id,vehicle_type,vehicle_details,policy_number
+15658583,Juan Andrade,916396839,tasha38@example.net,SUV,Turquoise Recognize SUV,POL71225AUTO
+60201922,Valerie Thornton MD,915417256,brittany64@example.com,Motorcycle,SlateGray Central Motorcycle,POL16024AUTO
+60695904,Jordan Davenport,857922884,kfry@example.net,Truck,SkyBlue Study Truck,POL81610AUTO
+93315106,Emma Smith,615476666,adam69@example.com,Truck,Gold True Truck,POL56327AUTO
+57755089,Jennifer Chan,827449842,andrew27@example.com,Motorcycle,DarkTurquoise Great Motorcycle,POL41466AUTO
+39427986,Mrs. Melinda Hernandez,688281354,vwilliams@example.net,Sedan,LightBlue It Sedan,POL99487AUTO
+86878349,Mr. John Smith DVM,788140488,davidquinn@example.org,Sedan,PapayaWhip Stock Sedan,POL66951AUTO
+15561010,Cindy Williamson,710035685,christinasimpson@example.org,Truck,BlueViolet Yeah Truck,POL35562AUTO
+77976123,Michael Harris,978440540,wisewalter@example.net,Sedan,LightSkyBlue Together Sedan,POL41317AUTO
+15603903,Charles Garza,810525698,robinsonrhonda@example.net,Motorcycle,SteelBlue Ten Motorcycle,POL28969AUTO
+65533632,Kathleen Prince,811688783,vanessagonzalez@example.com,Truck,Orange Cell Truck,POL54507AUTO
+77070408,Kristin Martinez,752304501,melvin62@example.org,Motorcycle,FloralWhite Today Motorcycle,POL87469AUTO
+23665264,Darrell Davis,798601723,peggybarron@example.org,Truck,PaleVioletRed Deep Truck,POL16871AUTO
+73389535,Brandy Anderson,648148812,bsanchez@example.org,Sedan,Violet Skill Sedan,POL87688AUTO
+15406724,Miss Diane Davis,740012539,shellyhunter@example.com,Motorcycle,Yellow Little Motorcycle,POL86896AUTO
+47659055,Barry Munoz,949671535,jasonhorton@example.org,Truck,LightGreen Cultural Truck,POL30408AUTO
+42151585,Brandon Campbell,893027994,shannonkelly@example.org,Truck,Violet Though Truck,POL08417AUTO
+95495718,Kimberly Brown,706032589,qsherman@example.org,Hatchback,Orchid Cultural Hatchback,POL61944AUTO
+72645667,John Smith,818364350,crystal66@example.net,Sedan,MediumPurple Small Sedan,POL23617AUTO
+96063620,Rebecca Benton,842816422,sergio99@example.org,Sedan,Green Experience Sedan,POL89353AUTO
+93315106,,,,,,
+57755089,,,,,,
+30371112,Kristi Duncan,755244569,welchpamela@example.org,Motorcycle,MediumSpringGreen Public Motorcycle,POL59939AUTO
+15850858,Adam Murray,907462362,charlesnavarro@example.org,Sedan,Linen Push Sedan,POL28984AUTO
+44788956,Patricia Villarreal MD,990512269,barbaraburton@example.net,Motorcycle,MediumVioletRed Foreign Motorcycle,POL34321AUTO
+45376758,Melinda Davis,978778681,sandra66@example.org,Hatchback,Pink South Hatchback,POL81468AUTO
+56074256,Nicole Jenkins,864277090,uperry@example.com,Hatchback,DarkBlue Be Hatchback,POL60427AUTO
+36016922,Andrew Manning,692985134,dale10@example.net,Motorcycle,BlanchedAlmond Military Motorcycle,POL73516AUTO
+20895027,Cynthia Graves,655183466,lindsaycarter@example.org,Sedan,DimGray Both Sedan,POL30049AUTO
+14968514,Mary Lambert,821203573,lisa61@example.com,Hatchback,DarkOrchid Season Hatchback,POL94111AUTO
+33947767,Diane Baker,625539570,karenrasmussen@example.org,Truck,DodgerBlue Especially Truck,POL29747AUTO
+65413199,Claire Johnson,870803705,frazierjonathan@example.com,Motorcycle,DarkOrchid Customer Motorcycle,POL60326AUTO
+99845337,Carolyn Washington,904291631,tarasosa@example.net,SUV,SeaShell Nothing SUV,POL84256AUTO
+44384431,Justin Wilson Jr.,941686988,cgould@example.com,Hatchback,CornflowerBlue Side Hatchback,POL57492AUTO
+68298670,Taylor Palmer,674479833,kgibson@example.com,Truck,Cyan Amount Truck,POL64603AUTO
+60141430,Megan Perez,661507644,tinadominguez@example.com,Sedan,Maroon Him Sedan,POL17904AUTO
+41991899,Stephanie Griffin,722852140,castrodevin@example.org,Truck,MistyRose Option Truck,POL56160AUTO
+70364469,Jessica Flores,817518165,perezdavid@example.com,Hatchback,LightPink Continue Hatchback,POL51753AUTO
+94252233,Stanley Brown,747265702,jillrichards@example.net,SUV,Chocolate Which SUV,POL71012AUTO
+68559430,Christina Brown,905449392,hatfielddavid@example.org,Truck,Khaki Mrs Truck,POL43803AUTO
+77899587,Robert Martin,947373171,bbell@example.net,Truck,Maroon Human Truck,POL17862AUTO
+29451178,Karen James,671259111,andrewsnow@example.com,Hatchback,MistyRose Expert Hatchback,POL14151AUTO
+10644726,David Barrett,947722047,burnstrevor@example.net,Truck,DeepSkyBlue Room Truck,POL35832AUTO
+57474947,Charles Green,978151245,brownmarilyn@example.net,Hatchback,Pink Thus Hatchback,POL60976AUTO
+98904074,Valerie Pearson,959067001,kwalsh@example.net,Truck,Tomato Strategy Truck,POL57902AUTO
+45053281,Frank Day,802023093,anthony31@example.net,Truck,DarkBlue Experience Truck,POL19423AUTO
+98235621,Mark Perez,909218558,lisasmith@example.com,Motorcycle,MistyRose Congress Motorcycle,POL87825AUTO
+22634739,Sherry Rowe,750127116,twise@example.org,Motorcycle,HotPink Read Motorcycle,POL48512AUTO
+35080990,Kathryn Thomas,660259021,tvelez@example.net,Truck,Turquoise Light Truck,POL57655AUTO
+33456447,Douglas Little,747388149,burnserin@example.net,Motorcycle,LightYellow Beat Motorcycle,POL35841AUTO
+19564030,Rachel Schwartz,611017817,howardjay@example.net,Hatchback,Yellow Tv Hatchback,POL71642AUTO
+74152986,Aimee Taylor,626228796,jreed@example.org,Truck,PaleVioletRed Then Truck,POL65309AUTO

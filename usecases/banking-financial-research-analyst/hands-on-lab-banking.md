@@ -144,7 +144,7 @@ Você deve ver as respostas sendo recuperadas dos documentos enviados e, em segu
 
 ![wxo agent knowledge test](images/wxo-agent-knowledge-test-meta.png) 
 
-Tenqye agora o seguinte teste:
+Faça agora o seguinte teste:
 
 ```Tenho interesse em saber mais sobre a Meta e a Amazon. Você pode me contar um pouco sobre os negócios deles?```
 
@@ -165,13 +165,9 @@ Nesta seção, você desenvolverá o Agente de API Financeira, um dos agentes co
 
 16. Na página inicial do watsonx Orchestrate, clique em **Create agent** (anotado com retângulo vermelho) para começar a desenvolver um novo agente, o Agente de API Financeira.
 
-![wxo create agent chatUI](images/wxo-create-agent.png) 
+![wxo create agent chatUI](images/wxo-create-agent.png)  
 
-17. Selecione Import from File
-
-![wxo create agent chatUI](images/wxo-create-agent_import.png) 
-
-18. Na página Criar um agente, selecione **Create from scratch**, provide a **Name** e uma **Description** para o agente e clique **Create** (annotated with red arrow).
+17. Na página Criar um agente, selecione **Create from scratch**, provide a **Name** e uma **Description** para o agente e clique **Create** (annotated with red arrow).
 
 Name: ```Agente API Financeiro```
 
@@ -183,13 +179,14 @@ Conforme explicado anteriormente, a descrição de um agente é importante, pois
 
 ![wxo create financial api agent](images/wxo-create-financial-api-agent.png) 
 
-19. Na página de configuração do agente, role para baixo até **Toolset** ou clique no atalho (anotado com oval vermelho). Em seguida, clique no botão **Add tool**  (anotado com seta vermelha) para abrir a janela para adicionar ferramentas ao agente.
+18. Na página de configuração do agente, role para baixo até **Toolset** ou clique no atalho (anotado com oval vermelho). Em seguida, clique no botão **Add tool**  (anotado com seta vermelha) para abrir a janela para adicionar ferramentas ao agente.
 
 ![wxo agent tools](images/wxo-agent-tools.png) 
 
-20. No pop-up de opções da ferramenta, selecione **Add from file or MCP Server** (anotado com retângulo vermelho) conforme ilustrado na figura abaixo.
+19. No pop-up de opções da ferramenta, selecione **Add from file or MCP Server** (anotado com retângulo vermelho) conforme ilustrado na figura abaixo.
 
 ![wxo tool options](images/wxo-tool-options.png) 
+
 
 O watsonx Orchestrate oferece suporte a várias abordagens para adicionar ferramentas a agentes, conforme explicado na documentação [Adicionando ferramentas a um agente](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-tools):
 
@@ -206,6 +203,10 @@ O watsonx Orchestrate oferece suporte a várias abordagens para adicionar ferram
 Além disso, você pode usar o [Agentic Development Kit (ADK)](https://developer.watson-orchestrate.ibm.com/) do watsonx Orchestrate para desenvolver e carregar ferramentas Python e OpenAPI em uma instância específica do watsonx Orchestrate, que você pode então adicionar aos agentes.
 
 Para fins do Agente de API Financeira, você usará a opção **Import** para importar uma especificação OpenAPI e definir quais operações importar como ferramentas. Você precisará do arquivo financial_api_openapi.json (o arquivo "financial_api_openapi.json" está na pasta "2. Agente Financeiro" gerada após a descompactação do arquivo LABS.zip).
+
+Selecione Import from File
+
+![wxo create agent chatUI](images/wxo-create-agent_import.png)
 
 21. Na página da ferramenta Importar, arraste e solte o arquivo e clique em **Next** (annotated with red arrow).
 
@@ -282,6 +283,8 @@ Você é um Agente Analista Financeiro que fornece pesquisas e análises finance
 - "Analisar o desempenho e a avaliação da Apple" → OBTER INFORMAÇÕES SOBRE AÇÕES + OBTER DADOS SOBRE O PREÇO DAS AÇÕES
 - "Comparar os resultados do primeiro trimestre da Apple e do Google com os índices P/L" → OBTER DEMONSTRAÇÕES FINANCEIRAS + OBTER INFORMAÇÕES SOBRE AÇÕES para ambas
 - "Explicar o EBITDA e mostrar a tendência do EBITDA da Microsoft" → PESQUISAR NA WIKIPÉDIA + OBTER DEMONSTRAÇÕES FINANCEIRAS
+
+As tools que utilizam "statement_type", esperam o conteúdo em inglês que precisa ser traduzido para uso interno para um dos seguintes valores: 'income', 'balance', 'cashflow'.
 ```
 
 Além disso, desative a barra deslizante (indicada pela seta vermelha) para desativar o acesso do **Agente da API Financeira** na interface de chat. Este agente é apenas um agente de suporte ao **Agente Analista Financeiro** e, portanto, deve ser desativado para não aparecer na interface de chat.
@@ -330,7 +333,7 @@ Opcional Se você utilizar múltiplas ferramentas de pesquisa, precisa atualizar
 
 Name: 
 ```
-Agente de pesquisa na web
+Agente de Pesquisa na Web
 ```
 
 Descrição: 
@@ -366,10 +369,10 @@ Este agente pode pesquisar na web para recuperar informações relacionadas à c
 
 Instruções: 
 ```
-Para informações sobre notícias recentes ou mais recentes, use a ferramenta de busca Brave. Além disso, para consultas gerais, onde as informações estão disponíveis online e podem ser recuperadas por meio de uma busca na web, use a ferramenta de busca Tavily.
+Para obter informações sobre notícias recentes ou as mais atuais, use a ferramenta de busca. Além disso, para consultas gerais, em que as informações estão disponíveis on-line e podem ser recuperadas por meio de uma pesquisa na web, use a ferramenta de pesquisa.
 ```
 
-Em seguida, teste a funcionalidade do agente fazendo uma pergunta como ```Você pode mostrar os principais executivos da IBM?``` e observe a resposta do agente. Clique no link **Show Reasoning** (indicado pela seta vermelha) e observe como o agente está invocando corretamente a **DuckDuckGo Search Tool**  para recuperar informações relevantes.
+Em seguida, teste a funcionalidade do agente fazendo uma pergunta como ```Você pode mostrar os principais executivos da IBM?``` e observe a resposta do agente. Clique no link **Show Reasoning** (indicado pela seta vermelha) e observe como o agente está invocando corretamente a **Tavily Search Tool**  para recuperar informações relevantes.
 
 ![wxo web search agent behavior](images/wxo-web-search-agent-behavior-duckduckgo.png) 
 

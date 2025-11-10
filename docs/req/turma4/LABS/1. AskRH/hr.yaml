@@ -1,0 +1,297 @@
+openapi: 3.0.0
+info:
+  title: HR Automation
+  description: API for retrieving employee details and updating profile information
+  version: 1.0.0
+servers:
+- url: https://hr-skills.21pfvqjn6rrj.us-south.codeengine.appdomain.cloud
+  description: Production server
+tags: []
+paths:
+  "/user_profile_details/{name}":
+    get:
+      summary: Obtenha o perfil do usuário
+      description: |2-
+        
+        Obtenha dados completos do perfil do usuário.
+
+        :param name: O nome do usuário
+        :returns: Dados do perfil do usuário, que incluem endereço, ID do usuário, nome, saldo de tempo livre e cargo.
+
+      parameters:
+      - name: name
+        in: path
+        description: O identificador exclusivo do usuário.
+        required: true
+        schema:
+          type: string
+          title: Nome
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  title:
+                    type: string
+                  address:
+                    type: string
+                  time_off_balance:
+                    type: integer
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+          description: Erro de validação
+  "/time-off-balance/{name}":
+    get:
+      summary: Saldo de horas
+      description: |
+        Obtenha dados de saldo de horas.
+
+        :param name: O nome do usuário
+        :returns: Saldo de horas usuário como uma única sequência
+       
+      parameters:
+      - name: name
+        in: path
+        description: O nome do usuário.
+        required: true
+        schema:
+          type: string
+          title: Nome
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Saldo restante de tempo livre como uma única sequência.
+          description: Resposta bem sucedida
+        '422':
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+          description: Validation Error
+  "/request-time-off":
+    post:
+      summary: Solicitar folga
+      description: |2-
+
+        Peça folga, peça licenças.
+
+        :param name: user's name
+        :param from_date: Data de início do tempo de folga, representada como uma sequência de caracteres em formato de data, por exemplo, 2025-05-22
+        :param to_date: Data final do período de folga, representada como uma sequência de caracteres em formato de data, por exemplo, 2025-05-27
+        :returns: Uma mensagem de confirmação
+
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Mensagem de confirmação como uma única sequência de caracteres.
+          description: Resposta bem sucedida
+        '422':
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+          description: Erro de validação
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/TimeOffRequest"
+  "/update-title":
+    put:
+      summary: Atualizar título
+      description: |
+
+        Update user's title. 
+
+        :param name: Nome do usuário
+        :param new_title: User's new title
+        :returns: A confirmation message as a single string
+
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Confirmation message as a single string.
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+          description: Erro de validação
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/UpdateTitleRequest"
+  "/update-address":
+    put:
+      summary: Atualizar endereço
+      description: |2-
+
+        Atualizar endereço do usuário.
+
+        :param name: Nome do usuário
+        :param new_address: Novo endereço do usuário
+        :returns: A confirmation message
+
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Mensagem de confirmação como uma única sequência de caracteres.
+          description: Resposta bem sucedida
+        '422':
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+          description: Erro de validação
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/UpdateAddressRequest"
+  "/create-user":
+    post:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Mensagem de confirmação incluindo o ID do usuário como uma única sequência de caracteres.
+          description: Resposta bem sucedida
+        '422':
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+          description: Erro de validação
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateUserRequest"
+      summary: Criar usuário
+components:
+  schemas:
+    CreateUserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nome completo do usuário.
+        time_off_balance:
+          type: integer
+          description: Saldo inicial de folga em dias.
+        title:
+          type: string
+          description: Cargo do usuário.
+        address:
+          type: string
+          description: Endereço do usuário.
+      required:
+      - name
+      - time_off_balance
+      - title
+      - address
+      title: CreateUserRequest
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            "$ref": "#/components/schemas/ValidationError"
+          description: Lista de erros de validação.
+          title: Detail
+      title: HTTPValidationError
+    TimeOffRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: O nome do usuário.
+        from_date:
+          type: string
+          description: Data de início da solicitação de folga (AAAA-MM-DD).
+          format: date
+        to_date:
+          type: string
+          description: Data final da solicitação de folga (AAAA-MM-DD).
+          format: date
+      required:
+      - name
+      - from_date
+      - to_date
+      title: TimeOffRequest
+    UpdateAddressRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the user.
+        new_address:
+          type: string
+          description: O endereço atualizado do usuário.
+      required:
+      - name
+      - new_address
+      title: UpdateAddressRequest
+    UpdateTitleRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: O nome do usuário.
+        new_title:
+          type: string
+          description: O cargo atualizado do usuário.
+      required:
+      - name
+      - new_title
+      title: UpdateTitleRequest
+    ValidationError:
+      type: object
+      properties:
+        loc:
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          description: A localização do erro na solicitação.
+        msg:
+          type: string
+          description: Uma mensagem descrevendo o erro.
+        type:
+          type: string
+          description: O tipo de erro.
+      required:
+      - loc
+      - msg
+      - type
+      title: Erro de validação

@@ -1,0 +1,406 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "APIs de ferramentas unificadas do GFM Bank",
+    "version": "1.0.0",
+    "description": "API unificada combinando vários serviços bancários",
+    "x-disclaimer": "IBM SAMPLE CODE DISCLAIMER\n\u00a9 Copyright IBM Corporation 2025. All Rights Reserved.\n\nThis sample code is provided solely for instructional use in IBM lab exercises. It is supplied \u201cAS IS,\u201d without warranties of any kind, express or implied, including (but not limited to) warranties of merchantability, fitness for a particular purpose, and non-infringement. IBM makes no commitment to update the code and assumes no responsibility for errors or omissions or for any damages arising out of its use.\n\nYou may copy, modify, and distribute this code in whole or in part, at your own risk, provided you retain this notice. The code is not part of any IBM product and is not officially supported by IBM. Use in production environments is entirely at your discretion and must comply with all applicable laws, regulations, and third-party license terms.\n\nIBM, the IBM logo, and ibm.com are trademarks or registered trademarks of International Business Machines Corporation. Other product and service names might be trademarks of IBM or other companies."
+  },
+  "servers": [
+    {
+      "url": "https://bank-backoffice.21pfvqjn6rrj.us-south.codeengine.appdomain.cloud",
+      "description": "Endpoint de Produção"
+    }
+  ],
+  "paths": {
+    "/iban-transfer": {
+      "post": {
+        "summary": "Transferir dinheiro entre IBANs",
+        "description": "Recebe o IBAN de origem, o IBAN de destino e o valor como entrada e realiza uma transferência de dinheiro.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "source_iban": {
+                    "type": "string",
+                    "example": "DE89320895326389021994"
+                  },
+                  "destination_iban": {
+                    "type": "string",
+                    "example": "DE89929842579913662103"
+                  },
+                  "amount_eur": {
+                    "type": "number",
+                    "example": 100.5
+                  },
+                  "username": {
+                    "type": "string",
+                    "default": "teller"
+                  },
+                  "password": {
+                    "type": "string",
+                    "default": "teller123"
+                  }
+                },
+                "required": [
+                  "source_iban",
+                  "destination_iban",
+                  "amount_eur"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Transferência concluída com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "source_iban": {
+                      "type": "string"
+                    },
+                    "destination_iban": {
+                      "type": "string"
+                    },
+                    "amount_eur": {
+                      "type": "number"
+                    },
+                    "debit_tx": {
+                      "type": "string"
+                    },
+                    "credit_tx": {
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "type": "string"
+                    },
+                    "new_balance_eur": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "IBAN não encontrado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "IBAN de origem ou destino não encontrado"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Saldo insuficientes",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "Saldo insuficientes. Saldo X, cheque especial Y"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Falha na autenticação",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "Credenciais erradas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/balance-inquiry": {
+      "post": {
+        "summary": "Verifique o saldo da conta por IBAN",
+        "description": "Recebe um IBAN e retorna o saldo atual e as transações recentes.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "iban": {
+                    "type": "string",
+                    "example": "DE89320895326389021994"
+                  },
+                  "username": {
+                    "type": "string",
+                    "default": "teller"
+                  },
+                  "password": {
+                    "type": "string",
+                    "default": "teller123"
+                  }
+                },
+                "required": [
+                  "iban"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Consulta de saldo bem-sucedida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "iban": {
+                      "type": "string"
+                    },
+                    "account_id": {
+                      "type": "string"
+                    },
+                    "current_balance_eur": {
+                      "type": "number"
+                    },
+                    "overdraft_limit_eur": {
+                      "type": "number"
+                    },
+                    "available_balance_eur": {
+                      "type": "number"
+                    },
+                    "recent_transactions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "transaction_id": {
+                            "type": "string"
+                          },
+                          "account_id": {
+                            "type": "string"
+                          },
+                          "booking_ts": {
+                            "type": "string"
+                          },
+                          "amount_eur": {
+                            "type": "number"
+                          },
+                          "type": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "IBAN não encontrado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "IBAN não encontrado"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Falha na autenticação",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "Credenciais Erradas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fee-reversal": {
+      "post": {
+        "summary": "Processar uma reversão de taxa para uma conta",
+        "description": "Recebe um IBAN e um valor e, em seguida, lança uma transação de reversão de taxa.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "iban": {
+                    "type": "string",
+                    "example": "DE89320895326389021994",
+                    "description": "O IBAN da conta para processar o estorno da taxa para"
+                  },
+                  "amount_eur": {
+                    "type": "number",
+                    "example": 50.0,
+                    "description": "O valor a reverter em EUR"
+                  }
+                },
+                "required": [
+                  "iban",
+                  "amount_eur"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Reversão de taxa processada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "iban": {
+                      "type": "string"
+                    },
+                    "customer_name": {
+                      "type": "string"
+                    },
+                    "amount_eur": {
+                      "type": "number"
+                    },
+                    "transaction_id": {
+                      "type": "string"
+                    },
+                    "booking_ts": {
+                      "type": "string"
+                    },
+                    "new_balance_eur": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Entrada inválida",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "Valor inválido"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "IBAN não encontrado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "IBAN não encontrado"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/approve-overdraft": {
+      "post": {
+        "summary": "Aprovar ou modificar o limite de cheque especial de uma conta",
+        "description": "Recebe um IBAN e um valor de cheque especial e, em seguida, define o limite de cheque especial especificado.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "iban": {
+                    "type": "string",
+                    "example": "DE89320895326389021994",
+                    "description": "O IBAN da conta para definir o limite de descoberto para"
+                  },
+                  "overdraft_limit_eur": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 10000,
+                    "example": 5000,
+                    "description": "O limite de descoberto a definir (entre 0 e 10.000 EUR)"
+                  }
+                },
+                "required": [
+                  "iban",
+                  "overdraft_limit_eur"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Limite de cheque especial atualizado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "account_id": {
+                      "type": "string"
+                    },
+                    "iban": {
+                      "type": "string"
+                    },
+                    "customer_name": {
+                      "type": "string"
+                    },
+                    "overdraft_limit_eur": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Entrada inválida",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "O limite de cheque especial deve estar entre 0 e 10.000 EUR"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "IBAN não encontrado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "detail": "IBAN não encontrado"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

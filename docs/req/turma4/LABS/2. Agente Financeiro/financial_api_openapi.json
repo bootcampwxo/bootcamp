@@ -1,0 +1,537 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Financial AI API with Yahoo Finance",
+      "version": "2.0.0",
+      "description": "Financial AI API with real-time Yahoo Finance data integration. Removed news and market overview endpoints for focused financial analysis."
+    },
+    "servers": [
+        {
+            "url": "https://financial-analyst.21pfvqjn6rrj.us-south.codeengine.appdomain.cloud/"
+          }
+    ],
+    "paths": {
+      "/financial/stock-data": {
+        "post": {
+          "summary": "Obter dados de preços de ações",
+          "description": "Obtenha dados históricos de preços de ações do Yahoo Finance, incluindo dados OHLCV para períodos e intervalos de tempo específicos.",
+          "operationId": "get_stock_price_data_financial_stock_data_post",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ticker": {
+                      "type": "string",
+                      "title": "Sigla",
+                      "description": "Código de negociação da ação (ex: AAPL, MSFT, TSLA)"
+                    },
+                    "period": {
+                      "type": "string",
+                      "title": "Período",
+                      "description": "Período de tempo para recuperação de dados",
+                      "default": "1mo",
+                      "enum": ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
+                    },
+                    "interval": {
+                      "type": "string",
+                      "title": "Interval",
+                      "description": "Granularidade do intervalo de dados",
+                      "default": "1d",
+                      "enum": ["1m", "2m", "5m", "15m", "30m", "60m", "90m", "1h", "1d", "5d", "1wk", "1mo", "3mo"]
+                    }
+                  },
+                  "required": ["ticker"]
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Resposta bem sucedida",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "success": {"type": "boolean"},
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "ticker": {"type": "string"},
+                          "period": {"type": "string"},
+                          "interval": {"type": "string"},
+                          "total_records": {"type": "integer"},
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "date": {"type": "string", "format": "date"},
+                                "open": {"type": "number"},
+                                "high": {"type": "number"},
+                                "low": {"type": "number"},
+                                "close": {"type": "number"},
+                                "volume": {"type": "integer"}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "error": {"type": "string"}
+                    },
+                    "required": ["success"]
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Erro de validação",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "detail": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "loc": {"type": "array", "items": {"type": "string"}},
+                            "msg": {"type": "string"},
+                            "type": {"type": "string"}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/financial/stock-info": {
+        "post": {
+          "summary": "Obter Informações sobre ações",
+          "description": "Obtenha informações abrangentes sobre ações, incluindo detalhes da empresa, métricas financeiras, dados de mercado e estatísticas importantes do Yahoo Finance.",
+          "operationId": "get_stock_information_financial_stock_info_post",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ticker": {
+                      "type": "string",
+                      "title": "Sigla",
+                      "description": "Código de negociação da ação (ex: AAPL, MSFT, TSLA)"
+                    }
+                  },
+                  "required": ["ticker"]
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Resposta bem sucedida",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "success": {"type": "boolean"},
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "ticker": {"type": "string"},
+                          "company_name": {"type": "string"},
+                          "sector": {"type": "string"},
+                          "industry": {"type": "string"},
+                          "market_cap": {"type": "number"},
+                          "current_price": {"type": "number"},
+                          "previous_close": {"type": "number"},
+                          "day_high": {"type": "number"},
+                          "day_low": {"type": "number"},
+                          "fifty_two_week_high": {"type": "number"},
+                          "fifty_two_week_low": {"type": "number"},
+                          "volume": {"type": "integer"},
+                          "avg_volume": {"type": "integer"},
+                          "pe_ratio": {"type": "number"},
+                          "forward_pe": {"type": "number"},
+                          "dividend_yield": {"type": "number"},
+                          "beta": {"type": "number"},
+                          "eps": {"type": "number"},
+                          "revenue": {"type": "number"},
+                          "profit_margin": {"type": "number"},
+                          "description": {"type": "string"}
+                        }
+                      },
+                      "error": {"type": "string"}
+                    },
+                    "required": ["success"]
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Erro de validação",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "detail": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "loc": {"type": "array", "items": {"type": "string"}},
+                            "msg": {"type": "string"},
+                            "type": {"type": "string"}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/financial/statements": {
+        "post": {
+          "summary": "Obter demonstrações financeiras",
+          "description": "Obter demonstrações financeiras, incluindo demonstração de resultados, balanço patrimonial ou demonstração de fluxo de caixa com dados anuais e trimestrais.",
+          "operationId": "get_financial_statements_data_financial_statements_post",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ticker": {
+                      "type": "string",
+                      "title": "Sigla",
+                      "description": "Código de negociação da ação"
+                    },
+                    "statement_type": {
+                      "type": "string",
+                      "title": "Tipo de declaração",
+                      "description": "Tipo de demonstração financeira a ser recuperada",
+                      "default": "renda",
+                      "enum": ["income", "balance", "cashflow"]
+                    }
+                  },
+                  "required": ["ticker"]
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Resposta bem sucedida",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "success": {"type": "boolean"},
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "ticker": {"type": "string"},
+                          "statement_type": {"type": "string"},
+                          "annual_data": {
+                            "type": "object",
+                            "description": "Dados financeiros anuais por ano",
+                            "additionalProperties": {
+                              "type": "object",
+                              "additionalProperties": {"type": "number"}
+                            }
+                          },
+                          "quarterly_data": {
+                            "type": "object",
+                            "description": "Dados financeiros trimestrais",
+                            "additionalProperties": {
+                              "type": "object",
+                              "additionalProperties": {"type": "number"}
+                            }
+                          }
+                        }
+                      },
+                      "error": {"type": "string"}
+                    },
+                    "required": ["success"]
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Erro de validação",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "detail": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "loc": {"type": "array", "items": {"type": "string"}},
+                            "msg": {"type": "string"},
+                            "type": {"type": "string"}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/financial/earnings": {
+        "post": {
+          "summary": "Obter o relatório de ganhos",
+          "description": "Obtenha um relatório de lucros para uma empresa, trimestre e ano específicos (ponto de extremidade legado para compatibilidade com versões anteriores).",
+          "operationId": "get_earnings_report_financial_earnings_post",
+          "parameters": [
+            {
+              "name": "ticker",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "title": "Sigla",
+                "description": "Código de negociação da ação (ex: AAPL, MSFT, TSLA)"
+              }
+            },
+            {
+              "name": "quarter",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "title": "Quarter",
+                "description": "Quartil (por exemplo, Q1, Q2, Q3, Q4)"
+              }
+            },
+            {
+              "name": "year",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "title": "Ano",
+                "description": "String de ano (e.g., 2023)"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Resposta bem sucedida",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "success": {"type": "boolean"},
+                      "data": {
+                        "type": "string",
+                        "description": "Conteúdo do relatório de lucros"
+                      },
+                      "error": {"type": "string"}
+                    },
+                    "required": ["success"]
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Erro de validação",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "detail": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "loc": {"type": "array", "items": {"type": "string"}},
+                            "msg": {"type": "string"},
+                            "type": {"type": "string"}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/search/wikipedia": {
+        "post": {
+          "summary": "Pesquisar na Wikipedia",
+          "description": "Pesquisa na Wikipédia sobre um tópico específico e retorna uma lista de resultados com informações detalhadas. Útil para definições de termos financeiros e pesquisa de histórico de empresas.",
+          "operationId": "search_wikipedia_search_wikipedia_post",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "query": {
+                      "type": "string",
+                      "title": "Busca",
+                      "description": "O termo ou frase de busca a ser procurado na Wikipédia"
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "title": "Limit",
+                      "default": 5,
+                      "description": "Mnúmero máximo de resultados a retornar"
+                    }
+                  },
+                  "required": ["query"]
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Resposta bem sucedida",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "success": {"type": "boolean"},
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "results": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {"type": "string"},
+                                "pageid": {"type": "integer"},
+                                "snippet": {"type": "string"},
+                                "fullurl": {"type": "string"},
+                                "extract": {"type": "string"},
+                                "wordcount": {"type": "integer"}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "error": {"type": "string"}
+                    },
+                    "required": ["success"]
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Erro de validação",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "detail": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "loc": {"type": "array", "items": {"type": "string"}},
+                            "msg": {"type": "string"},
+                            "type": {"type": "string"}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/": {
+        "get": {
+          "summary": "Root",
+          "description": "API root endpoint para verificar se o serviço está em execução.",
+          "operationId": "root__get",
+          "responses": {
+            "200": {
+              "description": "Resposta bem sucedida",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {"type": "string"},
+                      "version": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/health": {
+        "get": {
+          "summary": "Health Check",
+          "description": "Endpoint do Health check endpoint para verificar a conectividade da API e do serviço.",
+          "operationId": "health_check_health_get",
+          "responses": {
+            "200": {
+              "description": "Resposta bem sucedida",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {"type": "string"},
+                      "watsonx": {"type": "string"},
+                      "yahoo_finance": {"type": "string"},
+                      "version": {"type": "string"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "APIResponse": {
+          "type": "object",
+          "properties": {
+            "success": {"type": "boolean"},
+            "data": {"type": "object"},
+            "error": {"type": "string"}
+          },
+          "required": ["success"]
+        }
+      }
+    }
+  }

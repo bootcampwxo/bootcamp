@@ -1,0 +1,185 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API de Sinistro de Seguro Auto",
+    "version": "1.0.3",
+    "description": "API para gerenciar sinistros de seguro auto: consultar, atualizar e listar os principais sinistros."
+  },
+  "servers": [
+    {
+      "url": "https://auto-insurance.21pfvqjn6rrj.us-south.codeengine.appdomain.cloud",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/fetch_open_claims": {
+      "get": {
+        "summary": "Buscar Sinistros Abertos",
+        "description": "Recupera sinistros abertos de um cliente específico usando o ID do cliente e o número do sinistro.",
+        "operationId": "fetchOpenClaims",
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "query",
+            "required": true,
+            "description": "Identificação única do cliente",
+            "schema": {
+              "type": "string",
+              "example": "60695904"
+            }
+          },
+          {
+            "name": "claim_number",
+            "in": "query",
+            "description": "Número único do sinistro",
+            "schema": {
+              "type": "string",
+              "example": "CLM347697"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalhes do sinistro encontrados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "claim_number": {
+                      "type": "string",
+                      "example": "CLM347697"
+                    },
+                    "customer_id": {
+                      "type": "integer",
+                      "example": 60695904
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "Open"
+                    },
+                    "estimated_cost": {
+                      "type": "number",
+                      "example": 4500
+                    },
+                    "claim_request_details": {
+                      "type": "string",
+                      "example": "Rear bumper and tail light damage"
+                    },
+                    "vehicle_type": {
+                      "type": "string",
+                      "example": "Car"
+                    },
+                    "vehicle_details": {
+                      "type": "string",
+                      "example": "Toyota Corolla"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update_claim_status": {
+      "post": {
+        "summary": "Atualizar Status do Sinistro",
+        "description": "Atualiza o status de um sinistro usando o número do sinistro e o novo status como parâmetros de consulta.",
+        "operationId": "updateClaimStatus",
+        "parameters": [
+          {
+            "name": "claim_status",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["Open", "In Progress", "Closed", "Rejected"]
+            },
+            "description": "O novo status do sinistro."
+          },
+          {
+            "name": "claim_number",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Identificador único do sinistro."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status do sinistro atualizado com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "claim_number": {
+                      "type": "string"
+                    },
+                    "new_status": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Parâmetros de entrada inválidos."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/top_5_open_claims": {
+      "get": {
+        "summary": "Obter os 5 Principais Sinistros Abertos",
+        "description": "Recupera os 5 principais sinistros abertos de seguro.",
+        "operationId": "getTop5OpenClaims",
+        "responses": {
+          "200": {
+            "description": "Lista dos 5 principais sinistros abertos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "open_claims": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
