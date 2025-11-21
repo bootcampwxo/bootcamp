@@ -56,7 +56,19 @@ tools:
 4. Cole o código no editor de texto e salve o arquivo na greeter.yamlpasta * hello-world* .
 5. Para criar a ferramenta, copie o seguinte código:
 <br>
+```python
+#greetings.py
+from ibm_watsonx_orchestrate.agent_builder.tools import tool
 
+@tool
+def greeting() -> str:
+    """
+    Greeting for everyone   
+    """
+
+    greeting = "Hello World"
+    return greeting
+```
 
 <br>
 6. Cole o código no editor de texto e salve o arquivo na greetings.pypasta * hello-world* .
