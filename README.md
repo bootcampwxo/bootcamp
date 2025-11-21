@@ -41,6 +41,8 @@ OPCIONAIS<br>
 [6. Automação de negócios para análise competitiva](usecases/business-automation/README.md)<br>
 [7. RH - Aquisição de novos talentos](usecases/hr-talent/README.md)<br>
 
+# 🤖 Pró-code Experience - Desenvolvedores
+[Clique aqui](usecases/ADK/README.md)<br> para criar agentes utilizando o IBM watsonx Orchestrate Agent Development Kit (ADK)
 
 
 <br><br>
