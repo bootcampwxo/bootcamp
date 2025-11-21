@@ -40,7 +40,7 @@ Antes de começar:
 2. Abra um editor de texto, como o Visual Studio Code.
 3. Para criar o agente, copie o seguinte código:
 <br>
-```
+```yaml
 spec_version: v1
 kind: native
 name: greeter
@@ -49,26 +49,14 @@ instructions: Always run the tool "Greeting" when the user types Greeting in the
 llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
 style: default
 collaborators: []
-tools: 
-- greeting
-```
+tools:
+  - greeting
 <br>
  
 4. Cole o código no editor de texto e salve o arquivo na greeter.yamlpasta * hello-world* .
 5. Para criar a ferramenta, copie o seguinte código:
 <br>
-```
-#greetings.py
-from ibm_watsonx_orchestrate.agent_builder.tools import tool
 
-@tool
-def greeting() -> str:
-    """
-    Greeting for everyone   
-    """
-
-    greeting = "Hello World"
-    return greeting
 
 <br>
 6. Cole o código no editor de texto e salve o arquivo na greetings.pypasta * hello-world* .
