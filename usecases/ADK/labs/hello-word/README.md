@@ -1,24 +1,9 @@
 # 🤖✨ Watson Orchestrate — Tutorial "Hello World"
 
-
-
 > 🔵 **Link oficial do tutorial (referência):**  
 > https://developer.watson-orchestrate.ibm.com/tutorials/tutorial_1_hello_world
 
----
 
-## 📚 Índice
-
-- [📘 Visão Geral](#-visão-geral)
-- [🎯 Objetivos](#-objetivos)
-- [🧰 Pré-requisitos](#-pré-requisitos)
-- [🚀 Passo 1 — Criar a Skill Hello World](#-passo-1--criar-a-skill-hello-world)
-- [🔧 Passo 2 — Implementar a Lógica da Skill](#-passo-2--implementar-a-lógica-da-skill)
-- [▶️ Passo 3 — Testar a Skill](#️-passo-3--testar-a-skill)
-- [🤖 Passo 4 — Integrar com o Agente](#-passo-4--integrar-com-o-agente)
-- [🧪 Exemplos de Uso](#-exemplos-de-uso)
-- [🚀 Próximos Passos](#-próximos-passos)
-- [📝 Créditos](#-créditos)
 
 ## 📘 Visão Geral
 Os passos a seguir orientam você a disponibilizar seu agente no Criador de Agentes.
@@ -29,7 +14,7 @@ Antes de começar:
 
 - Conta ativa no **Watson Orchestrate Developer**
 - Navegador moderno
-- Acesso ao painel de Skills
+- VM com o ADK.
 - Vontade de aprender 😄
 
 ---
@@ -70,7 +55,7 @@ def greeting() -> str:
     return greeting
 ```
 
-6. Cole o código no editor de texto e salve o arquivo na greetings.pypasta * hello-world* .
+6. Cole o código no editor de texto e salve o arquivo como **greetings.py** dentro da pasta **hello-world** .
 7. Abra o terminal que você usa normalmente.
 8. Navegue até a pasta. Por exemplo, cd ~/Desktop/hello-world.
 9. Execute o comando **orchestrate tools import -k python -f tools/greetings.py**
@@ -79,39 +64,6 @@ def greeting() -> str:
 
 
 
-## 🧪 Exemplos de Uso
+## 🧪 Testando seu agente
 
-Experimente os seguintes comandos no agente:
-
-```
-Execute a skill Hello World agora.
-```
-
-```
-Qual é a mensagem da minha skill Hello World?
-```
-
-```
-Rode minha automação Hello World.
-```
-
----
-
-## 🚀 Próximos Passos
-
-Agora que você já domina o básico, continue sua jornada:
-
-👉 Crie skills com parâmetros  
-👉 Integre com APIs REST externas  
-👉 Crie fluxos inteligentes  
-👉 Automatize tarefas reais  
-👉 Siga para o tutorial avançado de Workflows  
-
----
-
-## 📝 Créditos
-
-Este README segue a estrutura e conceitos do tutorial oficial:  
-https://developer.watson-orchestrate.ibm.com/tutorials/tutorial_1_hello_world  
-
-Conteúdo reescrito em formato educacional para uso em treinamentos e GitHub.
+Após a configuração, você pode digitar “Saudação” na janela de bate-papo e continuar interagindo com seu agente.
