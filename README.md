@@ -25,7 +25,7 @@ O objetivo é simples: te deixar à vontade com o Watson Orchestrate, entendendo
 Então, aproveite o conteúdo, explore bastante e, sempre que possível, experimente por conta própria. Bora começar?
 
 <p align="center">
-  <img src="docs/images/importante_blink.gif" width="200" alt="IMPORTANTE">
+  <img src="docs/images/importante_blink.gif" width="1200" alt="IMPORTANTE">
 </p>
 
 
