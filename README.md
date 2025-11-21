@@ -1,5 +1,5 @@
 # 🤖 Agentes de IA em Ação
-# <img src="docs/images/bradseg.png" width="173" height="115"> 11 a 13 de Novembro
+# <img src="docs/images/DistritoFederal.png" width="173" height="115"> 02 de Dezembro
 
 
 
