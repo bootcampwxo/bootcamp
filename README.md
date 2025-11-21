@@ -28,9 +28,7 @@ Então, aproveite o conteúdo, explore bastante e, sempre que possível, experim
 <h1 align="center">📍📍📍📍👇👇👇👇👇 IMPORTANTE 👇👇👇📍📍📍📍</h1>
 
 PASSO 1: [CLIQUE AQUI](https://bootcampwxo.github.io/bootcampwxo/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
-PASSO 1: <a href="https://bootcampwxo.github.io/bootcampwxo/random.html" target="_blank">CLIQUE AQUI</a> para obter as informações necessárias durante a execução dos laboratórios<br>
-
-
+<br>
 PASSO 2: Escolha o caso de uso e mãos a obra <br>
 
 [1. AskRH](usecases/ask-hr/README.md)<br>
