@@ -44,6 +44,7 @@ PASSO 2: Escolha o caso de uso e mãos a obra <br>
 OPCIONAIS<br>
 [5. Agente de Sinistros de seguros](usecases/autoclaim-insurance/README.md)<br>
 [6. Automação de negócios para análise competitiva](usecases/business-automation/README.md)<br>
+[7. RH - Aquisição de novos talentos](usecases/hr-talent/README.md)<br>
 
 
 
