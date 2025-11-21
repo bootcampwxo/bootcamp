@@ -198,13 +198,13 @@ A próxima parte do laboratório é mais avançada e requer algumas habilidades 
 Este agente analisa casos de RH referentes a reclamações de funcionários sobre possíveis violações das diretrizes de conduta empresarial.
 ```
 
-<img width="723" alt="Screenshot 2025-09-25 at 10 59 02 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/6a49ad39-b869-4846-be4a-43216386fdd7">
+<img alt="Solução" src="hands-on-lab-assets/images/hr1.png">
 <br>
 <br>
 
 2. Adicione conhecimento. Role para baixo até a seção **Knowledge** e clique em **Choose Knowledge**.
 
-<img width="733" alt="Screenshot 2025-09-25 at 10 58 53 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/88c73733-5121-4f27-96d6-cb892c7cb84a">
+<img alt="Solução" src="hands-on-lab-assets/images/hr2.png">
 <br>
 <br>
 
@@ -216,7 +216,7 @@ Estas são as Diretrizes de Conduta Empresarial da IBM
 
 Após salvar, você verá algo como:
 
-<img width="704" alt="Screenshot 2025-09-25 at 11 01 08 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/ed0ff06f-3243-4b28-a8af-d82cfdf6c2d6">
+<img alt="Solução" src="hands-on-lab-assets/images/hr3.png">
 <br>
 <br>
 
@@ -225,7 +225,7 @@ Após salvar, você verá algo como:
 ``` Ajude-me a entender se a seguinte reclamação de um funcionário infringe as Diretrizes de Conduta Empresarial da IBM: "Meu gerente levantou a voz, me xingou, zombou de mim e me disse coisas muito desagradáveis ​​todos os dias durante o último mês."
 ```
 
-<img width="683" alt="Screenshot 2025-09-25 at 11 03 56 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/2c88e831-a267-4cc2-9c5c-9ddc03b75d19">
+<img alt="Solução" src="hands-on-lab-assets/images/hr4.png">
 <br>
 <br>
 
@@ -233,25 +233,25 @@ Após salvar, você verá algo como:
 Que tal esta: minha gerente me deu um chocolate do Havaí depois da viagem dela para Maui. Isso é uma violação da regra BCG?
 ```
 
-<img width="680" alt="Screenshot 2025-09-25 at 11 07 56 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/e2326cb3-7a42-456c-aa47-c4bc6ee6d981">
+<img alt="Solução" src="hands-on-lab-assets/images/hr4_1.png">
 <br>
 <br>
 
 5. Você pode perceber que o exemplo acima pode não constituir, na prática, uma violação real das Diretrizes de Conduta Empresarial. Podemos ajustar o agente para lidar com determinadas situações de forma diferente. Para isso, podemos usar o recurso **Guidelines**. Role a página para baixo até a seção **Guidelines** e clique em **New Guideline**.
 
-<img width="706" alt="Screenshot 2025-09-25 at 3 52 41 PM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/12cf07ec-efea-4e2a-8c15-a3e60455e782">
+<img alt="Solução" src="hands-on-lab-assets/images/hr5.png">
 <br>
 <br>
 
 6. Salve e tente a mesma consulta mais uma vez no chat. Você deverá ver algo como isto:
 
-<img width="623" alt="Screenshot 2025-09-25 at 3 53 09 PM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/1d13bc4a-5844-4f00-8137-25b5c1f7b859">
+<img alt="Solução" src="hands-on-lab-assets/images/hr6.png">
 <br>
 <br>
 
 7. O resultado após repetir a mesma consulta seria semelhante a este:
 
-<img width="678" alt="Screenshot 2025-09-25 at 11 11 26 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/0bf1d4ae-c5ba-4b52-8d81-23bfc8d464ee">
+<img alt="Solução" src="hands-on-lab-assets/images/hr7.png">
 <br>
 <br>
 
