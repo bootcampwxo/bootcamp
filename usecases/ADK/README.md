@@ -17,4 +17,7 @@ Certifique-se de solicitar ao intrutor deste bootcamp um ambiente pronto com par
 ## 🔧 LABS 
 
 [1. Hello Word](labs/hello-word/README.md)<br>
+[2. Criando tools e agentes](labs/ADK%20-%20Creating%20tools%20and%20agents%20-%20Lab%20guide%20-%20V250010.PDF)<br>
+[3. Criando tools e agentes com o copiloto](labs/ADK%20-%20Create%20and%20improve%20agents%20with%20copilot%20-%20Lab%20guide%20-%20V250910.PDF)<br>
+[4. Colaborando agentes com python e langfuse](labs/ADK%20-%20Collaborating%20agents%20%20-%20Python%20e%20LangFuse%20-%20Lab%20guide%20-V250910.PDF)<br>
 
