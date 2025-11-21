@@ -68,7 +68,7 @@ def greeting() -> str:
 
     greeting = "Hello World"
     return greeting
-```
+
 
 <br>
 6. Cole o código no editor de texto e salve o arquivo na greetings.pypasta * hello-world* .
