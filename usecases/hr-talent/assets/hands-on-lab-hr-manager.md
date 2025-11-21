@@ -1,102 +1,102 @@
 
-# 🧑‍💼 Agentic HR Manager
+# 🧑‍💼 Agente Gerente de RH
 
-## Table of Contents
+## Índice
 
-- [Use case description](#use-case-description)
-- [Talent acquisition agent](#-talent-acquisition-agent)
-- [Automate talent acquisition agent using agentic workflows](#-automate-talent-acquisition-agent-using-agentic-workflows)
-- [HR case review agent](#-hr-case-review-agent)
+- [Descrição do caso de uso](#-Descrição-do-caso-de-uso)
+- [Agente de aquisição de talentos](#-Agente-de-aquisição-de-talentos)
+- [Automatize o processo de recrutamento de talentos usando fluxos de trabalho baseados em agentes.](#-Automatize-o-processo-de-recrutamento-de-talentos-usando-fluxos-de-trabalho-baseados-em-agentes.)
+- [Agente de revisão de casos de RH](#-Agente-de-revisão-de-casos-de-RH)
     
-## Use Case Description
+## Descrição do caso de uso
 
-This is the story of **Luisa**. **Luisa** is an HR manager for a large corporation that's hiring 5,000 employees for their new division. Her struggle is two-fold:
+Esta é a história da **Luisa**. **Luisa** é a gerente de RH de uma grande corporação que está contratando 5.000 funcionários para sua nova divisão. A luta dela é dupla:
 
-1. **Recruiting candidates** for their open positions
-2. **Handling reports** from employees for potential Business Conduct Guidelines violations.
+1. **Recrutando Candidatos** para suas vagas aberta
+2. **Gerenciamento de denúncias** de funcionários sobre possíveis violações das Diretrizes de Conduta Empresarial.
 
-For recruiting, Luisa gets many PDFs with candidate résumés. She has to:
+Para recrutamento, Luisa recebe muitos PDFs com currículos de candidatos. Ela tem que:
 
-- Check if candidates **fulfill the requirements** of a given position
-- Fill in a **table** with the skills/experience of each candidate
-- Select **candidates** to be interviewed
-- Assign **interviewers** from the team
-- Coordinate **interviews** with candidates and interviewers via email
-- Schedule **interviews**
-- Compile **feedback** from different reviewers
-- **Report back** the results to the hiring manager
+- Verificar se os candidatos **atendem aos requisitos** de uma determinada vaga
+- Preencher uma **tabela** com as habilidades/experiência de cada candidato
+- Selecionar os **candidatos** para entrevistas
+- Designar os **entrevistadores** da equipe
+- Coordenar as **entrevistas** com os candidatos e entrevistadores por e-mail
+- Agendar as **entrevistas**
+- Compilar o **feedback** dos diferentes avaliadores
+- **Reportar** os resultados ao gerente de contratação
 
-Luisa would like to make her hiring process more efficiently.
+Luisa gostaria de tornar seu processo de contratação mais eficiente.
 
-## 🥇 Talent acquisition agent
+## 🥇 Agente de aquisição de talentos
 
-This first agent will help with the recruiting process. Follow these steps to build your Talent Acquisition AI Agent:
+Este primeiro agente ajudará no processo de recrutamento. Siga estes passos para criar seu Agente de IA para Aquisição de Talentos:
 
-1. Open watsonx Orchestrate. You will see the screen below. Then, click on **Create an Agent** at the bottom left:
+1. Abra o Watsonx Orchestrate. Você verá a tela abaixo. Em seguida, clique em **Create an Agent** no canto inferior esquerdo:
 
 <img width="1681" alt="welcome" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/6a7b9866-09ae-4c89-8902-20a8930f0e7a">
 <br>
 <br>
 
-2. Give it a name and a description. Descriptions are used to route a given query to this agent when needed. You can use the description below or experiment with your own:
+2. Dê um nome e uma descrição. As descrições são usadas para direcionar uma determinada consulta a este agente quando necessário. Você pode usar a descrição abaixo ou experimentar com a sua própria:
 ```
-This agent helps figure out whether a set of candidates match the skills given in a job description
+Este agente ajuda a determinar se um conjunto de candidatos corresponde às habilidades especificadas na descrição da vaga.
 ```
 
 <img width="600" alt="create-agent" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/8e821db1-99f1-43ba-a796-cc46ecaae0e1">
 <br>
 <br>
 
-3. After clicking **Create**, you will be taken to this screen:
+3. Depois de clicar em **Create**, você será direcionado para esta tela:
 
 <img width="1720" alt="profile" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/befd62e4-c18d-4973-b2a7-536c207a255a">
 <br>
 <br>
 
-4. Scroll down and enable the **Chat with Documents** toggle:
+4. Deslize a tela para baixo e ative a opção **Chat with Documents**:
 
 <img width="713" alt="chat-with-documents" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/ca258ba3-149b-462f-a28c-8e3574707fbf">
 <br>
 <br>
 
-5. Now let's deploy the agent by clicking on the blue **Deploy** button. This is how easily you can deploy an agent in watsonx Orchestrate.
+5. Agora, vamos implantar o agente clicando no botão azul **Deploy**. É assim que você pode implantar um agente no WatsonX Orchestrate com facilidade.
 
 <img width="600" alt="deploy" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/3d079a57-5969-4889-bd04-90a06e28d960">
 <br>
 <br>
 
+6. Agora, vamos simular o que o gerente de RH faria para processar currículos automaticamente. Primeiro, baixe os arquivos de currículo e descrição de vagas abaixo. Depois de tê-los em seu computador, faça o upload de todos de uma vez clicando no botão **Upload** abaixo do chat. Você também pode arrastar e soltar os arquivos no chat como alternativa.
 
-6. Now let's simmulate what the HR manager would do to automatically process résumés. First, download the résumés and job description files below. Once you have them in your local machine, upload them all at once by clicking on the **Upload** button below the chat. You can also drag and drop the files on the chat as an alternative.
 
-
-- [Candidate 1's Résumé](../data/Candidate%201.pdf)
-- [Candidate 2's Résumé](../data/Candidate%202.pdf)
-- [Candidate 3's Résumé](../data/Candidate%203.pdf)
-- [Candidate 4's Résumé](../data/Candidate%204.pdf)
-- [Candidate 5's Résumé](../data/Candidate%205.pdf)
-- [Job Description](../data/Job%20Description.pdf)
+- Currículo do Candidato 1 (Arquivo "Candidate 1_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
+- Currículo do Candidato 2 (Arquivo "Candidate 2_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
+- Currículo do Candidato 3 (Arquivo "Candidate 3_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
+- Currículo do Candidato 4 (Arquivo "Candidate 4_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
+- Currículo do Candidato 5 (Arquivo "Candidate 5_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
+- Descrição da vaga (Arquivo "Descricao_Vaga.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
 
 <img width="600" alt="live" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/e4e4480c-4629-430f-aef2-7ebb64c25b26">
 <br>
 <br>
 
 
-7. You will see a confirmation of the files being uploaded as follows:
+7. Você verá uma confirmação do upload dos arquivos da seguinte forma:
 
 <img width="685" alt="upload" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/4849445e-8936-44f4-9915-76850bd0841c">
 <br>
 <br>
 
-8. Now let's try a few different prompts to process the résumés and match them with the job description. First, let's summarize the skills and requirements in the job description:
+8. Agora, vamos experimentar algumas perguntas diferentes para processar os currículos e compará-los com a descrição da vaga. Primeiro, vamos resumir as habilidades e os requisitos da descrição da vaga:
+
+``` 
+Acima, enviei 5 documentos com currículos de candidatos e um documento com a descrição da vaga. Você pode me fornecer um breve resumo da descrição da vaga em um parágrafo?
 
 ```
-Above, I have uploaded 5 documents with candidate resumes and one document with job description. Can you give me a short one-paragraph summary of the job description?
-```
 
-9. Now let's check that the résumés were uploaded correctly by querying the names of the candidates:
+9. Agora, vamos verificar se os currículos foram enviados corretamente, consultando os nomes dos candidatos:
 
 ```
-give me the names of all the candidates
+dê-me os nomes de todos os candidatos
 ```
 
 <img width="687" alt="Screenshot 2025-09-25 at 10 44 18 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/52594697-ccdc-4835-939e-6d380c7683aa">
@@ -104,49 +104,50 @@ give me the names of all the candidates
 <br>
 
 
-10. Now let's generate a table matching the required skills with each candidate:
+10. Agora vamos gerar uma tabela que relacione as habilidades necessárias com cada candidato:
+
 ```
-make a table where each row is a candidate and each column is a skill in the job description. Have the check emoji if the candidate does have the corresponding skill.
+Crie uma tabela onde cada linha representa um candidato e cada coluna representa uma habilidade na descrição da vaga. Inclua um emoji de visto se o candidato possuir a habilidade correspondente.
 ```
 
 <img width="685" alt="Screenshot 2025-09-25 at 10 26 30 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/8b88bf74-7671-437d-8275-1a63901390e3">
 <br>
 <br>
 
-You can see that Emma is the person which has the best match of skills. However, the HR manager still needs to go and review Emma's profile and résumé before proceeding. It is important to keep a human in the loop, especially when making decisions affecting people. The goal of Agentic AI is to automate the tedious tasks rather than replacing the job of the HR manager.
+Você pode ver que Emma é a pessoa com as habilidades mais adequadas ao perfil. No entanto, o gerente de RH ainda precisa analisar o perfil e o currículo de Emma antes de prosseguir. É importante manter um profissional envolvido, principalmente ao tomar decisões que afetam pessoas. O objetivo da IA ​​Agente é automatizar as tarefas tediosas, e não substituir o trabalho do gerente de RH.
 
-<!--11. Now let's ask for drafting an email to schedule an interview:
+<!--11. Agora, vamos pedir para redigir um e-mail para agendar uma entrevista:
 ```
-Draft an email asking Emma for three potential times for next week to interview.
+Redija um e-mail pedindo a Emma três horários possíveis para a próxima semana para a entrevista.
 ```
 
 <img width="685" alt="Screenshot 2025-09-25 at 10 26 53 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/47a3ef11-20ce-4e15-82a2-13ca81ef4362">
 
 -->
 
-11. Now let's work on scheduling the interviews. First, let's add interviewers data. In real life, this will come from a database or data lakehouse querying multiple systems in the organization. For simplicity, let's assume we have a PDF file with the availability of interviewers and their skills. We can use watsonx Orchestrate to add interviewers **Knowledge** to the agent. Scroll down to the **Knowledge** section and click on **Choose Knowledge**:
+11. Agora vamos trabalhar no agendamento das entrevistas. Primeiro, vamos adicionar os dados dos entrevistadores. Na prática, esses dados viriam de um banco de dados ou data lake que consulta vários sistemas da organização. Para simplificar, vamos supor que temos um arquivo PDF com a disponibilidade dos entrevistadores e suas habilidades. Podemos usar o Watsonx Orchestrate para adicionar o **Knowledge** dos entrevistadores ao agente. Role para baixo até a seção **Knowledge** e clique em **Choose Knowledge**.
 
 <img width="733" alt="Screenshot 2025-09-25 at 10 58 53 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/88c73733-5121-4f27-96d6-cb892c7cb84a">.
 <br>
 <br>
 
 
-12. Select **Upload Files** at the bottom, click **Next**:
+12. Selecione **Upload Files** na parte inferior, clique **Next**:
 
 <img width="1588" alt="Screenshot 2025-09-29 at 2 24 57 PM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/788f7870-aee1-4a9a-9799-afb0932e4c2c">
 <br>
 <br>
 
-13. Drag and Drop or upload the file [Interviewer availability dataset](../data/Interviewer%20availability.docx). Click **Next**:
+13. Arraste e solte ou carregue o arquivo "Disponibilidade do Entrevistador" (Arquivo "Disponibilidade do Entrevistador.docx" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) . Clique **Next**:
 
 <img width="604" alt="Screenshot 2025-09-29 at 2 25 06 PM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/8c6bc433-b4ff-442b-8204-7164dd94bdaa">
 <br>
 <br>
 
-Now you need to set a description. This will be used to determine when to invoke the knowledge in the file. Add the following under **Description** and click **Save**:
+Agora você precisa definir uma descrição. Ela será usada para determinar quando invocar o conhecimento contido no arquivo. Adicione o seguinte em **Description** e clique em **Save**:
 
-```
-This document has the availability and skills of different interviewers
+``` 
+Este documento contém a disponibilidade e as habilidades de diferentes entrevistadores.
 ```
 
 <img width="991" alt="Screenshot 2025-09-29 at 2 27 32 PM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/7c334577-58f8-43f1-ba8f-56c9f5b4f8bd">
@@ -154,76 +155,74 @@ This document has the availability and skills of different interviewers
 <br>
 
 
-14. Now let's run some additional queries for the interviews. First, let's check if the interviewer data was loaded properly:
+14.Agora, vamos executar algumas consultas adicionais para as entrevistas. Primeiro, vamos verificar se os dados dos entrevistadores foram carregados corretamente:
 
 ```
-show me the availability of interviewers
+mostrar a disponibilidade dos entrevistadores
 ```
 
 <img width="667" alt="Screenshot 2025-09-29 at 11 51 36 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/86d72ba9-945b-4d5b-8c46-9ae724936c48">
 <br>
 <br>
 
-15. Now let's help Luisa select the most adequate interviewers for the given job description:
+15. Agora, vamos ajudar Luisa a selecionar os entrevistadores mais adequados para a descrição da vaga:
 
-```
-who's the most proficient interviewer for the job description? Show me the skills they have
+``` 
+Quem é o entrevistador mais competente para a descrição da vaga? Mostre-me as habilidades que ele(a) possui.
 ```
 
+16. Por fim, vamos escolher um entrevistador e redigir um e-mail para um dos candidatos, informando a disponibilidade dele:
 
-16. Finally, let's pick an interviewer and draft an email to one of the candidates with the interviewers' availability:
- 
-```
-draft an email to Emma to invite her for an interview with Aisha. Use Aisha's availability in the email draft
+``` 
+Redija um e-mail para Emma convidando-a para uma entrevista com Aisha. Inclua a disponibilidade de Aisha no rascunho do e-mail.
 ```
 
 <img width="688" alt="Screenshot 2025-09-29 at 12 14 37 PM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/9c4ba3bf-8d52-4e3a-8a49-2307ff71aee6">
 <br>
 <br>
 
-## 🤖 Automate talent acquisition agent using agentic workflows
+## 🤖 Automatize o processo de recrutamento de talentos usando fluxos de trabalho baseados em agentes.
 
-Thus far, you built an agent leveraging the **Chat with documents** feature of watsonx Orchestrate to upload process résumés, job descriiptions and interviewer schedules. In this case the agent's LLM does all the heavy lifting while it is Luisa's role to provide the right prompt/query.  
+Até agora, você criou um agente utilizando o recurso **Chat with documents** do Watsonx Orchestrate para fazer o upload de currículos, descrições de vagas e agendamentos de entrevistas. Nesse caso, o LLM do agente realiza todo o trabalho pesado, enquanto a função de Luisa é fornecer a mensagem/consulta adequada.
 
-However, it is often not obvious what the right prompt should be, especially for an HR Manager without prompt engineering background. Furthermore, there might be additional steps involved, such as automatically reaching out to the selected candidate or automatically scheduling interviews. In this case we could leverage **Agentic Workflows**. 
+No entanto, muitas vezes não é óbvio qual deve ser a mensagem adequada, especialmente para um gerente de RH sem experiência em engenharia de mensagens. Além disso, podem existir etapas adicionais envolvidas, como entrar em contato automaticamente com o candidato selecionado ou agendar entrevistas automaticamente. Nesse caso, poderíamos utilizar **Agentic Workflows**.
 
-The next part of the lab is more advanced and requires some low-coding skills and familiarity with basic programming concepts such as variables and for each loops. If you would like to learn how to work with **Agentic Workflows** [follow these steps](./hands-on-lab-hr-manager-flows.md)
+A próxima parte do laboratório é mais avançada e requer algumas habilidades de low-code e familiaridade com conceitos básicos de programação, como variáveis ​​e loops for each. Se você quiser aprender a trabalhar com **Agentic Workflows**, [siga estas etapas](./hands-on-lab-hr-manager-flows.md)
 
-**🎉🎉 Congratulations!! You have completed the talent acquisition module. You're ready to go to the next one!**
+**🎉🎉 Parabéns!! Você concluiu o módulo de aquisição de talentos. Agora você está pronto para o próximo!**
 
-## 🧑‍💼📝 HR case review agent
+## 🧑‍💼📝 Agente de revisão de casos de RH
 
-1. Create another agent as you did earlier. This time, add the following to the description:
+1. Crie outro agente como fez anteriormente. Desta vez, adicione o seguinte à descrição:
 ```
-This agent reviews HR cases from employee complaints of potential business conduct guidelines violations
+Este agente analisa casos de RH referentes a reclamações de funcionários sobre possíveis violações das diretrizes de conduta empresarial.
 ```
 
 <img width="723" alt="Screenshot 2025-09-25 at 10 59 02 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/6a49ad39-b869-4846-be4a-43216386fdd7">
 <br>
 <br>
 
-2. Add knowledge to it. Scroll down for the **Knowledge** section and click on **Choose Knowledge**
+2. Adicione conhecimento. Role para baixo até a seção **Knowledge** e clique em **Choose Knowledge**.
 
 <img width="733" alt="Screenshot 2025-09-25 at 10 58 53 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/88c73733-5121-4f27-96d6-cb892c7cb84a">
 <br>
 <br>
 
-3. Now you will upload the [IBM Business Conduct Guideliness Document](../data/ibm_business_conduct_guidelines.pdf). You can also experiment with your company's BCG if available. Enter a description. It could be something like this:
+3. Agora você fará o upload do "Documento de Diretrizes de Conduta Empresarial da IBM" (Arquivo "Candidate 1_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) . Você também pode experimentar com as Diretrizes de Conduta Empresarial (BCG) da sua empresa, se disponíveis. Insira uma descrição. Pode ser algo como:
 
 ```
-This is the IBM Business Conduct Guideliness
+Estas são as Diretrizes de Conduta Empresarial da IBM
 ```
 
-After saving, will see something like this:
+Após salvar, você verá algo como:
 
 <img width="704" alt="Screenshot 2025-09-25 at 11 01 08 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/ed0ff06f-3243-4b28-a8af-d82cfdf6c2d6">
 <br>
 <br>
 
-4. You're now ready to test some queries:
+4. Agora você está pronto para testar algumas consultas:
 
-```
-Help me understand if the following complaint from an employee infringes the IBM Business Conduct Guidelines: "my manager raised his voice and called me names and made fun of me and told me really nasty things every day for the past month"
+``` Ajude-me a entender se a seguinte reclamação de um funcionário infringe as Diretrizes de Conduta Empresarial da IBM: "Meu gerente levantou a voz, me xingou, zombou de mim e me disse coisas muito desagradáveis ​​todos os dias durante o último mês."
 ```
 
 <img width="683" alt="Screenshot 2025-09-25 at 11 03 56 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/2c88e831-a267-4cc2-9c5c-9ddc03b75d19">
@@ -231,49 +230,50 @@ Help me understand if the following complaint from an employee infringes the IBM
 <br>
 
 ```
-How about this one: my manager gave me a chocolate from Hawaii after her trip to Maui. Is this a BCG violation?
+Que tal esta: minha gerente me deu um chocolate do Havaí depois da viagem dela para Maui. Isso é uma violação da regra BCG?
 ```
 
 <img width="680" alt="Screenshot 2025-09-25 at 11 07 56 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/e2326cb3-7a42-456c-aa47-c4bc6ee6d981">
 <br>
 <br>
 
-5. You can notice how the above might not be, in practice, a real violation to the Business Conduct Guidelines. We can tweak the agent to address certain situations differently. For that we can use the **Guidelines** feature. Scroll down to the **Guideliness** section and click on **New Guideline**:
+5. Você pode perceber que o exemplo acima pode não constituir, na prática, uma violação real das Diretrizes de Conduta Empresarial. Podemos ajustar o agente para lidar com determinadas situações de forma diferente. Para isso, podemos usar o recurso **Guidelines**. Role a página para baixo até a seção **Guidelines** e clique em **New Guideline**.
 
 <img width="706" alt="Screenshot 2025-09-25 at 3 52 41 PM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/12cf07ec-efea-4e2a-8c15-a3e60455e782">
 <br>
 <br>
 
-6. Save it and try the same query one more time in the chat. You should see something like this:
+6. Salve e tente a mesma consulta mais uma vez no chat. Você deverá ver algo como isto:
 
 <img width="623" alt="Screenshot 2025-09-25 at 3 53 09 PM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/1d13bc4a-5844-4f00-8137-25b5c1f7b859">
 <br>
 <br>
 
-7. The result after retrying the same query would look like this:
+7. O resultado após repetir a mesma consulta seria semelhante a este:
 
 <img width="678" alt="Screenshot 2025-09-25 at 11 11 26 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/0bf1d4ae-c5ba-4b52-8d81-23bfc8d464ee">
 <br>
 <br>
 
-## 🛠️ Let's put it all together
+## 🛠️ Vamos juntar tudo.
 
-We have seen how you can create two separate agents to address different business needs, namely (1) Talent Acquisition and (2) HR Case Reviews. But wouldn't it be cool to have a single interface to address both kinds of queries from the user? To do som let's create an HR Manager Agent able to route queries accordingly.
+Vimos como você pode criar dois agentes separados para atender a diferentes necessidades de negócios, ou seja, (1) Recrutamento e Seleção e (2) Análise de Casos de RH. Mas não seria interessante ter uma única interface para lidar com ambos os tipos de consultas do usuário? Para isso, vamos criar um Agente de Gerenciamento de RH capaz de encaminhar as consultas adequadamente.
 
-1. Create a new agent. Use the same procedure above. In the description, provide some basic routing directions such as:
+1. Crie um novo agente. Use o mesmo procedimento acima. Na descrição, forneça algumas instruções básicas de roteamento, como:
 
 ```
-This agent manages different HR requests:
+Este agente gerencia diferentes solicitações de RH:
 
-1. Talent acquisition: processing resumes, job descriptions, ad interviewers, routing to the talent acquisition agent
+1. Recrutamento e Seleção: processamento de currículos, descrições de cargos, anúncios de entrevistadores, encaminhamento para o agente de recrutamento e seleção
 
-2. HR Case Reviewer: processing HR complaints or cases submitted by employees as potential violations to the Business Conduct Guideliness
+2. Análise de Casos de RH: processamento de reclamações ou casos de RH submetidos por funcionários como possíveis violações das Diretrizes de Conduta Empresarial
 ```
 
-2. Scroll down to the Agents section.
-3. Select Add from Local Instance
-4. Search for the two agents you just created and add them both.
-5. Now try different queries on the HR Manager Agent
+2. Role para baixo até a seção Agentes.
 
+3. Selecione Adicionar da Instância Local
+4. Procure os dois agentes que você acabou de criar e adicione ambos.
+
+5. Agora, tente fazer diferentes consultas no Agente de Gerenciamento de RH
 
 
