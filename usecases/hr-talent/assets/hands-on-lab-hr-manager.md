@@ -34,7 +34,7 @@ Este primeiro agente ajudará no processo de recrutamento. Siga estes passos par
 
 1. Abra o Watsonx Orchestrate. Você verá a tela abaixo. Em seguida, clique em **Create an Agent** no canto inferior esquerdo:
 
-<img alt="Solução" src="assets/hands-on-lab-assets/1welcome.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/1welcome.png">
 <br>
 <br>
 
@@ -43,25 +43,25 @@ Este primeiro agente ajudará no processo de recrutamento. Siga estes passos par
 Este agente ajuda a determinar se um conjunto de candidatos corresponde às habilidades especificadas na descrição da vaga.
 ```
 
-<img alt="Solução" src="assets/hands-on-lab-assets/2create_agent.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/2create_agent.png">
 <br>
 <br>
 
 3. Depois de clicar em **Create**, você será direcionado para esta tela:
 
-<img alt="Solução" src="assets/hands-on-lab-assets/3talentaquisition.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/3talentaquisition.png">
 <br>
 <br>
 
 4. Deslize a tela para baixo e ative a opção **Chat with Documents**:
 
-<img alt="Solução" src="assets/hands-on-lab-assets/4scrool.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/4scrool.png">
 <br>
 <br>
 
 5. Agora, vamos implantar o agente clicando no botão azul **Deploy**. É assim que você pode implantar um agente no WatsonX Orchestrate com facilidade.
 
-<img alt="Solução" src="assets/hands-on-lab-assets/5deploy.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/5deploy.png">
 <br>
 <br>
 
@@ -75,14 +75,14 @@ Este agente ajuda a determinar se um conjunto de candidatos corresponde às habi
 - Currículo do Candidato 5 (Arquivo "Candidate 5_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
 - Descrição da vaga (Arquivo "Descricao_Vaga.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
 
-<img alt="Solução" src="assets/hands-on-lab-assets/6upload.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/6upload.png">
 <br>
 <br>
 
 
 7. Você verá uma confirmação do upload dos arquivos da seguinte forma:
 
-<img alt="Solução" src="assets/hands-on-lab-assets/7preview.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/7preview.png">
 <br>
 <br>
 
@@ -99,7 +99,7 @@ Acima, enviei 5 documentos com currículos de candidatos e um documento com a de
 dê-me os nomes de todos os candidatos
 ```
 
-<img alt="Solução" src="assets/hands-on-lab-assets/9test.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/9test.png">
 <br>
 <br>
 
@@ -110,7 +110,7 @@ dê-me os nomes de todos os candidatos
 Crie uma tabela onde cada linha representa um candidato e cada coluna representa uma habilidade na descrição da vaga. Inclua um emoji de visto se o candidato possuir a habilidade correspondente.
 ```
 
-<img alt="Solução" src="assets/hands-on-lab-assets/10test.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/10test.png">
 <br>
 <br>
 
@@ -127,20 +127,20 @@ Redija um e-mail pedindo a Emma três horários possíveis para a próxima seman
 
 11. Agora vamos trabalhar no agendamento das entrevistas. Primeiro, vamos adicionar os dados dos entrevistadores. Na prática, esses dados viriam de um banco de dados ou data lake que consulta vários sistemas da organização. Para simplificar, vamos supor que temos um arquivo PDF com a disponibilidade dos entrevistadores e suas habilidades. Podemos usar o Watsonx Orchestrate para adicionar o **Knowledge** dos entrevistadores ao agente. Role para baixo até a seção **Knowledge** e clique em **Choose Knowledge**.
 
-<img alt="Solução" src="assets/hands-on-lab-assets/11knowledge.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/11knowledge.png">
 <br>
 <br>
 
 
 12. Selecione **Upload Files** na parte inferior, clique **Next**:
 
-<img alt="Solução" src="assets/hands-on-lab-assets/12upload.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/12upload.png">
 <br>
 <br>
 
 13. Arraste e solte ou carregue o arquivo "Disponibilidade do Entrevistador" (Arquivo "Disponibilidade do Entrevistador.docx" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) . Clique **Next**:
 
-<img alt="Solução" src="assets/hands-on-lab-assets/113drag.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/113drag.png">
 <br>
 <br>
 
@@ -150,7 +150,7 @@ Agora você precisa definir uma descrição. Ela será usada para determinar qua
 Este documento contém a disponibilidade e as habilidades de diferentes entrevistadores.
 ```
 
-<img alt="Solução" src="assets/hands-on-lab-assets/13description.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/13description.png">
 <br>
 <br>
 
@@ -161,7 +161,7 @@ Este documento contém a disponibilidade e as habilidades de diferentes entrevis
 mostrar a disponibilidade dos entrevistadores
 ```
 
-<img alt="Solução" src="assets/hands-on-lab-assets/14result.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/14result.png">
 <br>
 <br>
 
@@ -177,7 +177,7 @@ Quem é o entrevistador mais competente para a descrição da vaga? Mostre-me as
 Redija um e-mail para Emma convidando-a para uma entrevista com Aisha. Inclua a disponibilidade de Aisha no rascunho do e-mail.
 ```
 
-<img alt="Solução" src="assets/hands-on-lab-assets/16result.png">
+<img alt="Solução" src="assets/hands-on-lab-assets/image/16result.png">
 <br>
 <br>
 
