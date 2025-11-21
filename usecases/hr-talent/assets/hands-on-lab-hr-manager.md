@@ -34,7 +34,7 @@ Este primeiro agente ajudará no processo de recrutamento. Siga estes passos par
 
 1. Abra o Watsonx Orchestrate. Você verá a tela abaixo. Em seguida, clique em **Create an Agent** no canto inferior esquerdo:
 
-<img alt="Solução" src="assets/hands-on-lab-assets/image/1welcome.png">
+<img alt="Solução" src="hands-on-lab-assets/image/1welcome.png">
 <br>
 <br>
 
