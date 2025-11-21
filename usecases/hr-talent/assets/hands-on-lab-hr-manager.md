@@ -9,7 +9,7 @@
 - [Agente de revisão de casos de RH](#🧑‍💼📝-agente-de-revisão-de-casos-de-rh)
 
 
-    
+
 ## Descrição do caso de uso
 
 Esta é a história da **Luisa**. **Luisa** é a gerente de RH de uma grande corporação que está contratando 5.000 funcionários para sua nova divisão. A luta dela é dupla:
@@ -30,7 +30,7 @@ Para recrutamento, Luisa recebe muitos PDFs com currículos de candidatos. Ela t
 
 Luisa gostaria de tornar seu processo de contratação mais eficiente.
 
-## 🥇 Agente de aquisição de talentos
+## Agente de aquisição de talentos
 
 Este primeiro agente ajudará no processo de recrutamento. Siga estes passos para criar seu Agente de IA para Aquisição de Talentos:
 
@@ -183,7 +183,7 @@ Redija um e-mail para Emma convidando-a para uma entrevista com Aisha. Inclua a 
 <br>
 <br>
 
-## 🤖 Automatize o processo de recrutamento de talentos usando fluxos de trabalho baseados em agentes
+## Automatize o processo de recrutamento de talentos usando fluxos de trabalho baseados em agentes
 
 Até agora, você criou um agente utilizando o recurso **Chat with documents** do Watsonx Orchestrate para fazer o upload de currículos, descrições de vagas e agendamentos de entrevistas. Nesse caso, o LLM do agente realiza todo o trabalho pesado, enquanto a função de Luisa é fornecer a mensagem/consulta adequada.
 
@@ -193,7 +193,7 @@ A próxima parte do laboratório é mais avançada e requer algumas habilidades 
 
 **🎉🎉 Parabéns!! Você concluiu o módulo de aquisição de talentos. Agora você está pronto para o próximo!**
 
-## 🧑‍💼📝 Agente de revisão de casos de RH
+## Agente de revisão de casos de RH
 
 1. Crie outro agente como fez anteriormente. Desta vez, adicione o seguinte à descrição:
 ```
