@@ -1,8 +1,8 @@
 # 🧑‍💼 Bem vindo ao IBM watsonx Orchestrate Agent Development Kit 
 
-<img alt="AskHR" src="assets/hr_landscape.jpg">
+<img alt="AskHR" src="ADK.png">
 
-Um dos principais desafios enfrentados por qualquer grande organização é a gestão das operações de RH. À medida que as empresas crescem, torna-se cada vez mais difícil obter informações rapidamente e executar tarefas com facilidade. Com o advento dos sistemas Agentes e o poder dos modelos de raciocínio, torna-se mais fácil ter um único ponto de entrada para realizar praticamente todas as operações de RH.
+O IBM Watsonx Orchestrate Agent Development Kit (ADK) é um conjunto de ferramentas projetado para facilitar a criação e a implantação de agentes usando o IBM Watsonx Orchestrate . Ele é disponibilizado como uma biblioteca Python e uma ferramenta de linha de comando que permite aos desenvolvedores configurar agentes que são executados na plataforma IBM Watsonx Orchestrate . O ADK também oferece suporte à integração de agentes e ferramentas criadas em outras plataformas.
 
 ## 🤔 O Problema
 
