@@ -24,10 +24,8 @@ O objetivo é simples: te deixar à vontade com o Watson Orchestrate, entendendo
 
 Então, aproveite o conteúdo, explore bastante e, sempre que possível, experimente por conta própria. Bora começar?
 
-<p align="center">
-  <img src="docs/images/importante_blink.gif" width="1200" alt="IMPORTANTE">
-</p>
-
+<span style="font-size: 80px;">IMPORTANTE</span><br>
+<span style="font-size: 60px;">📍📍📍📍👇👇👇👇👇👇👇👇📍📍📍📍</span>
 
 PASSO 1: [clique aqui](https://bootcampwxo.github.io/bootcampwxo/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
 
