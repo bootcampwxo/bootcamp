@@ -39,7 +39,7 @@ Antes de começar:
 1. Em seu diretório, crie uma pasta com o nome hello-world .
 2. Abra um editor de texto, como o Visual Studio Code.
 3. Para criar o agente, copie o seguinte código:
-<br>
+
 ```yaml
 spec_version: v1
 kind: native
@@ -51,7 +51,7 @@ style: default
 collaborators: []
 tools:
   - greeting
-<br>
+```
  
 4. Cole o código no editor de texto e salve o arquivo na greeter.yamlpasta * hello-world* .
 5. Para criar a ferramenta, copie o seguinte código:
