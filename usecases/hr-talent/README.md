@@ -1,7 +1,7 @@
 # 🧑‍💼 Gestão de Agente de RH
 `Chat with documents` `RAG` `Flows` `Intelligent Document Processing` `Multi-agent orchestration`
 
-![alt text](/hands-on-lab-assets/recutamento.png)
+<img alt="Agente de RH" src="assets/hands-on-lab-assets/recutamento.png">
 
 
 ## 🤔 O Problema
@@ -36,7 +36,7 @@ Luisa e sua equipe seriam capazes de economizar centenas de horas gastas digital
 
 ## 🏛️ A Solução
 
-![alt text](/hands-on-lab-assets/solucao.png)
+<img alt="Solução" src="assets/hands-on-lab-assets/solucao.png">
 
 ## 🎥 Demo
 
