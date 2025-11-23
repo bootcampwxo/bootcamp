@@ -6,7 +6,7 @@
   02 de Dezembro
 </h2>
 
-<img src="/agentic-bootcamp-v2.png" style="width: 600px; height: 555px;" />
+<img src="/agentic-bootcamp-v3.png" style="width: 600px; height: 400px;" />
 
 Neste bootcamp, você vai aprender a criar e implantar agentes de Inteligência Artificial (Agentic AI) aplicados a casos reais de negócio.
 
@@ -16,7 +16,7 @@ Neste bootcamp, você vai aprender a criar e implantar agentes de Inteligência 
 
 🚀  Descubra como colocar um aplicativo Agentic AI em produção, incluindo práticas para garantir confiança e segurança.
 
-## Por favor, leia atentamente antes de prossegui
+## Por favor, leia atentamente antes de prosseguir
 
 Este material foi preparado com cuidado para te ajudar a entender como o <b>IBM watsonx Orchestrate</b> funciona na prática. A ideia é mostrar, de forma simples e objetiva, os principais recursos da ferramenta, como ela se conecta a outras plataformas e, claro, os benefícios que você pode aproveitar no dia a dia.
 
