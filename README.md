@@ -2,7 +2,7 @@
 
 
 <h2 style="display: flex; align-items: center; gap: 10px; margin: 0;">
-  <img src="docs/images/DistritoFederal.png" width="60" height="40" style="vertical-align: middle;">
+  <img src="docs/images/DistritoFederal.png" width="70" height="60" style="vertical-align: middle;">
   02 de Dezembro
 </h2>
 
