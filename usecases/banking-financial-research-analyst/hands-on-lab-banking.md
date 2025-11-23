@@ -183,6 +183,7 @@ Ao revisar a arquitetura, você concluiu a parte da solução agêntica que envo
 ![wxo agent knowledge complete](images/wxo-financial-research-agent-knowledge-complete.png) 
 
 ## Criação e configuração do agente de API financeira
+
 Nesta seção, você desenvolverá o Agente que se conecta com uma _API_(Interface para comunicação entre sistemas e aplicativos) Financeira, um dos agentes colaboradores especificamente habilitado para retornar dados de mercado e definições de glossários. Neste laboratório prático, o Agente de API Financeira conta com duas ferramentas: a **Ferramenta de Dados de Mercado**, que retorna preços de ações, e a **Ferramenta de Glossário**, que utiliza a Wikipédia para retornar definições de glossários. Na prática, este agente também pode acessar outras ferramentas internas, como as de modelagem do comportamento de ações ou previsão de preços de ações; a abordagem para capacitar o agente com essas ferramentas seria a mesma.
 
 15 - Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas acima para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.

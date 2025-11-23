@@ -2,18 +2,20 @@
 # 👨🏻‍💻 Caso de Uso: Order to Cash  
 
 ## Índice
-- [Descrição do caso de uso](#Descrição-do-caso-de-uso)
-- [Arquitetura](#Arquitetura)
-- [Pré-requisitos](#Pré-requisitos)
-- [watsonx Orchestrate](#watsonx-orchestrate)
-  - [Acessando o watsonx Orchestrate](#acessando-o-watsonx-orchestrate)
-- [Criação do Agente Order-to-Cash](#criação-do-agente-order-to-cash)
-  - [Configuração do agente com base de conhecimento](#Configuração-do-agente-com-base-de-conhecimento)
-- [Criação e configuração do agente de suporte ao cliente](#Criação-e-configuração-do-agente-de-suporte-ao-cliente)
-- [Criação e configuração do agente de gerenciamento de pedidos](#Criação-e-configuração-do-agente-de-gerenciamento-de-pedidos)
-- [Juntando tudo - Colaboração completa do agente](#Juntando-tudo---Colaboração-completa-do-agente)
-- [Experimente os agentes em ação no Watsonx Orchestrate](#Experimente-os-agentes-em-ação-no-watsonx-orchestrate)
-- [Conclusão](#Conclusão)
+- [👨🏻‍💻 Caso de Uso: Order to Cash](#-caso-de-uso-order-to-cash)
+  - [Índice](#índice)
+  - [Descrição do caso de uso](#descrição-do-caso-de-uso)
+  - [Arquitetura  ](#arquitetura--)
+  - [Pré requisitos](#pré-requisitos)
+  - [watsonx Orchestrate](#watsonx-orchestrate)
+    - [Acessando o watsonx Orchestrate](#acessando-o-watsonx-orchestrate)
+  - [Criação do Agente Order-to-Cash](#criação-do-agente-order-to-cash)
+    - [Configuração do agente com base de conhecimento](#configuração-do-agente-com-base-de-conhecimento)
+  - [Criação e configuração do agente de suporte ao cliente](#criação-e-configuração-do-agente-de-suporte-ao-cliente)
+  - [Criação e configuração do agente de gerenciamento de pedidos](#criação-e-configuração-do-agente-de-gerenciamento-de-pedidos)
+  - [Juntando tudo - Colaboração completa dos agentes](#juntando-tudo---colaboração-completa-dos-agentes)
+  - [Experimente os agentes em ação no Watsonx Orchestrate](#experimente-os-agentes-em-ação-no-watsonx-orchestrate)
+  - [Conclusão](#conclusão)
 
 ## Descrição do caso de uso
 
@@ -21,13 +23,12 @@ Este caso de uso concentra-se na transformação do processo Order-to-Cash (O2C)
 
 Neste laboratório, construiremos um agente O2C no Watsonx Orchestrate que simula interações com funções essenciais do negócio, como suporte ao cliente e gerenciamento de pedidos. O agente otimizará o gerenciamento de pedidos, reduzirá o esforço manual, acelerará o processamento de faturas e impulsionará a conversão de caixa mais rapidamente, melhorando, em última análise, a eficiência operacional e a satisfação do cliente.
 
-## 🏛 Arquitetura  <a id="architecture"></a>
+## Arquitetura  <a id="architecture"></a>
 
 <img width="900" alt="image" src="./images/arch.png">
 
-## Pré-requisitos
+## Pré requisitos
 Para executar as etapas desta parte do laboratório prático do bootcamp, você precisa ter acesso ao watsonx Orchestrate e ao watsonx.ai , que são fornecidos a você como parte da preparação para este bootcamp.
-
 
 ## watsonx Orchestrate
 Conforme detalhado na [Arquitetura da solução](./images/o2c-arch-sb.png), construiremos e implementaremos a maioria dos agentes da solução no Watsonx Orchestrate. Agentes de IA são entidades autônomas que podem executar tarefas, decidir e interagir com seu ambiente. No IBM Watsonx Orchestrate, os agentes são um componente-chave da nossa estrutura de IA agêntica, permitindo a criação de sistemas complexos e dinâmicos que podem se adaptar e responder a condições em constante mudança. 
@@ -72,30 +73,35 @@ O Agente Supervisor supervisiona dois agentes específicos de domínio:
 Ele também lida com consultas gerais, encaminhando-as para uma base de conhecimento.
 ```
 
-O Watsonx Orchestrate permite a criação de um agente do zero ou a partir de um modelo, o que envolve navegar por um catálogo de agentes existentes e usar atributos de outro agente como modelo para o novo agente. Neste laboratório, você criará agentes do zero.
+O watsonx Orchestrate permite a criação de um agente do zero ou a partir de um modelo, o que envolve navegar por um catálogo de agentes existentes e usar atributos de outro agente como modelo para o novo agente. Neste laboratório, você criará agentes do zero.
 
 ![wxo order to cash agent](./images/img20.png) 
 
 ### Configuração do agente com base de conhecimento
+
 Após a criação do Agente de IA, nesta seção, você passará pelo processo de configuração do agente com conhecimento e ferramentas para permitir que ele responda a consultas usando informações da base de conhecimento e execute tarefas usando as ferramentas.
 
-9. Em seguida, você passará pelo processo de configuração do seu agente. A página do Agente do Pedido ao Pagamento é dividida em duas partes. A metade direita é uma interface de chat de **Preview** que permite testar o comportamento do seu agente. A metade esquerda da página consiste em quatro seções principais que você pode usar para configurar seu agente.
-
-   - Profile: A seção **Profile** contém a descrição do agente que você forneceu ao criá-lo. Você pode acessar esta seção para editar e refinar a descrição do agente conforme necessário.
-
-   - Knowledge: A seção **Knowledge** é onde você pode adicionar conhecimento ao agente. Adicionar conhecimento aos agentes desempenha um papel crucial no aprimoramento de suas capacidades de conversação, fornecendo-lhes as informações necessárias para gerar respostas precisas e contextualmente relevantes para casos de uso específicos. Você pode enviar arquivos diretamente para o agente ou conectar-se a uma instância do Milvus ou Elasticsearch como um repositório de conteúdo. Por meio dessa interface de **Knowledge** , você pode habilitar seus agentes de IA para implementar o padrão de Geração Aumentada de Recuperação (RAG), um padrão de IA muito popular para fundamentar respostas em uma fonte confiável de dados, como uma base de conhecimento empresarial.
-
-   - Toolset: Enquanto *Knowledge* é como você capacita os agentes com uma base de conhecimento confiável, **Toolset** é como você capacita os agentes a agir, fornecendo-lhes Ferramentas e Agentes . Os agentes podem realizar tarefas usando **Tools** ou delegar tarefas a outros **Agentes** que sejam profundamente qualificados nessas tarefas.
-   
-   - Behavior: A seção **Behavior** do agente é onde você fornece instruções ao agente para definir como ele responde às solicitações e situações do usuário. Você pode configurar regras que determinam quando e como o agente deve agir. Essas regras ajudam o agente a se comportar de maneira previsível e consistente, proporcionando uma experiência perfeita ao usuário.
-
-   - Channels: A seção **Channels** é onde você pode conectar seu agente aos canais que sua equipe usa para se comunicar (em pré-visualização). Você pode habilitar seu agente para se comunicar via equipes, WhatsApp com Twilio, Facebook Messenger e Genesys Bot Connector.
+9 - Em seguida, você passará pelo processo de configuração do seu agente. A página do Agente do Pedido ao Pagamento é dividida em duas partes. A metade direita é uma interface de chat de **Preview** que permite testar o comportamento do seu agente. A metade esquerda da página consiste em quatro seções principais que você pode usar para configurar seu agente.
+<br>
+- <b>Profile:</b> A seção **Profile** contém a descrição do agente que você forneceu ao criá-lo. Você pode acessar esta seção para editar e refinar a descrição do agente conforme necessário.
+<br>
+- <b>Welcome Message:</b> Ainda durante a etapa de definição do tipo de agente, você também pode configurar uma mensagem de boas vindas que será exibida na interface para o usuário, como mostrado na imagem abaixo. Essa etapa é opcional e você pode definir algo como: Bem vindo ao Agente X
+<br>
+- <b>Quick start Prompts:</b> Esse passo também é opcional. Nessa sessão podemos definir atalhos para o usuário, essas mensagens serão exibidas para o usuário como botões na interface. Você pode criar esses botões clicando em `Add prompt +` e removê-los clicando no ícone de lixeira.  Para que essas opções apareçam na telinha de preview do lado direito da tela, use o ícone de restart para atualizar a interface. <b>Não é necessário sair da página.</b>
+<br>
+- <b>Knowledge:</b> A seção **Knowledge** é onde você pode adicionar conhecimento ao agente. Adicionar conhecimento aos agentes desempenha um papel crucial no aprimoramento de suas capacidades de conversação, fornecendo-lhes as informações necessárias para gerar respostas precisas e contextualmente relevantes para casos de uso específicos. Você pode enviar arquivos diretamente para o agente ou conectar-se a uma instância do <b>Milvus</b>, </b>Elasticsearch, AstraDB ou algum outro banco de dados vetorial da sua preferência, como um repositório de conteúdo. Por meio dessa interface de  **Knowledge**, você pode habilitar seus agentes de IA para implementar o padrão de Geração Aumentada de Recuperação (RAG), um padrão de IA muito popular para fundamentar respostas em uma fonte confiável de dados, como uma base de conhecimento empresarial.  
+<br>
+- <b>Toolset:</b> Enquanto *Knowledge* é como você capacita os agentes com uma base de conhecimento confiável, **Toolset** é como você capacita os agentes a agir, fornecendo-lhes Ferramentas e Agentes . Os agentes podem realizar tarefas usando **Tools** ou delegar tarefas a outros **Agentes** que sejam profundamente qualificados nessas tarefas.
+<br> 
+- <b>Behavior:</b> A seção **Behavior** do agente é onde você fornece instruções ao agente para definir como ele responde às solicitações e situações do usuário. Você pode configurar regras que determinam quando e como o agente deve agir. Essas regras ajudam o agente a se comportar de maneira previsível e consistente, proporcionando uma experiência perfeita ao usuário.
+<br>
+- <b>Channels:</b> A seção **Channels** é onde você pode conectar seu agente aos canais que sua equipe usa para se comunicar (em pré-visualização). Você pode habilitar seu agente para se comunicar via equipes, WhatsApp com Twilio, Facebook Messenger e Genesys Bot Connector.
 
 Por fim, após concluir a configuração do agente e testar seu desempenho, você pode **implantar** o agente para disponibilizá-lo no canal selecionado. No momento, o principal canal suportado é a página inicial do Chat que você acessa ao iniciar o Watsonx Orchestrate pela primeira vez. O produto adicionará suporte a canais adicionais onde você poderá implantar seu(s) agente(s).
 
 ![wxo create agent config](./images/img21.png) 
 
-10. Na página de configuração do agente, revise a *Descrição* do agente na seção  **Profile** e mantenha-a como está (sem necessidade de edição). Em seguida, role para baixo até a seção **Knowledge**, ou clique no atalho **Knowledge**. Na seção Knowledge adicione uma descrição para informar o agente sobre o conteúdo do conhecimento. Para este laboratório, adicione a seguinte descrição, pois forneceremos ao agente um documento de Perguntas Frequentes (FAQ) sobre o processo Order to Cash.
+10 - Na página de configuração do agente, revise a *Descrição* do agente na seção  **Profile** e mantenha-a como está (sem necessidade de edição). Em seguida, role para baixo até a seção **Knowledge**, ou clique no atalho **Knowledge**. Na seção Knowledge adicione uma descrição para informar o agente sobre o conteúdo do conhecimento. Para este laboratório, adicione a seguinte descrição, pois forneceremos ao agente um documento de Perguntas Frequentes (FAQ) sobre o processo Order to Cash.
 
 Descrição: 
 
@@ -109,7 +115,7 @@ Em seguida, você precisa escolher como fornecer informações de conhecimento a
 Arraste e solte o arquivos PDF "Order to Cash FAQs pt_BR.pdf" para enviar ao conhecimento do agente (O arquivo "Order to Cash FAQs pt_BR.pdf" está disponível na pasta "7. Automation do Order to Cash" gerada após a descompactação do arquivo LABS.zip)
 
 
-11. Após o upload de todos os arquivos para a base de conhecimento, você pode começar a testar o agente para validar como ele responde a perguntas usando essa base de conhecimento. Os arquivos enviados são processados ​​e preparados para serem utilizados pelo agente. Após a conclusão do upload, teste o agente fazendo algumas perguntas, como:
+11 - Após o upload de todos os arquivos para a base de conhecimento, você pode começar a testar o agente para validar como ele responde a perguntas usando essa base de conhecimento. Os arquivos enviados são processados ​​e preparados para serem utilizados pelo agente. Após a conclusão do upload, teste o agente fazendo algumas perguntas, como:
 
 ```O que devo fazer se houver um problema com a entrega do meu pedido, como atrasos ou produtos danificados? ```
 
@@ -119,21 +125,22 @@ Você deverá ver as respostas sendo recuperadas dos documentos enviados e, em s
 
 ![wxo agent knowledge test](./images/img37.png) 
 
-**NÃO PRECISA SALVAR NEM FAZER DEPLOY NESTE MOMENTO**
+**NÃO é NECESSÁRIO NEM FAZER IMPLANTAR/FAZER DEPLOY NESTE MOMENTO**
 
-Neste momento, vale a pena refletir sobre o que você desenvolveu até agora. Você projetou um agente e o capacitou com uma base de conhecimento para que ele possa responder a consultas em contexto usando sua base de conhecimento. *Parabéns!!*
+Neste momento, vale a pena refletir sobre o que você desenvolveu até agora. Você projetou um agente e o capacitou com uma base de conhecimento para que ele possa responder a consultas em contexto usando sua base de conhecimento. *Parabéns!*
 
 
 ## Criação e configuração do agente de suporte ao cliente
+
 Nesta seção, você criará o Agente de Suporte ao Cliente, um agente colaborador projetado para lidar com as dúvidas dos clientes, recuperando conversas de e-mail relevantes e fornecendo atualizações de pedidos em tempo real. Este agente é alimentado por uma combinação de ferramentas, incluindo a **Ferramenta de Recuperação de E-mails** para acessar mensagens de clientes e a **Ferramenta de Consulta de Pedidos** para obter o status do pedido. O agente espelha fluxos de trabalho de suporte do mundo real, selecionando respostas e, opcionalmente, enviando e-mails aos clientes, tudo dentro de um fluxo de conversa guiado.
 
-12. Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas acima para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
+12 - Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas acima para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
 
-13. Na página de idioma do watsonx Orchestrate, clique em  **Create agent** para começar a desenvolver um novo agente, o Agente de Suporte ao Cliente.
+13 - Na página de idioma do watsonx Orchestrate, clique em  **Create agent** para começar a desenvolver um novo agente, o Agente de Suporte ao Cliente.
 
 ![wxo landing page create agent](./images/wxo-landing-page-create-agent.png) 
 
-14. Na página Criar um agente, selecione o bloco **Create from scratch** forneça um  **Nome** e uma **Descrição** para o agente e clique em **Create**.
+14 - Na página de criação de um agente/Create new agent, selecione o bloco **Create from scratch** forneça um  **Nome** e uma **Descrição** para o agente e clique em **Create**.
 
 Name: ```Agente de Suporte ao Cliente```
 
@@ -145,42 +152,42 @@ Conforme explicado anteriormente, a descrição de um agente é importante, pois
 
 ![wxo create customer support agent](./images/img1.png) 
 
-15. Na página de configuração do agente, role para baixo até a seção **Toolset** ou clique no atalho. Em seguida, clique no botão **Add tool** para abrir a janela para adicionar ferramentas ao agente.
+15 -  Na página de configuração do agente, role para baixo até a seção **Toolset** ou clique no atalho. Em seguida, clique no botão **Add tool** para abrir a janela para adicionar ferramentas ao agente.
 
 ![wxo agent tools](./images/img3.png) 
 
-16. No pop-up de opções da ferramenta, selecione **Import** conforme ilustrado na figura abaixo.
+16 - No pop-up de opções da ferramenta, selecione **Import** conforme ilustrado na figura abaixo.
 
 ![wxo tool options](./images/img4.png) 
 ![wxo tool options](./images/img4.1.png) 
 
 O watsonx Orchestrate oferece suporte a diversas abordagens para adicionar ferramentas aos agentes:
 
-   - Adicionar do catálogo: A opção **Add from catalog** permite adicionar uma ferramenta de um amplo catálogo de ferramentas predefinidas. O catálogo de ferramentas está sendo desenvolvido ativamente para facilitar ainda mais a adição de ferramentas aos agentes.
+- Adicionar do catálogo: A opção **Add from catalog** permite adicionar uma ferramenta de um amplo catálogo de ferramentas predefinidas. O catálogo de ferramentas está sendo desenvolvido ativamente para facilitar ainda mais a adição de ferramentas aos agentes.
 
-   - Adicionar da instância local: A opção **Add from local instance** opermite que você adicione uma ferramenta de um conjunto existente de ferramentas já carregadas na instância local do watsonx Orchestrate.
+- Adicionar da instância local: A opção **Add from local instance** opermite que você adicione uma ferramenta de um conjunto existente de ferramentas já carregadas na instância local do watsonx Orchestrate.
 
-   - Importar: A opção **Import** permite que você importe uma ferramenta externa usando uma especificação **OpenAPI** e selecionando quais operações você deseja importar como ferramentas.
+- Importar: A opção **Import** permite que você importe uma ferramenta externa usando uma especificação **OpenAPI** e selecionando quais operações você deseja importar como ferramentas.
 
-   - Criar um novo fluxo: A opção **Create a new flow** fornece uma interface de criação de ferramentas de arrastar e soltar para criar uma sequência de etapas que utilizam controles e atividades condicionais.
+- Criar um novo fluxo: A opção **Create a new flow** fornece uma interface de criação de ferramentas de arrastar e soltar para criar uma sequência de etapas que utilizam controles e atividades condicionais.
 
 Para fins do Agente Order-to-Cash, você usará a opção **Import** e, em seguida **Import from file** tpara importar uma especificação OpenAPI e definir quais operações importar como ferramentas. Você precisará de um arquivo de especificação OpenAPI, que está disponível na pasta "7. Automation do Order to Cash" gerada após a descompactação do arquivo LABS.zip.
 
-17. Na página da ferramenta Importar, arraste e solte o arquivo de especificação **customer_support.yml** (disponível na pasta "7. Automation do Order to Cash" gerada após a descompactação do arquivo LABS.zip.) e clique em **Next**.
+17 - Na página da ferramenta Importar, arraste e solte o arquivo de especificação **customer_support.yml** (disponível na pasta "7. Automation do Order to Cash" gerada após a descompactação do arquivo LABS.zip.) e clique em **Next**.
 
 ![wxo tool import openapi](./images/img2.png) 
 
-18. Em seguida, marque as caixas de seleção para as operações **Obter detalhes do pedido** , **Obter todos os pedidos** e **Obter todos os e-mails** e clique em **Done**.
+18 - Em seguida, marque as caixas de seleção para as operações **Obter detalhes do pedido** , **Obter todos os pedidos** e **Obter todos os e-mails** e clique em **Done**.
 
 ![wxo tool import operations](./images/img5.png) 
 
-19. Neste ponto, você verá as três ferramentas importadas na subseção Ferramentas, o que significa que elas estão disponíveis para o **Agente de Suporte ao Cliente** usar essas ferramentas na execução de tarefas.
+19 - Neste ponto, você verá as três ferramentas importadas na subseção Ferramentas, o que significa que elas estão disponíveis para o **Agente de Suporte ao Cliente** usar essas ferramentas na execução de tarefas.
 
-20. Em seguida, role mais para baixo até a seção **Behavior** ou clique no atalho **Behavior** e adicione as seguintes instruções para orientar o agente em seu raciocínio e orquestração.
+20 - Em seguida, role mais para baixo até a seção **Behavior** ou clique no atalho **Behavior** e adicione as seguintes instruções para orientar o agente em seu raciocínio e orquestração.
 
-Instruções de comportamento: 
+<b>Instruções de comportamento do Agente </b>
 
-```
+`````````````````````````````````````````````````
 ### **Condição de Acionamento**
 Quando um usuário inicia uma conversa ou faz uma pergunta contendo a palavra-chave
 ```mostrar todos os meus e-mails, atendimento ao cliente, lista de clientes ou frases relacionadas```
@@ -254,11 +261,11 @@ Quando um usuário inicia uma conversa ou faz uma pergunta contendo a palavra-ch
 * Prompts claros em cada etapa para orientar o usuário
 * Formatação estruturada para facilitar a leitura
 * Segue um fluxo de trabalho de suporte do mundo real
-```
+`````````````````````````````````````````````````
 
 ![wxo customer support agent behavior](./images/img6.png)
 
-21. Agora que você concluiu a criação do agente e adicionou as ferramentas necessárias, teste as ferramentas na seção **Preview** fazendo uma pergunta de exemplo, como:
+20 - Agora que você concluiu a criação do agente e adicionou as ferramentas necessárias, teste as ferramentas na seção **Preview** fazendo uma pergunta de exemplo, como:
 
 ```mostrar todos os e-mails```
 
@@ -269,31 +276,31 @@ Observe a resposta baseada nas informações retornadas pela ferramenta de e-mai
 ![wxo tool mails](./images/img7.png) 
 ![wxo tool mails](./images/img8.png) 
 
-22. Digite um dos nome de clientes da lista retornada pelo Agente (Ex: Globex Ltd - Maria Gonzales) para listar os ids de pedidos. Em seguida digite um dos ids retornados pelo agente para obter os detalhes do pedido e depois entrar em contato com o cliente, redigir e enviar um e-mail.
+22 - Digite um dos nome de clientes da lista retornada pelo Agente (Ex: Globex Ltd - Maria Gonzales) para listar os ids de pedidos. Em seguida digite um dos ids retornados pelo agente para obter os detalhes do pedido e depois entrar em contato com o cliente, redigir e enviar um e-mail.
 
 Novamente, observe a resposta e expanda o link **Show Reasoning** para rastrear o raciocínio do agente, que neste caso acionou corretamente a ferramenta **Obter detalhes do pedido**.
 
 ![wxo tool order](./images/img9.png)  
 ![wxo tool order](./images/img10.png)
 
-23. Neste ponto, você está pronto para implantar seu agente. Para isso, role até o final da página de configuração e certifique-se de que a barra deslizante ao lado de **Show agent** esteja desabilitada. Clique no botão **Deploy** para implantar o agente e torná-lo disponível para uso como um agente colaborador.
+23 - Neste ponto, você está pronto para implantar seu agente. Para isso, role até o final da página de configuração e certifique-se de que a barra deslizante ao lado de **Show agent** esteja desabilitada. Clique no botão **Deploy** para implantar o agente e torná-lo disponível para uso como um agente colaborador.
 
 ![wxo order managemen agent deploy](./images/show-chat.png)
 ![wxo o2c deploy](./images/img11.png) 
 
-*Parabéns!! Você acabou de concluir o desenvolvimento do **Agente de Suporte ao Cliente** , equipado com ferramentas para retornar dados de e-mail e atualizações de pedidos.
+*Parabéns! Você acabou de concluir o desenvolvimento do **Agente de Suporte ao Cliente** , equipado com ferramentas para retornar dados de e-mail e atualizações de pedidos.
 
 ## Criação e configuração do agente de gerenciamento de pedidos
+
 Nesta seção, você criará o **Agente de Gerenciamento de Pedidos** , um agente colaborador essencial responsável por gerenciar o fluxo de ponta a ponta de pedidos de compra (POs) dentro do ciclo de vida do Pedido ao Pagamento (O2C). Este agente foi projetado para otimizar o processamento de pedidos interagindo com sistemas externos, como bancos de dados e plataformas ERP (por exemplo, SAP), ajudando os usuários a recuperar detalhes de POs e cotações, validar entradas e fazer pedidos com eficiência. Neste laboratório, o agente estará equipado com ferramentas como **Buscar Todos as ordens de pedidos** , **Obter Detalhes da ordem de pedido** , **Obter Detalhes da Cotação** e **Exibir Confirmação** para simular a automação empresarial do mundo real.
 
+24 - Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas anteriores para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
 
-24. Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas anteriores para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
-
-25. Na página inicial do watsonx Orchestrate, que é a interface de bate-papo, clique no link **Create new agent** para começar a criar o agente de gerenciamento de pedidos.
+25 - Na página inicial do watsonx Orchestrate, que é a interface de bate-papo, clique no link **Create new agent** para começar a criar o agente de gerenciamento de pedidos.
 
 ![wxo landing page create agent](./images/wxo-landing-page-create-agent.png) 
 
-26. Repita os passos anteriores para criar um agente do zero e forneça o seguinte nome e descrição para o agente de gerenciamento de pedidos. Clique em **Create**.
+26 - Repita os passos anteriores para criar um agente do zero e forneça o seguinte nome e descrição para o agente de gerenciamento de pedidos. Clique em **Create**.
 
 Name: ```Agente de Gerenciamento de Pedidos```
 
@@ -305,24 +312,25 @@ Este agente foi projetado para lidar com consultas de usuários relacionadas ao 
 
 ![wxo create order management agent](./images/img12.png)
 
-27. Na página de configuração do agente, role para baixo até a seção **Toolset** ou clique no atalho **Toolset**e, em seguida, clique em **Add tool**.
+27 - Na página de configuração do agente, role para baixo até a seção **Toolset** ou clique no atalho **Toolset**e, em seguida, clique em **Add tool**.
 
-28. Como explicado anteriormente, o Watsonx Orchestrate oferece suporte a diversas abordagens para adicionar ferramentas aos agentes. Para o Agente de Gerenciamento de Pedidos, você utilizará a funcionalidade de **Import**, como fez anteriormente. Clique no bloco **Import from file**.
+28 - Como explicado anteriormente, o Watsonx Orchestrate oferece suporte a diversas abordagens para adicionar ferramentas aos agentes. Para o Agente de Gerenciamento de Pedidos, você utilizará a funcionalidade de **Import**, como fez anteriormente. Clique no bloco **Import from file**.
 
-29. Na página da ferramenta Importar, arraste e solte o arquivo de especificação **order_management.yml** fornecido pelo seu instrutor e clique em **Next**. (O arquivo order_management.yml" está disponível na pasta "7. Automation do Order to Cash" gerada após a descompactação do arquivo LABS.zip)
+29 - Na página da ferramenta Importar, arraste e solte o arquivo de especificação **order_management.yml** fornecido pelo seu instrutor e clique em **Next**. (O arquivo order_management.yml" está disponível na pasta "7. Automation do Order to Cash" gerada após a descompactação do arquivo LABS.zip)
 
 ![wxo order managemen agent tool import openapi](./images/img13.png) 
 
-30. Em seguida, marque as caixas de seleção para as operações **Buscar todos os pedidos de compra** , **Obter detalhes do pedido de compra** , **Obter detalhes da cotação**, **Obter detalhes correspondentes** e **Exibir confirmação** e clique em **Done**.
+30 - Em seguida, marque as caixas de seleção para as operações **Buscar todos os pedidos de compra** , **Obter detalhes do pedido de compra** , **Obter detalhes da cotação**, **Obter detalhes correspondentes** e **Exibir confirmação** e clique em **Done**.
 
 ![wxo order management agent tool import operations](./images/img38.png) 
 
-31. Neste ponto, você verá a ferramenta importada na subseção Ferramentas, o que significa que ela está disponível para o **Agente de Gerenciamento de Pedidos** .
+31 - Neste ponto, você verá a ferramenta importada na subseção Ferramentas, o que significa que ela está disponível para o **Agente de Gerenciamento de Pedidos** .
 
-32. Role mais para baixo até a seção **Behavior** da página de configuração do agente e adicione as seguintes **instruções** para ajudar a orientar o comportamento do agente.
+32 - Role mais para baixo até a seção **Behavior** da página de configuração do agente e adicione as seguintes **instruções** para ajudar a orientar o comportamento do agente.
 
-Instruções de comportamento:
-```
+<b>Instruções de comportamento do Agente</b>
+
+`````````````````````````````````````````````````````
 ### **Condição de Acionamento**
 Quando um usuário inicia uma conversa ou faz uma pergunta contendo a palavra-chave
 ```mostrar todos os pedidos ou gerenciamento de pedidos ou gerenciar pedidos ou frases relacionadas.```
@@ -371,8 +379,7 @@ Quando um usuário inicia uma conversa ou faz uma pergunta contendo a palavra-ch
 * Evite sobrecarregar o usuário com muitas informações de uma só vez.
 * Valide as entradas do usuário e forneça prompts de recuperação amigáveis ​​caso algo dê errado.
 * Formate as mensagens de forma clara com tabelas e destaques limpos em estilo markdown.
-
-```
+`````````````````````````````````````````````````````
 
 Em seguida, teste a funcionalidade do agente fazendo uma pergunta como
 
@@ -380,50 +387,52 @@ Em seguida, teste a funcionalidade do agente fazendo uma pergunta como
 
 ```Mostrar todos os pedidos```
   
-  -->> Selecione um pedido, cotinue conversando com o agente e observe a resposta do agente. Clique no link **Show Reasoning** e observe como o agente está invocando corretamente as funções **Obter Todos os Detalhes da PO**, **Obter Detalhes da PO**, **Obter Detalhes da Cotação**, **Obter Detalhes da Correspondência** e **Exibir Confirmação** para recuperar informações relevantes.
+-> Selecione um pedido, cotinue conversando com o agente e observe a resposta do agente. Clique no link **Show Reasoning** e observe como o agente está invocando corretamente as funções **Obter Todos os Detalhes da PO**, **Obter Detalhes da PO**, **Obter Detalhes da Cotação**, **Obter Detalhes da Correspondência** e **Exibir Confirmação** para recuperar informações relevantes.
 
 ![wxo order management agent behavior](./images/img16.png) 
 ![wxo order management agent behavior](./images/img17.png)
 ![wxo order management agent behavior](./images/img18.png)
 ![wxo chat q3 reasoning](./images/img34.0.png)
 
-33. Neste ponto, você está pronto para implantar seu agente. Para isso, role até o final da página de configuração e certifique-se de que a barra deslizante ao lado de **Show agent** esteja desabilitada. Em seguida, clique no botão **Deploy** para implantar o agente e torná-lo disponível para uso como um agente colaborador.
+33 - Neste ponto, você está pronto para implantar seu agente. Para isso, role até o final da página de configuração e certifique-se de que a barra deslizante ao lado de **Show agent** esteja desabilitada. Em seguida, clique no botão **Deploy** para implantar o agente e torná-lo disponível para uso como um agente colaborador.
 
 ![wxo order managemen agent deploy](./images/show-chat.png)
 ![wxo order managemen agent deploy](./images/img19.png) 
 
-*Parabéns!!* Você acabou de concluir o desenvolvimento do **Agente de Gerenciamento de Pedidos** equipado com ferramentas para ajudar os usuários a recuperar detalhes de PO e cotação, validar entradas e fazer pedidos de forma eficiente.
+*Parabéns!* Você acabou de concluir o desenvolvimento do **Agente de Gerenciamento de Pedidos** equipado com ferramentas para ajudar os usuários a recuperar detalhes de PO e cotação, validar entradas e fazer pedidos de forma eficiente.
 
-## Juntando tudo - Colaboração completa do agente 
+## Juntando tudo - Colaboração completa dos agentes
+
 Agora que você desenvolveu todos os agentes e ferramentas, nesta seção, você trabalhará no processo de integração dos agentes colaboradores, testando e implantando o agente. **Agente Order-to-Cash**.
 
-34. Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas anteriores para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
+34 - Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas anteriores para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
 
-35. Na página Gerenciar agentes, selecione o **Manage agents**.
+35 - Na página Gerenciar agentes, selecione o **Manage agents**.
 
 ![wxo landing page manage agents](./images/wxo-landing-page-manage-agents.png) 
 
-36. Na página Gerenciar agentes, selecione o **Agente Order-to-Cash**.
+36 - Na página Gerenciar agentes, selecione o **Agente Order-to-Cash**.
 
 ![wxo collaborator agents](./images/img39.png) 
 
-37. Na página de configuração do **Agente Order-to-Cash**, role até a seção **Toolset** ou clique no atalho **Toolset** e você utilizará a funcionalidade **Add from local instance** como fez anteriormente e selecionará todas as ferramentas relevantes de ambos os agentes conforme abaixo:
+37 - Na página de configuração do **Agente Order-to-Cash**, role até a seção **Toolset** ou clique no atalho **Toolset** e você utilizará a funcionalidade **Add from local instance** como fez anteriormente e selecionará todas as ferramentas relevantes de ambos os agentes conforme abaixo:
 
 ![wxo collaborator agents](./images/img39.1.png) 
 
 
-38. No pop-up, selecione **Add from local instance**. Para referência, o Watsonx Orchestrate oferece suporte a diversas abordagens para adicionar agentes colaboradores.
+38 - Na janela _pop up_, selecione **Add from local instance**. Para referência, o Watsonx Orchestrate oferece suporte a diversas abordagens para adicionar agentes colaboradores.
 
 ![wxo collaborator agents](./images/img22.png)  
 
-39. Marque a caixa de seleção ao lado do **Agente de Suporte ao Cliente** e do **Agente de Gerenciamento de Pedidos** e clique no botão  **Add to agent**
+39 - Marque a caixa de seleção ao lado do **Agente de Suporte ao Cliente** e do **Agente de Gerenciamento de Pedidos** e clique no botão  **Add to agent**
 
 ![wxo financial analyst add collaborators](./images/img23.png) 
 
-40. Role mais para baixo até a seção **Behavior** ou clique no atalho  **Behavior** e adicione as seguintes **instruções** para orientar o agente em seu raciocínio e orquestração.
+40 - Role mais para baixo até a seção **Behavior** ou clique no atalho  **Behavior** e adicione as seguintes **instruções** para orientar o agente em seu raciocínio e orquestração.
 
-Instruções de comportamento:
-```
+<b>Instruções de comportamento do Agente</b>
+
+````````````````````````````````````````````
 ## **Função do Agente: Agente Supervisor**
 - Este **Agente Supervisor** orquestra e gerencia o fluxo da conversa, encaminhando de forma inteligente as consultas dos usuários para os agentes especializados apropriados, com base no contexto.
 ---
@@ -456,11 +465,9 @@ O Agente Supervisor supervisiona dois agentes específicos de domínio:
 * **Fluxo de interação natural**: Transições suaves sem interromper a experiência do usuário.
 * **Sem sobreposição entre agentes**: Mantém limites claros para evitar confusão.
 * **Respostas diretas para O2C e outros tópicos**: Sem enquadramento ou isenções de responsabilidade extras — apenas a resposta relevante.
+````````````````````````````````````````````
 
-```
 Teste o comportamento do agente na seção **Preview** fazendo a seguinte pergunta de exemplo:
-
-Pergunta:
 
 ```Mostrar todos os e-mails de atendimento ao cliente```
 
@@ -470,33 +477,31 @@ Expanda os links **Show Reasoning** e **Step 1** para revisar o raciocínio do a
 
 ![wxo knowledge base test](./images/img25.png) 
 
-41. Continue testando seu agente agora, enfatizando a funcionalidade do agente de gerenciamento de pedidos e a Base de conhecimento. Para isso, faça a seguinte pergunta.
+41 - Continue testando seu agente agora, enfatizando a funcionalidade do agente de gerenciamento de pedidos e a Base de conhecimento. 
 
-Pergunta:
+Para isso, faça a seguinte perguntas:
 
 ```Mostrar todos os detalhes do pedido```
 
 ```Gerenciar pedidos```
 
-42. Neste ponto, você está pronto para implementar seu **Agente Order-to-Cash** . Para isso, role até o final da página de configuração e certifique-se de que a barra deslizante ao lado de **Show agent** esteja habilitada (verde) para tornar o **Agente Order-to-Cash** acessível na interface de chat. Clique no botão **Deploy** para implementar seu agente.
+42 - Neste ponto, você está pronto para implementar seu **Agente Order-to-Cash** . Para isso, role até o final da página de configuração e certifique-se de que a barra deslizante ao lado de **Show agent** esteja habilitada (verde) para tornar o **Agente Order-to-Cash** acessível na interface de chat. Clique no botão **Deploy** para implementar seu agente.
 
 
 ![wxo  agent deploy](./images/img24.png)
 
-*Parabéns!!* Você acabou de desenvolver e implantar o **Agente Order-to-Cash**.
+*Parabéns!* Você acabou de desenvolver e implantar o **Agente Order-to-Cash**.
 
 ## Experimente os agentes em ação no Watsonx Orchestrate
 
 Agora que você implantou seu **Order-to-Cash Agent**, você pode interagir com o agente usando a Watsonx Orchestrate Conversational Interface.
 
-43. Clique no menu de navegação superior esquerdo e selecione **Chat** para acessar a interface de conversação.
+43 - Clique no menu de navegação superior esquerdo e selecione **Chat** para acessar a interface de conversação.
 
 ![wxo chat ui](./images/wxo-chat-ui.png)
 
-44. Na interface do **Chat**, observe que agora você tem o **Order-to-Cash** como um dos agentes disponíveis para conversar. À medida que você adiciona mais agentes, pode selecionar com qual agente deseja interagir selecionando a lista suspensa de agentes.
-Com o **Order-to-Cash** selecionado, tente interagir fazendo a seguinte pergunta e observe a resposta.
-
-Pergunta:
+44 - Na interface do **Chat**, observe que agora você tem o **Order-to-Cash** como um dos agentes disponíveis para conversar. À medida que você adiciona mais agentes, pode selecionar com qual agente deseja interagir selecionando a lista suspensa de agentes.
+Com o **Order-to-Cash** selecionado, tente interagir fazendo a seguintes perguntas e observe a resposta.
 
 ```Mostrar todos os e-mails de atendimento ao cliente```
 
@@ -504,13 +509,13 @@ Pergunta:
 
 ![wxo chat q1](./images/img26.png)
 
-45. Expanda as seções **Show Reasoning** e **Step 1** para investigar o raciocínio do agente ao recuperar a resposta da ferramenta **Agente de suporte ao cliente** e continuar a conversar com o fluxo de trabalho de suporte ao cliente.
+45 -  Expanda as seções **Show Reasoning** e **Step 1** para investigar o raciocínio do agente ao recuperar a resposta da ferramenta **Agente de suporte ao cliente** e continuar a conversar com o fluxo de trabalho de suporte ao cliente.
 
 ![wxo chat q1 reasoning](./images/img26copy.png)
 ![wxo chat q1](./images/img27.png)
 ![wxo chat q1](./images/img27.1.png)
 
-46. Em seguida, faça a seguinte pergunta para obter uma resposta da base de conhecimento.
+46 - Em seguida, faça a seguinte pergunta para obter uma resposta da base de conhecimento.
 Pergunta:
 
 ```O que devo fazer se houver algum problema com a entrega do meu pedido, como atrasos ou produtos danificados?``
@@ -521,23 +526,23 @@ Expanda as seções **Show Reasoning** e **Step 1** para investigar o raciocíni
 
 ![wxo chat q2](./images/img28.png)
 
-47. Em seguida, tente outra pergunta para recuperar os detalhes do pedido.
+47 - Em seguida, tente outra pergunta para recuperar os detalhes do pedido.
 Pergunta:
 
 ```Mostre-me todos os pedidos```
 
 Expanda a seção **Show Reasoning** e observe que o agente tomou 2 passos para recuperar a resposta para esta pergunta.
 
-48. Agora, vamos tentar explorar quais são as etapas executadas. Expanda as seções **Step 1** e **Step 2** e observe o agente transferindo a solicitação ao **Agente de Gerenciamento de Pedidos** para fornecer os detalhes do pedido de um usuário específico.
+48 -  Agora, vamos tentar explorar quais são as etapas executadas. Expanda as seções **Step 1** e **Step 2** e observe o agente transferindo a solicitação ao **Agente de Gerenciamento de Pedidos** para fornecer os detalhes do pedido de um usuário específico.
 
 ![wxo chat q3 reasoning](./images/img31.png)
 ![wxo chat q3 reasoning](./images/img32.png)
 ![wxo chat q3 reasoning](./images/img33.png)
 
-
 Sinta-se à vontade para explorar e experimentar o poder dos Agentes em ação!
 
 ## Conclusão
+
 **Parabéns** por concluir a parte prática do laboratório do bootcamp.
 
 Recapitulando, você utilizou a funcionalidade sem código do Watsonx Orchestrate para desenvolver o **Agente Order-to-Cash** especializado em auxiliar na colocação de pedidos, faturamento, aumento da satisfação do cliente, aceleração do fluxo de caixa e impacto mensurável nos resultados financeiros, integrando agentes inteligentes e sistemas corporativos. Em seguida, você adicionou conhecimento ao agente, enviando documentos de conhecimento em formato PDF que capturam informações O2C.

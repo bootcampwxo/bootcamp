@@ -47,7 +47,7 @@ Os principais benefícios comerciais observados por meio dessa transformação i
 - Maior satisfação do cliente por meio do atendimento de pedidos e faturamento oportunos, transparentes e confiáveis.
 - Melhorou a produtividade do agente e a confiança na tomada de decisões usando o RAG para exibir perguntas frequentes contextuais, caminhos de escalonamento e orientações sobre tratamento de exceções diretamente no fluxo de trabalho, eliminando o tempo perdido em pesquisas de documentos e escalonamentos desnecessários.
 
-## 🏛️ Arquitetura
+## Arquitetura
 
 <img alt="Order-to-Cash" src="./practitioner_docs/images/arch.png" width="1000">
 

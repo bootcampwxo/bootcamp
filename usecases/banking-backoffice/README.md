@@ -3,11 +3,13 @@
 ![](banking-automation-banner.png)
 
 ## 🤔 The Problem
+
 O GFM Bank está enfrentando desafios operacionais significativos devido à sua dependência de processos bancários tradicionais e manuais. Os clientes geralmente suportam longos tempos de espera: de 20 a 30 minutos para falar com um caixa e até 45 minutos a mais para aprovações de back-office. Esses atrasos são especialmente problemáticos durante as temporadas de pico e para solicitações complexas, como aprovações de cheque especial ou reversões de taxas. Além disso, os serviços estão disponíveis apenas durante o horário comercial, limitando a acessibilidade e a conveniência. A equipe está sobrecarregada com tarefas repetitivas, levando a ineficiências e experiências inconsistentes do cliente.
 
 ---
 
 ## 🎯 Objetivo
+
 O **GFM Bank Agentic AI System**, criado com o **Watson Orchestrate**, visa modernizar as operações bancárias implantando uma rede de agentes de IA inteligentes e colaborativos. Esses agentes automatizam tarefas rotineiras, agilizam fluxos de trabalho complexos e fornecem aos clientes um serviço rápido, confiável e 24 horas por dia, 7 dias por semana, garantindo a conformidade com os regulamentos bancários.
 
 ### 💡 Principais Recursos
@@ -46,9 +48,9 @@ O **GFM Bank Agentic AI System**, criado com o **Watson Orchestrate**, visa mode
 * Solução escalável que se adapta à demanda sazonal e ao volume de clientes
 ---
 
-## 🏛 Architecture
+## Arquitetura
 
-![Architecture](banking-backoffice-architecture.png)
+![Arquitetura](banking-backoffice-architecture.png)
 
 ---
 

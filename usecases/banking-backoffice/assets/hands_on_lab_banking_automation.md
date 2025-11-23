@@ -2,34 +2,34 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [🔍Introdução](#-introdução)
+- [🔍 Introdução](#-introdução)
 - [📊 Operações Bancárias](#-operações-bancárias)
-  - [Cenário do Usuário Atual](#Cenário-do-Usuário-Atual)
-  - [Futuro com Agentic AI](#Futuro-com-Agenticai)
-- [🏗️ Target Architecture with Agentic AI](#%EF%B8%8F-arquitetura-de-destino-com-agentic-ai)
-- [🔧 Instruções de Laboratório](#-Instruções-de-Laboratório)
-  - [Pré-requisitos](#pré-requisitos)
-  - [Visão Geral das Etapas do Laboratório](#Visão-Geral-das-Etapas-do-Laboratório)
-- [Conecte-se à sua instância atribuída do Watsonx Orchestrate](#Conecte-se-à-sua-instância-atribuída-do-Watsonx-Orchestrate)
-- [Agente de Back Office GFM](#Agente-de-Back-Office-GFM)
-  - [Crie o Agente de Back Office GFM](#Crie-o-Agente-de-Back-Office-GFM)
-  - [Teste e implante o Agente de Back Office GFM](#Teste-e-implante-o-Agente-de-Back-Office-GFM)
-- [Agente de caixa GFM](#Agente-de-caixa-GFM)
-  - [Criar Agente de Caixa GFM](#Criar-Agente-de-Caixa-GFM)
-  - [Teste e implante o Agente de Caixa GFM](#Teste-e-implante-o-Agente-de-Caixa-GFM)
-- [Agente de Informações sobre Produtos GFM](#Agente-de-Informações-sobre-Produtos-GFM)
-  - [Criar Agente de Informações do Produtos GFM](#Criar-Agente-de-Informações-sobre-Produtos-GFM)
-  - [Teste e implante o Agente de Informações do Produto GFM](#Teste-e-implante-o-Agente-de-Informações-do-Produto-GFM)
-- [Agente Orquestrador do Banco GFM](#Agente-Orquestrador-do-Banco-GFM)
-  - [Criar Agente de Orquestra do Banco GFM](#Crie-o-Agente-Orquestrador-do-Banco-GFM)
-  - [Adicione Agentes colaborativos](#Adicione-Agentes-colaborativos)
-  - [Teste e implante o Agente Orquestrador do Banco GFM](#Teste-e-implante-o-Agente-Orquestrador-do-Banco-GFM)
-- [Teste Sua Solução Bancária De Agentic IA](#Teste-Sua-Solução-Bancária-De-Agentic-AI)
-- [🎉 Parabéns. Você completou o laboratório](#-Parabéns)
+  - [Cenário do Usuário Atual](#cenário-do-usuário-atual)
+  - [Futuro com IA Agentic](#futuro-com-ia-agentic)
+- [Arquitetura de destino com Agentic AI](#arquitetura-de-destino-com-agentic-ai)
+- [🔧 Instruções de Laboratório](#-instruções-de-laboratório)
+  - [Pré requisitos](#pré-requisitos)
+  - [Visão Geral das Etapas do Laboratório](#visão-geral-das-etapas-do-laboratório)
+  - [Conecte-se à sua instância atribuída do Watsonx Orchestrate](#conecte-se-à-sua-instância-atribuída-do-watsonx-orchestrate)
+  - [Agente de Back Office GFM](#agente-de-back-office-gfm)
+    - [Crie o Agente de Back Office GFM](#crie-o-agente-de-back-office-gfm)
+    - [Teste e implante o Agente de Back Office GFM](#teste-e-implante-o-agente-de-back-office-gfm)
+  - [Agente de caixa GFM](#agente-de-caixa-gfm)
+    - [Criar Agente de Caixa GFM](#criar-agente-de-caixa-gfm)
+    - [Teste e implante o Agente de Caixa GFM](#teste-e-implante-o-agente-de-caixa-gfm)
+  - [Agente de Informações sobre Produtos GFM](#agente-de-informações-sobre-produtos-gfm)
+    - [Criar Agente de Informações sobre Produtos GFM](#criar-agente-de-informações-sobre-produtos-gfm)
+    - [Teste e implante o Agente de Informações do Produto GFM](#teste-e-implante-o-agente-de-informações-do-produto-gfm)
+  - [Agente Orquestrador do Banco GFM](#agente-orquestrador-do-banco-gfm)
+    - [Crie o Agente Orquestrador do Banco GFM](#crie-o-agente-orquestrador-do-banco-gfm)
+    - [Adicione Agentes colaborativos](#adicione-agentes-colaborativos)
+    - [Teste e implante o Agente Orquestrador do Banco GFM](#teste-e-implante-o-agente-orquestrador-do-banco-gfm)
+- [Teste Sua Solução Bancária De Agentic AI](#teste-sua-solução-bancária-de-agentic-ai)
+- [🎉 Parabéns!](#-parabéns)
+- [Você completou com sucesso o laboratório](#você-completou-com-sucesso-o-laboratório)
 - [🔊 Recurso adicional para experimentar: Interação por voz](#-recurso-adicional-para-experimentar-interação-por-voz)
-  - [✨ You successfully added Voice Configuration to your agent!](#-you-successfully-added-voice-configuration-to-your-agent)
+  - [✨ Você adicionou a Configuração de Voz ao seu agente com sucesso!](#-você-adicionou-a-configuração-de-voz-ao-seu-agente-com-sucesso)
 - [📚 Recursos](#-recursos)
-- [📄 Isenção de responsabilidade do código de amostra da IBM](#-ibm-sample-code-disclaimer)
 
 ## 🔍 Introdução
 
@@ -69,6 +69,7 @@ John, um cliente do GFM Bank, precisa fazer um pagamento urgente de €8.000, ma
 Esse processo normalmente leva de 1 a 2 horas do tempo de John e envolve vários membros da equipe.
 
 ### Futuro com IA Agentic
+
 Com o sistema alimentado por IA, você construirá hoje:
 
 1. John envia uma mensagem para o Agente Orquestrador do Banco GFM
@@ -81,7 +82,7 @@ Com o sistema alimentado por IA, você construirá hoje:
 
 Todo o processo leva minutos em vez de horas, e John nunca precisa sair de casa.
 
-## 🏗️ Arquitetura de destino com Agentic AI
+## Arquitetura de destino com Agentic AI
 
 ![Architecture](banking-backoffice-architecture.png)
 
@@ -89,7 +90,7 @@ Todo o processo leva minutos em vez de horas, e John nunca precisa sair de casa.
 
 Neste laboratório, você construirá uma solução completa de IA Agentic para o GFM Bank usando o watsonx Orchestrate. Você criará vários agentes especializados que trabalham juntos para lidar com solicitações de clientes.
 
-### Pré-requisitos
+### Pré requisitos
 - Compreensão básica das operações bancárias (por exemplo, transferência, verificação de saldo, cheque especial...)
 - Familiaridade com conceitos de agentes de IA (por exemplo, instruções, ferramentas, colaboradores...)
 
@@ -149,13 +150,19 @@ Suas competências:
     
   - Clique **Create**
  
-    ![Back Office Agent Description](./backoffice_ag_imgs/i2.png)
+![Back Office Agent Description](./backoffice_ag_imgs/i2.png)
 
 - Na página Agente de Back Office do GFM Bank, selecione o modelo "llama-3-405b-instruct" no menu suspenso no meio superior da página.
 
-  ![Select Model](./backoffice_ag_imgs/i15.png)
+![Select Model](./backoffice_ag_imgs/i15.png)
+
+- <b>Welcome Message:</b> Ainda durante a etapa de definição do tipo de agente, você também pode configurar uma mensagem de boas vindas que será exibida na interface para o usuário, como mostrado na imagem abaixo. Essa etapa é opcional e você pode definir algo como: Bem vindo ao Agente X
+<br>
+- <b>Quick start Prompts:</b> Esse passo também é opcional. Nessa sessão podemos definir atalhos para o usuário, essas mensagens serão exibidas para o usuário como botões na interface. Você pode criar esses botões clicando em `Add prompt +` e removê-los clicando no ícone de lixeira.  Para que essas opções apareçam na telinha de preview do lado direito da tela, use o ícone de restart para atualizar a interface. <b>Não é necessário sair da página.</b>
+<br>
 
 - Mantenha os padrões para as seções **Profile**, **Voice modality**, and **Knowledge**.
+
 - Na seção **Toolset**, clique no botão **Add tool**.
 
   ![Add Tool](./backoffice_ag_imgs/i3.png)
