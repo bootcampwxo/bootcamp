@@ -26,7 +26,7 @@ Nosso objetivo é claro: Deixar você à vontade com o <b>watsonx Orchestrate</b
 
 Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por conta própria. <b>Bora começar?</b>
 
-<h1 align="center">📍📍📍📍👇👇👇👇👇 IMPORTANTE 👇👇👇📍📍📍📍</h1>
+<h1 align="center">📍 IMPORTANTE 📍</h1>
 
 <b>PASSO 1:</b> [CLIQUE AQUI](https://bootcampwxo.github.io/bootcampwxo/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
 
@@ -47,7 +47,7 @@ Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por c
 
 [Clique aqui](usecases/ADK/README.md) para criar agentes utilizando o IBM watsonx Orchestrate Agent Development Kit (ADK)
 
-⚠️⚠️⚠️ <b>Este repositório é público apenas para fins de visualização.A  clonagem, redistribuição ou modificação não autorizada deste código é expressamente proibida.</b> ⚠️⚠️⚠️
+⚠️ <b>Este repositório é público apenas para fins de visualização.A  clonagem, redistribuição ou modificação não autorizada deste código é expressamente proibida.</b> ⚠️
 
 
 
