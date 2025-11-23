@@ -32,6 +32,7 @@ Neste laboratório, construiremos um agente de RH no Watsonx Orchestrate, utiliz
 
 
 ## Instruções:
+
 ### Abrir Agent Builder
 
 - Faça login na IBM Cloud (cloud.ibm.com). Navegue até o menu hambúrguer no canto superior esquerdo, depois até Lista de Recursos. Abra a seção de IA/Machine Learning. Você deve ver um serviço **watsonx Orchestrate**, clique para abrir.
