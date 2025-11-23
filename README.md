@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOkcNbMCZRZtz0U_JxAvafT3HFwkkdJhKalA&s" width="50" style="vertical-align: middle;" />
   <br />
-  <span style="font-size: 2rem; font-weight: bold;">Agentes de IA em Ação com watsonx Orchestrate</span>
+  <span style="font-size: 3rem; font-weight: bold;"><b> Agentes de IA em Ação com watsonx Orchestrate</b> </span>
 </p>
 <br>
 <h2 style="display: flex; align-items: center; gap: 10px; margin: 0;">
