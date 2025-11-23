@@ -109,13 +109,14 @@ Após a criação do Agente de IA, nesta seção, você passará pelo processo d
 
 <b>Observação:</b> para obter mais detalhes, consulte a documentação [Escolhendo um estilo de raciocínio para seu agente](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base?topic=agents-choosing-reasoning-style-your-agent) para entender a diferença e como ela afeta o comportamento do agente.
 
-- Model: Nessa opção você pode escolher o modelo de base de Inteligência Artificial generativa que trabalhará no seu agente, você pode manter como padrão ou alterar para outras opções disponíveis.
+- <b>Model:</b> Nessa opção você pode escolher o modelo de base de Inteligência Artificial generativa que trabalhará no seu agente, você pode manter como padrão ou alterar para outras opções disponíveis.
+<br>
+- <b>Welcome Message:</b> Ainda durante a etapa de definição do tipo de agente, você também pode configurar uma mensagem de boas vindas que será exibida na interface para o usuário, como mostrado na imagem abaixo. Essa etapa é opcional e você pode definir algo como: Bem vindo ao Agente X
+<br>
+- <b>Quick start Prompts:</b> Esse passo também é opcional. Nessa sessão podemos definir atalhos para o usuário, essas mensagens serão exibidas para o usuário como botões na interface. Você pode criar esses botões clicando em `Add prompt +` e removê-los clicando no ícone de lixeira.  Para que essas opções apareçam na telinha de preview do lado direito da tela, use o ícone de restart para atualizar a interface. <b>Não é necessário sair da página.</b>
+<br>
 
-- Welcome Message: Ainda durante a etapa de definição do tipo de agente, você também pode configurar uma mensagem de boas vindas que será exibida na interface para o usuário, como mostrado na imagem abaixo. Essa etapa é opcional e você pode definir algo como: Bem vindo ao Agente X
-
-- Quick start Prompts: Esse passo também é opcional. Nessa sessão podemos definir atalhos para o usuário, essas mensagens serão exibidas para o usuário como botões na interface. Você pode criar esses botões clicando em `Add prompt +` e removê-los clicando no ícone de lixeira.  Para que essas opções apareçam na telinha de preview do lado direito da tela, use o ícone de restart para atualizar a interface. Não é necessário sair da página.
-
-- Knowledge: A seção **Knowledge** é onde você pode adicionar conhecimento ao agente. Adicionar conhecimento aos agentes desempenha um papel crucial no aprimoramento de suas capacidades de conversação, fornecendo-lhes as informações necessárias para gerar respostas precisas e contextualmente relevantes para casos de uso específicos. Você pode enviar arquivos diretamente para o agente ou conectar-se a uma instância do Milvus ou Elasticsearch como um repositório de conteúdo. Por meio dessa interface de **Knowledge**, você pode habilitar seus agentes de IA para implementar o padrão de Geração Aumentada de Recuperação (RAG), um padrão de IA muito popular para fundamentar respostas em uma fonte confiável de dados, como uma base de conhecimento empresarial.
+- <b>Knowledge:</b> A seção **Knowledge** é onde você pode adicionar conhecimento ao agente. Adicionar conhecimento aos agentes desempenha um papel crucial no aprimoramento de suas capacidades de conversação, fornecendo-lhes as informações necessárias para gerar respostas precisas e contextualmente relevantes para casos de uso específicos. Você pode enviar arquivos diretamente para o agente ou conectar-se a uma instância do <b>Milvus</b>, </b>Elasticsearch, AstraDB ou algum outro banco de dados vetorial da sua preferência, como um repositório de conteúdo. Por meio dessa interface de  **Knowledge**, você pode habilitar seus agentes de IA para implementar o padrão de Geração Aumentada de Recuperação (RAG), um padrão de IA muito popular para fundamentar respostas em uma fonte confiável de dados, como uma base de conhecimento empresarial.
    
 *Observação: para obter mais detalhes, consulte a documentação [Adicionando conhecimento aos agentes](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-knowledge).*
 
@@ -123,9 +124,9 @@ Após a criação do Agente de IA, nesta seção, você passará pelo processo d
 
 *Observação: Para obter mais detalhes, consulte as seções [Adicionando ferramentas a um agente](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-tools) e [Adicionando agentes para orquestração](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-orchestration) da documentação.*
    
-- Behavior: Essa sessão de configuração do agente é onde você fornece instruções ao agente para definir como ele responde às solicitações e situações do usuário. Você pode configurar regras que determinam quando e como o agente deve agir. Essas regras ajudam o agente a se comportar de maneira previsível e consistente, proporcionando uma experiência perfeita ao usuário.
+- <b>Behavior:</b> Essa sessão de configuração do agente é onde você fornece instruções ao agente para definir como ele responde às solicitações e situações do usuário. Você pode configurar regras que determinam quando e como o agente deve agir. Essas regras ajudam o agente a se comportar de maneira previsível e consistente, proporcionando uma experiência perfeita ao usuário.
 
-*Observação: Para obter mais detalhes, consulte a documentação [Adicionando instruções aos agentes](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-instructions).
+<b>Observação:</b> Para obter mais detalhes, consulte a documentação [Adicionando instruções aos agentes](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-instructions).
 
 Por fim, após concluir a configuração do seu agente e testar seu desempenho, você pode **Implantar** o agente (indicado pela seta vermelha) para disponibilizá-lo no canal selecionado. No momento, o principal canal suportado é a página inicial do *Chat* que você acessa ao iniciar o watsonx Orchestrate pela primeira vez. O produto adicionará suporte a canais adicionais onde você poderá implantar seu(s) agente(s).
 
@@ -175,14 +176,14 @@ Você deverá ver as respostas sendo recuperadas dos documentos enviados e, em s
 
 ![wxo agent knowledge test](images/wxo-agent-knowledge-test-meta-amazon.png) 
 
-Neste momento, vale a pena refletir um pouco sobre o que você desenvolveu até agora. Você projetou um agente e o capacitou com uma base de conhecimento para que ele possa responder a consultas em contexto usando sua base de conhecimento. *Parabéns!!*
+Neste momento, vale a pena refletir um pouco sobre o que você desenvolveu até agora. Você projetou um agente e o capacitou com uma base de conhecimento para que ele possa responder a consultas em contexto usando sua base de conhecimento. *Parabéns!*
 
 Ao revisar a arquitetura, você concluiu a parte da solução agêntica que envolveu a criação do agente Analista Financeiro e sua capacitação com uma base de conhecimento (indicada com retângulos vermelhos na figura abaixo). Na próxima seção, você trabalhará no processo de criação do **Agente de API financeira** e o **Agente de pesquisa na Web**, que você adicionará como agentes colaboradores ao **Agente de analista financeiro**.
 
 ![wxo agent knowledge complete](images/wxo-financial-research-agent-knowledge-complete.png) 
 
 ## Criação e configuração do agente de API financeira
-Nesta seção, você desenvolverá o Agente de API Financeira, um dos agentes colaboradores especificamente habilitado para retornar dados de mercado e definições de glossários. Neste laboratório prático, o Agente de API Financeira conta com duas ferramentas: a **Ferramenta de Dados de Mercado**, que retorna preços de ações, e a **Ferramenta de Glossário**, que utiliza a Wikipédia para retornar definições de glossários. Na prática, este agente também pode acessar outras ferramentas internas, como as de modelagem do comportamento de ações ou previsão de preços de ações; a abordagem para capacitar o agente com essas ferramentas seria a mesma.
+Nesta seção, você desenvolverá o Agente que se conecta com uma _API_(Interface para comunicação entre sistemas e aplicativos) Financeira, um dos agentes colaboradores especificamente habilitado para retornar dados de mercado e definições de glossários. Neste laboratório prático, o Agente de API Financeira conta com duas ferramentas: a **Ferramenta de Dados de Mercado**, que retorna preços de ações, e a **Ferramenta de Glossário**, que utiliza a Wikipédia para retornar definições de glossários. Na prática, este agente também pode acessar outras ferramentas internas, como as de modelagem do comportamento de ações ou previsão de preços de ações; a abordagem para capacitar o agente com essas ferramentas seria a mesma.
 
 15 - Se você não estiver na página inicial do watsonx Orchestrate (interface de bate-papo), repita as etapas acima para garantir que você esteja conectado ao IBM Cloud, localize o serviço watsonx Orchestrate e inicie-o para acessar a página inicial.
 
@@ -206,7 +207,7 @@ Conforme explicado anteriormente, a descrição de um agente é importante, pois
 
 ![wxo agent tools](images/wxo-agent-tools.png) 
 
-19 - Na janela _pop-up_ de opções da ferramenta, selecione **Add from file or MCP Server** (anotado com retângulo vermelho) conforme ilustrado na figura abaixo.
+19 - Na janela _pop up_ de opções da ferramenta, selecione **Add from file or MCP Server** (anotado com retângulo vermelho) conforme ilustrado na figura abaixo.
 
 ![wxo tool options](images/wxo-tool-options.png) 
 
@@ -324,6 +325,8 @@ Observe a resposta baseada nas informações retornadas pela ferramenta Dados de
 ![wxo tool earnings](images/wxo-financial-api-agent-tool-earnings.png) 
 
 26 - Teste o **Agente de API Financeira** mais detalhadamente fazendo outra pergunta:  
+
+
 ```O que significa EBITDA?```
 
 Novamente, observe a resposta e expanda o link **Mostrar raciocínio** para rastrear o raciocínio do agente que, neste caso, acionou corretamente a ferramenta **Pesquisar na Wikipedia** (anotada com um oval vermelho).
@@ -334,7 +337,7 @@ Novamente, observe a resposta e expanda o link **Mostrar raciocínio** para rast
 
 ![wxo financial agent deploy](images/wxo-financial-api-agent-deploy.png) 
 
-Na página Deploy Agent, você tem a oportunidade de revisar a definição e configuração do agente e qualquer conhecimento ou ferramentas associados, bem como fornecer detalhes de conexão necessários para as ferramentas acessarem sistemas backend com credenciais. Para as ferramentas que estamos usando neste laboratório, nenhuma credencial é necessária e não há necessidade de configurar conexões. Clique em Deploy para implantar seu agente.
+No _pop up_ de Deploy Agent, você tem a oportunidade de revisar a definição e configuração do agente e qualquer conhecimento ou ferramentas associados, bem como fornecer detalhes de conexão necessários para as ferramentas acessarem sistemas backend com credenciais. Para as ferramentas que estamos usando neste laboratório, nenhuma credencial é necessária e não há necessidade de configurar conexões. Clique em Deploy para implantar seu agente.
 
 ![wxo financial agent deploy](images/wxo-financial-api-agent-deploy-conn.png) 
 
@@ -405,9 +408,9 @@ Agora clique em **Deploy** para implantar o agente e torná-lo disponível para 
 
 ![wxo web search agent deploy](images/wxo-web-search-agent-deploy.png) 
 
-*Parabéns!!* Você acabou de concluir o desenvolvimento do **Agente de Busca na Web**, equipado com ferramentas para pesquisar na web e recuperar informações relevantes.
+*Parabéns!* Você acabou de concluir o desenvolvimento do **Agente de Busca na Web**, equipado com ferramentas para pesquisar na web e recuperar informações relevantes.
 
-*Observação: Na seção opcional ao final do laboratório, você aprenderá como adicionar outra ferramenta baseada em uma ferramenta de busca na web MCP hospedada externamente*
+<b>Observação:</b> Na seção opcional ao final do laboratório, você aprenderá como adicionar outra ferramenta baseada em uma ferramenta de busca na web MCP hospedada externamente*
 
 ## Juntando tudo - Colaboração completa do agente <a id="pulling-it-together"></a>
 Agora que você desenvolveu todos os agentes e ferramentas, nesta seção, você trabalhará no processo de integração dos agentes colaboradores, testando e implantando o **Agente de Analista Financeiro**.
