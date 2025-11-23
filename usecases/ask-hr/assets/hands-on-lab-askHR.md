@@ -44,7 +44,7 @@ Clique no botão azul "Launch watsonx Orchestrate" como ilustrado na imagem abai
 
 Bem vindo ao <b>watsonx Orchestrate</b> 💙 
 
-Abra o menu hambúrguer, clique `Agent Builder`
+Abra o menu hambúrguer do lado esquerdo da interface, clique `Agent Builder`
 
 <img width="1000" alt="image" src="hands-on-lab-assets/step_1_v2.png">
 
