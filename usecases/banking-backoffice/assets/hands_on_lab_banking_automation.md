@@ -10,18 +10,15 @@
   - [Pré requisitos](#pré-requisitos)
   - [Visão Geral das Etapas do Laboratório](#visão-geral-das-etapas-do-laboratório)
   - [Agente de Back Office GFM](#agente-de-back-office-gfm)
-    - [Crie o Agente de Back Office GFM](#crie-o-agente-de-back-office-gfm)
     - [Teste e implante o Agente de Back Office GFM](#teste-e-implante-o-agente-de-back-office-gfm)
   - [Agente de caixa GFM](#agente-de-caixa-gfm)
     - [Criar Agente de Caixa GFM](#criar-agente-de-caixa-gfm)
     - [Teste e implante o Agente de Caixa GFM](#teste-e-implante-o-agente-de-caixa-gfm)
   - [Agente de Informações sobre Produtos GFM](#agente-de-informações-sobre-produtos-gfm)
-    - [Criar Agente de Informações sobre Produtos GFM](#criar-agente-de-informações-sobre-produtos-gfm)
     - [Teste e implante o Agente de Informações do Produto GFM](#teste-e-implante-o-agente-de-informações-do-produto-gfm)
   - [Agente Orquestrador do Banco GFM](#agente-orquestrador-do-banco-gfm)
     - [Crie o Agente Orquestrador do Banco GFM](#crie-o-agente-orquestrador-do-banco-gfm)
     - [Adicione Agentes colaborativos](#adicione-agentes-colaborativos)
-  - [🤝 O que são Agentes Colaborativos?](#-o-que-são-agentes-colaborativos)
     - [Teste e implante o Agente Orquestrador do Banco GFM](#teste-e-implante-o-agente-orquestrador-do-banco-gfm)
 - [Teste Sua Solução Bancária De Agentic AI](#teste-sua-solução-bancária-de-agentic-ai)
 - [🎉 Parabéns! Você completou com sucesso o laboratório](#-parabéns-você-completou-com-sucesso-o-laboratório)
@@ -128,9 +125,9 @@ Abra o menu de hambúrguer, clique em **Build** -> **Agent Builder**
 
 Este Agente lida com operações bancárias especiais para o GFM Bank que exigem privilégios elevados, como aprovação de cheque especial e processamento de reversões de taxas. Opera a partir do centro de operações do GFM Bank.
 
-#### Crie o Agente de Back Office GFM
+<b> Criando o Agente de Back Office GFM </b>
 
-- Clique em **Create Agent**
+Clique em **Create Agent**
 
 ![Create Agent](./backoffice_ag_imgs/i1.png)
 
@@ -167,34 +164,34 @@ Este Agente lida com operações bancárias especiais para o GFM Bank que exigem
 - <b>Quick start Prompts:</b> Esse passo também é opcional. Nessa sessão podemos definir atalhos para o usuário, essas mensagens serão exibidas para o usuário como botões na interface. Você pode criar esses botões clicando em `Add prompt +` e removê-los clicando no ícone de lixeira.  Para que essas opções apareçam na telinha de preview do lado direito da tela, use o ícone de restart para atualizar a interface. <b>Não é necessário sair da página.</b>
 <br>
 
-- Mantenha os padrões para as seções **Profile**, **Voice modality**, and **Knowledge**.
+Mantenha os padrões para as seções **Profile**, **Voice modality**, and **Knowledge**.
 
-- Na seção **Toolset**, clique no botão **Add tool**.
+Na seção **Toolset**, clique no botão **Add tool**.
 
 ![Add Tool](./backoffice_ag_imgs/i3.png)
 
-- Clique em **Import**.
+Clique em **Import**.
 
 ![Import file](./backoffice_ag_imgs/i4.png)
 
-- Clique em  **Import from file**
+Clique em  **Import from file**
 
 ![Import from file](./backoffice_ag_imgs/i16.png)
 
-- Faça Upload do arquivo de API `bank.json` API (o arquivo está disponível na pasta "3. Banking Backoffice" gerada após a descompactação do arquivo LABS.zip). Arraste e solte o arquivo na área designada.
+Faça Upload do arquivo de API `bank.json` API (o arquivo está disponível na pasta "3. Banking Backoffice" gerada após a descompactação do arquivo LABS.zip). Arraste e solte o arquivo na área designada.
 
 ![Upload spec file](./images/i38.png)
 
-- Assim que o arquivo for carregado, selecione **Next**. Seleciona as **Operações**  the "Processar uma reversão de taxa para uma conta" and Aprovar ou modificar o limite de cheque especial para uma conta" **Operations** e clique em **Done**
+Assim que o arquivo for carregado, selecione **Next**. Seleciona as **Operações**  the "Processar uma reversão de taxa para uma conta" and Aprovar ou modificar o limite de cheque especial para uma conta" **Operations** e clique em **Done**
 
 ![Select Tools](./backoffice_ag_imgs/i7.png)
 
-- Você deve ver o seguinte em **Tools**:
+Você deve ver o seguinte em **Tools**:
 
 ![Loaded tools](./backoffice_ag_imgs/i9.png)
 
-- Na seção **Behavior** . Adicione o seguinte texto às **Instruções**: 
-- 
+Na seção **Behavior** . Adicione o seguinte texto às **Instruções**: 
+
 ```
 Instruções Principais:
 - Execute somente operações explicitamente solicitadas pelos clientes
@@ -219,39 +216,50 @@ Seu cheque especial no valor de 2.000 euros foi aprovado
 Mantenha um tom profissional com a formalidade apropriada para um representante bancário com privilégios elevados.
 ```
 
-- Como este agente será um agente colaborador e será invocado pelo GFM Bank Orchestrator, não queremos habilitá-lo para bate-papo direto na página inicial do bate-papo. Desatile o recurso **Show agent** na seção **Channels**.
+Como este agente será **colaborador** e será invocado pelo **GFM Bank Orchestrator**, não queremos habilitá-lo para bate papo direto na página inicial.
 
-  ![Instructions](./backoffice_ag_imgs/i11.png)
+Para isso, **desative o recurso**:
+
+**Show agent** na seção **Channels** → *Desativado*
+
+Isso garante que o agente não apareça como disponível para interação direta, mantendo sua função apenas como parte do fluxo orquestrado.
+
+![Instructions](./backoffice_ag_imgs/i11.png)
 
 #### Teste e implante o Agente de Back Office GFM
 
-- Na janela de visualização à direita, teste com a seguinte consulta:
+Na janela de visualização à direita, teste com a seguinte consulta:
 
 ```
 Quero solicitar um limite de cheque especial de 1000 euros para minha conta IBAN DE89320895326389021994.
 ```
 
-- Clique em **Deploy** 
+Clique em **Deploy** 
 
-  ![Deploy](./backoffice_ag_imgs/i10.png)
+![Deploy](./backoffice_ag_imgs/i10.png)
 
-- Na página **Deploy Agent**, clique em **Deploy**
+Na página **Deploy Agent**, clique em **Deploy**
 
-  ![Deploy agent](./backoffice_ag_imgs/i13.png)
+![Deploy agent](./backoffice_ag_imgs/i13.png)
 
 ### Agente de caixa GFM
 
-Este Agente auxilia os clientes com tarefas bancárias diárias, como consultas de saldo e transferências de dinheiro. Responde apenas ao que é perguntado, evitando suposições ou ações proativas.
+Este agente auxilia os clientes com **tarefas bancárias do dia a dia**, como:
+
+- Consultas de saldo.
+- Transferências de dinheiro entre contas.
+
+Ele responde **somente ao que é perguntado**, evitando suposições ou ações proativas, garantindo uma experiência clara e segura para o cliente.
 
 #### Criar Agente de Caixa GFM
 
 - Clique no menu de hambúrguer, depois em  **Build** -> **Agent Builder**
 
-  ![Agent Builder](./images/i3.png)
+![Agent Builder](./images/i3.png)
 
 - Clique em **Create Agent**
 
-  ![Create Agent](./teller_ag_imgs/i2.png)
+![Create Agent](./teller_ag_imgs/i2.png)
 
 - Siga os passos de acordo com a captura de tela abaixo.
   - Selecione **Create from scratch**
@@ -279,49 +287,53 @@ Este Agente auxilia os clientes com tarefas bancárias diárias, como consultas 
  
     ![Create agent](./teller_ag_imgs/i5.png)
 
-- Na página do `Agente de Caixa GFM`, selecione o modelo "llama-3-405b-instruct" no menu suspenso no meio superior da página.
+Na página do `Agente de Caixa GFM`, selecione o modelo "llama-3-405b-instruct" no menu suspenso no meio superior da página.
 
-  ![Select model](./teller_ag_imgs/i20.png)
+![Select model](./teller_ag_imgs/i20.png)
 
-- Use os padrões para as seções **Profile**, **Voice modality**, e **Knowledge**. Na seção **Toolset**, clique no botão **Add tool**.
+Use os padrões para as seções **Profile**, **Voice modality**, e **Knowledge**. 
 
-  ![Add Tool](./teller_ag_imgs/i6.png)
+Na seção **Toolset**, clique no botão `Add tool`
 
-- Clique em **Import**.
+![Add Tool](./teller_ag_imgs/i6.png)
 
-  ![Import](./teller_ag_imgs/i7.png)
+Clique em `Import`
 
-- Clique em **Import from file**.
+![Import](./teller_ag_imgs/i7.png)
 
-  ![Import from file](./teller_ag_imgs/i21.png)
+Clique em **Import from file**.
 
-- Faça Upload do arquivo de API `bank.json` API (o arquivo está disponível na pasta "6. Banking Backoffice" gerada após a descompactação do arquivo LABS.zip). Arraste e solte o arquivo na área designada e clique em **Next**.
+![Import from file](./teller_ag_imgs/i21.png)
+
+Faça Upload do arquivo de API `bank.json` API (o arquivo está disponível na pasta `6. Banking Backoffice" gerada após a descompactação do arquivo LABS.zip). 
+
+Arraste e solte o arquivo na área designada e clique em `Next`
   
-  ![Upload spec file](./images/i38.png)
+![Upload spec file](./images/i38.png)
 
-- Selecione as **operações** "Verificar saldo da conta por IBAN" e "Transferir dinheiro entre IBANs" e clique **Done**.
+Selecione as **operações** "Verificar saldo da conta por IBAN" e "Transferir dinheiro entre IBANs" e clique `Done`
 
 ![Select Operations](./teller_ag_imgs/i10.png)
 
-- Você deve ver o seguinte em  **Tools**:
+Você deve ver o seguinte em  **Tools**:
   
 ![Uploaded tools](./teller_ag_imgs/i12.png)
 
-- Na seção **Agents**, clique em **Add Agent**
+Na seção **Agents**, clique em **Add Agent**
 
 ![Uploaded tools](./teller_ag_imgs/i16.png)
 
-- Clique **Add from local instance**
+Clique **Add from local instance**
 
 ![Uploaded tools](./teller_ag_imgs/i17.png)
 
-- Selecione **Agente de Back Office do GFM Bank** e depois **Add to Agent button**
+Selecione **Agente de Back Office do GFM Bank** e depois **Add to Agent button**
 
 ![Uploaded tools](./teller_ag_imgs/i18.png)
 
 ![Uploaded tools](./teller_ag_imgs/i19.png)
 
-- Vá para a seção **Behavior**. Adicione o seguinte em **Instructions**:
+Vá para a seção **Behavior**. Adicione o seguinte em **Instructions**:
 
   ```
   Responda apenas ao que o cliente solicitar explicitamente — nunca antecipe ou sugira próximos passos
@@ -353,37 +365,48 @@ Este Agente auxilia os clientes com tarefas bancárias diárias, como consultas 
   | May 13     | Purchase  | -30 EUR | Grocery Store        |
   ```
 
-- Como este agente será um agente colaborador e será invocado pelo Agente Orquestrador do GFM Bank, não queremos habilitá-lo para bate-papo direto na página inicial do bate-papo. Desatile o recurso **Show agent**.
+Como este agente será **colaborador** e será invocado pelo **Agente Orquestrador do GFM Bank**, não queremos habilitá-lo para bate-papo direto na página inicial.
+
+Para isso, **desative o recurso**:
+
+**Show agent** → *Desativado* na seção **Channels**.
+
+Isso garante que o agente não apareça como disponível para interação direta, mantendo sua função apenas como parte do fluxo orquestrado.
+
 
 ![Show agent toggle](./teller_ag_imgs/i14.png)
 
 #### Teste e implante o Agente de Caixa GFM
 
-- Na janela de visualização à direita, teste com a seguinte consulta:
+Na janela de visualização à direita, teste com a seguinte consulta:
 
 ```
 Qual é o saldo do IBAN da minha conta DE89320895326389021994
 ```
 
-- Clique em **Deploy** 
+Clique em `Deploy`
 
 ![Deploy](./teller_ag_imgs/i13.png)
 
-- Na tela de **Deploy Agent**, clique em **Deploy**. O Agente agora está disponível para que outras pessoas interajam.
+Na tela de **Deploy Agent**, clique em `Deploy`. O Agente agora está disponível para que outras pessoas interajam.
 
 ![Deploy agent](./teller_ag_imgs/i1.png)
   
 ### Agente de Informações sobre Produtos GFM
 
-Este Agente atua como especialista confiável em todos os produtos e serviços bancários oferecidos pelo GFM Bank. Ajuda os clientes a explorar e entender as soluções financeiras disponíveis com clareza e precisão.
+Este agente atua como um **especialista confiável em todos os produtos e serviços bancários** oferecidos pelo **GFM Bank**.  
+Seu objetivo é:
 
-#### Criar Agente de Informações sobre Produtos GFM
+- Ajudar os clientes a **explorar** as soluções financeiras disponíveis.
+- Fornecer informações com **clareza e precisão**, garantindo que o cliente compreenda cada opção antes de tomar decisões.
 
-- Clique no menu de hambúrguer, depois em **Build** -> **Agent Builder**
+Esse agente é essencial para oferecer uma experiência informativa e segura, orientando os clientes de forma profissional.
+
+Clique no menu de hambúrguer, depois em **Build** -> **Agent Builder**
 
 ![Agent Builder](./images/i3.png)
 
-- Na próxima tela, clique em **Create Agent**
+Na próxima tela, clique em **Create Agent**
 
 ![Create Agent](./prod_info_ag_imgs/i1.png)
 
@@ -409,24 +432,24 @@ Este Agente atua como especialista confiável em todos os produtos e serviços b
 
     Serviços Especializados – Banco internacional, gestão de patrimônio, negócios, seguros, planejamento financeiro.
     ```
-    
-  - Clique **Create**
-  - 
-[Prod Agent Description](./prod_info_ag_imgs/i2.png)
+  
+Clique em `Create`
 
-- Na página do `Informações do Produto GFMe, selecione o modelo "llama-3-405b-instruct" no menu suspenso na parte superior central da página.
+![Prod Agent Description](./prod_info_ag_imgs/i2.png)
+
+Na página do `Informações do Produto GFMe, selecione o modelo "llama-3-405b-instruct" no menu suspenso na parte superior central da página.
 
 ![Select model](./prod_info_ag_imgs/i14.png)
 
-- Na seção **Knowledge**. clique em **Choose knowledge**.
+Na seção **Knowledge**. clique em **Choose knowledge**.
 
 ![Choose knowledge](./prod_info_ag_imgs/i13.png)
 
-- Clique em **Upload files** e depois **Next**.
+Clique em **Upload files** e depois **Next**.
 
 ![Choose knowledge](./prod_info_ag_imgs/i12.png)
 
-- Carregue os documentos listados abaixo fornecidos pelo instrutor e clique **Next**
+Carregue os documentos listados abaixo fornecidos pelo instrutor e clique **Next**
 
   ```
   lista-de-precos-e-servicos.pdf
@@ -436,7 +459,7 @@ Este Agente atua como especialista confiável em todos os produtos e serviços b
   
 ![Upload Documents](./prod_info_ag_imgs/i11.png)
 
-- Na seção **Description**, adicione o seguinte e depois  **Save**:
+Na seção **Description**, adicione o seguinte e depois clique em `Save`:
 
 ```
 Esta base de conhecimento abrangente contém informações detalhadas sobre os produtos, serviços, taxas e procedimentos operacionais do GFM Bank, organizados nas seguintes categorias:
@@ -448,7 +471,7 @@ Esta base de conhecimento abrangente contém informações detalhadas sobre os p
 - Contas para Jovens e Estudantes: Requisitos de idade, recursos especiais, transição para contas para adultos
 - Requisitos para Abertura de Conta: Documentação, critérios de elegibilidade, processos online vs. na agência
 
-2. Produtos e Serviços de Cartão
+1. Produtos e Serviços de Cartão
 - Cartões de Débito: Recursos, medidas de segurança, recursos de pagamento por aproximação
 - Termos e Condições do Cartão de Débito: Contrato completo do titular do cartão, responsabilidades, resolução de disputas
 - Proteção contra Cheque Especial do Cartão: Requisitos de adesão, limites de cobertura, taxas associadas
@@ -456,37 +479,37 @@ Esta base de conhecimento abrangente contém informações detalhadas sobre os p
 - Segurança do Cartão: Gerenciamento de PIN, substituição do cartão, medidas de proteção contra fraudes
 Cartão Perdido/Roubado Procedimentos: Processo de denúncia, substituição emergencial, limitações de responsabilidade
 
-3. Serviços de Banco Digital
+1. Serviços de Banco Digital
 - Banco Móvel: Recursos do aplicativo, compatibilidade de dispositivos, medidas de segurança
 - Banco Online: Gerenciamento de contas, serviços de pagamento de contas, recursos de transferência
 - Recursos de Segurança: Métodos de autenticação, prevenção de fraudes, garantias de proteção ao cliente
 
-4. Taxas e Estrutura de Preços
+1. Taxas e Estrutura de Preços
 - Tabela de Tarifas Abrangente: Taxas de serviço, taxas de transação, multas
 - Programas de Isenção de Tarifas: Requisitos para evitar taxas mensais de manutenção
 - Estrutura de Tarifas de Caixas Eletrônicos: Taxas dentro da rede vs. fora da rede, custos de uso de caixas eletrônicos internacionais
 - Preços de Serviços de Investimento: Tabelas de comissões, taxas de administração, valores mínimos de conta
 - Considerações Especiais sobre Tarifas: Descontos para militares, benefícios para idosos, isenções para estudantes
 
-5. Produtos de Empréstimo
+1. Produtos de Empréstimo
 - Empréstimos Pessoais: Taxas, termos, requisitos para solicitação, prazos de aprovação
 - Empréstimos Imobiliários: Opções de hipoteca, linhas de crédito, oportunidades de refinanciamento
 - Empréstimos para Veículos: Financiamento de veículos novos e usados, estruturas de taxas, processo de pré-aprovação
 - Produtos de Construção de Crédito: Crédito com Garantia Opções de Contas de Investimento, Programas de Melhoria de Crédito
 
-6. Bancos Internacionais
+1. Bancos Internacionais
 - Serviços em Moeda Estrangeira: Taxas de câmbio, disponibilidade de moeda, procedimentos para solicitação
 - Transferências Eletrônicas Internacionais: Taxas, tempo de processamento, informações necessárias
 - Políticas de Transações Estrangeiras: Uso do cartão no exterior, taxas internacionais, taxas de conversão de moeda
 - Acesso a Caixas Eletrônicos Estrangeiros: Parcerias com redes globais de caixas eletrônicos, limites de saque e taxas associadas
 
-7. Serviços de Investimento
+1. Serviços de Investimento
 - Opções de Contas de Investimento: Contas individuais, contas de aposentadoria, poupança para educação
 - Produtos de Investimento: Fundos mútuos, títulos, ações, certificados de depósito
 - Serviços de Consultoria: Opções de contas administradas, recursos de planejamento financeiro
 - Estrutura de Taxas de Investimento: Taxas de administração, custos de transação, requisitos de saldo mínimo
 
-8. Recursos de Suporte ao Cliente
+1. Recursos de Suporte ao Cliente
 - Informações da Central de Atendimento: Números de contato, horário de funcionamento, procedimentos de escalonamento
 - Detalhes Bancários da Agência: Locais, horário de funcionamento, serviços disponíveis
 - Agendamento de Consultas: Processo para reunião com especialistas, preparação necessária
@@ -494,13 +517,13 @@ Cartão Perdido/Roubado Procedimentos: Processo de denúncia, substituição eme
 Cada tópico inclui informações atualizadas, divulgações regulatórias, quando aplicável, e referências cruzadas internas a produtos ou serviços relacionados para facilitar o atendimento completo ao cliente.
 ```
 
-  ![Prod Agent Knowledge Description](./prod_info_ag_imgs/i10.png)
+![Prod Agent Knowledge Description](./prod_info_ag_imgs/i10.png)
 
 Todos os arquivos e a descrição enviados como a imagem a seguir:
 
 ![Prod Agent Knowledge Description](./prod_info_ag_imgs/i9.png)
 
-- Na seção **Behavior**, adicione em **Instructions**:
+Na seção **Behavior**, adicione em **Instructions**:
   ```
   Diretrizes de Resposta:
   Ao descrever produtos:
@@ -615,11 +638,11 @@ Na janela de visualização à direita, teste com as seguintes consultas:
   Se eu digitar a senha do meu cartão 5 vezes, o que acontece?
   ```
 
-- Clique `Deploy`
+Clique em `Deploy`
 
 ![Deploy Agent](./prod_info_ag_imgs/i6.png)
 
-- Na página de **Deploy Agent**, clique em **Deploy**
+- Na página de **Deploy Agent**, clique em `Deploy`
 
 ![Deploy](./prod_info_ag_imgs/i8.png)
 
@@ -703,17 +726,16 @@ Clique no menu de hambúrguer, depois em **Build** -> **Agent Builder**
 
     Seu papel é crucial como a primeira impressão da qualidade do serviço do GFM Bank. Concentre-se em encaminhar com precisão e criar uma experiência positiva e fluida para o cliente.
     ```
-  Clique em  `Create`
+
+Clique em  `Create`
 
 ![Agent Description](./bank_orch_ag_imgs/i2.png)
 
-- Na página do `Orquestrador do Banco GFM`, selecione o modelo `llama-3-405b-instruct` no menu suspenso no meio superior da página.  
+Na página do `Orquestrador do Banco GFM`, selecione o modelo `llama-3-405b-instruct` no menu suspenso no meio superior da página.  
 
 ![Select model](./bank_orch_ag_imgs/i15.png)
 
 #### Adicione Agentes colaborativos
-
-### 🤝 O que são Agentes Colaborativos?
 
 Agentes colaborativos são **componentes de IA que trabalham juntos de forma coordenada** para executar tarefas complexas.   Cada agente é especializado em uma função específica, mas eles se comunicam entre si para entregar uma experiência integrada e eficiente.
 
@@ -726,15 +748,15 @@ Em vez de atuar isoladamente, esses agentes compartilham informações e dividem
 
 - **Experiência fluida**: O usuário interage com um sistema unificado, enquanto os agentes trabalham nos bastidores.
 
-- Na seção **Agents**, clique em **Add Agent**
+- Na seção **Agents**, clique em `Add Agent`
 
 ![Add Agents](./bank_orch_ag_imgs/i3.png)
 
-- Cliqyue **Add from local instance**
+- Clique em `Add from local instance`
 
 ![Local Instance](./bank_orch_ag_imgs/i4.png)
 
-- Selecione **Agente de caixa GFM**, **Informações do Produto GFM** e depois **Add to Agent button**
+- Selecione **Agente de caixa GFM**, **Informações do Produto GFM** e depois `Add to Agent button`
   
 ![Select Agents](./bank_orch_ag_imgs/i12.png)
 
@@ -794,7 +816,7 @@ Para clientes recorrentes, confirme o retorno com "Bem-vindo de volta ao GFM Ban
 Este Agente Orchestrator atua como um ponto central de encaminhamento para consultas de clientes, garantindo que cada cliente seja direcionado ao agente especializado mais bem equipado para atender às suas necessidades bancárias específicas com eficiência e precisão.
  ```
 
-  ![Agent Behavior](./bank_orch_ag_imgs/i7.png)
+![Agent Behavior](./bank_orch_ag_imgs/i7.png)
 
 #### Teste e implante o Agente Orquestrador do Banco GFM
 
