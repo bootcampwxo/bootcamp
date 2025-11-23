@@ -635,7 +635,8 @@ Expanda a seção `Show Reasoning` e observe que o agente tomou 2 passos para re
 ![wxo chat q3 reasoning](./images/img32.png)
 ![wxo chat q3 reasoning](./images/img33.png)
 
-Sinta-se à vontade para explorar e experimentar o poder dos Agentes em ação!
+
+> 💡 Dica: Teste diferentes cenários para entender como os agentes se adaptam às suas necessidades.
 
 ## Conclusão
 
