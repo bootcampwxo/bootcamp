@@ -5,7 +5,7 @@
 </p>
 
 <h2 style="display: flex; align-items: center; gap: 10px; margin: 0;">
-  <img src="docs/images/DistritoFederal.png" width="35" height="30" style="vertical-align: middle;">
+  <img src="docs/images/fortaleza.jpg" width="35" height="30" style="vertical-align: middle;">
   02 de Dezembro
 </h2>
 
