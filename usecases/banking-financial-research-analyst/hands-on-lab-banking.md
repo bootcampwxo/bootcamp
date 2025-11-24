@@ -246,13 +246,13 @@ O <b>watsonx Orchestrate</b> oferece suporte a várias abordagens para adicionar
 
 - Adicionar do catálogo: A opção **Add from catalog** permite adicionar uma ferramenta de um catálogo completo de ferramentas predefinidas. O catálogo de ferramentas está sendo desenvolvido ativamente para facilitar ainda mais a adição de ferramentas aos agentes.
 
-- Adicionar da instância local: A opção **Add from local instance** permite adicionar uma ferramenta de um conjunto existente de ferramentas já carregadas na instância local do Watsonx Orchestrate.
+- Adicionar da instância local: A opção **Add from local instance** permite adicionar uma ferramenta de um conjunto existente de ferramentas já carregadas na instância local do <b>watsonx Orchestrate.</b>
 
 - Importar: A opção **Add from file or MCP Server** permite importar uma ferramenta externa usando uma especificação OpenAPI ou a partir de um MCP Server:
 
 - Importar ferramentas de uma OpenAPI: Você pode importar uma ferramenta externa usando uma especificação OpenAPI e selecionar quais operações você deseja importar como ferramentas.
 
-- Importar ferramentas de um servidor MCP: Conecte-se a um servidor Model Context Protocol (MCP) e importe ferramentas externas. Se você não estiver familiarizado com isso, MCP é um padrão para conectar Agentes de IA a sistemas onde os dados residem, incluindo repositórios de conteúdo, ferramentas de negócios e ambientes de desenvolvimento. MCP está se tornando cada vez mais popular como o padrão para capacitar agentes com ferramentas.
+- Importar ferramentas de um servidor MCP: Você pode **conectar-se a um servidor Model Context Protocol (MCP)** para importar ferramentas externas.  O MCP é um padrão que conecta agentes de IA a sistemas onde os dados estão armazenados, como: Repositórios de conteúdo, Ferramentas de negócios e Ambientes de desenvolvimento. Esse padrão está se tornando cada vez mais popular por **capacitar agentes com acesso a ferramentas externas**, ampliando suas capacidades.
 
 - Criar um novo fluxo: A opção **Create a new flow** fornece uma interface de construtor de ferramentas com recurso de arrastar e soltar para criar uma sequência de etapas que utiliza controles e atividades condicionais.
 
@@ -344,7 +344,9 @@ Você é um Agente Analista Financeiro que fornece pesquisas e análises finance
 As tools que utilizam "statement_type", esperam o conteúdo em inglês que precisa ser traduzido para uso interno para um dos seguintes valores: 'income', 'balance', 'cashflow'.
 ```
 
-Além disso, desative a barra deslizante  para desativar o acesso do **Agente da API Financeira** na interface de chat. Este agente é apenas um agente de suporte ao **Agente Analista Financeiro** e, portanto, deve ser desativado para não aparecer na interface de chat.
+Em **Channnels**, **Localize o botão de switch** correspondente e **Desative a barra deslizante** para impedir que ele apareça na interface de chat.
+
+> **Por que desativar?**  Este agente é apenas um **suporte ao Agente Analista Financeiro** e não deve ser exibido diretamente para interação no chat.
 
 ![wxo financial agent behavior](images/wxo-financial-api-agent-behavior.png)
 
@@ -466,7 +468,13 @@ Agora que você desenvolveu todos os agentes e ferramentas, nesta seção, você
 
 ![wxo financial analyst collaborator agents](images/wxo-financial-analyst-agent-collaborator-agents.png) 
 
-43 - Na janela _pop up_, selecione **Add from local instance** tile. Para referência, o watsonx Orchestrate oferece suporte a diversas abordagens para adicionar agentes de colaboração. Reserve um minuto para consultar a documentação [Adicionando agentes para orquestração](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-orchestration) para obter uma visão geral das diferentes abordagens, incluindo a opção de adicionar um agente de colaboração a partir de um catálogo completo de agentes pré-criados ou de outros agentes definidos na instância local, ou até mesmo importar um agente externo.
+43 - Na janela _pop up_, clique em `Add from local instance`. 
+
+-------
+> O <b>watsonx Orchestrate</b> oferece suporte a diversas abordagens para adicionar agentes de colaboração. 
+> 
+> Reserve um minuto para consultar a documentação [Adicionando agentes para orquestração](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-orchestration) para obter uma visão geral das diferentes abordagens, incluindo a opção de adicionar um agente de colaboração a partir de um catálogo completo de agentes pré criados ou de outros agentes definidos em uma instância local, ou, até mesmo importar um agente externo.
+-------
 
 ![wxo collaborator agent options](images/wxo-collaborator-agents-options.png) 
 
