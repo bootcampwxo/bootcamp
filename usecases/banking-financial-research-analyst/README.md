@@ -11,7 +11,7 @@
 
 ## 🥇 Agente Analista Financeiro
 
-<img width="900" alt="image" src="images/blue_aurum_img.png">
+![Agente Analista Financeiro](images/blue_aurum_img.png)
 
 ## 🤔 O Problema
 
@@ -66,7 +66,7 @@ Essa arquitetura é composta por agentes especializados, que trabalham de forma 
 
 Este sistema aproveita o poder do [watsonx Orchestrate](https://www.ibm.com/products/watsonx-orchestrate), a plataforma da IBM de no-code/low-code/pro-code para soluções com agentes de IA, e do [watsonx.ai](https://www.ibm.com/products/watsonx-ai), a plataforma da IBM para hospedagem de modelos de base como LLMs (Modelos de Linguagem de Grande Escala).
 
-<img width="900" alt="image" src="images/banking-fra-architecture.png">
+![Arquitetura - Agente Analista Financeiro](images/banking-fra-architecture.png)
 
 ------
 
