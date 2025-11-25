@@ -31,7 +31,7 @@ Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por c
 
 <h1 align="center">📍 IMPORTANTE 📍</h1>
 
-<b>PASSO 1:</b> [CLIQUE AQUI](https://bootcampwxo.github.io/bootcampwxo/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
+<b>PASSO 1:</b> [CLIQUE AQUI](https://bootcampwxo.github.io/bootcamp/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
 
 <b>PASSO 2:</b> Escolha o caso de uso e mãos a obra <br>
 
