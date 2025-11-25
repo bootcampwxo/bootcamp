@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Wxo Bootcamp</title>
+<style>
+/* Reset & scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: auto !important;
+  overflow-y: auto !important;
+}
+body {
+  position: relative;
+  font-family: 'Montserrat', system-ui, -apple-system, Arial, sans-serif;
+  font-size: 125%;
+  color: #111111;
+  background: none !important; /* ensure background comes from html::before */
+}
+
+/* Full-page background with light overlay (for contrast) */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.70), rgba(255,255,255,0.70)),
+    url('https://bootcampwxo.github.io/bootcampwxo/req/IBM_watsonx.png') center center / cover no-repeat;
+  z-index: -1;
+}
+
+/* Images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Keep the agent floating and not blocking scroll */
+#root {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Defensive: prevent any full-screen fixed overlay from hijacking scroll */
+[style*="position: fixed"][style*="width: 100%"][style*="height: 100%"] {
+  pointer-events: none;
+}
+</style></head>
+<body>
+<h2 id="dados-necessários-para-os-labs">DADOS NECESSÁRIOS PARA OS
+LABS</h2>
+<p style="font-size: 1.5em; color: red; font-weight: bold;">API_KEY = XXXXXXXXXXXXXXXX-</p><p>Siga os passos abaixo:</p>
+<ol type="1">
+<li>Faça o download do aquivo LABS.zip para o seu compudador clicando no
+link abaixo:<br/></li>
+</ol>
+<p><a href="https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/LABS5.zip" target="_blank">https://ibm.biz/BdeEFb</a></p>
+<ol start="2" type="1">
+<li>Descompacte o arquivo zip <br/></li>
+</ol>
+<ul>
+<li>Clique com o botão direito do mouse sobre o arquivo e selecione
+“Extract All” ou “Extrair Tudo”</li>
+</ul>
+<p><img alt="image" src="https://bootcampwxo.github.io/bootcampwxo/req/turma2/extrair.png" style="width:50%; height:auto; display:block; margin:auto;" width="1000"/></p>
+<ul>
+<li>Será gerada uma estrutura de diretórios conforme figura abaixo. Cada
+pasta contém os arquivos necessários para os laboratórios
+correspondentes.</li>
+</ul>
+<p><img alt="image" src="https://bootcampwxo.github.io/bootcampwxo/req/turma2/estrutura1.png" style="width:50%; height:auto; display:block; margin:auto;" width="1000"/></p>
+<ol start="3" type="1">
+  <li>
+    Para o lab "Banking Backoffice" você tem a opção de integrar com canal de voz. Caso deseje testar canais de voz utilize os dados:
+    <br><br>
+
+    <strong>Speech to Text:</strong><br>
+    URL: https://api.au-syd.speech-to-text.watson.cloud.ibm.com/instances/3a9f664a-627b-452f-9e6d-b808239e7e82<br>
+    API KEY: XXXXXXXXXXXXXXXX
+    <br><br>
+
+    <strong>Text to Speech:</strong><br>
+    URL: https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/7e07dece-adc0-45cd-b325-1f1e21170d96<br>
+    API KEY: XXXXXXXXXXXXXXXX
+  </li>
+</ol>
+<ol start="4" type="1">
+<li>Durante os labs, o agente irá solicitar algumas
+informações (Nome, número de conta, etc). <span style="font-weight:bold; color:#c00;">Utilize agente ao lado para obter as informações</span> →</li>
+</ol>
+<p>
+<a href="https://bootcampwxo.github.io/bootcampwxo/wxo_ai_agent_la1x.html" target="_blank">
+<img alt="Dados de Acesso" src="https://img.shields.io/badge/🤖 🤖 Consulta DadosLABS%20-blue?style=for-the-badge" style="transform: scale(1.5);"/> </a>
+</p>
+<div id="root">
+</div>
+<script>
+  window.wxOConfiguration = {
+    orchestrationID: "20240520-1149-0230-601a-ac533db16138_20250528-1749-3727-6091-a6e9a5607ebd",
+    hostURL: "https://dl.watson-orchestrate.ibm.com",
+    rootElementID: "root",
+    chatOptions: {
+        agentId: "c6c362b3-4d38-4863-ba37-cb628bd076ca", 
+        agentEnvironmentId: "399803c4-7402-4199-a361-cd880aacec3f",
+    },
+    layout: {
+//      form: "fullscreen-overlay", // Options: float | custom | fullscreen-overlay - if not specified float is default
+      form: "float", // Options: float | custom | fullscreen-overlay - if not specified float is default
+      showOrchestrateHeader: true, // Optional: shows top agent header bar
+      width: "600px", // Optional: honored when form is float only
+      height: "600px", // Optional: honored when form is float only
+    },
+  };
+  setTimeout(function () {
+    const script = document.createElement('script');
+    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+    script.addEventListener('load', function () {
+        wxoLoader.init();
+    });
+    document.head.appendChild(script);
+  }, 0);
+  </script>
+</body>
+</html>
