@@ -5,7 +5,7 @@
 </h3>
 
 <h2 style="display: flex; align-items: center; gap: 10px; margin: 0;">
-  <img src="/docs/images/fortaleza.png" width="35" height="30" style="vertical-align: middle;">
+  <img src="/docs/images/DistritoFederal.png" width="35" height="30" style="vertical-align: middle;">
   BRASÍLIA - 02/12/2025
 </h2>
 
