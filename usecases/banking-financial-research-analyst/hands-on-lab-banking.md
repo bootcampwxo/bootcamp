@@ -234,35 +234,34 @@ Conforme explicado anteriormente, a descrição de um agente é importante, pois
 
 ![wxo create financial api agent](images/wxo-create-financial-api-agent.png) 
 
-18 - Na página de configuração do agente, role para baixo até **Toolset** ou clique no atalho. Em seguida, clique no botão **Add tool**  (anotado com seta vermelha na imagem) para abrir a janela para adicionar ferramentas ao agente.
+18 - Role para baixo até a seção **Toolset**. Clique em **Add tool +**:
 
-![wxo agent tools](images/wxo-agent-tools.png) 
+![wxo agent tools](images/wxo-agent-tools_v2.png) 
 
-19 - Na janela _pop up_ de opções da ferramenta, selecione `Add from file or MCP Server` conforme ilustrado na figura abaixo.
+19 - Na janela _pop up_:
 
-![wxo tool options](images/wxo-tool-options.png) 
+- Criar um novo fluxo: A opção **Agentic Workflow** fornece uma interface de construtor de ferramentas com recurso de arrastar e soltar para criar uma sequência de etapas que utiliza controles e atividades condicionais.
 
-O <b>watsonx Orchestrate</b> oferece suporte a várias abordagens para adicionar ferramentas a agentes, conforme explicado na documentação [Adicionando ferramentas a um agente](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-tools):
 
-- Adicionar do catálogo: A opção **Add from catalog** permite adicionar uma ferramenta de um catálogo completo de ferramentas predefinidas. O catálogo de ferramentas está sendo desenvolvido ativamente para facilitar ainda mais a adição de ferramentas aos agentes.
+- Adicionar do catálogo: A opção **Catalog** permite adicionar uma ferramenta de um catálogo completo de ferramentas predefinidas. O catálogo de ferramentas está sendo desenvolvido ativamente para facilitar ainda mais a adição de ferramentas aos agentes.
 
-- Adicionar da instância local: A opção **Add from local instance** permite adicionar uma ferramenta de um conjunto existente de ferramentas já carregadas na instância local do <b>watsonx Orchestrate.</b>
+- Adicionar da instância local: A opção **Local instance** permite adicionar uma ferramenta de um conjunto existente de ferramentas já carregadas na instância local do <b>watsonx Orchestrate.</b>
 
-- Importar: A opção **Add from file or MCP Server** permite importar uma ferramenta externa usando uma especificação OpenAPI ou a partir de um MCP Server:
+- Importar: A opção **MCP Server** permite importar uma ferramenta externa usando uma especificação OpenAPI ou a partir de um MCP Server:
 
 - Importar ferramentas de uma OpenAPI: Você pode importar uma ferramenta externa usando uma especificação OpenAPI e selecionar quais operações você deseja importar como ferramentas.
 
-- Importar ferramentas de um servidor MCP: Você pode **conectar-se a um servidor Model Context Protocol (MCP)** para importar ferramentas externas.  O MCP é um padrão que conecta agentes de IA a sistemas onde os dados estão armazenados, como: Repositórios de conteúdo, Ferramentas de negócios e Ambientes de desenvolvimento. Esse padrão está se tornando cada vez mais popular por **capacitar agentes com acesso a ferramentas externas**, ampliando suas capacidades.
+Selecione **Open API**:
 
-- Criar um novo fluxo: A opção **Create a new flow** fornece uma interface de construtor de ferramentas com recurso de arrastar e soltar para criar uma sequência de etapas que utiliza controles e atividades condicionais.
+![wxo tool options](images/wxo-tool-options_v2.png) 
 
-Além disso, você pode usar o [Agentic Development Kit (ADK)](https://developer.watson-orchestrate.ibm.com/) do <b>watsonx Orchestrate para</b> desenvolver e carregar ferramentas Python e OpenAPI em uma instância específica do watsonx Orchestrate, que você pode então adicionar aos agentes.
+O <b>watsonx Orchestrate</b> oferece suporte a várias abordagens para adicionar ferramentas a agentes, conforme explicado na documentação [Adicionando ferramentas a um agente](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=agents-adding-tools):
 
-Para fins do Agente de API Financeira, você usará a opção **Import** para importar uma especificação OpenAPI e definir quais operações importar como ferramentas. Você precisará do arquivo financial_api_openapi.json (o arquivo `financial_api_openapi.json` está na pasta "2. Agente Financeiro" gerada após a descompactação do arquivo LABS.zip).
 
-Selecione `Import from File`
+> Além disso, você pode usar o [Agentic Development Kit (ADK)](https://developer.watson-orchestrate.ibm.com/) do <b>watsonx Orchestrate para</b> desenvolver e carregar ferramentas Python e OpenAPI em uma instância específica do watsonx Orchestrate, que você pode então adicionar aos agentes.
 
-![wxo create agent chatUI](images/wxo-create-agent_import.png)
+Acesse o arquivo `financial_api_openapi.json` (o arquivo `financial_api_openapi.json` está na pasta "2. Agente Financeiro" gerada após a descompactação do arquivo LABS.zip).
+
 
 21 - Na página da ferramenta Importar, arraste e solte o arquivo e clique em **Next**
 
@@ -407,11 +406,11 @@ Este agente pode pesquisar na web para recuperar informações relacionadas à c
 
 ![wxo create web search agent](images/wxo-create-web-search-agent.png) 
 
-31 - Na página de configuração do agente, role para baixo até a seção **Toolset** ou clique no atalho **Toolset** shortcut e clique em **Add tool**.
+31 - Na página de configuração do agente, role para baixo até a seção **Toolset** ou clique no atalho **Toolset** shortcut e clique em **Add tool +**.
 
 ![wxo web search agent toolset](images/wxo-web-search-agent-toolset.png) 
 
-32 - Conforme explicado anteriormente, o Watsonx Orchestrate oferece suporte a diversas abordagens para adicionar ferramentas aos agentes. Para o Agente de Pesquisa na Web, você aproveitará a funcionalidade de **Import** como você fez antes. Clique em `Import`
+32 - Conforme explicado anteriormente, o watsonx Orchestrate oferece suporte a diversas abordagens para adicionar ferramentas aos agentes. Para o Agente de Pesquisa na Web, você aproveitará a funcionalidade de **Import** como você fez antes. Clique em `Import`
 
 ![wxo web search tool import](images/wxo-web-search-tool-import.png) 
 

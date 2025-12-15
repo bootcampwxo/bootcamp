@@ -233,14 +233,13 @@ A descrição de um agente é importante, pois ela é aproveitada pela solução
 
 ![wxo create customer support agent](./images/img1.png) 
 
-13 -  Na página de configuração do agente, role para baixo até a seção **Toolset** ou clique no atalho. Em seguida, clique no botão **Add tool** para abrir a janela para adicionar ferramentas ao agente.
+13 -  Na página de configuração do agente, role para baixo até a seção **Toolset** ou clique no atalho. Em seguida, clique no botão **Add tool +** para abrir a janela para adicionar ferramentas ao agente.
 
-![wxo agent tools](./images/img3.png) 
+![wxo tool options](./images/img3.png) 
 
-14 - Na janela _pop up_ de opções da ferramenta, selecione **Import** conforme ilustrado na figura abaixo.
+14 - Na janela _pop up_, selecione **Open API**:
 
-![wxo tool options](./images/img4.png) 
-![wxo tool options](./images/img4.1.png) 
+![wxo tool options](./images/img4_v2.png) 
 
 O <b>watsonx Orchestrate</b> oferece suporte a diversas abordagens para adicionar ferramentas aos agentes:
 

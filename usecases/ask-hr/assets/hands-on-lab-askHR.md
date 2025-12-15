@@ -81,7 +81,7 @@ Ou simplesmente deixar em branco para manter as mensagens padrão.
 
 <img width="1000" alt="image" src="hands-on-lab-assets/step_6-1_v4.png">
 
-A seguir,podemos definir mensagens de atalho. Essas mensagens serão exibidas para o usuário como botões na interface, funcionando como atalhos para ações.
+A seguir, podemos definir mensagens de atalho. Essas mensagens serão exibidas para o usuário como botões na interface, funcionando como atalhos para ações.
 
 Por exemplo:
 
@@ -118,17 +118,13 @@ Esta base de conhecimento aborda os benefícios dos funcionários da empresa, in
 
 8. Role para baixo até a seção **Toolset**. Clique em **Add tool +**:
 
-<img width="1000" alt="image" src="hands-on-lab-assets/step_9_v3.png">
+<img width="1000" alt="image" src="hands-on-lab-assets/step_9_v4.png">
 
-9. Selecione **Add from file or MCP server**:
+9. Na janela _pop up_,  Selecione **Open API**:
 
-<img width="1000" alt="image" src="hands-on-lab-assets/step_10_v4.png">
+<img width="1000" alt="image" src="hands-on-lab-assets/step_10_v5.png">
 
-10. Selecione **Import from file**:
-
-<img width="1000" alt="image" src="hands-on-lab-assets/step_11_v3.png">
-
-11. Arraste e solte ou clique para carregar o arquivo **hr.yaml** (Arquivo `hr.yaml` dentro da pasta "1. AskRH" gerada após descompactar o LABS.zip) , então clique em **Next**:
+10.  Arraste e solte ou clique para carregar o arquivo **hr.yaml** (Arquivo `hr.yaml` dentro da pasta "1. AskRH" gerada após descompactar o LABS.zip) , então clique em **Next**:
 
 <img width="1000" alt="image" src="hands-on-lab-assets/step_12_v3.png">  
 

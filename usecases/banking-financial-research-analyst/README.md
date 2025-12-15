@@ -86,7 +86,7 @@ Tudo isso para ajudar os analistas a encontrar informações relevantes rapidame
 
 ## 📝 Laboratório Prático Passo a Passo
 
-👉 [Clique aqui](hands-on-lab-banking.md) para acessar as instruções detalhadas aqui e começar agora mesmo!
+👉👉👉 [Clique aqui](hands-on-lab-banking.md) para acessar as instruções detalhadas aqui e começar agora mesmo!
 
 ## 🎥 Vídeo de Demonstração
 

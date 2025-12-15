@@ -5,8 +5,8 @@
 </h3>
 
 <h2 style="display: flex; align-items: center; gap: 10px; margin: 0;">
-  <img src="/docs/images/bandeira-estado-minas.png" width="35" height="30" style="vertical-align: middle;">
-  Belo Horizonte - 10/12/2025
+  <img src="/docs/images/recife.png" width="40" height="20" style="vertical-align: middle;">
+  27 de Novembro
 </h2>
 
 <img src="/bootcamp.png" width="600" height="400" style="display:block; margin-left:auto; margin-right:auto;" />
@@ -17,7 +17,7 @@ Neste bootcamp, você vai aprender a criar e implantar agentes de Inteligência 
 
 🚀 Explore o IBM Watsonx e ferramentas open source para prototipar rapidamente, com pouco código.
 
-🚀  Descubra como colocar um aplicativo Agentic AI em produção, incluindo práticas para garantir confiança e segurança.
+🚀 Descubra como colocar um aplicativo Agentic AI em produção, incluindo práticas para garantir confiança e segurança.
 
 ## Por favor, leia atentamente antes de prosseguir
 
@@ -31,7 +31,7 @@ Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por c
 
 <h1 align="center">📍 IMPORTANTE 📍</h1>
 
-<b>PASSO 1:</b> [CLIQUE AQUI](https://bootcampwxo.github.io/bootcamp/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
+<b>PASSO 1:</b> [CLIQUE AQUI](https://bootcampwxo.github.io/bootcampwxo/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
 
 <b>PASSO 2:</b> Escolha o caso de uso e mãos a obra <br>
 

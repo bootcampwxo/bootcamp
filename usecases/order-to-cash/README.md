@@ -5,7 +5,7 @@
   - [🎯 Objetivo](#-objetivo)
   - [📊 Valor para o negócio](#-valor-para-o-negócio)
   - [Arquitetura](#arquitetura)
-  - [�‍💻👨‍💻 Laboratório prático passo a passo](#-laboratório-prático-passo-a-passo)
+  - [👩‍💻👨‍💻 Laboratório prático passo a passo](#-laboratório-prático-passo-a-passo)
   - [🎥 Demo](#-demo)
 
 
@@ -64,7 +64,7 @@ Entre os principais benefícios estão:
 
 ## 👩‍💻👨‍💻 Laboratório prático passo a passo
 
-👉 [Clique aqui](./practitioner_docs/hands-on-lab.md) paraimplementar este caso de uso nos dois fluxos de trabalho disponíveis.
+👉👉👉 [Clique aqui](./practitioner_docs/hands-on-lab.md) paraimplementar este caso de uso nos dois fluxos de trabalho disponíveis.
 
 
 ## 🎥 Demo

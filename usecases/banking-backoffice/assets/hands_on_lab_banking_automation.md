@@ -168,15 +168,11 @@ Mantenha os padrões para as seções **Profile**, **Voice modality**, and **Kno
 
 Na seção **Toolset**, clique no botão **Add tool**.
 
-![Add Tool](./backoffice_ag_imgs/i3.png)
+![Add Tool](./backoffice_ag_imgs/i3_v2.png)
 
-Clique em **Import**.
+Na janela _pop up_, selecione **Open API**:
 
 ![Import file](./backoffice_ag_imgs/i4.png)
-
-Clique em  **Import from file**
-
-![Import from file](./backoffice_ag_imgs/i16.png)
 
 Faça Upload do arquivo de API `bank.json` API (o arquivo está disponível na pasta "3. Banking Backoffice" gerada após a descompactação do arquivo LABS.zip). Arraste e solte o arquivo na área designada.
 

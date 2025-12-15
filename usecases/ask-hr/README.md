@@ -83,4 +83,4 @@ Este laboratório usa um simulador para um sistema de Gestão de Capital Humano.
 
 ## 👩‍💻👨‍💻 Laboratório prático passo a passo
 
-👉 [Clique aqui](assets/hands-on-lab-askHR.md) para executar as instruções passo a passo aqui e implemente este caso de uso agora mesmo. 
+👉👉👉 [Clique aqui](assets/hands-on-lab-askHR.md) para executar as instruções passo a passo aqui e implemente este caso de uso agora mesmo. 
