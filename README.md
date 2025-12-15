@@ -5,8 +5,8 @@
 </h3>
 
 <h2 style="display: flex; align-items: center; gap: 10px; margin: 0;">
-  <img src="/docs/images/recife.png" width="40" height="20" style="vertical-align: middle;">
-  27 de Novembro
+  <img src="/docs/images/crist.png" width="40" height="20" style="vertical-align: middle;">
+  18 de Dezembro - Rio de Janeiro
 </h2>
 
 <img src="/bootcamp.png" width="600" height="400" style="display:block; margin-left:auto; margin-right:auto;" />
