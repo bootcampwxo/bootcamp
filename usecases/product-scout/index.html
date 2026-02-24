@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FreshLane Market — Mock Grocery + Chat</title>
+  <meta name="description" content="Mock grocery storefront shell with slot for an embedded chat widget via <script>." />
+  <style>
+    :root{
+      --brand-50:#ecfdf5; --brand-100:#d1fae5; --brand-200:#a7f3d0; --brand-300:#6ee7b7;
+      --brand-400:#34d399; --brand-500:#10b981; --brand-600:#059669; --brand-700:#047857;
+      --ink:#0f172a; --muted:#475569; --bg:#ffffff; --card:#ffffff; --line:#e2e8f0;
+      --accent:#f59e0b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:var(--brand-700);text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line);backdrop-filter:saturate(160%) blur(6px)}
+    .topbar{display:flex;align-items:center;gap:14px;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:0.2px}
+    .logo .mark{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand-500),var(--brand-700));display:grid;place-items:center;color:#fff;font-weight:700}
+    .search{flex:1;display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:8px 12px;gap:8px}
+    .search input{border:0;outline:0;flex:1;font-size:14px}
+    .search button{border:0;background:var(--brand-600);color:#fff;border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer}
+    nav{display:flex;gap:18px;padding:8px 0 14px}
+    nav a{color:var(--muted);font-weight:600}
+    nav a:hover{color:var(--ink)}
+
+    /* Hero */
+    .hero{margin:20px 0;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1.1fr 0.9fr;min-height:240px}
+    .hero .left{padding:28px 28px;background:linear-gradient(135deg,var(--brand-50),#fff)}
+    .hero h1{margin:0 0 8px;font-size:28px}
+    .hero p{margin:0 0 16px;color:var(--muted)}
+    .hero .cta{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);cursor:pointer;background:#fff}
+    .btn.primary{background:var(--brand-600);border-color:var(--brand-600);color:#fff}
+    .hero .right{background:conic-gradient(from 180deg at 50% 50%, #fff, var(--brand-100), #fff);display:grid;place-items:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px dashed var(--brand-300);color:var(--brand-700);padding:6px 10px;border-radius:999px;font-weight:700}
+
+    /* Categories */
+    .cats{display:flex;gap:10px;overflow:auto;padding-bottom:6px}
+    .chip{flex:0 0 auto;border:1px solid var(--line);padding:8px 12px;border-radius:999px;background:#fff;color:var(--muted);font-weight:600}
+    .chip.active{background:var(--brand-600);border-color:var(--brand-600);color:#fff}
+
+    /* Grid */
+    .section{margin:28px 0}
+    .section h2{font-size:20px;margin:0 0 14px}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media(min-width:720px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    .card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);display:flex;flex-direction:column}
+    .card .img{position:relative;width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,#f8fafc,#e2e8f0);overflow:hidden;border-bottom:1px solid var(--line)}
+    .card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .card .body{padding:12px}
+    .card .title{font-weight:700}
+    .card .brand{color:var(--muted);font-size:13px;margin-top:2px}
+    .card .row{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+    .price{font-weight:800}
+    .add{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer}
+
+    /* Footer */
+    footer{margin-top:40px;border-top:1px solid var(--line);padding:24px 0;color:var(--muted)}
+
+    /* Chat embed slot + launcher */
+    #chat-container{position:fixed;right:20px;bottom:88px;width:360px;max-width:calc(100vw - 40px);height:520px;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(2,6,23,.2);border:1px solid var(--line);background:#fff;z-index:60;display:none}
+    #chat-launcher{position:fixed;right:20px;bottom:20px;z-index:70;background:var(--brand-600);color:#fff;border:0;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;box-shadow:0 10px 30px rgba(2,6,23,.22)}
+    #chat-launcher .dot{width:8px;height:8px;border-radius:999px;background:#22c55e}
+
+    /* Fallback (if no widget injected) */
+    .chat-fallback{display:flex;flex-direction:column;height:100%}
+    .chat-fallback header{position:static;border-bottom:1px solid var(--line);padding:10px;background:var(--brand-600);color:#fff}
+    .chat-fallback .area{padding:12px;color:var(--muted);font-size:14px}
+    .hint{background:#fffbeb;color:#92400e;border:1px solid #fef3c7;padding:10px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="logo" aria-label="FreshLane Market home">
+        <div class="mark">F</div>
+        <div>FreshLane <span style="color:var(--brand-600)">Market</span></div>
+      </div>
+      <form class="search" role="search" aria-label="Search products" onsubmit="event.preventDefault();">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.3-4.3" stroke="#64748b" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="#64748b" stroke-width="2"/></svg>
+        <input placeholder="Search groceries…" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="container">
+      <nav aria-label="Primary">
+        <a href="#">Shop</a>
+        <a href="#">Deals</a>
+        <a href="#">Recipes</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Weekly deal">
+      <div class="left">
+        <span class="badge">This week only — Fresh produce up to 30% off</span>
+        <h1>Everything you need, delivered same‑day.</h1>
+        <p>Hand‑picked produce, pantry staples, and household must‑haves at everyday prices.</p>
+        <div class="cta">
+          <button class="btn primary">Start shopping</button>
+          <button class="btn">View weekly ad</button>
+        </div>
+      </div>
+      <div class="right">
+        <svg width="140" height="140" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h2l1 10a2 2 0 002 2h8a2 2 0 002-2l1-8H6" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="20" r="1.5" fill="#10b981"/>
+          <circle cx="17" cy="20" r="1.5" fill="#10b981"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="cats" aria-label="Browse categories">
+      <button class="chip active">Popular</button>
+      <button class="chip">Produce</button>
+      <button class="chip">Dairy & Eggs</button>
+      <button class="chip">Bakery</button>
+      <button class="chip">Snacks</button>
+      <button class="chip">Beverages</button>
+      <button class="chip">Household</button>
+      <button class="chip">Frozen</button>
+      <button class="chip">Pantry</button>
+    </div>
+
+    <section class="section">
+      <h2>Popular near you</h2>
+      <div class="grid">
+        <!-- Simple, image‑less mock cards -->
+        <article class="card" aria-label="Bananas">
+          <div class="img"><img src="images/bananas.jpg" alt="Bananas" loading="lazy" width="600" height="600"></div>
+          <div class="body">
+            <div class="title">Bananas</div>
+            <div class="brand">FreshLane</div>
+            <div class="row"><span class="price">$0.59/lb</span><button class="add">Add</button></div>
+          </div>
+        </article>
+        <article class="card" aria-label="Whole milk">
+          <div class="img"><img src="images/milk.jpg" alt="Whole Milk" loading="lazy" width="600" height="600"></div>
+          <div class="body">
+            <div class="title">Whole Milk</div>
+            <div class="brand">FreshLane Dairy</div>
+            <div class="row"><span class="price">$3.49</span><button class="add">Add</button></div>
+          </div>
+        </article>
+        <article class="card" aria-label="Sourdough bread">
+          <div class="img"><img src="images/bread.jpg" alt="Sourdough Bread" loading="lazy" width="600" height="600"></div>
+          <div class="body">
+            <div class="title">Sourdough Bread</div>
+            <div class="brand">Bakery</div>
+            <div class="row"><span class="price">$4.29</span><button class="add">Add</button></div>
+          </div>
+        </article>
+        <article class="card" aria-label="Free‑range eggs">
+          <div class="img"><img src="images/eggs.jpg" alt="Free‑Range Eggs" loading="lazy" width="600" height="600"></div>
+          <div class="body">
+            <div class="title">Free‑Range Eggs (12ct)</div>
+            <div class="brand">FreshLane</div>
+            <div class="row"><span class="price">$5.99</span><button class="add">Add</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> FreshLane Market • Mock site for demo purposes.</div>
+    </div>
+  </footer>
+
+  <!-- Chat container (your widget can mount into this) -->
+  <div id="chat-container" aria-label="Chat window" role="dialog" aria-modal="true">
+    <!-- Fallback content is only visible if you haven't embedded a real widget yet -->
+    <div class="chat-fallback">
+      <header><strong>Customer Care</strong></header>
+      <div class="area">
+        <p class="hint"><strong>Heads‑up:</strong> This is a placeholder. Paste your chat widget below and have it mount to <code>#chat-container</code>, or let it create its own iframe.</p>
+        <p>While testing, click the green bubble to toggle this container.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple launcher toggle for the fallback container
+    const launcher = document.getElementById('chat-launcher');
+    const panel = document.getElementById('chat-container');
+    function toggleChat(open){
+      const show = open !== undefined ? open : panel.style.display !== 'block';
+      panel.style.display = show ? 'block' : 'none';
+      launcher.setAttribute('aria-expanded', String(show));
+    }
+    launcher.addEventListener('click', () => toggleChat());
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Expose a tiny API so your embed can take over the container if needed
+    window.__CHAT_SLOT__ = {
+      mountInto: '#chat-container',   // your script can read this target
+      open: () => toggleChat(true),
+      close: () => toggleChat(false)
+    };
+  </script>
+
+  <!-- 🔌 Paste your chat widget <script> here.  -->
+    
+</body>
+</html>

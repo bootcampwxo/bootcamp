@@ -1,0 +1,10 @@
+spec_version: v1
+kind: knowledge_base 
+name: nutrition_and_guidelines
+description: >
+   This knowledge contains details about nutri scores (nutrition grades) and dietary guidelines.
+documents:
+   - NutriScore_thresholds.txt
+   - Dietary_Guidelines_for_Americans.pdf
+vector_index:
+   embeddings_model_name: ibm/slate-125m-english-rtrvr-v2

@@ -33,22 +33,60 @@ Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por c
 
 <b>PASSO 1:</b> [CLIQUE AQUI](https://bootcampwxo.github.io/bootcamp/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
 
-<b>PASSO 2:</b> Escolha o caso de uso e mãos a obra <br>
+<b>PASSO 2:</b> Escolha o caso de uso e mãos a obra
 
-[1. AskRH](usecases/ask-hr/README.md)<br>
-[2. Agente Financeiro](usecases/banking-financial-research-analyst/README.md)<br>
-[3. Banking Backoffice](usecases/banking-backoffice/README.md)<br>
-[4. Order to Cash (O2C)](usecases/order-to-cash/README.md)<br>
+## 📋 Laboratórios do Bootcamp
 
-<b>OPCIONAIS</b>
+Siga a sequência recomendada para máximo aprendizado:
 
-[5. Agente de Sinistros de seguros](usecases/autoclaim-insurance/README.md)<br>
-[6. Automação de negócios para análise competitiva](usecases/business-automation/README.md)<br>
-[7. RH - Aquisição de novos talentos](usecases/hr-talent/README.md)<br>
+### 1. 🎯 [Ask-HR](usecases/ask-hr/README.md) - Single Agent + RAG
+**Seu primeiro agente IA!** Aprenda os fundamentos criando um assistente de RH que responde perguntas sobre políticas da empresa.
+
+**Features:** `RAG` `Knowledge base` `No code`
+
+---
+
+### 2. 🔍 Multi-Agent - Escolha seu caminho:
+
+#### Opção A: [Análise Competitiva](usecases/competitive-analysis/README.md)
+Agentes colaborativos que analisam produtos concorrentes usando múltiplas fontes de dados.
+
+**Features:** `Multi-agent` `RAG` `Image recognition` `MCP` `No code`
+
+#### Opção B: [Agente de Sinistros de Seguros](usecases/autoclaim-insurance/README.md)
+Sistema multi-agente para processamento automatizado de sinistros de seguros.
+
+**Features:** `Multi-agent` `RAG` `Backend connection` `No code`
+
+---
+
+### 3. 👥 [RH - Aquisição de Talentos](usecases/hr-talent/README.md) - Flows + IDP
+Automatize o processo de recrutamento com fluxos inteligentes e processamento de documentos.
+
+**Features:** `Flows` `Intelligent document processing` `Multi-agent` `Chat with documents`
+
+---
+
+### 4. 🛡️ [Governance](usecases/addons/governance/README.md) - Qualidade e Monitoramento
+Aprenda a avaliar e monitorar seus agentes para garantir qualidade e segurança em produção.
+
+**O que você vai aprender:**
+- Testar agentes antes do deployment
+- Monitorar performance em tempo real
+- Detectar alucinações e problemas de dados
+- Medir métricas de qualidade (relevância, fidelidade, segurança)
+
+---
 
 ## 🤖 Pró code Experience - Desenvolvedores
 
 [Clique aqui](usecases/ADK/README.md) para criar agentes utilizando o IBM watsonx Orchestrate Agent Development Kit (ADK)
+
+---
+
+### 📚 [Ver Todos os Casos de Uso →](ALL_USECASES.md)
+
+Explore o catálogo completo com mais de 15 casos de uso para diferentes indústrias e cenários.
 
 ⚠️ <b>Este repositório é público apenas para fins de visualização.A  clonagem, redistribuição ou modificação não autorizada deste código é expressamente proibida.</b> ⚠️
 

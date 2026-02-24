@@ -4,7 +4,7 @@
   - [🤔 O Problema](#-o-problema)
   - [🎯 Objetivo](#-objetivo)
   - [📈 Valor para o Negócio](#-valor-para-o-negócio)
-  - [Arquitetura](#arquitetura)
+  - [🏛️ Arquitetura](#-arquitetura)
   - [📝 Laboratório Prático Passo a Passo](#-laboratório-prático-passo-a-passo)
   - [🎥 Vídeo de Demonstração](#-vídeo-de-demonstração)
 
@@ -50,7 +50,7 @@ Ao automatizar essas tarefas, a empresa quer tornar o processo de pesquisa muito
 
 ✅  Gera recomendações mais precisas, baseadas em pesquisa automatizada e diligência inteligente.
 
-## Arquitetura
+## 🏛️ Arquitetura
 
 Para agilizar o processo de pesquisa, a Blue Aurum Financial fez parceria com a IBM para desenvolver uma solução de Pesquisa Financeira Multiagente, baseada no [watsonx Orchestrate](https://www.ibm.com/products/watsonx-orchestrate)
 
@@ -86,10 +86,21 @@ Tudo isso para ajudar os analistas a encontrar informações relevantes rapidame
 
 ## 📝 Laboratório Prático Passo a Passo
 
-👉👉👉 [Clique aqui](hands-on-lab-banking.md) para acessar as instruções detalhadas aqui e começar agora mesmo!
+👉👉👉 [Clique aqui](hands-on-lab-banking.md) para acessar as instruções detalhadas e implementar este caso de uso.
 
-## 🎥 Vídeo de Demonstração
+**Tempo estimado**: 60-90 minutos
 
-Demonstração em vídeo da solução:
+**Pré-requisitos**:
+- Acesso ao watsonx Orchestrate
+- Conclusão do guia de configuração de ambiente
+- Familiaridade com conceitos financeiros básicos
 
-https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/Banking%20Financial%20Research%20Analyst.mp4
+## 🎥 Demonstração
+
+Veja o vídeo completo que demonstra a solução:
+
+[▶️ Assistir demonstração do Financial Research Analyst](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/Banking%20Financial%20Research%20Analyst.mp4)
+
+---
+
+**Features demonstradas**: `RAG` `Multi-agent orchestration` `Backend connection` `No code`

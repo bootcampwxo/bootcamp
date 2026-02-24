@@ -4,8 +4,8 @@
   - [🤔 O Problema](#-o-problema)
   - [🎯 Objetivo](#-objetivo)
   - [📈 Valor de Negócio](#-valor-de-negócio)
-  - [Arquitetura](#arquitetura)
-      - [Capacidades principais do agente AskHR:](#capacidades-principais-do-agente-askhr)
+  - [🏛️ Arquitetura](#-arquitetura)
+    - [Capacidades Principais do Agente AskHR](#capacidades-principais-do-agente-askhr)
     - [Componentes da Arquitetura](#componentes-da-arquitetura)
   - [🎥 Demonstração](#-demonstração)
   - [👩‍💻👨‍💻 Laboratório prático passo a passo](#-laboratório-prático-passo-a-passo)
@@ -40,13 +40,13 @@ Usar um sistema com suporte de IA para otimizar processos de RH pode gerar impac
 
 Além disso, aproveitar as capacidades de agentes traz benefícios adicionais, como mais segurança nos dados e respostas mais precisas, sem riscos de alucinação, garantindo uma experiência confiável e fortalecendo a imagem da marca.
 
-## Arquitetura
+## 🏛️ Arquitetura
 
 Para simplificar a interação dos colaboradores com os sistemas de RH, criamos o AskHR, um agente inteligente desenvolvido com o IBM watsonx. Essa solução utiliza um modelo de orquestração multiagente, garantindo raciocínio avançado, execução fluida de ações e uma experiência ágil para os usuários.
 
 A arquitetura é baseada no <b>watsonx Orchestrate</b>, permitindo que o agente gerencie uma ampla variedade de consultas e solicitações de RH de forma eficiente e integrada.
 
-#### Capacidades principais do agente AskHR:
+### Capacidades Principais do Agente AskHR
 
 1. Automatizar tarefas rotineiras de RH, como: consultar saldo de férias, solicitar folgas e atualizar dados.
 
@@ -73,14 +73,27 @@ Ele conta com uma coleção de ferramentas reutilizáveis, um agente RAG baseado
 ## 🎥 Demonstração
 
 
-[▶️ Assistir à demonstração do Ask HR](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/ashHR_demo_new_version.mp4)
+[▶️ Assistir demonstração do AskHR](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/ashHR_demo_new_version.mp4)
 
-<h2> IMPORTANTE</h2 >
+---
 
-Este laboratório usa um simulador para um sistema de Gestão de Capital Humano. No entanto, isso pode ser facilmente substituído por qualquer sistema real em produção, como Workday ou outros.¹
+> [!IMPORTANT]
+> Este laboratório usa um simulador para um sistema de Gestão de Capital Humano. No entanto, isso pode ser facilmente substituído por qualquer sistema real em produção, como Workday, SuccessFactors, ServiceNow, Salesforce ou outros.
 
-¹ O Watsonx Orchestrate é compatível com sistemas externos como Workday e SuccessFactors, Service Now, SalesForce. [Clique aqui](https://www.ibm.com/br-pt/products/watsonx-orchestrate/integrations) para saber mais
+> [!NOTE]
+> O watsonx Orchestrate é compatível com sistemas externos como Workday, SuccessFactors, ServiceNow e Salesforce. [Clique aqui](https://www.ibm.com/br-pt/products/watsonx-orchestrate/integrations) para saber mais.
 
 ## 👩‍💻👨‍💻 Laboratório prático passo a passo
 
-👉👉👉 [Clique aqui](assets/hands-on-lab-askHR.md) para executar as instruções passo a passo aqui e implemente este caso de uso agora mesmo. 
+👉👉👉 [Clique aqui](assets/hands-on-lab-askHR.md) para acessar as instruções detalhadas e implementar este caso de uso.
+
+**Tempo estimado**: 60-90 minutos
+
+**Pré-requisitos**:
+- Acesso ao watsonx Orchestrate
+- Conclusão do guia de configuração de ambiente
+- Familiaridade com conceitos de RH
+
+---
+
+**Features demonstradas**: `RAG` `Multi-agent orchestration` `Backend connection` `No code`

@@ -1,0 +1,34 @@
+Nutri-Score Thresholds Cheatsheet
+=================================
+
+General foods (excluding cheeses, fats/oils, and beverages):
+- A: -15 to -1 points (most favorable)
+- B: 0 to 2 points
+- C: 3 to 10 points
+- D: 11 to 18 points
+- E: 19 points and above (least favorable)
+
+Beverages (non-alcoholic, excluding water):
+- A: -15 to 1 points
+- B: 2 to 5 points
+- C: 6 to 9 points
+- D: 10 to 18 points
+- E: 19 points and above
+
+Cheeses:
+- A: -15 to -1 points
+- B: 0 to 2 points
+- C: 3 to 9 points
+- D: 10 to 16 points
+- E: 17 points and above
+
+Added fats, oils, nuts, seeds, spreads:
+- A: -15 to -1 points
+- B: 0 to 2 points
+- C: 3 to 6 points
+- D: 7 to 14 points
+- E: 15 points and above
+
+Interpretation:
+- 'A' is green and indicates highest nutritional quality.
+- 'E' is red and indicates lowest nutritional quality, usually high in sugars, salt, saturated fats, and/or low in fiber and fruit/vegetable content.
