@@ -1,55 +1,57 @@
- # 🥇 Agentic Competitive Insights
+# 🥇 Análise Competitiva com Agentes IA
 
-`Image recognition`
-`MCP` 
-`RAG`
-`Multi-agent orchestration`
-`No code`
+## 🎯 Features
 
-<img width="1010" alt="Screenshot 2025-10-01 at 11 00 48 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/a2a5dd2f-675c-4e5b-ad90-b7a90c92c7f3">
+`Image recognition` `MCP` `RAG` `Multi-agent orchestration` `No code`
 
+<img width="1010" alt="Screenshot 2025-10-01 at 11 00 48 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/a2a5dd2f-675c-4e5b-ad90-b7a90c92c7f3">
 
-## 🤔 The Problem
+## 🤔 O Problema
 
-ABC Robots' sales department faced challenges in preparing sales proposals for their new line of high performance home cleaning robots. Every time they release a new model, the competitive analysis team spends a great amount of time and resources to deliver their insights. Issues include: 
+O departamento de vendas da ABC Robots enfrentava desafios na preparação de propostas comerciais para sua nova linha de robôs de limpeza doméstica de alto desempenho. Toda vez que lançam um novo modelo, a equipe de análise competitiva gasta uma grande quantidade de tempo e recursos para entregar seus insights. Os problemas incluem:
 
-- Manual research delays decisions and reduces productivity.
+- Pesquisa manual atrasa decisões e reduz produtividade
+- Posicionamento fraco prejudica diferenciação de vendas
+- Resposta lenta a mudanças de mercado sem inteligência em tempo real
 
-- Weak positioning hampers sales differentiation.
+<img width="1187" alt="Screenshot 2025-10-01 at 10 58 12 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/c4004e3b-5d28-4fda-8069-1896ae996e9c">
 
-- Slow response to market changes without real-time intelligence.
+## 🎯 Objetivo
 
-<img width="1187" alt="Screenshot 2025-10-01 at 10 58 12 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/c4004e3b-5d28-4fda-8069-1896ae996e9c">
+A ABC Robots planeja implementar um Sistema de Inteligência Competitiva alimentado por IA para automatizar pesquisa de mercado e análise de concorrentes. Este sistema ajudará equipes de vendas a rapidamente identificar e posicionar seus produtos contra concorrentes, superando as ineficiências de pesquisa manual e insights desatualizados. O objetivo é criar um sistema habilitado por IA que suporte análise competitiva e pesquisa de mercado através de:
 
+- Extração de produtos do catálogo de produtos da empresa
+- Identificação e extração de características-chave de cada produto
+- Busca por produtos concorrentes baseada em atributos-chave
+- Geração de tabela de comparação competitiva estruturada com preço, características e diferenciais
+- Execução de Análise SWOT (Forças, Fraquezas, Oportunidades e Ameaças) para fornecer insights estratégicos mais profundos
 
-## 🎯 Objective
+Ao automatizar essas tarefas, a empresa visa acelerar processos de vendas, melhorar precisão de dados e habilitar equipes de vendas a tomar decisões informadas mais rapidamente.
 
-ABC Robots plans to implement an AI-powered Competitive Intelligence System to automate market research and competitor analysis. This system will help sales teams quickly identify and position their products against competitors, overcoming the inefficiencies of manual research and outdated insights. The goal is to create an AI-enabled system that supports competitive analysis and market research by:
+## 📈 Valor de Negócio
 
-* Extracting products from the company’s product catalog.
-* Identifying and extract key features of each product.
-* Searching for competitor products based on key attributes or
-* Generate a structured competitive comparison table with price, features, and differentiators.
-* Perform SWOT Analysis (Strengths, Weaknesses, Opportunities, and Threats) to provide deeper strategic insights.
+- Redução no tempo de pesquisa manual de concorrentes
+- Atualizações automatizadas em tempo real sobre competição de mercado
+- Melhoria na efetividade de apresentações de vendas
 
-By automating these tasks, the company aims to accelerate sales processes, improve data accuracy, and enable sales teams to make informed decisions faster.
+## 🏛️ Arquitetura
 
-## 📈 Business Value
-
-* Reduction in manual competitor research time.
-* Automated, real-time updates on market competition.
-* Improved sales pitch effectiveness
-
-## 🏛 Architecture
 ![Competitive Analysis Architecture drawio](https://github.ibm.com/user-attachments/assets/2db97495-1c38-4174-9805-d9a26d2cc03f)
 
+## 💡 Pré-requisitos
 
-## 📝 Step-by-step Hands-on Lab
-You can find step-by-step instructions here:
+- Acesso ao watsonx Orchestrate
+- Chave de API IBM configurada
+- Arquivo `Vaccum_cleaners_v2.docx` fornecido pelo instrutor
+- URL do servidor MCP fornecida pelo instrutor
+- Arquivo `abc-robots-website-final.zip` para incorporar chat no website
 
-[Step-by-step hands-on guide](./hands-on-lab-competitive-analysis.md)
+## 📄 Laboratório Prático Passo a Passo
 
-## Demo Video
-Coming soon
+Você pode encontrar instruções passo a passo aqui:
 
+[Guia prático passo a passo](./hands-on-lab-competitive-analysis.md)
 
+## 🎬 Vídeo de Demonstração
+
+Em breve
