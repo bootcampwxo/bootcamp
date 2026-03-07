@@ -4,12 +4,8 @@
   <span style="font-size: 3rem; font-weight: bold;"><b> Agentes de IA em Ação com watsonx Orchestrate</b> </span>
 </h3>
 
-<h2 style="display: flex; align-items: center; gap: 10px; margin: 0;">
-  <img src="/docs/images/crist.png" width="40" height="20" style="vertical-align: middle;">
-  18 de Dezembro - Rio de Janeiro
-</h2>
 
-<img src="/bootcamp.png" width="600" height="400" style="display:block; margin-left:auto; margin-right:auto;" />
+<img src="bootcamp.png" width="100%" style="display:block; margin-left:auto; margin-right:auto;" />
 <br>
 Neste bootcamp, você vai aprender a criar e implantar agentes de Inteligência Artificial (Agentic AI) aplicados a casos reais de negócio.
 
@@ -48,15 +44,15 @@ Siga a sequência recomendada para máximo aprendizado:
 
 ### 2. 🔍 Multi-Agent - Escolha seu caminho:
 
-#### Opção A: [Análise Competitiva](usecases/competitive-analysis/README.md)
-Agentes colaborativos que analisam produtos concorrentes usando múltiplas fontes de dados.
-
-**Features:** `Multi-agent` `RAG` `Image recognition` `MCP` `No code`
-
-#### Opção B: [Agente de Sinistros de Seguros](usecases/autoclaim-insurance/README.md)
+#### Opção A: [Agente de Sinistros de Seguros](usecases/autoclaim-insurance/README.md)
 Sistema multi-agente para processamento automatizado de sinistros de seguros.
 
 **Features:** `Multi-agent` `RAG` `Backend connection` `No code`
+
+#### Opção B: [Análise Competitiva](usecases/competitive-analysis/README.md)
+Agentes colaborativos que analisam produtos concorrentes usando múltiplas fontes de dados.
+
+**Features:** `Multi-agent` `RAG` `Image recognition` `MCP` `No code`
 
 ---
 

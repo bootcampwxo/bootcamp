@@ -1,6 +1,6 @@
 # Sumário
 - [Sumário](#sumário)
-- [🧑‍💼 AskHR](#-askhr)
+  - [🧑‍💼 AskHR](#-askhr)
   - [🤔 O Problema](#-o-problema)
   - [🎯 Objetivo](#-objetivo)
   - [📈 Valor de Negócio](#-valor-de-negócio)
@@ -8,7 +8,7 @@
     - [Capacidades Principais do Agente AskHR](#capacidades-principais-do-agente-askhr)
     - [Componentes da Arquitetura](#componentes-da-arquitetura)
   - [🎥 Demonstração](#-demonstração)
-  - [👩‍💻👨‍💻 Laboratório prático passo a passo](#-laboratório-prático-passo-a-passo)
+  - [📝 Laboratório prático passo a passo](#-laboratório-prático-passo-a-passo)
 
 # 🧑‍💼 AskHR
 
@@ -62,18 +62,18 @@ A arquitetura é baseada no <b>watsonx Orchestrate</b>, permitindo que o agente 
 
 ### Componentes da Arquitetura
 
-<b>Agente de RH e Aplicativo (IBM watsonx Orchestrate)</b>: O agente de RH funciona como o orquestrador central, gerenciando as interações com os usuários e delegando tarefas para as ferramentas certas dentro do aplicativo.
+<b>Agente e App de RH (IBM watsonx Orchestrate)</b>: O agente de RH funciona como o orquestrador central, gerenciando as interações com os usuários e delegando tarefas para as ferramentas certas dentro do aplicativo.
 
 Ele conta com uma coleção de ferramentas reutilizáveis, um agente RAG baseado em OpenAPI e descrições de metadados. Cada ferramenta é criada para executar uma tarefa específica, como: <b>Consultar saldo de férias, Solicitar folgas e Atualizar dados pessoais (cargo, endereço, etc.)</b> <br>
 
-<b>O agente RAG</b> é responsável por buscar informações relevantes em documentos para responder às perguntas dos usuários.
+<b>O Agentic RAG</b> é responsável por buscar informações relevantes em documentos para responder às perguntas dos usuários.
 
 - Sistema de Gestão de Capital Humano (HCM): A aplicação de RH se conecta ao sistema HCM para consultar ou atualizar dados dos colaboradores, garantindo sincronização e precisão em tempo real.
 
 ## 🎥 Demonstração
 
 
-[▶️ Assistir demonstração do AskHR](https://bucket-wxo.s3.us-south.cloud-object-storage.appdomain.cloud/ashHR_demo_new_version.mp4)
+[▶️ Assistir demonstração do AskHR](ashHR_demo_new_version.mp4)
 
 ---
 
@@ -83,16 +83,11 @@ Ele conta com uma coleção de ferramentas reutilizáveis, um agente RAG baseado
 > [!NOTE]
 > O watsonx Orchestrate é compatível com sistemas externos como Workday, SuccessFactors, ServiceNow e Salesforce. [Clique aqui](https://www.ibm.com/br-pt/products/watsonx-orchestrate/integrations) para saber mais.
 
-## 👩‍💻👨‍💻 Laboratório prático passo a passo
+## 📝 Laboratório prático passo a passo
 
 👉👉👉 [Clique aqui](assets/hands-on-lab-askHR.md) para acessar as instruções detalhadas e implementar este caso de uso.
 
 **Tempo estimado**: 60-90 minutos
-
-**Pré-requisitos**:
-- Acesso ao watsonx Orchestrate
-- Conclusão do guia de configuração de ambiente
-- Familiaridade com conceitos de RH
 
 ---
 

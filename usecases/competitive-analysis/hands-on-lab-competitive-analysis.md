@@ -1,6 +1,6 @@
 # 👨🏻‍💻 Caso de Uso: Análise Competitiva
 
-## Índice
+## Sumário
 - [Arquitetura](#-arquitetura)
 - [Descrição do Caso de Uso](#descrição-do-caso-de-uso)
 - [Pré-requisitos](#pré-requisitos)
@@ -15,7 +15,7 @@
 
 ## 🏛️ Arquitetura
 
-![Competitive Analysis Architecture drawio](https://github.ibm.com/user-attachments/assets/39d11294-f75d-482d-a94d-80e0511a5aa7)
+![Competitive Analysis Architecture drawio](assets/archietcture.png)
 
 ## Descrição do Caso de Uso
 
@@ -30,17 +30,13 @@ Ao automatizar essas tarefas, a empresa visa acelerar processos de vendas, melho
 
 ## Pré-requisitos
 
-**Instrutores:**
-- Consulte o [guia do instrutor](https://github.ibm.com/skol/agentic-ai-client-bootcamp-instructors/tree/main/usecase-setup/competitive-analysis) correspondente para configurar todos os ambientes e serviços backend
-- Forneça a URL para o servidor MCP deployado
 
 **Participantes:**
-- Valide que você tem acesso ao ambiente TechZone correto para este laboratório
-- Complete o guia de [configuração de ambiente](../../environment-setup) para passos sobre criação de chave de API e configuração de projeto
+- Valide que você tem acesso ao ambiente watsonx Orchestrate correto para este laboratório
 - Certifique-se de que o instrutor forneceu a URL para conectar ao servidor MCP
 - Certifique-se de que seu instrutor forneceu o arquivo `Vaccum_cleaners_v2.docx` para ser carregado como conhecimento
 - Certifique-se de que seu instrutor forneceu o arquivo `abc-robots-website-final.zip` para incorporar seu chat em um website
-- Certifique-se de que seu instrutor forneceu todas as credenciais necessárias
+
 
 ## Visão Geral das Etapas do Lab
 
@@ -73,11 +69,11 @@ O Agente Identificador reconhece um produto a partir de uma imagem. Ele depende 
 
 1. Vá para a página inicial do watsonx Orchestrate, clique no menu hambúrguer (☰), selecione **Build** e depois **Agent Builder**.
 
-   ![Agent Builder](assets/BAP_1.png)
+   ![Agent Builder](assets/2.png)
 
 2. Clique no botão **Create agent**.
 
-   ![Create Agent](assets/BAP_2.png)
+   ![Create Agent](assets/0.png)
 
 3. Selecione **Create from scratch**, adicione as seguintes informações:
    
@@ -104,7 +100,7 @@ O Agente Identificador reconhece um produto a partir de uma imagem. Ele depende 
 
 6. Selecione **Import from MCP server**:
 
-   ![Import from MCP Server](assets/id_import_mcp.png)
+   ![Import from MCP Server](assets/step_10_v5.png)
 
 7. Na janela **Import or remove tools from MCP server**, clique em **Add MCP server**:
 
@@ -116,11 +112,11 @@ O Agente Identificador reconhece um produto a partir de uma imagem. Ele depende 
      ```
      mcp-competitive-tools
      ```
-   - Obtenha a URL do servidor MCP do seu instrutor e preencha no comando Install da seguinte forma:
+   - Obtenha a URL do servidor MCP (Remote) do seu instrutor e preencha no comando Install da seguinte forma:
      ```
      uvx mcp-proxy [MCP-SERVER-URL]/sse
      ```
-     > ex: `uvx mcp-proxy https://remote-mcp-tools.20sp7brq6u6i.us-south.codeengine.appdomain.cloud/sse`
+     > ex: `https://remote-mcp-tools.20sp7brq6u6i.us-south.codeengine.appdomain.cloud/sse`
 
    ![Server Details](assets/id_server_details.png)
 
@@ -193,9 +189,7 @@ Usamos o SerpAPI para invocar esses serviços e depois os expusemos como ferrame
 
    Clique no botão **Create**.
 
-4. Configure o modelo para `llama-3-405b-instruct`. Este modelo é mais apropriado para lidar com queries do que o de visão.
-
-   ![Create from scratch](assets/comp_model.png)
+4. Mantenha o modelo **default**.
 
 5. Vá para a seção **Toolset** e clique no botão **Add tool**.
 
@@ -245,7 +239,7 @@ Este agente extrairá informações do catálogo de produtos da ABC Robots. Na v
 <br>
 <br>
 
-<img width="1187" alt="Screenshot 2025-10-01 at 10 58 12 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/37dbc688-a5b7-4835-8564-07637ea5a57b">
+<img width="1187" alt="ABC Models" src="assets/abc_models.png">
 
 <br>
 <br>
@@ -348,9 +342,8 @@ Este agente extrairá informações do catálogo de produtos da ABC Robots. Na v
 
    ![Create from scratch](assets/master_create_agent.png)
 
-4. Configure o modelo para `llama-3-405b-instruct`.
+4. Mantenha o modelo **default**.
 
-   ![Model](assets/master_model.png)
 
 5. Na seção **Agents**, clique no botão **Add agent**.
 
@@ -403,7 +396,6 @@ Siga os passos acima e depois tente interagir com o caso de uso usando estas que
 
 1. Vá para o menu hambúrguer e selecione **Chat**.
 
-   ![chat](assets/chat.png)
 
 2. Selecione o **Master Agent** do menu dropdown, e você estará pronto para começar.
 
@@ -425,11 +417,10 @@ Siga os passos acima e depois tente interagir com o caso de uso usando estas que
    Give me a comparison table between Aerowash X1 and HydraClean v9 broken down into individual features
    ```
 
-   <img width="684" alt="Screenshot 2025-10-04 at 11 21 08 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/1555eefe-73fb-4812-94b7-452bc8e22123">
+   <img width="684" alt="Models comparison" src="assets/models_comparison.png">
 
 ### Agora clique no ícone azul para criar um Novo Chat e iniciar uma nova conversa:
 
-![New Chat Image](assets/image41.png)
 
 4. Para identificar informações de produto a partir de uma imagem, pergunte:
 
@@ -437,7 +428,7 @@ Siga os passos acima e depois tente interagir com o caso de uso usando estas que
    Tell me what product is in this image https://m.media-amazon.com/images/I/613mvDKX1hL._AC_SL1500_.jpg
    ```
    
-   Você será perguntado "Would you like me to pull information for this model?". Responda com `yes`:
+   Caso você seja perguntado "Would you like me to pull information for this model?". Responda com `yes`:
    
    ![Comparison Agent Response](assets/chat_q5.png)
 
@@ -456,7 +447,7 @@ Siga os passos acima e depois tente interagir com o caso de uso usando estas que
    Give me a competitive analysis of the product in the image against each of the products in the catalog for ABC robots. Break it down by individual features in a table. Include Laundry and Dishwashing as well. Put it all together into a single table.
    ```
 
-   <img width="685" alt="Screenshot 2025-10-04 at 11 26 16 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/cdde7a14-cd88-4f2a-bdcd-7c8869d9ee53">
+   <img width="685" alt="Competitive analysis" src="assets/comp_analysis.png">
 
 ## Deployment
 
@@ -466,7 +457,7 @@ Agora você vai deployar este chat no website interno da ABC Robots para que os 
 
 2. Role para baixo até **Channels** e clique em **Embedded Agent**.
 
-   <img width="700" alt="embedding" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/0a57a2ec-53ee-4266-bb4d-4fefd5bafd48">
+   <img width="700" alt="embedding" src="assets/embedd_agent.png">
 
 3. Copie o código clicando no botão **Copy to Clipboard** no canto superior direito do bloco de código que começa com `<script>`.
 
@@ -474,12 +465,12 @@ Agora você vai deployar este chat no website interno da ABC Robots para que os 
 
 5. Edite o arquivo **index.html** usando seu editor de texto favorito ou ferramenta de desenvolvimento.
 
-   <img width="700" alt="deployment-code" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/f2d323bc-f693-4d83-a8f2-71bd485de941">
+   <img width="700" alt="deployment-code" src="assets/embedd_script.png">
 
 6. Role até o final e cole-o logo antes da tag `</body>`.
 
 7. Salve suas mudanças e abra o arquivo **index.html** com seu navegador. Você verá algo assim:
 
-   <img width="700" alt="robots-website" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/0a9dc956-5898-4ce1-89cd-6600d869d508">
+   <img width="700" alt="robots-website" src="assets/abc_website.png">
 
 Clique no ícone do watsonx Orchestrate no canto inferior direito e comece a conversar com seu agente.

@@ -9,12 +9,10 @@
   - [Arquitetura](#arquitetura)
   - [🎥 Demo](#-demo)
   - [📝 Laboratório prático passo a passo](#-laboratório-prático-passo-a-passo)
-  - [�‍💻👨‍💻 Passo a passo para implementação](#-passo-a-passo-para-implementação)
 
 
 ## 🚗 Automação de sinistros de seguro automóvel com Agentic AI
 
-<img src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/blob/main/img/beta.png" width="100">
 
 ![](insurance-banner.png)
 
@@ -53,7 +51,7 @@ O **Agente de Sinistro de Seguro Automóvel**, desenvolvido com **Watsonx Orches
 - **Respostas rápidas e contextuais**: Para clientes e processadores, garantindo precisão e conformidade.
 
 
-## 📈 Valor
+## 📈 Valor de Negócio
 
 ### Para clientes:
 - Envio de sinistros sem complicações
@@ -73,16 +71,15 @@ O **Agente de Sinistro de Seguro Automóvel**, desenvolvido com **Watsonx Orches
 ![Architecture](/usecases/autoclaim-insurance/assets/Insurance_Autoclaims_Architecture_v2.png)
 
 ## 🎥 Demo
+[▶️ Assistir demonstração do Autoclaims Insurance](autoclaim_demo.mp4)
 
-https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/448234/63965561-72ea-4e00-b829-b92599e6127f
 
 
 ## 📝 Laboratório prático passo a passo
 
-Passo a passo para implementação deste caso:  [Hands-on Lab](/usecases/autoclaim-insurance/assets/hands_on_lab_autoclaim_insurance.md) 
+👉👉👉 [Clique aqui](/usecases/autoclaim-insurance/assets/hands_on_lab_autoclaim_insurance.md) para acessar as instruções detalhadas e implementar este caso de uso.
+
+**Tempo estimado**: 60-90 minutos
 
 
-## 👩‍💻👨‍💻 Passo a passo para implementação
-
-👉 [Clique aqui](/usecases/autoclaim-insurance/assets/hands_on_lab_autoclaim_insurance.md) para implementar este caso de uso.
 

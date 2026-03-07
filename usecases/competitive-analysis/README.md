@@ -4,7 +4,7 @@
 
 `Image recognition` `MCP` `RAG` `Multi-agent orchestration` `No code`
 
-<img width="1010" alt="Screenshot 2025-10-01 at 11 00 48 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/a2a5dd2f-675c-4e5b-ad90-b7a90c92c7f3">
+<img width="1010" alt="ABC Robots" src="assets/abc_home.png">
 
 ## 🤔 O Problema
 
@@ -14,7 +14,7 @@ O departamento de vendas da ABC Robots enfrentava desafios na preparação de pr
 - Posicionamento fraco prejudica diferenciação de vendas
 - Resposta lenta a mudanças de mercado sem inteligência em tempo real
 
-<img width="1187" alt="Screenshot 2025-10-01 at 10 58 12 AM" src="https://github.ibm.com/skol/agentic-ai-client-bootcamp/assets/12043/c4004e3b-5d28-4fda-8069-1896ae996e9c">
+<img width="1187" alt="ABC Models" src="assets/abc_models.png">
 
 ## 🎯 Objetivo
 
@@ -36,7 +36,7 @@ Ao automatizar essas tarefas, a empresa visa acelerar processos de vendas, melho
 
 ## 🏛️ Arquitetura
 
-![Competitive Analysis Architecture drawio](https://github.ibm.com/user-attachments/assets/2db97495-1c38-4174-9805-d9a26d2cc03f)
+![Competitive Analysis Architecture drawio](assets/archietcture.png)
 
 ## 💡 Pré-requisitos
 
@@ -46,11 +46,13 @@ Ao automatizar essas tarefas, a empresa visa acelerar processos de vendas, melho
 - URL do servidor MCP fornecida pelo instrutor
 - Arquivo `abc-robots-website-final.zip` para incorporar chat no website
 
-## 📄 Laboratório Prático Passo a Passo
 
-Você pode encontrar instruções passo a passo aqui:
+## 📝 Laboratório prático passo a passo
 
-[Guia prático passo a passo](./hands-on-lab-competitive-analysis.md)
+👉👉👉 [Clique aqui](./hands-on-lab-competitive-analysis.md) para acessar as instruções detalhadas e implementar este caso de uso.
+
+**Tempo estimado**: 60-90 minutos
+
 
 ## 🎬 Vídeo de Demonstração
 
