@@ -35,10 +35,17 @@ Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por c
 
 Siga a sequência recomendada para máximo aprendizado:
 
-### 1. 🎯 [Ask-HR](usecases/ask-hr/README.md) - Single Agent + RAG
-**Seu primeiro agente IA!** Aprenda os fundamentos criando um assistente de RH que responde perguntas sobre políticas da empresa.
+### 1. 🎯 Single Agent + RAG - Escolha seu caminho:
 
-**Features:** `RAG` `Knowledge base` `No code`
+#### Opção A: [Ask-HR](usecases/ask-hr/README.md)
+Assistente inteligente de RH que responde perguntas sobre políticas da empresa usando base de conhecimento.
+
+**Features:** `Single agent` `RAG` `Knowledge base` `Backend connection` `No code`
+
+#### Opção B: [Agente de Sinistros - Customer](usecases/autoclaim-insurance/README-customer.md)
+Agente focado na experiência do cliente para abertura e acompanhamento de sinistros de seguros.
+
+**Features:** `Single agent` `RAG` `Knowledge base` `Backend connection` `No code`
 
 ---
 
