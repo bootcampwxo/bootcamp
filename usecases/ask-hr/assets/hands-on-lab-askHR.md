@@ -156,9 +156,9 @@ Abra o menu hambúrguer do lado esquerdo da interface, clique `Agent Builder`
 
    <img width="1000" alt="image" src="hands-on-lab-assets/step_14_v4.jpg">
 
-   <img width="1000" alt="image" src="hands-on-lab-assets/step_14_v4_0.jpg">
+   <img width="1000" alt="image" src="hands-on-lab-assets/step_14_v4_0.png">
 
-   <img width="800" alt="image" src="hands-on-lab-assets/step_14_v4_1.jpg">
+   <img width="800" alt="image" src="hands-on-lab-assets/step_14_v4_1.png">
 
 ### Testar Agente de RH na Visualização
 
