@@ -1,10 +1,10 @@
-# 🛡️ Governança de Agentes no watsonx Orchestrate
+# Governança de Agentes no watsonx Orchestrate 🛡️
 
-<img width="1021" alt="Screenshot 2026-02-04 at 2 47 16 PM" src="https://github.ibm.com/user-attachments/assets/e7ff49c9-3856-42c0-946c-408ff8b3f0e7" />
+<img width="1021" alt="Screenshot 2026-02-04 at 2 47 16 PM" src="./assets/images/wxg.jpg"/>
 
 Garanta que seus agentes IA entreguem respostas consistentes, seguras e de alta qualidade através de capacidades abrangentes de avaliação e monitoramento no watsonx Orchestrate.
 
-## 🤔 O Problema
+## O Problema
 
 Conheça Sarah, uma Product Manager de IA em uma grande empresa de serviços financeiros. Sua equipe construiu vários agentes IA para ajudar representantes de atendimento ao cliente a responder perguntas sobre apólices e processar sinistros. No entanto, Sarah enfrenta um desafio crítico: **Como ela pode garantir que esses agentes estão prontos para produção e continuam a performar bem após o deployment?**
 
@@ -18,7 +18,7 @@ As preocupações de Sarah são compartilhadas entre indústrias:
 
 Sem governança adequada, a equipe de Sarah hesita em deployar agentes em escala, temendo erros custosos e danos à reputação.
 
-## 🎯 Objetivo
+## Objetivo 🎯
 
 Este laboratório addon ajuda product managers, engenheiros de IA e líderes de negócio como Sarah a implementar um framework abrangente de governança usando as capacidades integradas de avaliação e monitoramento do watsonx Orchestrate.
 
@@ -32,7 +32,7 @@ Este laboratório addon ajuda product managers, engenheiros de IA e líderes de 
 
 Ao completar este laboratório, você ganhará confiança para deployar agentes IA sabendo que eles atendem padrões de qualidade e entregam valor de negócio mensurável.
 
-## 📈 Valor de Negócio
+## Valor de Negócio 📈
 
 Avaliação e monitoramento no watsonx Orchestrate fornecem insights mensuráveis sobre performance e segurança de agentes:
 
@@ -44,7 +44,7 @@ Avaliação e monitoramento no watsonx Orchestrate fornecem insights mensurávei
 
 Essas métricas habilitam decisões baseadas em dados sobre qualidade, segurança e custo-efetividade do agente.
 
-## 🏛️ Fluxo de Trabalho de Governança
+## Fluxo de Trabalho de Governança
 
 O ciclo de vida de governança de agentes no watsonx Orchestrate segue um modelo de melhoria contínua:
 
@@ -138,14 +138,14 @@ Descubra como monitorar a performance dos seus agentes em produção e obter ins
 
 **[Iniciar Lab de Monitoramento →](./monitoring.md)**
 
-## 🎯 Pré-requisitos
+## Pré-requisitos
 
 Antes de iniciar estes laboratórios, você deve ter:
 - Completado pelo menos um dos laboratórios de casos de uso principais (ex: AskHR, Retail, Análise Competitiva)
 - Um agente deployado ou em draft no watsonx Orchestrate
 - Acesso ao watsonx Orchestrate com capacidades de avaliação e monitoramento habilitadas
 
-## 💡 Melhores Práticas
+## Melhores Práticas 💡
 
 **Para Avaliação:**
 - Crie casos de teste diversos cobrindo cenários comuns e de borda
@@ -159,7 +159,7 @@ Antes de iniciar estes laboratórios, você deve ter:
 - Use análise de conversas para entender necessidades reais de usuários e melhorar capacidades do agente
 - Rastreie uso de tokens para otimizar custos enquanto mantém qualidade
 
-## 📚 Referências
+## Referências 📚
 
 Para mais informações sobre governança de agentes no watsonx Orchestrate, consulte a documentação oficial:
 
