@@ -1,1 +1,1 @@
-Here's the data files needed for this lab.
+Aqui estão os arquivos de dados necessários para este laboratório.
