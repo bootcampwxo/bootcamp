@@ -123,7 +123,7 @@ Aprenda como testar seu agente antes que ele entre em produção usando casos de
 - Interpretar resultados de avaliação e métricas
 - Iterar na configuração do agente baseado em resultados de teste
 
-**[Iniciar Lab de Avaliação →](./evaluation.md)**
+**[Clique aqui para iniciar Lab de Avaliação →](./evaluation.md)**
 
 ### 2. Monitoramento Pós-Deployment
 
@@ -136,7 +136,7 @@ Descubra como monitorar a performance dos seus agentes em produção e obter ins
 - Customizar visualizações de métricas para suas necessidades
 - Usar dados de monitoramento para melhorar performance do agente
 
-**[Iniciar Lab de Monitoramento →](./monitoring.md)**
+**[Clique aqui para iniciar Lab de Monitoramento →](./monitoring.md)**
 
 ## Pré-requisitos
 
