@@ -5,7 +5,6 @@
 - [🧑‍💼 AskHR: Automatize tarefas de RH com a IA da Agentic](#-askhr-automatize-tarefas-de-rh-com-a-ia-da-agentic)
   - [Sumário](#sumário)
   - [Descrição do caso de uso](#descrição-do-caso-de-uso)
-  - [Arquitetura](#arquitetura)
   - [Pré requisitos](#pré-requisitos)
   - [Instruções:](#instruções)
     - [Abrir Agent Builder](#abrir-agent-builder)
@@ -18,10 +17,6 @@
 Este caso de uso tem como objetivo desenvolver e implementar um agente AskHR utilizando o <b>IBM watsonx Orchestrate</b>, conforme ilustrado no diagrama de arquitetura abaixo. Esse agente vai permitir que os colaboradores interajam com os sistemas de RH e acessem informações de forma simples e eficiente, usando IA conversacional.
 
 No laboratório, vamos construir um agente de RH no <b>watsonx Orchestrate</b>, aproveitando ferramentas e conhecimento externo para se conectar a um sistema de Gestão de Capital Humano simulado. Esse agente será capaz de recuperar informações relevantes de documentos para responder às perguntas dos usuários e também permitir que eles visualizem e gerenciem seus próprios perfis.
-
-## Arquitetura
-
-<img width="1000" alt="image" src="arch_diagm.png">
 
 ## Pré requisitos
 
@@ -57,7 +52,10 @@ Abra o menu hambúrguer do lado esquerdo da interface, clique `Agent Builder`
 2. Selecione **Create from scratch**, de o nome ao seu agente, por exemplo, `Agente de RH`, e preencha o campo **Description** conforme mostrado abaixo:﻿
 
    ```
-   Você é um agente que lida com as dúvidas dos funcionários sobre RH. Você fornece respostas curtas e diretas, com no máximo 200 palavras ou menos. Você pode ajudar os usuários a verificar os seus dados do perfil, recuperar o saldo de folgas mais recente, atualizar cargo ou endereço e solicitar folgas. Você também pode responder a perguntas gerais sobre os benefícios da empresa.
+   Você é um agente que lida com as dúvidas dos funcionários sobre RH.
+   Você fornece respostas curtas e diretas, com no máximo 200 palavras ou menos.
+   Você pode ajudar os usuários a verificar os seus dados do perfil, recuperar o saldo de folgas mais recente, atualizar cargo ou endereço e solicitar folgas.
+   Você também pode responder a perguntas gerais sobre os benefícios da empresa.
    ```  
    Clique em **Create**:
 
@@ -98,9 +96,11 @@ Abra o menu hambúrguer do lado esquerdo da interface, clique `Agent Builder`
 
    <img width="1000" alt="image" src="hands-on-lab-assets/step_6-2_v4.png">
 
-4. Role a tela para baixo até a seção **Knowledge**. Clique em **Choose knowledge**.
+4. Role a tela para baixo até a seção **Knowledge**. Clique em **Add source**.
 
-   <img width="1000" alt="image" src="hands-on-lab-assets/step_6_v3.png">
+   <img width="1000" alt="image" src="hands-on-lab-assets/step_6_v4.png">
+
+   <img width="500" alt="image" src="hands-on-lab-assets/step_6-0_v4.png">
 
 5. Clique em  **Upload files** e depois **Next**
 
@@ -156,6 +156,9 @@ Abra o menu hambúrguer do lado esquerdo da interface, clique `Agent Builder`
 
    <img width="1000" alt="image" src="hands-on-lab-assets/step_14_v4.jpg">
 
+   <img width="1000" alt="image" src="hands-on-lab-assets/step_14_v4_0.jpg">
+
+   <img width="800" alt="image" src="hands-on-lab-assets/step_14_v4_1.jpg">
 
 ### Testar Agente de RH na Visualização
 
