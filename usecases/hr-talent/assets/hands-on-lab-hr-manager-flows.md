@@ -144,7 +144,7 @@ Adicione outra variável:
 
 Desta vez, crie uma string. Dê o nome *candidatos* e uma descrição simples, por exemplo:
 
-![alt text](./images-lab/input-string.png)
+![alt text](./images-lab/flow-variables.png)
 
 ```
 Nomes e habilidades dos candidatos
