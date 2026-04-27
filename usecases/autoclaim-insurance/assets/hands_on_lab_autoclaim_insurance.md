@@ -1,20 +1,21 @@
-# Automatize o processamento de reivindicações de seguros com a IA da Agentic
+# Sistema Multi-Agente para Processamento de Sinistros de Seguros
 
 ## Sumário
 
-- [Automatize o processamento de reivindicações de seguros com a IA da Agentic](#automatize-o-processamento-de-reivindicações-de-seguros-com-a-ia-da-agentic)
-  - [Índice](#índice)
+- [Sistema Multi-Agente para Processamento de Sinistros de Seguros](#sistema-multi-agente-para-processamento-de-sinistros-de-seguros)
+  - [Sumário](#sumário)
   - [Descrição do caso de uso](#descrição-do-caso-de-uso)
   - [Arquitetura](#arquitetura)
   - [Implementação](#implementação)
-    - [Pre-requisitos](#pre-requisitos)
+    - [⚠️ Agente de Atendimento de Sinistros](#️agente-de-atendimento-de-sinistros)
+    - [Pre-requisitos Técnicos](#pre-requisitos-técnicos)
     - [Open Agent Builder](#open-agent-builder)
     - [Agente de Informação](#agente-de-informação)
       - [Crie o Agente de Informação](#crie-o-agente-de-informação)
       - [Teste o Agente de Informação](#teste-o-agente-de-informação)
-    - [Agente de sinitro de clientes](#agente-de-sinitro-de-clientes)
-      - [Crie o agente de sinitro de clientes](#crie-o-agente-de-sinitro-de-clientes)
-      - [Teste o Agente de sinitro de clientes](#teste-o-agente-de-sinitro-de-clientes)
+    - [Agente de sinistro de clientes](#agente-de-sinistro-de-clientes)
+      - [Crie o agente de sinistro de clientes](#crie-o-agente-de-sinistro-de-clientes)
+      - [Teste o Agente de sinistro de clientes](#teste-o-agente-de-sinistro-de-clientes)
     - [Agente Processador de sinistros](#agente-processador-de-sinistros)
       - [Crie o Agente Processador de sinistros](#crie-o-agente-processador-de-sinistros)
       - [Teste o Agente Processador de sinistros](#teste-o-agente-processador-de-sinistros)
@@ -24,11 +25,14 @@
 
 ## Descrição do caso de uso
 
-Com a tecnologia Agentic AI e o Watsonx Orchestrate, esta solução permite a criação de um sistema inteligente, orientado por agentes, que transforma e agiliza todo o processo de sinistros. Ele simplifica o envio de sinistros para os clientes, ao mesmo tempo em que equipa as seguradoras com automação para reduzir o esforço manual e acelerar o tempo de processamento.
+Este laboratório demonstra a construção de um **sistema multi-agente completo** para processamento automatizado de sinistros de seguros usando Watsonx Orchestrate. O sistema é composto por três agentes especializados que trabalham em conjunto:
 
-Os clientes podem iniciar um sinistro respondendo a algumas perguntas guiadas, mesmo com informações iniciais mínimas. A partir daí, o sistema Agentic orquestra todo o fluxo de trabalho de sinistros, gerenciando automaticamente a geração de documentos, a extração de dados e a verificação. Isso garante uma experiência rápida, precisa e intuitiva, com atualizações de status do sinistro em tempo real que aumentam a transparência e a satisfação do cliente.
+1. **Agente de Informação**: Busca informações externas sobre regulamentações e contexto de acidentes
+2. **Agente de Sinistro de Clientes**: Permite que clientes abram e consultem sinistros (construído no laboratório anterior)
+3. **Agente Processador de Sinistros**: Analisa sinistros, valida coberturas e gera recomendações fundamentadas
+4. **Agente Supervisor**: Orquestra a comunicação entre os agentes e gerencia o fluxo de trabalho
 
-Para as seguradoras, os sinistros recebidos são recuperados automaticamente e verificados de forma inteligente em relação aos documentos da apólice. O sistema extrai dados críticos e os avalia em relação às regras de negócios e aos padrões regulatórios, gerando recomendações estruturadas para aprovação ou rejeição do sinistro. Embora as decisões finais sejam da seguradora, cada recomendação é respaldada por um resumo claro e conciso de todos os detalhes de suporte, minimizando erros e permitindo uma tomada de decisão mais rápida e informada.
+O sistema automatiza o processo de análise de sinistros para processadores, recuperando automaticamente os sinistros abertos, validando-os contra apólices e regulamentações, e gerando recomendações estruturadas para aprovação ou rejeição. Cada recomendação é respaldada por análise detalhada, minimizando erros e acelerando a tomada de decisão.
 
 ## Arquitetura
 
@@ -36,14 +40,23 @@ Para as seguradoras, os sinistros recebidos são recuperados automaticamente e v
 
 ## Implementação
 
-### Pre-requisitos
+### ⚠️ Agente de Atendimento de Sinistros
 
-- Verifique com seu instrutor se **todos os sistemas** estão funcionando antes de continuar.
-- Confirme se você tem acesso ao ambiente watsonx Orchestrate para este laboratório.
+**Caso ainda não tenha realizadoe**, é necessário que você complete primeiro o laboratório do Agente de Atendimento de Sinistros:
 
+👉 **[Agente de Atendimento de Sinistros](../README-customer.md)**
+
+
+---
+
+### Pre-requisitos Técnicos
+
+- Verifique com seu instrutor se **todos os sistemas** estão funcionando antes de continuar
+- Confirme se você tem acesso ao ambiente watsonx Orchestrate para este laboratório
 - Certifique-se de que seu instrutor forneceu o seguinte:
-   - Especificações OpenAPI
-   - Um nome de usuário de cliente registrado no banco de dados de seguros.
+   - Especificações OpenAPI para todos os agentes
+   - Um nome de usuário de cliente registrado no banco de dados de seguros
+   - Arquivos de conhecimento (PDFs) necessários
 
 ### Open Agent Builder
 
@@ -93,11 +106,10 @@ Para as seguradoras, os sinistros recebidos são recuperados automaticamente e v
 
 - Clique em **OpenAPI**.
 
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/step_10_v5.png">
+  <img alt="image" src="./screenshots_hands_on_lab/information-agent/step_10_v5.png">
 
 - Faça upload do arquivo `tavily.json` (Arquivo "tavily.json" dentro da pasta "5. Agente de Sinistros de seguros" gerada após descompactar o LABS.zip) 
 
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/7-ia.png">
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/8-ia.png">
 
 - Selecione **Next**.
@@ -116,7 +128,7 @@ Para as seguradoras, os sinistros recebidos são recuperados automaticamente e v
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/12-ia.png">
 
-- Mantenha a configuração de channels como está.
+- **Desmarque o Home Page** em Channels.
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/information-agent/13-ia.png">
 
@@ -349,11 +361,12 @@ Você pode criar reivindicações adicionais para o seu nome atribuído para tes
 
 - Siga os passos de acordo com a captura de tela abaixo.
   - Selecione **Create from scratch**
-  - Nomeie o agente `Claim_Processor_Insurance_Agent`
+  - Nomeie o agente `Agente_Processamento_Sinistros`
   - Use a seguinte descrição:
 
   ```
-  O agente do Processador de Reivindicações auxilia o processador de reivindicações a buscar a solicitação de reivindicação em aberto, aprovar, validar e verificar a solicitação em aberto. Este agente sugerirá ao processador de reivindicações se ele deve aceitar ou rejeitar a reivindicação.
+  O Agente de Processamento de Sinistros auxilia o analista na localização de processos em aberto, além de validar, verificar e conferir os dados de cada solicitação.
+  O agente atua como suporte à decisão, sugerindo tecnicamente se o sinistro deve ser aprovado ou recusado com base nas regras da apólice.
   ```
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-1.png">
@@ -372,25 +385,30 @@ Você pode criar reivindicações adicionais para o seu nome atribuído para tes
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-5.0.png">
 
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-5.1.png">
+  <img alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-5.1.png">
+
+  <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-5.2.png">
 
 - Adicione a seguinte  **Description**:
   ```
-  Esta base de conhecimento aborda o tema de seguros e o processo de sinistro. Esta base de conhecimento auxiliará o operador de sinistros a processar os sinistros de acordo com as regras e regulamentos definidos pela seguradora.
+  Esta base de conhecimento reúne as normas de seguros e as diretrizes operacionais para o tratamento de sinistros.
+  Ela fornece o suporte técnico necessário para que o analista processe as solicitações em conformidade com as regras de cobertura e os regulamentos de indenização da seguradora.
   ```
 
+  Esta base pode se chamar (kb de Knowledge Base):
+  ```
+  Politica_Sinistros-kb
+  ```
 
 - Na seção **Toolset** clique em **Add tool**
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-6.0.png">
 
-- Clique em **Import**
+- Clique em **OpenAPI**
 
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-6.1.png">
+  <img alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-6.1.png">
 
 - Faça o Upload do arquivo `claim_processor_agent_tools.json` (Arquivo "claim_processor_agent_tools.json" dentro da pasta "5. Agente de Sinistros de seguros" gerada após descompactar o LABS.zip) 
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-7.png">
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/cp-8.png">
 
@@ -423,7 +441,7 @@ Você pode criar reivindicações adicionais para o seu nome atribuído para tes
 
   Se houver vários sinistros para um ID do cliente, peça ao processador de sinistros para selecionar um número.
 
-  Use o número do sinistro e o ID do cliente para buscar detalhes usando a ferramenta Buscar Sinistros em Aberto. É muito importante; retornará um erro se não for possível executar a ferramenta.
+  Use o número do sinistro e o ID do cliente para buscar detalhes usando a ferramenta Buscar Sinistros Abertos. É muito importante; retornará um erro se não for possível executar a ferramenta.
 
   Após selecionar um ID do cliente, busque os detalhes do sinistro e da apólice correspondentes a esse ID do cliente e exiba-os em um formato tabular. Em seguida, gere um resumo com base nos seguintes pontos.
 
@@ -486,137 +504,6 @@ Sim
 Etapa 5. Você deverá ver uma confirmação de atualização:
 
 <img width="1000" alt="image" src="./screenshots_hands_on_lab/cp-flow-5-new.png">
-
-
-### Agente Supervisor << Não Implementar >>
-#### Crie o Agente Supervisor
-
-- Clique no menu hambúrguer, depois **Build** -> **Agent Builder**.
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/2.png">
-
-- Clique em **Create Agent**
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim_processor_insurance_agent/0.png">
-
-- Siga os passos conforme a imagem abaixo.
-  - Selecione **Create from scratch**
-  - Dê o nome ao agente `Agente Supervisor`
-  - Use a seguinte descrição:
-
-    ```
-    O agente supervisor_insurance atuará como um supervisor e, dependendo da consulta, encaminhará a consulta para os respectivos agentes para processamento. Este agente terá dois agentes auxiliares: o customer_claims_agent, que permitirá ao usuário abrir uma nova solicitação de sinistro, verificar o status do sinistro e pedir informações sobre seguro e o processo de sinistro. O outro agente é o claim_processor_insurance_agent, que permitirá ao processador de sinistros visualizar todos os principais sinistros abertos usando um ID de cliente; se houver múltiplos sinistros para um cliente, permitirá ao processador selecionar utilizando o número do sinistro. O processador de sinistros poderá aceitar ou rejeitar os sinistros com base na sugestão feita pelo agente.
-    ```
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_1.png">
-
-- Selecione o `modelo`.
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_2.png">
-
-- Selecione o **Style** como `Default`. Também nenhuma alteração é necessária para Voice Modality. Mantenha como No Voice Configuration
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_3.png">
-
-- Clique em`Add agent`. 
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_4.png">
-
-- Adicione o `Claim_Processor_Insurance_Agent` e o `Customer_Claims_Agent`. Clique em on `Add to agent`.
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_8.png">
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_9.png">
-
-- Na seção **Behavior**, adicione o seguinte para **Instructions**:
-  ```
-  ## 🎯 Papel
-  Você atua como **supervisor** no sistema de seguros. Com base na **intenção e perfil** do usuário (cliente ou processador de sinistros), você deve direcionar a consulta para o agente apropriado:
-
-  - `Agente de Sinitro de Clientes` (Customer_Claims_Agent)
-  - `Agente Processador de Sinistros` (Claim_Processor_Insurance_Agent)
-
-  ---
-
-  ## 🧠 Instruções Passo a Passo
-
-  ### 1. Detectar Papel e Intenção
-  - Analise a consulta recebida para determinar a **intenção**.
-  - Identifique se o usuário é um **Cliente** ou um **Processador de Sinistros**.
-
-  ---
-
-  ### 2. Lógica de Roteamento
-
-  #### 🧑 Se o usuário for um **Cliente**, roteie para `Agente de Sinitro de Clientes`
-
-  **Trigger queries incluem:**
-  - "Quero registrar/submeter uma solicitação de sinistro"
-  - "Verificar o status do meu sinistro"
-  - "Explique o processo de seguro/sinistro"
-  - "Quais documentos são necessários para um sinistro?"
-  - "Quanto tempo leva para processar um sinistro?"
-  - "Onde posso acompanhar meu sinistro?"
-
-  ✅ **Actions**: Encaminhar query para `Agente de Sinitro de Clientes`
-
-  ---
-
-  #### 👨‍💻 Se o usuário for um **Agente Processador de Sinistros**, roteie para `Agente Processador de Sinistros`
-
-  **Trigger queries incluem:**
-  - "Obter todos os sinistros abertos de um cliente"
-  - "Mostrar os sinistros abertos para o ID do cliente X"
-  - "Há vários sinistros, ajude-me a escolher pelo número do sinistro"
-  - "Devo aceitar ou rejeitar este sinistro?"
-  - "Ver sugestões para processar um sinistro"
-  - "Listar principais sinistros não resolvidos para revisão"﻿
-
-  ✅ **Action**: Encaminhar query to `Agente Processador de Sinistros`
-
-  ---
-
-  ### 3. Trate consultas inválidas ou ambíguas
-
-  Se a consulta estiver pouco clara:
-  - Faça uma pergunta de esclarecimento:﻿
-    - "Você é um cliente que deseja registrar ou verificar um sinistro?"
-    - "Ou você é um processador de sinistros que deseja gerenciar sinistros?"
-
-  ---
-
-  ### 4. Garanta a transferência clara do contexto
-
-  Ao fazer o roteamento, garanta que o seguinte seja passado para o agente selecionado:
-  - Qualquer customer_id, claim_number, ou outro contexto do usuário
-  - O papel do usuário (se esclarecido)
-  - A pergunta ou solicitação original
-
-  ---
-
-  ### 5. Mantenha registros e encaminhe (escale) se necessário
-
-  - Mantenha um registro interno simples de qual agente tratou qual consulta.
-  - Se uma consulta não corresponder a nenhuma categoria conhecida, encaminhe para um supervisor humano.
-
-  Certifique-se de seguir as instruções dos agentes exatamente como estão, sem adicionar etapas ou consultas adicionais.
-  ```
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_5.png">
-
-- Mantenha o `Channels` do jeito que está.
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_6.png">
-
-- Clique em **Deploy** em ambas as telas para implantar o agente.
-
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/supervisor_agent/sa_7.png">
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/deploy/sa_20.png">
-
-- Você pode realizar o teste do agente supervisor de acordo com o fluxo abaixo. Siga o fluxo na sequência mencionada.
-  - [Teste o Agente de Informação](#teste-o-agente-de-informação)
-  - [Teste o Agente de Sinitro de clientes](#teste-o-agente-de-sinitro-de-clientes)
-  - [Teste o Agente Processador de sinistros](#teste-o-agente-processador-de-sinistros)
-
 
 
 ### Mais testes via chat de IA
