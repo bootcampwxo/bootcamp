@@ -2,16 +2,16 @@
 
 ## Sumário
 
-- [Automatize o processamento de reivindicações de seguros com a IA da Agentic - Agente Customer](#automatize-o-processamento-de-reivindicações-de-seguros-com-a-ia-da-agentic---agente-customer)
+- [Automatize o processamento de sinistros de seguros com Agentes de IA](#automatize-o-processamento-de-sinistros-de-seguros-com-agentes-de-ia)
   - [Sumário](#sumário)
   - [Descrição do caso de uso](#descrição-do-caso-de-uso)
   - [Arquitetura](#arquitetura)
   - [Implementação](#implementação)
     - [Pre-requisitos](#pre-requisitos)
     - [Open Agent Builder](#open-agent-builder)
-    - [Agente de sinistro de clientes](#agente-de-sinistro-de-clientes)
-      - [Crie o agente de sinistro de clientes](#crie-o-agente-de-sinistro-de-clientes)
-      - [Teste o Agente de sinistro de clientes](#teste-o-agente-de-sinistro-de-clientes)
+    - [Agente de atendimento de sinistros](#agente-de-atendimento-de-sinistros)
+      - [Crie o agente de sinistro de clientes](#crie-o-agente-de-atendimento-de-sinistros)
+      - [Teste o Agente de sinistro de clientes](#teste-o-agente-de-atendimento-de-sinistros)
 
 ## Descrição do caso de uso
 
@@ -21,9 +21,6 @@ Os clientes podem iniciar um sinistro respondendo a algumas perguntas guiadas, m
 
 O agente também fornece informações sobre apólices de seguro e o processo de sinistros através de uma base de conhecimento integrada, respondendo dúvidas dos clientes de forma clara e contextualizada.
 
-## Arquitetura
-
-![Arquitetura](Insurance_Autoclaims_Architecture_v2.png)
 
 ## Implementação
 
@@ -50,9 +47,9 @@ O agente também fornece informações sobre apólices de seguro e o processo de
 
 <img width="1000" alt="image" src="screenshots_hands_on_lab/wxo-agent-builder.png">
 
-### Agente de sinistro de clientes
+### Agente de Atendimento de Sinistros
 
-#### Crie o agente de sinistro de clientes
+#### Crie o agente de atendimento de sinistros
 
 - Clique no menu de hambúrguer e depois **Build** -> **Agent Builder**
 
@@ -64,11 +61,13 @@ O agente também fornece informações sobre apólices de seguro e o processo de
 
 - Siga os passos de acordo com a captura de tela abaixo
   - Selecione **Create from scratch**
-  - Nomeie o agente `Customer_Claims_Agent`
+  - Nomeie o agente `Agente_Atendimento_Sinistros`
   - Utilize a seguinte descrição:
 
   ```
-  O agente de Reclamações do Cliente permitirá que os clientes consultem o status de suas solicitações de reclamação e criem uma nova solicitação. Você também responderá a perguntas sobre o processo de reclamação e a apólice de seguro, utilizando a base de conhecimento.
+  Agente especialista em suporte ao segurado para abertura e acompanhamento de sinistros.
+  O agente permite que os clientes consultem o status de processos em andamento e realizem a abertura de novos chamados de indenização.
+  Além disso, fornece esclarecimentos sobre o processo de regulação e coberturas da apólice de seguro, utilizando exclusivamente a base de conhecimento técnica.
   ```
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-1.png">
@@ -92,11 +91,13 @@ O agente também fornece informações sobre apólices de seguro e o processo de
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-4.png">
 
 
-- Na seção **Knowledge**:
-
-- Faça o upload do arquivo Automobile Insurance Knowledge Base (Arquivo "Automobile Insurance Knowledge Base.pdf" dentro da pasta "5. Agente de Sinistros de seguros" gerada após descompactar o LABS.zip) clicando em **Upload files** em **Documents**
-
+- Role a tela para baixo até a seção **Knowledge**. Clique em **Add source**:
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-5.png">
+  <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-5_1.png">
+  
+- Faça o upload do arquivo Automobile Insurance Knowledge Base (Arquivo "Automobile Insurance Knowledge Base.pdf" dentro da pasta "5. Agente de Sinistros de seguros" gerada após descompactar o LABS.zip) clicando em **Upload files**
+
+
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-6.png">
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-7.png">
 
@@ -106,19 +107,24 @@ O agente também fornece informações sobre apólices de seguro e o processo de
   Esta base de conhecimento aborda o tema de seguros e o processo de sinistro. Esta base de conhecimento ajudará o cliente a obter informações sobre o processo de sinistro e as regras e regulamentos de processamento de sinistros de seguro.
   ```
 
+  Esta base pode se chamar (kb de Knowledge Base):
+  ```
+  Atendimento_Sinistros-kb
+  ```
+
 - Na seção **Toolset**, clique em **Add tool** 
 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-8.png">
 
-- Clique em **Import**. Importe o arquivo `customer_claims_agent_tools.json` (Arquivo "customer_claims_agent_tools.json" dentro da pasta "5. Agente de Sinistros de seguros" gerada após descompactar o LABS.zip) 
-
+- Na janela pop up, selecione **Open API**:
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-9.png">
-  <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-10.png">
+
+- Importe o arquivo `customer_claims_agent_tools.json` (Arquivo "customer_claims_agent_tools.json" dentro da pasta "5. Agente de Sinistros de seguros" gerada após descompactar o LABS.zip) 
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-11.png">
 
 - Selecione **Next**
-
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-13.png">
+
 - Selecione todas as  **Operações** e clique em **Done**
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-14.png">
 
@@ -167,7 +173,7 @@ Se o usuário tiver dúvidas sobre:
   - Processos de seguro
   - Elegibilidade para sinistros
   - Documentação
-  Consulte apenas a base de conhecimento “Automobile Insurance Knowledge Base.pdf”. Se a resposta não estiver na base de conhecimento, responda: “Não sei”.
+  Consulte apenas a base de conhecimento “Atendimento_Sinistros-kb”. Se a resposta não estiver na base de conhecimento, responda: “Não sei”.
 
 Não faça referência à base de conhecimento ao interagir com ferramentas.
 ```
@@ -178,7 +184,7 @@ Não faça referência à base de conhecimento ao interagir com ferramentas.
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-16.png">
   <img width="1000" alt="image" src="./screenshots_hands_on_lab/customer/customer-17.png">
 
-#### Teste o Agente de sinitro de clientes
+#### Teste o Agente de Atendimento de Sinitros
 
 Passo 1. Insira uma consulta básica:
 
@@ -227,12 +233,12 @@ Eu estava dirigindo para o trabalho quando uma caminhonete vermelha avançou o s
 
 <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim-flow-7.png">
 
-Etapa 3. Verifique o fluxo para o status da reivindicação
+Etapa 3. Verifique o fluxo para o status do sinistro
 
 Insira a consulta:
 
 ```
-Verifique o status da reivindicação
+Verifique o status do sinistro
 ```
 
 <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim-flow-8.png">
@@ -245,13 +251,13 @@ Para o número da reclamação, insira o número da reclamação do resumo da re
 
 <img width="1000" alt="image" src="./screenshots_hands_on_lab/claim-flow-11.png">
 
-Você pode criar reivindicações adicionais para testar diferentes cenários com o agente de sinistro de clientes.
+Você pode criar sinistros adicionais para testar diferentes cenários com o agente de atendimento de sinistros.
 
 ---
 
 ## Parabéns! 🎉
 
-Você concluiu com sucesso a implementação do **Agente de Sinistro de Clientes** usando Watsonx Orchestrate. Este agente permite que os clientes:
+Você concluiu com sucesso a implementação do **Agente de Atendimento de Sinistros** usando Watsonx Orchestrate. Este agente permite que os clientes:
 
 - ✅ Abram novos sinistros de forma guiada e intuitiva
 - ✅ Consultem o status de seus sinistros existentes

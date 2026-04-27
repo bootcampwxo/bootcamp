@@ -58,7 +58,7 @@ O **Agente de Sinistro de Seguro Automóvel**, desenvolvido com **Watsonx Orches
 
 ## Arquitetura
 
-![Architecture](/usecases/autoclaim-insurance/assets/Insurance_Autoclaims_Architecture_v2.png)
+![Architecture](/usecases/autoclaim-insurance/assets/Insurance_Autoclaims_Architecture_v2c.png)
 
 ## 🎥 Demo
 [▶️ Assistir demonstração do Autoclaims Insurance](autoclaim_demo.mp4)
@@ -69,7 +69,7 @@ O **Agente de Sinistro de Seguro Automóvel**, desenvolvido com **Watsonx Orches
 
 👉👉👉 [Clique aqui](/usecases/autoclaim-insurance/assets/hands_on_lab_autoclaim_insurance-customer.md) para acessar as instruções detalhadas e implementar este caso de uso.
 
-**Tempo estimado**: 45-60 minutos
+**Tempo estimado**: 20 minutos
 
 
 
