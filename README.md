@@ -35,21 +35,23 @@ Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por c
 
 Siga a sequência recomendada para máximo aprendizado:
 
-### 1. 🎯 Single Agent + RAG - Escolha seu caminho:
+### 1. Agente Único + RAG(Retrieval Augmented Generation) - Escolha seu caminho:
 
 #### Opção A: [Ask-HR](usecases/ask-hr/README.md)
+
 Assistente inteligente de RH que responde perguntas sobre políticas da empresa usando base de conhecimento.
 
-**Features:** `Single agent` `RAG` `Knowledge base` `Backend connection` `No code`
+**Features:** `Agente Único` `RAG` `Knowledge base` `Backend connection` `No code`
 
 #### Opção B: [Agente de Sinistros - Customer](usecases/autoclaim-insurance/README-customer.md)
+
 Agente focado na experiência do cliente para abertura e acompanhamento de sinistros de seguros.
 
 **Features:** `Single agent` `RAG` `Knowledge base` `Backend connection` `No code`
 
 ---
 
-### 2. 🔍 Multi-Agent - Escolha seu caminho:
+### 2. Multi-Agente - Escolha seu caminho:
 
 #### Opção A: [Agente de Sinistros de Seguros](usecases/autoclaim-insurance/README.md)
 Sistema multi-agente para processamento automatizado de sinistros de seguros.
@@ -83,15 +85,15 @@ Aprenda a avaliar e monitorar seus agentes para garantir qualidade e segurança 
 
 ## 🤖 Pró code Experience - Desenvolvedores
 
-[Clique aqui](usecases/ADK/README.md) para criar agentes utilizando o IBM watsonx Orchestrate Agent Development Kit (ADK)
+É desenvolvedor e tem skills em Python? Então [clique aqui](usecases/ADK/README.md) para criar agentes utilizando o IBM watsonx Orchestrate Agent Development Kit (ADK)
 
 ---
 
-### 📚 [Ver Todos os Casos de Uso →](ALL_USECASES.md)
+### 📚 [Clique aqui para acessar todos os Casos de Uso →](ALL_USECASES.md)
 
 Explore o catálogo completo com mais de 15 casos de uso para diferentes indústrias e cenários.
 
-⚠️ <b>Este repositório é público apenas para fins de visualização.A  clonagem, redistribuição ou modificação não autorizada deste código é expressamente proibida.</b> ⚠️
+⚠️ <b>Este repositório é público apenas para fins de visualização. A clonagem, redistribuição ou modificação não autorizada deste código é expressamente proibida. </b> ⚠️
 
 
 
