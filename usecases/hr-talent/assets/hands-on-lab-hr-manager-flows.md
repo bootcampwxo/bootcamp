@@ -46,12 +46,12 @@ Ao usar fluxos de trabalho agéticos, os usuários corporativos obtêm:
 
 Você vai precisar dos arquivos baixados durante o laboratório de Gerente de RH:
 
-- Currículo do Candidato 1 (Arquivo "Candidate 1_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
-- Currículo do Candidato 2 (Arquivo "Candidate 2_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
-- Currículo do Candidato 3 (Arquivo "Candidate 3_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
-- Currículo do Candidato 4 (Arquivo "Candidate 4_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
-- Currículo do Candidato 5 (Arquivo "Candidate 5_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
-- Descrição da vaga (Arquivo "Descricao_Vaga.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip) 
+- [Currículo do Candidato 1](../data/Candidato%201.pdf)
+- [Currículo do Candidato 2](../data/Candidato%202.pdf)
+- [Currículo do Candidato 3](../data/Candidato%203.pdf)
+- [Currículo do Candidato 4](../data/Candidato%204.pdf)
+- [Currículo do Candidato 5](../data/Candidato%205.pdf)
+- [Descrição do Cargo](../data/Descrição%20do%20Cargo.pdf)
 
 ## 🥇 Agente de Aquisição de Talentos com fluxos de trabalho
 
