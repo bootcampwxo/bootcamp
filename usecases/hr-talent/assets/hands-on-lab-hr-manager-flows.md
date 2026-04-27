@@ -63,43 +63,37 @@ Agora, vamos orientá-lo passo a passo na criação do fluxo de trabalho acima. 
 
 ### Criar um novo agente
  
-Abra o Construtor de Agentes no Watsonx Orchestrate, caso ainda não esteja aberto -- clique em ***Build->Agent Builder** no menu principal (ícone de hambúrguer).
+Abra o Construtor de Agentes no Watsonx Orchestrate, caso ainda não esteja aberto -- clique em ***Build** no menu principal (ícone de hambúrguer).
 
-![alt text](./hands-on-lab-assets/open_agent_builder.png)
+![alt text](./images-lab/builder.png)
 
 Criar um novo agente:
 
-![alt text](./hands-on-lab-assets/create_new_agent.png)
+![alt text](./images-lab/create-agent.png)
 
-Selecione **Create from scratch**, dê o nome de **Agente de Talentos** e adicione uma breve descrição. As descrições são usadas para direcionar a consulta do usuário ao agente correto. Você pode usar a descrição abaixo:
+Selecione **Create from scratch**, dê o nome de **Agente de Seleção** e adicione uma breve descrição. As descrições são usadas para direcionar a consulta do usuário ao agente correto. Você pode usar a descrição abaixo:
 ```
 Este agente ajuda a encontrar candidatos para vagas com base em suas habilidades.
 ```
-![alt text](./hands-on-lab-assets/agent_description.png)
+![alt text](./images-lab/agent-scratch.png)
 
 Após clicar em **Create**, você será direcionado para esta tela:
 
-![alt text](./hands-on-lab-assets/talent_agent_intro.png)
-
-Para este agente, usaremos o modelo **llama-3-405b-instruct**. Você pode selecioná-lo no menu suspenso **Model**:
-
-![alt text](./hands-on-lab-assets/agent_change_model.png)
-
-Sinta-se à vontade para experimentar também o outro modelo (de visão), mas este funcionou melhor para o nosso caso de uso.
+![alt text](./images-lab/principal-screen.png)
 
 Vamos manter todas as outras configurações com os valores padrão por enquanto. Role para baixo até a seção **Toolset**. É aqui que adicionaremos nosso fluxo (fluxo de trabalho com agentes). Clique em **Add Tool**.
 
-![alt text](./hands-on-lab-assets/add_tool.png)
+![alt text](./images-lab/add-tool-flows.png)
 
 Selecione **Create an agentic workflow**:
 
-![alt text](./hands-on-lab-assets/create_workflow.png)
+![alt text](./images-lab/agentic-workflow.png)
 
 ### Etapa 1: Crie um fluxo de trabalho baseado em agentes e configure as entradas e saídas
 
-Primeiro, vamos editar a descrição do fluxo, as entradas e as saídas. Clique no ícone de lápis ao lado do nome do fluxo no canto superior esquerdo:
+Primeiro, crie o nome do fluxo você usar esse **Match candidatos** vamos editar a descrição do fluxo, as entradas e as saídas. Clique no ícone de lápis ao lado do nome do fluxo no canto superior esquerdo:
 
-![alt text](./hands-on-lab-assets/edit_flow_description.png)
+![alt text](./images-lab/parametros.png)
 Altere o nome para **Combinar candidatos** e a descrição para:
 
 ``` 
@@ -108,7 +102,7 @@ Extrai habilidades dos currículos dos candidatos, extrai habilidades da descri�
 ```
 e clique no botão  **Add output** para especificar a saída do fluxo: 
 
-![alt text](./hands-on-lab-assets/flow_description.png)
+![alt text](./images-lab/add-output.png)
 
 Aqui configuraremos a variável que armazenará a saída de todo o fluxo, retornada ao agente após a conclusão da execução do fluxo. Selecione **String** para o tipo de variável:
 
@@ -120,42 +114,37 @@ Dê o nome **match_summary** e clique em **Add**:
 
 Após clicar em **Save**, seu fluxo de trabalho ficará semelhante a este:
 
-![alt text](./hands-on-lab-assets/flow_start.png)
+![alt text](./images-lab/workflows.png)
 
 Por enquanto, o fluxo possui apenas dois nós: o nó inicial, com 0 entradas e 0 variáveis ​​configuradas, e o nó final, com 1 variável configurada. Você pode verificar se a variável de saída foi adicionada com sucesso clicando no nó final.
 
-![alt text](./hands-on-lab-assets/output_node.png)
+![alt text](./images-lab/output-var.png)
 
 
 Em seguida, configuraremos algumas variáveis ​​de fluxo que poderemos usar ao longo do nosso fluxo. Precisaremos de duas:
 
-- *num_candidates* - uma lista que representa um intervalo de números inteiros de *0* a *n*, onde *n* é o número de candidatos. Para carregar e processar vários currículos de candidatos, usaremos um nó **For each**. Para isso, podemos iterar sobre *num_candidates*.
-- *candidates* - esta é uma variável de string que armazenará os nomes dos candidatos extraídos e suas respectivas habilidades. Precisaremos dela para usá-la em um nó de prompt generativo.
+- *num_candidatos* - uma lista que representa um intervalo de números inteiros de *0* a *n*, onde *n* é o número de candidatos. Para carregar e processar vários currículos de candidatos, usaremos um nó **For each**. Para isso, podemos iterar sobre *num_candidatos*.
+- *candidatos* - esta é uma variável de string que armazenará os nomes dos candidatos extraídos e suas respectivas habilidades. Precisaremos dela para usá-la em um nó de prompt generativo.
 
-Clique no nó inicial e selecione **Edit** variáveis ​​de fluxo.
+Clique no nó inicial e selecione **Add**.
+Selecione **Integer**
 
-![alt text](./hands-on-lab-assets/edit_flow_variables.png)
+![alt text](./images-lab/flow-variables.png)
 
-Adicionar variável de fluxo:
-
-![alt text](./hands-on-lab-assets/add_flow_var.png)
-
-e selecione **Integer**: 
-
-![alt text](./hands-on-lab-assets/integer_var.png)
-
-Insira o nome da variável, *num_candidates*, e uma descrição, por exemplo:
+Insira o nome da variável, *num_candidatos*, e uma descrição, por exemplo:
 
 ```
-lista de candidatos, enum
+Quantidade de candidatos
 ```
 Habilite a opção **List of Integer**  já que teremos uma lista, clique em **Add** para adicionar a variável.
 
 Adicione outra variável:
 
-![alt text](./hands-on-lab-assets/add_another_var.png)
+![alt text](./images-lab/input-integer-list.png)
 
 Desta vez, crie uma string. Dê o nome *candidatos* e uma descrição simples, por exemplo:
+
+![alt text](./images-lab/input-string.png)
 
 ```
 Nomes e habilidades dos candidatos
@@ -163,50 +152,42 @@ Nomes e habilidades dos candidatos
 
 Especifique o valor padrão (starting): "" e clique em **Add**:
 
-![alt text](./hands-on-lab-assets/candidates_var.png)
+![alt text](./images-lab/input-string-nomes.png)
 
 Seu fluxo de trabalho agora está assim:
 
-![alt text](./hands-on-lab-assets/start_vars_defined.png)
+![alt text](./images-lab/fluxo-no-momento.png)
 
 ### Etapa 2: Atividade do usuário para coletar o número de candidatos
 
 Agora vamos adicionar nossa primeira atividade de usuário. A primeira atividade que vamos criar será perguntar ao usuário quantos candidatos ele gostaria de avaliar para a vaga. Passe o cursor sobre a seta que conecta o nó inicial ao nó final e clique no sinal de **+**:
 
-![alt text](./hands-on-lab-assets/add_user_activity1.png)
+![alt text](./images-lab/nova-atividade.png)
 
 Clique em **User activity**:
 
-![alt text](./hands-on-lab-assets/select_user_activity.png)
+![alt text](./images-lab/fluxo-2-seleciona-number.png)
 
-Passe o cursor sobre a seta que vai do Início ao Fim **dentro da User activity 1**.  Clique em **+**, depois em **Collect from user**, depois em **Number**: 
-
-![alt text](./hands-on-lab-assets/collect_number.png)
-
-Clique em **Number 1**, em seguida, clique no ícone de lápis para editar a pergunta que será exibida ao usuário:
+A seguir será necessário adicionar a pergunta referente a quantidade de candidatos:
 
 ``` 
 Quantos candidatos você gostaria de avaliar?
-
 ```
 
-![alt text](./hands-on-lab-assets/collect_number2.png)
+![alt text](./images-lab/fluxo-2-pergunta.png)
 
 Seu fluxo agora deve estar assim:
 
-![alt text](./hands-on-lab-assets/number_collected.png)
+![alt text](./images-lab/fluxo-2.png)
 
 ### Etapa 3: Bloco de código para armazenar o número de candidatos
 
 Agora vamos definir um nó para atualizar a variável *num_candidates*:
 
-Passe o cursor sobre a seta que conecta a atividade do usuário ao nó final. Clique no sinal de **+** e depois em **Code block***:
-
-![alt text](./hands-on-lab-assets/add_code_block.png)
-
+Arraste da lista **Flow nodes** o **Logic block** e adiciona entre **User activity** e **output**.
 Clique no novo nó de bloco de código e abra o editor de código:
 
-![alt text](./hands-on-lab-assets/open_code_editor.png)
+![alt text](./images-lab/fluxo-3-logic-block.png)
 
 Enter the folowing code into the editor: 
 
@@ -217,34 +198,34 @@ flow.private.num_candidates = list(range(0, numc))
 
 E clique no **X** para fechar o editor:
 
-![alt text](./hands-on-lab-assets/enter_code.png)
+![alt text](./images-lab/fluxo-3-code.png)
 
 Clique novamente no bloco de código e renomeie-o usando o botão Editar (lápis):
 
-![alt text](./hands-on-lab-assets/edit_code_block_name.png)
+![alt text](./images-lab/fluxo-3-edit-name-flow.png)
 
 Dê o nome **armazenar lista de candidatos** e clique **V** para salvar.  Seu fluxo agora deve estar semelhante ao seguinte:
 
-![alt text](./hands-on-lab-assets/flow_with_code_block.png)
+![alt text](./images-lab/fluxo-3-momento.png)
 
 ### Etapa 4: Para cada iteração faça o upload dos currículos dos candidatos.
 
 Nós vamos criar um **for-each loop** Para fazer o upload de cada currículo, extrair o nome do candidato e suas habilidades e armazenar todas essas informações na variável *candidatos*.
 
-Posicione o cursor sobre a seta que conecta o bloco de código ao nó final e clique no sinal de **+**, depois selecione **For each***:
+No Flow Controls arraste o **For each*** para ficar entre **Armazenar lista de candidatos** e **output**:
 
-![alt text](./hands-on-lab-assets/create_for_each.png)
+![alt text](./images-lab/fluxo-4-foreach.png)
 
 ### Etapa 5: Exibir mensagem para enviar um currículo
 
-Dentro do nó **For each**, crie uma **User activity** passando o cursor sobre a seta dentro do nó **For each** e clicando no sinal de **+**. Em seguida, passe o cursor sobre o interior da **AUser activity**, clique em **+**, selecione **isplay to user** e, em seguida, **Message**.
+Dentro do nó **For each**, crie uma **User activity** arrastando para dentro do nó **For each** e clicando no sinal de **Add +**. Em seguida, passe o cursor sobre o interior da **User activity**, clique em **+**, selecione **isplay to user** e, em seguida, **Message**.
 
-![alt text](./hands-on-lab-assets/add_display_message.png)
+![alt text](./images-lab/fluxo-5-user-activity.png)
 
 Em seguida, clique em **Message** e edite a **Output message**:
 
 ```
-Solicite que o usuário envie o currículo do candidato
+Faça o envio do currículo dos candidatos
 ```
 
 Esta é a mensagem que será exibida ao usuário para solicitar o envio de um currículo.
@@ -255,60 +236,53 @@ Ao mesmo tempo, altere o nome do nó para:
 Solicitar ao usuário que envie o currículo
 ```
 
-![alt text](./hands-on-lab-assets/upload_resume_message.png)
+![alt text](./images-lab/fluxo-5-message.png)
 
 
 ### Etapa 6: Envio de arquivo
 
 Adicione outra **User Activity**:
-
-![alt text](./hands-on-lab-assets/add_another_user_activity.png)
-
 Desta vez será uma atividade de **File Upload**:
 
-![alt text](./hands-on-lab-assets/create_file_upload.png)
+![alt text](./images-lab/fluxo-6-atividade.png)
 
 Clique no novo nó *File upload** e renomeie para **Upload de currículo**: 
 
-![alt text](./hands-on-lab-assets/rename_file_upload.png)
+![alt text](./images-lab/fluxo-6-change-name.png)
 
 ### Etapa 7: Extrator de documentos para currículos
 
 Em seguida, criaremos um nó de extração de documentos para extrair o nome e as habilidades do candidato do seu currículo.
 
-Ainda dentro do loop **For all**, passe o cursor sobre a última seta e clique em **+** para criar um novo nó de **Document extractor**:
+Ainda dentro do loop **For Each**, arraste **Document extractor** para criar o nó:
 
-![alt text](./hands-on-lab-assets/create_doc_extractor.png)
+![alt text](./images-lab/fluxo-7-document-extrator.png)
 
-Clique no nó **Document extractor** node e depois **Edit fields**: 
-
-![alt text](./hands-on-lab-assets/edit_doc_extractor_fields.png)
-
-Agora, vamos carregar um dos currículos como exemplo para treinar o extrator de documentos. Arraste e solte o arquivo **Currículo do Candidato 2** (Arquivo "Candidate 2_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip)  que você baixou anteriormente no laboratório:
+Agora, vamos carregar um dos currículos como exemplo para treinar o extrator de documentos. Arraste e solte o arquivo **Currículo do Candidato 2** (Arquivo "Candidato 2.pdf". Talentos de RH" gerada após descompactar o LABS.zip)  que você baixou anteriormente no laboratório:
 
 Assim que o documento for carregado, você verá a seguinte tela. Clique em **Add field** para começar a adicionar os campos que queremos extrair e usar para treinar o extrator de documentos:
 
-![alt text](./hands-on-lab-assets/doc_extractor_show.png)
+![alt text](./images-lab/fluxo-7-selecionar-campos.png)
 
 Entre **Nome** para o nome do campo e pressione Enter. O extrator de documentos tentará extrair o nome do currículo e o exibirá assim que estiver pronto:
 
-![alt text](./hands-on-lab-assets/candidate_name.png)
+![alt text](./images-lab/fluxo-7-entidade-nome.png)
 
 Em seguida, precisamos adicionar outro campo: **Habilidades**. Adicione mais um campo e nomeie-o como **Habilidades**. Depois de pressionar Enter, o extrator de documentos preencherá o campo com os dados do documento.
 
-![alt text](./hands-on-lab-assets/candidate_skills.png)
+![alt text](./images-lab/fluxo-7-entidade-habilidade.png)
 
 Renomeie o nó do extrator de documentos para **Extrator de currículo** clicando nele e editando o nome.
 
 Seu loop **For each** deverá agora ter este aspeto:
 
-![alt text](./hands-on-lab-assets/for_each_after_extractor.png)
+![alt text](./images-lab/fluxo-7-end.png)
 
 ### Etapa 8: Armazene o nome e as habilidades do candidato para uso posterior
 
 A última atividade que precisamos criar no loop **For each** é outro bloco de código que armazena o nome e as habilidades do candidato após cada iteração:
 
-![alt text](./hands-on-lab-assets/store_candidate_info.png)
+![alt text](./images-lab/fluxo-8-code.png)
 
 Clique no bloco de código e abra o editor de código. Digite o seguinte no editor de código:
 
@@ -317,19 +291,17 @@ flow.private.candidates += "Nome: " + str(flow["For each 1"]["Extrator de currí
 ```
 Renomeie o bloco para **Atualizar Candidatos**. O **For each** deverá agora ter este aspeto:
 
-![alt text](./hands-on-lab-assets/for_each_final.png)
+![alt text](./images-lab/fluxo-8-end.png)
 
 ### Etapa 9: Exibir uma mensagem para enviar a descrição da vaga
 
 Em seguida, pediremos ao usuário que carregue uma descrição da vaga. Primeiro, exibiremos uma mensagem para o usuário e, depois, adicionaremos uma atividade de upload de arquivo.
 
-**Abaixo** do loop **For each**, clique na seta que conecta ao nó final e adicione uma **User activity**:
-
-![alt text](./hands-on-lab-assets/add_user_activity_job.png)
+**Abaixo** do loop **For each**, arraste a **User activity**:
 
 Clique dentro da atividade do usuário e selecione **Display to user** e, em seguida, **Message**:
 
-![alt text](./hands-on-lab-assets/display_to_user_job_upload.png)
+![alt text](./images-lab/fluxo-9-atividades.png)
 
 Atualize a **Output message** para: 
 
@@ -343,13 +315,13 @@ E altere a **Display message** (nome do nó no fluxo) para:
 Solicitar ao usuário que carregue a descrição do cargo
 ```
 
-![alt text](./hands-on-lab-assets/configure_display_to_user_job_upload.png)
+![alt text](./images-lab/fluxo-9-upload-file.png)
 
 ### Etapa 10: Faça o upload da descrição da vaga
 
-Adicione outra **User activity** rlogo antes do nó final. Desta vez, faça-o do tipo **File upload**: 
+Adicione outra **User activity** logo antes do nó final. Desta vez, faça-o do tipo **File upload**: 
 
-![alt text](./hands-on-lab-assets/file_upload_job.png)
+![alt text](./images-lab//fluxo-10-user-activity.png)
 
 Clique no nó de upload de arquivos recém-criado e altere o nome dele para:
 
@@ -357,7 +329,7 @@ Clique no nó de upload de arquivos recém-criado e altere o nome dele para:
 Carregar descrição da vaga
 ```
 
-![alt text](./hands-on-lab-assets/change_file_upload_job_node_name.png)
+![alt text](./images-lab/fluxo-10-rename.png)
 
 ### Etapa 11: Extrator de documentos para habilidades da vaga
 
@@ -365,15 +337,11 @@ Em seguida, criaremos outro nó extrator de documentos para extrair as habilidad
 
 Adicione um nó **Document extractor** antes do final do fluxo e renomeie-o como **Extrair habilidades da vaga**:
 
-![alt text](./hands-on-lab-assets/extract_job_skills.png)
-
-Edite os campos deste nó extrator de documentos e arraste e solte a **Descrição da vaga** (Arquivo "Descricao_Vaga.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip):
-
-![alt text](./hands-on-lab-assets/job_file_drag_drop.png)
+![alt text](./images-lab/fluxo-11-extractor.png)
 
 Após o processamento do documento, você verá a seguinte tela:
 
-![alt text](./hands-on-lab-assets/job_desc_doc_proc.png)
+![alt text](./images-lab/fluxo-11-documents.png)
 
 Adicione dois campos, semelhantes aos que você adicionou ao extrator de currículos. Desta vez, porém, adicione os campos **necessárias** e **desejáveis** para extrair as habilidades obrigatórias e desejáveis:
 
@@ -383,13 +351,12 @@ Feche o nó do extrator quando terminar.
 
 Estamos quase no fim do fluxo. Ainda precisamos implementar um prompt generativo. Este prompt receberá como entrada o valor da variável *candidatos*, que é uma string contendo, até o momento, os nomes de todos os candidatos e suas habilidades. Também receberá como entrada as habilidades necessárias e desejáveis, extraídas da descrição da vaga. O prompt comparará as habilidades de cada candidato com as habilidades exigidas pela vaga e gerará uma tabela que resume o quão bem as habilidades dos candidatos se encaixam na descrição da vaga.
 
-Adicione um nó **Generate prompt** node no final do fluxo (antes do nó final):
+Adicione um nó **Generate prompt** node no final do fluxo (antes do nó final).
+Arraste o nó para que ele fique no final do fluxo.
 
-![alt text](./hands-on-lab-assets/generative_prompt.png)
+![alt text](./images-lab/fluxo-12-init.png)
 
-Renomeio o nó para **Adequar as competências do candidato às competências da vaga.** e edite o **Prompt settings**: 
-
-![alt text](./hands-on-lab-assets/rename_prompt_node.png)
+Renomeio o nó para **Adequar as competências do candidato às competências da vaga.** e edite o **Prompt settings**.
 
 Para o prompt do sistema, digite o seguinte:
 
@@ -411,17 +378,13 @@ Para funcionar, nosso prompt generativo precisará receber **como entrada** uma 
 
 Também podemos fornecer um valor de teste de exemplo para cada variável, para que possamos executar o prompt diretamente no editor de prompts generativos e verificar se a saída está correta, sem precisar encerrar e executar todo o fluxo.
 
-Adicione as seguintes variáveis ​​de entrada do tipo _String_: *candidates*, *job_required* e *job_preferred* e atribua alguns valores de teste, por exemplo:
-
-![alt text](./hands-on-lab-assets/create_new_var_gp.png)
+Adicione as seguintes variáveis ​​de entrada do tipo _String_: *candidatos*, *job_necessarias* e *job_desejaveis* e atribua alguns valores de teste, por exemplo:
 
 Insira o nome da variável e adicione uma breve descrição:
 
-![alt text](./hands-on-lab-assets/create_candidates_var_gp.png)
-
 Edite a variável para adicionar um valor de teste:
 
-![alt text](./hands-on-lab-assets/add_test_value.png)
+![alt text](./images-lab/fluxo-12-var.png)
 
 Cole o seguinte texto para adicionar o valor:
 
@@ -433,63 +396,53 @@ Nome: John Doe
 Habilidades: Java, Python, Javascript, Aprendizado de Máquina
 ```
 
-A sua variável _candidates_ agora está assim:
+A sua variável _candidatos_ agora está assim
 
-![alt text](./hands-on-lab-assets/prompt_candidates_var.png)
+Siga os passos acima para adicionar mais duas variáveis ​​do tipo _String_, _job_necessarias_ e _job_desejaveis_:
 
-Siga os passos acima para adicionar mais duas variáveis ​​do tipo _String_, _job_required_ e _job_preferred_:
-
-![alt text](./hands-on-lab-assets/job_reqs.png)
+![alt text](./images-lab/fluxo-12.png)
 
 Por fim, faça referência a essas variáveis ​​no seu prompt clicando no sinal **X** na área de prompts do usuário:
 
-![alt text](./hands-on-lab-assets/select_vars.png)
-
 Seu prompt agora deve estar assim:
 
-![alt text](./hands-on-lab-assets/generative_prompt_finished.png)
+![alt text](./images-lab/fluxo-12-config-prompt.png)
 
 Clique em **Generate response** Para executar o comando com os valores de teste fornecidos e observar os resultados retornados:
-
-![alt text](./hands-on-lab-assets/gen_prompt_test.png)
 
 Como você pode ver, o resultado é uma tabela que compara as habilidades de cada candidato com os requisitos da vaga. Isso é exatamente o que estávamos procurando, então validamos que nosso prompt generativo funciona e podemos prosseguir para a próxima etapa.
 
 Feche a definição do prompt agora, clique no nó "Prompt generativo" que você acabou de criar e **Edite o mapeamento de dados**:
 
-![alt text](./hands-on-lab-assets/edit_data_mapping.png)
+![alt text](./images-lab/fluxo-12-edit-mapping.png)
 
  Agora precisamos mapear os dados coletados anteriormente no fluxo para as entradas do prompt generativo.
 
-Clique no ícone da **variável** na linha *candidates*:
+Clique no ícone da **variável** na linha *candidatos*:
 
-![alt text](./hands-on-lab-assets/prompt_edit_candidates_input.png)
+![alt text](./images-lab/prompt_edit_candidates_input.png)
 
 No editor, selecione **Flow variables -> candidatos**: 
 
-![alt text](./hands-on-lab-assets/select_candidates_fv.png)
+![alt text](./images-lab/select_candidates_fv.png)
 
-Para *job_preferred*, também selecione **ícone de variável** e escolha **Extract job skills -> preferred**
+Para *job_desejaveis*, também selecione **ícone de variável** e escolha **Extrair habilidades da vaga -> desejaveis**
 
-![alt text](./hands-on-lab-assets/select_job_preferred.png)
+![alt text](./images-lab/select_job_preferred.png)
 
-Da mesma forma, para *job_required*, selecione o ícone da variável e escolha **Extract job skills -> required**
+Da mesma forma, para *job_necessarias*, selecione o ícone da variável e escolha **Extrair habilidades da vaga -> necessarias**
 
-![alt text](./hands-on-lab-assets/select_job_required.png)
+![alt text](./images-lab/select_job_required.png)
 
 ### Etapa 13: Exibir resumo da partida - saída do prompt generativo
 
-Por fim, crie um último nó **User activity** para exibir a saída do prompt generativo:
-
-![alt text](./hands-on-lab-assets/display_output.png)
+Por fim, crie um último nó **User activity** para exibir a saída do prompt generativo.
 
 Altere o nome do nó para **Mostrar resumo** e clique em **Select variable** para selecionar a mensagem de saída:
 
-![alt text](./hands-on-lab-assets/edit_output_node.png)
-
 No editor, selecione o nome do nó de prompt generativo e, em seguida, selecione o valor da variável de saída correspondente:
 
-![alt text](./hands-on-lab-assets/select_prompt_output_var.png)
+![alt text](./images-lab/fluxo-13-end.png)
 
 Finalmente terminamos de definir o fluxo. Clique em **Done** para fechar o fluxo.
 
@@ -498,8 +451,16 @@ Finalmente terminamos de definir o fluxo. Clique em **Done** para fechar o fluxo
 
 Antes de testar o agente, vamos concluir a seção **Behavior**. Siga as instruções abaixo:
 
-``` Quando solicitado a encontrar um candidato adequado para uma vaga ou a recomendar o melhor candidato para uma vaga, utilize a ferramenta 'Combinar candidatos'. Todas as outras perguntas devem ser respondidas com base no contexto do chat.
+``` Você especialista em análise para seleção de candidatos para vagas. Sua missão é analisar curriculos de acordo com a descriação da vaga, mas que você consiga realizar tua tarefa tem que usar a seguinte ferramenta.
 
+Para atuar na analise é obrigatório acionar a tool `Match candidatos` que eu não tenha muitas informações sobre candidato ou descrição da vaga. Pois estas mesmas informações será solicitadas ao longo do processo.
+
+## Retrições
+- Você é obrigado a usar a tool
+- No incio da interação você é obirgado a utilizar a tool
+- Não pode solicitar informações sem que tenha acessado a tool
+- Não pode solicitar informações do candidato ou da vaga sem que tenha acessado a tool
+- Não pode sair do fluxo da tool, tem que realizar cada etapa
 ```
 
 ![alt text](./hands-on-lab-assets/behavior.png)
@@ -514,11 +475,11 @@ recomendar um candidato para uma vaga
 
 O agente perguntará quantos candidatos você gostaria de avaliar. Resposta: 2
 
-Em seguida, você será solicitado a enviar o currículo de um candidato. Você pode enviar o currículo de qualquer candidato, por exemplo **Currículo do Candidato 3** (Arquivo "Candidate 3_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip). Observe que você poderá ser solicitado a revisar os resultados da extração. Se a confiança do extrator for inferior a 95%, será necessária a validação humana. Esse comportamento pode ser facilmente configurado no nó do extrator de documentos. O mesmo se aplica a quaisquer outros documentos carregados.
+Em seguida, você será solicitado a enviar o currículo de um candidato. Você pode enviar o currículo de qualquer candidato, por exemplo **Currículo do Candidato 3**. Observe que você poderá ser solicitado a revisar os resultados da extração. Se a confiança do extrator for inferior a 95%, será necessária a validação humana. Esse comportamento pode ser facilmente configurado no nó do extrator de documentos. O mesmo se aplica a quaisquer outros documentos carregados.
 
-Em seguida, você será solicitado a enviar o segundo currículo. Você pode enviar o currículo de outro candidato, por exemplo **Currículo do Candidato 1** (Arquivo "Candidate 1_ptBR.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip).
+Em seguida, você será solicitado a enviar o segundo currículo. Você pode enviar o currículo de outro candidato, por exemplo **Currículo do Candidato 1**.
 
-Por fim, você será solicitado a enviar uma descrição da vaga. Você pode usar o **Descrição da vaga** (Arquivo "Descricao_Vaga.pdf" dentro da pasta "7. Talentos de RH" gerada após descompactar o LABS.zip).
+Por fim, você será solicitado a enviar uma descrição da vaga. Você pode usar o **Descrição da vaga**.
 
 Os resultados devem ser semelhantes aos seguintes:
 
