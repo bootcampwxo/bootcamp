@@ -182,7 +182,7 @@ Seu fluxo agora deve estar assim:
 
 ### Etapa 3: Bloco de código para armazenar o número de candidatos
 
-Agora vamos definir um nó para atualizar a variável *num_candidates*:
+Agora vamos definir um nó para atualizar a variável *num_candidatos*:
 
 Arraste da lista **Flow nodes** o **Logic block** e adiciona entre **User activity** e **output**.
 Clique no novo nó de bloco de código e abra o editor de código:
@@ -193,7 +193,7 @@ Enter the folowing code into the editor:
 
 ``` 
 numc = flow["User activity 1"]["Quantos candidatos você gostaria de avaliar?"].output.value
-flow.private.num_candidates = list(range(0, numc))
+flow.private.num_candidatos = list(range(0, numc))
 ```
 
 E clique no **X** para fechar o editor:
@@ -287,7 +287,7 @@ A última atividade que precisamos criar no loop **For each** é outro bloco de 
 Clique no bloco de código e abra o editor de código. Digite o seguinte no editor de código:
 
 ```
-flow.private.candidates += "Nome: " + str(flow["For each 1"]["Extrator de currículo"].output.nome) + "\n\nHabilidades: " + str(flow["For each 1"]["Extrator de currículo"].output.habilidades) + "\n\n"
+flow.private.candidatos += "Nome: " + str(flow["For each 1"]["Extrator de currículo"].output.nome) + "\n\nHabilidades: " + str(flow["For each 1"]["Extrator de currículo"].output.habilidades) + "\n\n"
 ```
 Renomeie o bloco para **Atualizar Candidatos**. O **For each** deverá agora ter este aspeto:
 
@@ -463,7 +463,7 @@ Para atuar na analise é obrigatório acionar a tool `Match candidatos` que eu n
 - Não pode sair do fluxo da tool, tem que realizar cada etapa
 ```
 
-![alt text](./hands-on-lab-assets/behavior.png)
+![alt text](./images-lab/behavior.png)
 
 ### Teste o agente
 
