@@ -154,7 +154,7 @@ Clique em **Create Agent**
  
 ![Back Office Agent Description](./backoffice_ag_imgs/i2.png)
 
-- Na página Agente de Back Office do GFM Bank, selecione o modelo "llama-3-405b-instruct" no menu suspenso no meio superior da página.
+- Agente de Back Office do GFM Bank.
 
 ![Select Model](./backoffice_ag_imgs/i15.png)
 
@@ -168,9 +168,9 @@ Mantenha os padrões para as seções **Profile**, **Voice modality**, and **Kno
 
 Na seção **Toolset**, clique no botão **Add tool**.
 
-![Add Tool](./backoffice_ag_imgs/i3_v2.png)
+![Add Tool](./backoffice_ag_imgs/i3.png)
 
-Na janela _pop up_, selecione **Open API**:
+Na janela _pop up_, selecione **OpenAPI**:
 
 ![Import file](./backoffice_ag_imgs/i4.png)
 
@@ -216,7 +216,7 @@ Como este agente será **colaborador** e será invocado pelo **GFM Bank Orchestr
 
 Para isso, **desative o recurso**:
 
-**Show agent** na seção **Channels** → *Desativado*
+**Home page** na seção **Channels** → *Desativado*
 
 Isso garante que o agente não apareça como disponível para interação direta, mantendo sua função apenas como parte do fluxo orquestrado.
 
@@ -249,13 +249,13 @@ Ele responde **somente ao que é perguntado**, evitando suposições ou ações 
 
 #### Criar Agente de Caixa GFM
 
-- Clique no menu de hambúrguer, depois em  **Build** -> **Agent Builder**
+- Clique no menu de hambúrguer, depois em  **Build**
 
-![Agent Builder](./images/i3.png)
+![Agent Builder](./backoffice_ag_imgs/i3_v1.png)
 
 - Clique em **Create Agent**
 
-![Create Agent](./teller_ag_imgs/i2.png)
+![Create Agent](./backoffice_ag_imgs/i2_v1.png)
 
 - Siga os passos de acordo com a captura de tela abaixo.
   - Selecione **Create from scratch**
@@ -281,53 +281,45 @@ Ele responde **somente ao que é perguntado**, evitando suposições ou ações 
     ```
   - Clique **Create**
  
-    ![Create agent](./teller_ag_imgs/i5.png)
-
-Na página do `Agente de Caixa GFM`, selecione o modelo "llama-3-405b-instruct" no menu suspenso no meio superior da página.
-
-![Select model](./teller_ag_imgs/i20.png)
+    ![Create agent](./backoffice_ag_imgs/i5_v1.png)
 
 Use os padrões para as seções **Profile**, **Voice modality**, e **Knowledge**. 
 
 Na seção **Toolset**, clique no botão `Add tool`
 
-![Add Tool](./teller_ag_imgs/i6.png)
+![Add Tool](./backoffice_ag_imgs/i6.png)
 
-Clique em `Import`
+Clique em `OpenAPI`
 
-![Import](./teller_ag_imgs/i7.png)
-
-Clique em **Import from file**.
-
-![Import from file](./teller_ag_imgs/i21.png)
+![Import from file](./backoffice_ag_imgs/i7_v1.png)
 
 Faça Upload do arquivo de API `bank.json` API (o arquivo está disponível na pasta `6. Banking Backoffice" gerada após a descompactação do arquivo LABS.zip). 
 
 Arraste e solte o arquivo na área designada e clique em `Next`
   
-![Upload spec file](./images/i38.png)
+![Upload spec file](./backoffice_ag_imgs/i38_v1.png)
 
 Selecione as **operações** "Verificar saldo da conta por IBAN" e "Transferir dinheiro entre IBANs" e clique `Done`
 
-![Select Operations](./teller_ag_imgs/i10.png)
+![Select Operations](./backoffice_ag_imgs/i10_v1.png)
 
 Você deve ver o seguinte em  **Tools**:
   
-![Uploaded tools](./teller_ag_imgs/i12.png)
+![Uploaded tools](./backoffice_ag_imgs/i12_v1.png)
 
 Na seção **Agents**, clique em **Add Agent**
 
-![Uploaded tools](./teller_ag_imgs/i16.png)
+![Uploaded tools](./backoffice_ag_imgs/i16_v1.png)
 
 Clique **Add from local instance**
 
-![Uploaded tools](./teller_ag_imgs/i17.png)
+![Uploaded tools](./backoffice_ag_imgs/i17_v1.png)
 
 Selecione **Agente de Back Office do GFM Bank** e depois **Add to Agent button**
 
-![Uploaded tools](./teller_ag_imgs/i18.png)
+![Uploaded tools](./backoffice_ag_imgs/i18_v1.png)
 
-![Uploaded tools](./teller_ag_imgs/i19.png)
+![Uploaded tools](./backoffice_ag_imgs/i19_v1.png)
 
 Vá para a seção **Behavior**. Adicione o seguinte em **Instructions**:
 
@@ -365,12 +357,12 @@ Como este agente será **colaborador** e será invocado pelo **Agente Orquestrad
 
 Para isso, **desative o recurso**:
 
-**Show agent** → *Desativado* na seção **Channels**.
+**Home page** → *Desativado* na seção **Channels**.
 
 Isso garante que o agente não apareça como disponível para interação direta, mantendo sua função apenas como parte do fluxo orquestrado.
 
 
-![Show agent toggle](./teller_ag_imgs/i14.png)
+![Show agent toggle](./backoffice_ag_imgs/i14_v1.png)
 
 #### Teste e implante o Agente de Caixa GFM
 
@@ -382,11 +374,11 @@ Qual é o saldo do IBAN da minha conta DE89320895326389021994
 
 Clique em `Deploy`
 
-![Deploy](./teller_ag_imgs/i13.png)
+![Deploy](./backoffice_ag_imgs/i13_v1.png)
 
 Na tela de **Deploy Agent**, clique em `Deploy`. O Agente agora está disponível para que outras pessoas interajam.
 
-![Deploy agent](./teller_ag_imgs/i1.png)
+![Deploy agent](./backoffice_ag_imgs/i1_v1.png)
   
 ### Agente de Informações sobre Produtos GFM
 
@@ -398,13 +390,13 @@ Seu objetivo é:
 
 Esse agente é essencial para oferecer uma experiência informativa e segura, orientando os clientes de forma profissional.
 
-Clique no menu de hambúrguer, depois em **Build** -> **Agent Builder**
+Clique no menu de hambúrguer, depois em **Build**
 
-![Agent Builder](./images/i3.png)
+![Agent Builder](./backoffice_ag_imgs/i3_v2.png)
 
 Na próxima tela, clique em **Create Agent**
 
-![Create Agent](./prod_info_ag_imgs/i1.png)
+![Create Agent](./backoffice_ag_imgs/i1_v2.png)
 
 - Siga os passos de acordo com a captura de tela abaixo
   - Selecione **Create from scratch**
@@ -431,19 +423,18 @@ Na próxima tela, clique em **Create Agent**
   
 Clique em `Create`
 
-![Prod Agent Description](./prod_info_ag_imgs/i2.png)
+![Prod Agent Description](./backoffice_ag_imgs/i2_v2.png)
 
-Na página do `Informações do Produto GFMe, selecione o modelo "llama-3-405b-instruct" no menu suspenso na parte superior central da página.
+Na página do `Informações do Produto GFMe, na seção **Knowledge**. clique em **Choose knowledge**.
 
-![Select model](./prod_info_ag_imgs/i14.png)
+![Choose knowledge](./backoffice_ag_imgs/i13_v2.png)
 
-Na seção **Knowledge**. clique em **Choose knowledge**.
-
-![Choose knowledge](./prod_info_ag_imgs/i13.png)
+Selecione **New knowledge**
+![Select knowledge](./backoffice_ag_imgs/i99.png)
 
 Clique em **Upload files** e depois **Next**.
 
-![Choose knowledge](./prod_info_ag_imgs/i12.png)
+![Choose knowledge](./backoffice_ag_imgs/i12_v2.png)
 
 Carregue os documentos listados abaixo fornecidos pelo instrutor e clique **Next**
 
@@ -453,7 +444,13 @@ Carregue os documentos listados abaixo fornecidos pelo instrutor e clique **Next
   FAQ sobre serviços de cheque especial.docx
   ```
   
-![Upload Documents](./prod_info_ag_imgs/i11.png)
+![Upload Documents](./backoffice_ag_imgs/i11_v2.png)
+
+Na seção **Name**, adicione o seguinte nome para base de conhecimento
+
+```
+Base Produto GFMe
+```
 
 Na seção **Description**, adicione o seguinte e depois clique em `Save`:
 
@@ -513,11 +510,11 @@ Cartão Perdido/Roubado Procedimentos: Processo de denúncia, substituição eme
 Cada tópico inclui informações atualizadas, divulgações regulatórias, quando aplicável, e referências cruzadas internas a produtos ou serviços relacionados para facilitar o atendimento completo ao cliente.
 ```
 
-![Prod Agent Knowledge Description](./prod_info_ag_imgs/i10.png)
+![Prod Agent Knowledge Description](./backoffice_ag_imgs/i10_v2.png)
 
 Todos os arquivos e a descrição enviados como a imagem a seguir:
 
-![Prod Agent Knowledge Description](./prod_info_ag_imgs/i9.png)
+![Prod Agent Knowledge Description](./backoffice_ag_imgs/i9_v2.png)
 
 Na seção **Behavior**, adicione em **Instructions**:
   ```
@@ -619,11 +616,11 @@ Como este agente será **colaborador** e será invocado pelo **GFM Bank Orchestr
 
 Para isso, **desative a opção**:
 
-**Show agent** → *Desativado*
+**Home page** → *Desativado*
 
 Isso garante que o agente não apareça como disponível para interação direta, mantendo sua função apenas como parte do fluxo orquestrado.
 
-![Disable toggle](./prod_info_ag_imgs/i5.png)
+![Disable toggle](./backoffice_ag_imgs/i5_v2.png)
 
 #### Teste e implante o Agente de Informações do Produto GFM
 
@@ -636,11 +633,11 @@ Na janela de visualização à direita, teste com as seguintes consultas:
 
 Clique em `Deploy`
 
-![Deploy Agent](./prod_info_ag_imgs/i6.png)
+![Deploy Agent](./backoffice_ag_imgs/i6_v2.png)
 
 - Na página de **Deploy Agent**, clique em `Deploy`
 
-![Deploy](./prod_info_ag_imgs/i8.png)
+![Deploy](./backoffice_ag_imgs/i8_v2.png)
 
 ### Agente Orquestrador do Banco GFM
 
@@ -652,13 +649,13 @@ Este agente atua como o **recepcionista virtual do GFM Bank**, sendo responsáve
 
 #### Crie o Agente Orquestrador do Banco GFM
 
-Clique no menu de hambúrguer, depois em **Build** -> **Agent Builder**
+Clique no menu de hambúrguer, depois em **Build**
 
-![Agent Builder](./images/i3.png)
+![Agent Builder](./backoffice_ag_imgs/i3_v3.png)
 
 - Na próxima tela, clique em **Create Agent**
 
-![Create Agent](./bank_orch_ag_imgs/i1.png)
+![Create Agent](./backoffice_ag_imgs/i1_v3.png)
 
 - Siga os passos de acordo com a captura de tela abaixo
   - Selecione **Create from scratch**
@@ -725,11 +722,7 @@ Clique no menu de hambúrguer, depois em **Build** -> **Agent Builder**
 
 Clique em  `Create`
 
-![Agent Description](./bank_orch_ag_imgs/i2.png)
-
-Na página do `Orquestrador do Banco GFM`, selecione o modelo `llama-3-405b-instruct` no menu suspenso no meio superior da página.  
-
-![Select model](./bank_orch_ag_imgs/i15.png)
+![Agent Description](./backoffice_ag_imgs/i2_v3.png)
 
 #### Adicione Agentes colaborativos
 
@@ -746,17 +739,17 @@ Em vez de atuar isoladamente, esses agentes compartilham informações e dividem
 
 - Na seção **Agents**, clique em `Add Agent`
 
-![Add Agents](./bank_orch_ag_imgs/i3.png)
+![Add Agents](./backoffice_ag_imgs/i3_v4.png)
 
 - Clique em `Add from local instance`
 
-![Local Instance](./bank_orch_ag_imgs/i4.png)
+![Local Instance](./backoffice_ag_imgs/i4_v3.png)
 
 - Selecione **Agente de caixa GFM**, **Informações do Produto GFM** e depois `Add to Agent button`
   
-![Select Agents](./bank_orch_ag_imgs/i12.png)
+![Select Agents](./backoffice_ag_imgs/i12_v3.png)
 
-![Add to Agent](./bank_orch_ag_imgs/i13.png)
+![Add to Agent](./backoffice_ag_imgs/i13_v3.png)
 
 Na seção **Behavior** adicione o seguinte em **Instructions**:
   
@@ -812,7 +805,7 @@ Para clientes recorrentes, confirme o retorno com "Bem-vindo de volta ao GFM Ban
 Este Agente Orchestrator atua como um ponto central de encaminhamento para consultas de clientes, garantindo que cada cliente seja direcionado ao agente especializado mais bem equipado para atender às suas necessidades bancárias específicas com eficiência e precisão.
  ```
 
-![Agent Behavior](./bank_orch_ag_imgs/i7.png)
+![Agent Behavior](./backoffice_ag_imgs/i7_v3.png)
 
 #### Teste e implante o Agente Orquestrador do Banco GFM
 
@@ -825,38 +818,47 @@ Qual é o saldo da minha conta? IBAN DE89320895326389021994
 
 Clique em `Deploy`
 
-![Agent Deploy](./bank_orch_ag_imgs/i8.png)
+![Agent Deploy](./backoffice_ag_imgs/i8_v3.png)
 
 Na página de **Deploy Agent**, clique em `Deploy`
 
-![Deploy](./bank_orch_ag_imgs/i11.png)
+![Deploy](./backoffice_ag_imgs/i11_v3.png)
 
 ## Teste Sua Solução Bancária De Agentic AI
 
 Clique no ícone de hambúrguer no canto superior esquerdo da janela  **watsonx Orchestrate**, e selecione **Chat**. No canto superior direito, você deve ver apenas um Agente chamado "Orquestrador do Bando GFM".
 
-![Select Orchestrator Agent](./bank_orch_ag_imgs/i9.png)
+![Select Orchestrator Agent](./backoffice_ag_imgs/i9_v3.png)
 
 Na janela de bate papo, teste com as seguintes consultas:
 
 ```
-Qual é o saldo da minha conta (IBAN DE89320895326389021994)?
-Quero transferir 20 euros do IBAN DE89320895326389021994 para o IBAN DE89929842579913662103.
-Quero transferir 4.000 euros do IBAN DE89320895326389021994 para o IBAN DE89929842579913662103.
-O que é um cheque especial de cartão bancário?
-Como posso evitar taxas de cheque especial?
-Quero solicitar um saque a descoberto de 4.000 euros para o IBAN da minha conta DE89320895326389021994
-Por favor, aprove um saque a descoberto de 4.000 euros para o IBAN da minha conta DE89320895326389021994
-Qual é o saldo do IBAN da minha conta DE89320895326389021994?
-Quero transferir 4.000 euros do IBAN DE89320895326389021994 para o IBAN DE89929842579913662103
+- Qual é o saldo da minha conta IBAN DE89320895326389021994? 
+
+- Quero transferir 20 euros do IBAN DE89320895326389021994 para o IBAN DE89929842579913662103.
+
+- Quero transferir 4.000 euros do IBAN DE89320895326389021994 para o IBAN DE89929842579913662103. 
+
+- O que é um cheque especial de cartão bancário? 
+
+- Como posso evitar taxas de cheque especial? 
+
+- Quero solicitar um saque a descoberto de 4.000 euros para o IBAN da minha conta DE89320895326389021994
+
+- Por favor, aprove um saque a descoberto de 4.000 euros para o IBAN da minha conta DE89320895326389021994 
+
+- Qual é o saldo do IBAN da minha conta DE89320895326389021994? 
+
+- Quero transferir 4.000 euros do IBAN DE89320895326389021994 para o IBAN DE89929842579913662103
+
 Ah, cometi um erro. Você pode estornar meu pagamento anterior de 4.000 euros para o meu IBAN DE89320895326389021994?
 ```
 
-![Text Queries](./images/i36.png)
+![Text Queries](./backoffice_ag_imgs/i36.png)
 
 Exemplo da funcionalidade do **Back Office Agent** em **Agent de Caixa**
 
-![Text Queries](./bank_orch_ag_imgs/i14.png)
+![Text Queries](./backoffice_ag_imgs/i14_v3.png)
 
 
 ## 🎉 Parabéns! Você completou com sucesso o laboratório
