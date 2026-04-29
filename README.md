@@ -27,7 +27,7 @@ Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por c
 
 <h1 align="center">📍 IMPORTANTE 📍</h1>
 
-<b>PASSO 1:</b> [CLIQUE AQUI](https://bootcampwxo.github.io/bootcamp/random.html) para obter as informações necessárias durante a execução dos laboratórios<br>
+<b>PASSO 1:</b> [CLIQUE AQUI](LABS%2001.zip) para obter as informações necessárias durante a execução dos laboratórios<br>
 
 <b>PASSO 2:</b> Escolha o caso de uso e mãos a obra
 
@@ -35,31 +35,26 @@ Então, aproveite o conteúdo, explore bastante e, sempre que puder, teste por c
 
 Siga a sequência recomendada para máximo aprendizado:
 
-### 1. 🎯 [Ask-HR](usecases/ask-hr/README.md) - Single Agent + RAG
-**Seu primeiro agente IA!** Aprenda os fundamentos criando um assistente de RH que responde perguntas sobre políticas da empresa.
+### 1. 👥 [RH - Aquisição de Talentos](usecases/hr-talent/README.md)
 
-**Features:** `RAG` `Knowledge base` `No code`
+Automatize o processo de recrutamento com processamento de documentos.
+
+**Features:** `Intelligent document processing` `Chat with documents`
 
 ---
 
-### 2. 🔍 Multi-Agent - Escolha seu caminho:
+### 2. 👥 [Agente Analista Financeiro](usecases/banking-financial-research-analyst/README.md)
 
-#### Opção A: [Agente de Sinistros de Seguros](usecases/autoclaim-insurance/README.md)
-Sistema multi-agente para processamento automatizado de sinistros de seguros.
+Apoiar sua equipe de analistas, acelerando pesquisas e identificando oportunidades de investimento de alto valor.
+
+**Features:** `Multi-agent` `RAG` `Bakend connection` `No code`
+
+---
+
+### 3. 👥 [Agente de Backoffice](usecases/banking-backoffice/README.md)
+Sistema multi-agente para modernizar as operações bancárias.
 
 **Features:** `Multi-agent` `RAG` `Backend connection` `No code`
-
-#### Opção B: [Análise Competitiva](usecases/competitive-analysis/README.md)
-Agentes colaborativos que analisam produtos concorrentes usando múltiplas fontes de dados.
-
-**Features:** `Multi-agent` `RAG` `Image recognition` `MCP` `No code`
-
----
-
-### 3. 👥 [RH - Aquisição de Talentos](usecases/hr-talent/README.md) - Flows + IDP
-Automatize o processo de recrutamento com fluxos inteligentes e processamento de documentos.
-
-**Features:** `Flows` `Intelligent document processing` `Multi-agent` `Chat with documents`
 
 ---
 
