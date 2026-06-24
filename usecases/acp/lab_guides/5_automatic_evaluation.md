@@ -26,19 +26,19 @@ Vamos avaliar o desempenho do agente usando casos de teste.
 As duas primeiras perguntas são simples e devem ser fáceis para o agente responder. A terceira pergunta é mais complexa e requer mais chamadas de ferramentas onde o agente pode cometer um erro.
 
 ```
-Show me all the cars in your catalog
+Mostre todos os carros do catálogo
 ```
 
 ![test](../agentic-monitoring/assets/test-question-1.png)
 
 ```
-What do owners say about the Hyundai Kona?
+O que os proprietários dizem sobre o Hyundai Kona?
 ```
 ![test](../agentic-monitoring/assets/test-question-2.png)
 
 
 ```
-I'm looking for a family SUV under $40,000 with good fuel economy. What do you recommend from your catalog, and how do they compare to market leaders?
+Estou procurando um SUV familiar abaixo de $40.000 com bom consumo de combustível. O que você recomenda do catálogo e como eles se comparam aos líderes de mercado?
 ```
 ![test](../agentic-monitoring/assets/test-question-3.png)
 

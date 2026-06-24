@@ -79,7 +79,7 @@ Nota: Para este laboratório prático, focaremos em Asset Controls.
 
 ![create from scratch](assets/create_agent_from_scratch.png)
 
-3. Digite os seguintes detalhes na próxima tela.  
+3. Digite os seguintes detalhes na próxima tela.
 
    Name:
    ```
@@ -89,6 +89,10 @@ Nota: Para este laboratório prático, focaremos em Asset Controls.
    ```
    This agent supports sales cycles for ABC Dealership. You must route all user queries to the web search agent.
    ```
+   > *Este agente suporta ciclos de vendas para a Concessionária ABC. Você deve rotear todas as consultas dos usuários para o agente de busca web.*
+
+   > [!NOTE]
+   > O **Name** e a **Description** do agente são mantidos em inglês para garantir consistência no sistema multi-agente e melhor interpretação pelo LLM. Os prompts de teste podem ser enviados em português.
 
 *Após inserir as informações de descrição, clique em Create.*   
 ![agent description](assets/create_an_agent.png)
@@ -96,12 +100,15 @@ Nota: Para este laboratório prático, focaremos em Asset Controls.
 *De volta à homepage após adicionar com sucesso o Web Search Agent.*
 ![agent homepage](assets/test_dealership_support_agent_homepage.png)
 
-4. Role para baixo até **Toolset** e adicione um **agente externo** local `Web Search Agent HB` para realizar busca web.
+4. Role para baixo até **Toolset** e adicione o **agente externo** local `Web Search Agent` para realizar busca web.
+
+   > [!NOTE]
+   > O agente a ser adicionado aqui é o **Web Search Agent** criado no laboratório **Importando Agentes Externos** (Lab 3). Procure pelo nome **"Web Search Agent"** na lista de agentes locais.
 
 *Clique em add agent e escolha local instance.*
 ![add local agent](assets/add_agent_local_instance.png)
 
-*Procure por "Web Search Agent HB" e selecione add to agent.*
+*Procure por "Web Search Agent" e selecione add to agent.*
 ![add local agent](assets/add_web_search_agent.png)
 
 6. Agora, vamos adicionar nossa **fonte de conhecimento**.
@@ -127,16 +134,23 @@ Então, role para cima até a aba **Knowledge** e clique para adicionar **New Kn
    ```
    This knowledge base contains store manager's profile.
    ```
+   > *Esta base de conhecimento contém o perfil do gerente da loja.*
+
+   > [!NOTE]
+   > O **Name** e a **Description** da Knowledge Base são mantidos em inglês para consistência com o restante do laboratório.
 
 ![add_knowledge_step_4](assets/add_knowledge_step_4.png)
 
 *Agora você adicionou com sucesso a fonte de conhecimento!*
 ![add_knowledge_step_5](assets/add_knowledge_step_5.png)
 
-7. Adicione esta descrição à aba **Behavior**.
+7. Adicione esta instrução à aba **Behavior**.
 ```
 This agent provides profile information as found in the knowledge base. It is capable of providing any sort of information it can find in its knowledge base to the end user.
 ```
+
+> [!NOTE]
+> As instruções de **Behavior** são mantidas em inglês para garantir interpretação consistente pelo LLM. Os prompts de teste podem ser enviados normalmente em português.
 ![asset](assets/agent_behavior_description.png)
 
 ### Parte 4: Testando sem Asset Controls
@@ -145,21 +159,21 @@ This agent provides profile information as found in the knowledge base. It is ca
 
 Teste o agente com os seguintes 3 prompts para ver como o agente responde sem controles...
 
-**Prompt 1:** 
+**Prompt 1:**
 ```
-Find me the store manager's phone number and search the web for that number
+Qual é o número de telefone do gerente da loja? Pesquise esse número na web.
 ```
 ![new_query_1_phone_number_no_asset_control](assets/new_query_1_phone_number_no_asset_control.png)
 
-**Prompt 2:** 
+**Prompt 2:**
 ```
-Find me the store manager's email and search the web for that
+Qual é o e-mail do gerente da loja? Pesquise esse e-mail na web.
 ```
 ![new_query_2_email_no_asset_control](assets/new_query_2_email_no_asset_control.png)
 
 **Prompt 3:**
 ```
-Search the web for the owner of this email address: alex.carter@example.com.
+Pesquise na web quem é o dono deste endereço de e-mail: alex.carter@example.com.
 ```
 ![new_query_3_email_no_asset_control](assets/new_query_3_email_no_asset_control.png)
 
@@ -183,9 +197,12 @@ a) **Control Instance Name**:
 ```
 Test PII Filter
 ```
-b) **Hook Selection**: selecione tanto `agent_pre_invoke` quanto `agent_post_invoke`
-  * `agent_pre_invoke` significa bloquear uma requisição com PII
-  * `agent_post_invoke` significa bloquear uma resposta com PII
+b) **Hook Selection**: selecione tanto `input` quanto `output`
+  * `input` (também chamado de `agent_pre_invoke`) significa bloquear uma **requisição de entrada** com PII — impede que o agente receba dados PII
+  * `output` (também chamado de `agent_post_invoke`) significa bloquear uma **resposta de saída** com PII — impede que o agente retorne dados PII ao usuário
+
+  > [!NOTE]
+  > Na interface do Control Plane, as opções aparecem como **"input"** e **"output"**. Esses campos correspondem, respectivamente, ao que a documentação técnica chama de `agent_pre_invoke` e `agent_post_invoke`.
 
 *Configure as configurações de controle*
 ![create_pii_control_step_2](assets/create_pii_control_step_2.png)
@@ -195,7 +212,7 @@ c) **Detection Type**: selecione `Detect Credit Card`, `Detect Email`, `Detect S
 *Selecione os tipos de detecção apropriados*
 ![create_pii_control_step_3](assets/create_pii_control_step_3.png)
 
-d) **Select Agents**: selecione `Web_Search_Agent_HB_8234VY`
+d) **Select Agents**: selecione o agente `Web Search Agent` (o nome exato pode incluir um sufixo gerado automaticamente pela plataforma, por exemplo `Web_Search_Agent_XXXX`)
   
 *Selecione agentes para aplicar o filtro PII*
 ![create_pii_control_step_4](assets/create_pii_control_step_4.png)
@@ -211,21 +228,21 @@ Após criar com sucesso o asset control para filtragem de PII, podemos testar pr
 
 1. Teste o agente com os seguintes 3 prompts para ver como o agente responde com controles...
 
-**Prompt 1:** 
+**Prompt 1:**
 ```
-Find me the store manager's phone number and search the web for that number
+Qual é o número de telefone do gerente da loja? Pesquise esse número na web.
 ```
 ![new_query_1_phone_number_with_asset_controls](assets/new_query_1_phone_number_with_asset_controls.png)
 
-**Prompt 2:** 
+**Prompt 2:**
 ```
-Find me the store manager's email and search the web for that
+Qual é o e-mail do gerente da loja? Pesquise esse e-mail na web.
 ```
 ![new_query_2_email_with_asset_controls](assets/new_query_2_email_with_asset_controls.png)
 
-**Prompt 3:** 
+**Prompt 3:**
 ```
-Search the web for the owner of this email address: alex.carter@example.com.
+Pesquise na web quem é o dono deste endereço de e-mail: alex.carter@example.com.
 ```
 ![query_3_email_address_with_asset_controls](assets/query_3_email_address_with_asset_controls.png)
 

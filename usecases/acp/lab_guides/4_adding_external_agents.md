@@ -4,6 +4,8 @@
 
 Este guia de laboratório orienta você no processo de integração de agentes externos ao seu ambiente watsonx Orchestrate. Você aprenderá como conectar um agente LangGraph de terceiros que realiza buscas no Google, criar um agente orquestrador mestre para rotear consultas de forma inteligente e testar o sistema multi-agente completo. Ao final deste laboratório, você terá um assistente de compra de carros totalmente funcional que combina informações do catálogo com pesquisa web em tempo real.
 
+> [!NOTE]
+> **Pré-requisito:** Este laboratório assume que você já completou o laboratório **Data Poisoning** e criou o **Dealership Support Agent** com a base de conhecimento do catálogo de veículos. O agente criado naquele laboratório será usado aqui como o agente de pesquisa do catálogo (Car Research Agent).
 
 ## Índice
 
@@ -44,6 +46,10 @@ Agora vamos conectar o agente LangGraph externo que realiza buscas no Google por
    ```
    This agent searches Google for real-time information such as user reviews, ratings, and market comparisons, but only for cars that are in our catalog. It should not provide information for vehicles not sold by our dealership.
    ```
+   > *Este agente pesquisa no Google informações em tempo real, como avaliações de usuários, classificações e comparações de mercado, mas apenas para carros que estão em nosso catálogo. Não deve fornecer informações sobre veículos não vendidos pela nossa concessionária.*
+
+   > [!NOTE]
+   > O **Name** e a **Description** do agente são mantidos em inglês. Eles são usados pelo agente mestre para tomar decisões de roteamento — manter em inglês garante consistência e precisão na orquestração multi-agente.
 
    Clique no botão **Create**.
 
@@ -71,10 +77,10 @@ Agora vamos conectar o agente LangGraph externo que realiza buscas no Google por
 
    ![A2A configuration](../agentic-monitoring/assets/google_search_a2a_config.png)
 
-   Role para baixo até a seção **Define new agent** e preencha os detalhes:  
+   Role para baixo até a seção **Define new agent** e preencha os detalhes:
 
    **Name**:
-   ``` 
+   ```
    Web Search Agent
    ```
 
@@ -82,6 +88,10 @@ Agora vamos conectar o agente LangGraph externo que realiza buscas no Google por
    ```
    This agent connects to the Tavily service to perform a web search and return the top results.
    ```
+   > *Este agente se conecta ao serviço Tavily para realizar uma busca na web e retornar os principais resultados.*
+
+   > [!NOTE]
+   > O **Name** e a **Description** do agente importado são mantidos em inglês, pois identificam o agente dentro do sistema multi-agente.
 
    ![Define new agent](../agentic-monitoring/assets/google_search_define_agent.png)
 
@@ -114,11 +124,11 @@ Agora vamos conectar o agente LangGraph externo que realiza buscas no Google por
 9. Teste o agente com estas consultas:
 
     ```
-    What do owners say about the Porsche 911?
+    O que os proprietários dizem sobre o Porsche 911?
     ```
 
     ```
-    Find user reviews for the Toyota Camry
+    Encontre avaliações de usuários para o Toyota Camry
     ```
 
     ![Test search agent](../agentic-monitoring/assets/google_test_porsche.png)
@@ -150,6 +160,10 @@ Agora vamos criar um agente orquestrador que roteia consultas de forma inteligen
    ```
    Intelligent car buying assistant that routes queries to specialized agents. Provides comprehensive information from both our catalog and external market research.
    ```
+   > *Assistente inteligente de compra de carros que roteia consultas para agentes especializados. Fornece informações abrangentes tanto do nosso catálogo quanto de pesquisas externas de mercado.*
+
+   > [!NOTE]
+   > O **Name** e a **Description** do agente mestre são mantidos em inglês. As instruções de **Behavior** também permanecem em inglês para garantir que a lógica de roteamento funcione de forma confiável.
 
    Clique no botão **Create**.
 
@@ -163,18 +177,21 @@ Agora vamos criar um agente orquestrador que roteia consultas de forma inteligen
 
    ![Add local](../agentic-monitoring/assets/master_add_local.png)
 
-5. Selecione tanto **Car Research Agent** quanto **Google Search Agent**, depois clique em **Add to Agent**.
+5. Selecione tanto o **Dealership Support Agent** (criado no laboratório de Data Poisoning — este é o agente de pesquisa do catálogo de carros) quanto o **Google Search Agent** (criado na Parte 1 acima), depois clique em **Add to Agent**.
+
+   > [!NOTE]
+   > O **Dealership Support Agent** foi criado no laboratório anterior (Data Poisoning) e possui a base de conhecimento com o catálogo de veículos da ABC Dealership. Ele atuará como o agente especializado em pesquisa do catálogo neste sistema multi-agente.
 
    ![Select agents](../agentic-monitoring/assets/master_add_agents.png)
 
 6. Na seção **Behavior**, adicione a seguinte lógica de roteamento:
 
     ```
-    You are the Master Car Buying Assistant. Your role is to route user queries to the appropriate specialized agent and synthesize responses. 
+    You are the Master Car Buying Assistant. Your role is to route user queries to the appropriate specialized agent and synthesize responses.
 
     ROUTING RULES:
 
-    1. CATALOG QUERIES → Car Research Agent
+    1. CATALOG QUERIES → Dealership Support Agent
        - "Show me your sedans/SUVs/trucks"
        - "What's the price of [car in catalog]?"
        - "Compare [catalog car] and [catalog car]"
@@ -200,7 +217,7 @@ Agora vamos criar um agente orquestrador que roteia consultas de forma inteligen
     RESPONSE GUIDELINES:
     - The vehicles in the catalog are: Nissan Versa, Hyundai Kona Electric, Alfa Romeo Spider, Porsche 911 Carrera GTS, and Kia Nero.
     - Always determine whether the vehicle is in our catalog before routing
-    - Only use Car Research Agent and Google Search Agent for cars in our catalog
+    - Only use Dealership Support Agent and Google Search Agent for cars in our catalog
     - Always identify which agent(s) you're using
     - For comparisons, create clear tables with all relevant features
     - Cite sources for external information
@@ -214,17 +231,16 @@ Agora vamos criar um agente orquestrador que roteia consultas de forma inteligen
 
 7. Teste o agente mestre com várias consultas:
 
-
     ```
-    Compare the Kia Nero with the Hyundai Kona Electric
-    ```
-
-    ```
-    Are owner reviews more positive for the Alfa Romeo Spider or the Porsche 911?
+    Compare o Kia Nero com o Hyundai Kona Electric
     ```
 
     ```
-    Show me user reviews for the Tesla Model Y
+    As avaliações dos proprietários são mais positivas para o Alfa Romeo Spider ou para o Porsche 911?
+    ```
+
+    ```
+    Mostre-me avaliações de usuários para o Tesla Model Y
     ```
 
 
@@ -260,19 +276,18 @@ Agora vamos testar o sistema completo através da interface de chat.
 
    **Cenário 1: Pesquisa de Catálogo**
    ```
-   Show me all the electric vehicles in your catalog
+   Mostre-me todos os veículos elétricos do catálogo
    ```
    ![test all](../agentic-monitoring/assets/test_scenario1.png)
 
    **Cenário 2: Pesquisa Externa**
    ```
-   What do owners say about the Nissan Versa?
+   O que os proprietários dizem sobre o Nissan Versa?
    ```
    ![test all](../agentic-monitoring/assets/test_scenario2a.png)
    
    ```
-
-   What do owners say about the BMW X5 2024?
+   O que os proprietários dizem sobre o BMW X5 2024?
    ```
 
    ![test all](../agentic-monitoring/assets/test_scenario2b.png)
@@ -280,12 +295,12 @@ Agora vamos testar o sistema completo através da interface de chat.
 
    **Cenário 3: Consulta Híbrida Catálogo + Avaliação**
    ```
-   What do reviewers say about the Porsche 911, and what are its key specs?
+   O que os avaliadores dizem sobre o Porsche 911 e quais são suas especificações principais?
    ```
    ![test all](../agentic-monitoring/assets/test_scenario3.png)
 
    **Cenário 4: Consulta Complexa**
    ```
-   I'm looking for a family SUV under $40,000 with good fuel economy. What do you recommend from your catalog, and how do they compare to market leaders?
+   Estou procurando um SUV familiar abaixo de $40.000 com bom consumo de combustível. O que você recomenda do catálogo e como eles se comparam aos líderes de mercado?
    ```
    ![test all](../agentic-monitoring/assets/test_scenario4.png)

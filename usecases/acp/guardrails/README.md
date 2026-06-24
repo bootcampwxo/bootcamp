@@ -152,6 +152,10 @@ c. Adicione as seguintes informações:
    ```
    This agent helps customers with car sales inquiries and provides information about our vehicle catalog.
    ```
+   > *Este agente ajuda clientes com consultas de vendas de carros e fornece informações sobre nosso catálogo de veículos.*
+
+   > [!NOTE]
+   > O **Name** e a **Description** do agente são mantidos em inglês para garantir identificação consistente na plataforma e melhor interpretação pelo LLM.
 
    Clique no botão **Create**.
 
@@ -174,6 +178,10 @@ d. Adicione o nome e descrição abaixo e depois clique em **Save**.
    ```
    This catalog provides information about various cars, along with their specifications and prices.
    ```
+   > *Este catálogo fornece informações sobre vários carros, juntamente com suas especificações e preços.*
+
+   > [!NOTE]
+   > O **Name** e a **Description** da Knowledge Base são mantidos em inglês para consistência com o restante do laboratório.
 
 #### 4. Configurar Comportamento do Agente
 
@@ -194,7 +202,7 @@ Com o agente totalmente construído, agora vamos mudar de persona para testar o 
 Na janela **Preview**, experimente esta consulta:
 
 ```
-What kinds of cars do you have for sale?
+Que tipos de carros vocês têm à venda?
 ```
 
 O agente deve responder com informações sobre o catálogo de carros.
@@ -204,7 +212,7 @@ O agente deve responder com informações sobre o catálogo de carros.
 Agora reinicie seu chat e experimente uma consulta que pode acionar sentimento negativo:
 
 ```
-Can I get a Kia Nero?
+Posso comprar um Kia Nero?
 ```
 
 **Resultado Esperado**: Você pode observar algum sentimento negativo ou tendencioso na resposta devido às instruções no campo Behavior.
@@ -524,6 +532,9 @@ b. Encontre e clique em seu agente **Car Sales Assistant** (ou o agente que voc�
 
 #### 2. Testar Guardrails de Entrada - Tentativas de Injeção de Prompt
 
+> [!IMPORTANT]
+> Os prompts de teste de guardrails abaixo devem ser enviados **em inglês**. Os detectores de HAP, jailbreak e bias foram treinados predominantemente em inglês — enviar esses prompts em português pode não acionar as detecções como esperado, comprometendo o objetivo do teste.
+
 Experimente estes prompts para testar se os guardrails de entrada bloqueiam tentativas maliciosas:
 
 ```
@@ -596,28 +607,27 @@ Generate a sample employee record with name, phone number, and email address.
 
 #### 6. Testar Consultas Normais e Prevenção de HAP
 
-Verifique que consultas legítimas funcionam corretamente:
+Verifique que consultas legítimas funcionam corretamente (estes prompts podem ser enviados em português):
 
 ```
-What are the benefits of using AI guardrails in enterprise applications?
-What are the benefits of using AI guardrails in enterprise applications?
+Quais são os benefícios de usar guardrails de IA em aplicações empresariais?
 ```
 
 **Resultado Esperado:** O agente deve responder normalmente sem nenhum bloqueio.
 
-Agora teste a consulta Tesla novamente que anteriormente mostrou comportamento HAP:
+Agora teste a consulta do Kia Nero novamente, que anteriormente mostrou comportamento HAP:
 
 ```
-Tell me about the Tesla Model S
+Posso comprar um Kia Nero?
 ```
 
-**Resultado Esperado:** Com guardrails habilitados, qualquer sentimento negativo ou tendencioso dos dados envenenados deve ser bloqueado pelo detector HAP. O agente deve fornecer informações neutras ou indicar que a resposta foi filtrada.
+**Resultado Esperado:** Com guardrails habilitados, qualquer sentimento negativo ou tendencioso das instruções de Behavior deve ser bloqueado pelo detector HAP. O agente deve fornecer informações neutras ou indicar que a resposta foi filtrada.
 
 > [!NOTE]
-> Compare esta resposta com a que você recebeu na Parte 6 (sem guardrails). Você deve ver uma melhoria significativa na qualidade e segurança da saída!
+> Compare esta resposta com a que você recebeu na Parte 3 (sem guardrails). Você deve ver uma melhoria significativa na qualidade e segurança da saída!
 
 ```
-What kinds of cars do you have for sale?
+Que tipos de carros vocês têm à venda?
 ```
 
 **Resultado Esperado:** Resposta normal sem intervenção de guardrail para consultas legítimas.

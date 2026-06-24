@@ -25,7 +25,7 @@ Este guia de laboratório apresenta as capacidades de monitoramento em tempo rea
 2. Vamos explorar as analytics de agentes usando o chat à esquerda. Faça a seguinte pergunta:
 
 ```
-show me agents with the lowest success rate for this week
+Mostre os agentes com a menor taxa de sucesso desta semana
 ```
 
    ![Agent analytics](../agentic-monitoring/assets/agent-performance.png)
