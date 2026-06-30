@@ -104,12 +104,15 @@ Nesta seção, você criará um agente usando uma base de conhecimento **envenen
 3. Agora, vamos adicionar o Nome e uma Descrição.
 
 **Mas antes, note que:** Os campos **Name** e **Description** do agente devem ser obrigatoriamente preenchidos em inglês. Isso ocorre porque esses campos são utilizados pela plataforma para identificação do agente e também pelo modelo de linguagem (LLM) para compreender corretamente o seu propósito, especialmente em cenários com múltiplos agentes interagindo entre si. Os prompts de teste e as interações com o agente podem ser realizados em português normalmente, sem qualquer problema.
+
+Copie e Cole na descrição abaixo no campo `Name`
    
    **Name**:
    ```
    Dealership Support Agent
    ```
-   
+Copie e Cole na descrição abaixo no campo `Description`
+
    **Description**:
    ```
    This agent answers questions and qualifies sales for the car dealership. It's purpose is to use its internal and other knowledge bases to answer questions and help complete sales.
