@@ -69,8 +69,9 @@ Sistemas RAG (Retrieval-Augmented Generation) são particularmente vulneráveis 
 - Eles não conseguem distinguir entre dados legítimos e envenenados
 - Eles apresentam confiantemente informações recuperadas como verdade
 
-> [Note]: Sempre pratique higiene de dados. Trabalhe de perto com suas equipes de engenharia de dados para garantir alta qualidade de dados antes de incorporar quaisquer fontes de dados em suas bases de conhecimento.
-Vamos começar!
+> [!NOTE]
+> Sempre pratique higiene de dados. Trabalhe de perto com suas equipes de engenharia de dados para garantir alta qualidade de dados antes de incorporar quaisquer fontes de dados em suas bases de conhecimento.
+> Vamos começar!
 
 ## Instruções do Laboratório
 
@@ -134,7 +135,7 @@ Nesta seção, você criará um agente usando uma base de conhecimento **envenen
 
    ![Upload catalog](assets/choose_knowledge_source.png)
 
-   > [Note]:
+    > [!NOTE]
    > Este PDF contém dados envenenados com informações de preços irrealistas injetadas por um ator malicioso.
 
 7. Adicione o nome e descrição abaixo e depois clique em **Save**.
