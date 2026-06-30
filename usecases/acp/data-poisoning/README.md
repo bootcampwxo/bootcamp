@@ -75,7 +75,7 @@ Sistemas RAG (Retrieval-Augmented Generation) são particularmente vulneráveis 
 
 ## Instruções do Laboratório
 
-### Parte 1: Conectar ao watsonx Orchestrate
+### Parte 1: Acesso ao watsonx Orchestrate
 
 1. Faça login no IBM Cloud (cloud.ibm.com). Navegue até o menu hambúrguer no canto superior esquerdo, depois para **Resource List**. Abra a seção **AI/Machine Learning**. Você deve ver um serviço **watsonx Orchestrate**. Clique para abri-lo.
 
@@ -101,7 +101,9 @@ Nesta seção, você criará um agente usando uma base de conhecimento **envenen
 
    ![Create from scratch](assets/comp_create_from_scratch.png)
 
-3. Adicione as seguintes informações:
+3. Agora, vamos adicionar o Nome e uma Descrição.
+
+**Mas antes, note que:** Os campos **Name** e **Description** do agente devem ser obrigatoriamente preenchidos em inglês. Isso ocorre porque esses campos são utilizados pela plataforma para identificação do agente e também pelo modelo de linguagem (LLM) para compreender corretamente o seu propósito, especialmente em cenários com múltiplos agentes interagindo entre si. Os prompts de teste e as interações com o agente podem ser realizados em português normalmente, sem qualquer problema.
    
    **Name**:
    ```
@@ -112,33 +114,29 @@ Nesta seção, você criará um agente usando uma base de conhecimento **envenen
    ```
    This agent answers questions and qualifies sales for the car dealership. It's purpose is to use its internal and other knowledge bases to answer questions and help complete sales.
    ```
-   > *Este agente responde perguntas e qualifica vendas para a concessionária. Sua função é usar suas bases de conhecimento internas e externas para responder perguntas e ajudar a concluir vendas.*
-
-   > [!NOTE]
-   > O **Name** e a **Description** do agente devem ser preenchidos em inglês, pois são usados pela plataforma para identificação e pelo LLM para entender o propósito do agente em contextos multi-agente. Prompts de teste com o agente podem ser enviados em português normalmente.
 
    Clique no botão **Create**.
 
    ![Create from scratch](assets/car_poisoned_create.png)
 
-4. Na seção **Knowledge Source**, clique no botão **Choose knowledge**.
+5. Na seção **Knowledge Source**, clique no botão **Choose knowledge**.
 
    ![Knowledge](assets/add-source.png)
 
-5. Após clicar no botão **Choose knowledge**, uma janela pop-up aparecerá. Selecione **New Knowledge**, **Upload files**, depois clique em **Next**.
+6. Após clicar no botão **Choose knowledge**, uma janela pop-up aparecerá. Selecione **New Knowledge**, **Upload files**, depois clique em **Next**.
 
    ![New Knowledge](assets/car_research_new_knowledge.png)
 
    ![Upload files](assets/car_research_upload.png)
 
-6. Faça upload do documento fornecido [**ABC-Catalog-poisoned.pdf**](ABC-Catalog-poisoned.pdf) (fornecido pelo instrutor) e clique no botão **Next**.
+7. Faça upload do documento fornecido [**ABC-Catalog-poisoned.pdf**](ABC-Catalog-poisoned.pdf) (fornecido pelo instrutor) e clique no botão **Next**.
 
    ![Upload catalog](assets/choose_knowledge_source.png)
 
     > [!NOTE]
    > Este PDF contém dados envenenados com informações de preços irrealistas injetadas por um ator malicioso.
 
-7. Adicione o nome e descrição abaixo e depois clique em **Save**.
+8. Adicione o nome e descrição abaixo e depois clique em **Save**.
 
    **Name:**
    ```
@@ -156,11 +154,11 @@ Nesta seção, você criará um agente usando uma base de conhecimento **envenen
 
    ![Knowledge source](assets/choose_knowledge_source_2.png)
 
-8. Após completar todos os passos acima, sua fonte de conhecimento será adicionada e aparecerá como mostrado na imagem abaixo.
+9. Após completar todos os passos acima, sua fonte de conhecimento será adicionada e aparecerá como mostrado na imagem abaixo.
 
    ![Knowledge added](assets/KB-complete.png)
 
-9. Na seção **Behavior**, adicione o seguinte ao campo de texto **Instructions**:
+10. Na seção **Behavior**, adicione o seguinte ao campo de texto **Instructions**:
 
     ```
     Provide wholesome sales support for ABC Dealership. If clients ask questions about cars, answer them as best as you can. Always follow up with probing questions with the goal of getting a sale.
