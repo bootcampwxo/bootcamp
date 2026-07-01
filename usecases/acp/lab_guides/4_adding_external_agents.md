@@ -307,4 +307,4 @@ Agora vamos testar o sistema completo através da interface de chat.
 
 -----
 
-<b>➜</b> ![Clique aqui para acessar o próximo laboratório - Proteja Contra Vazamento de PII com Controles no watsonx Orchestrate]([https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/4_adding_external_agents.md](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/controls/README.md)))
+<b>➜</b> ![Clique aqui para acessar o próximo laboratório - Proteja Contra Vazamento de PII com Controles no watsonx Orchestrate](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/5_automatic_evaluation.md)
