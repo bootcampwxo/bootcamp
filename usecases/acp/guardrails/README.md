@@ -709,4 +709,4 @@ Você completou com sucesso o laboratório de guardrails! Agora você entende co
 
 ---
 
-<b>➜</b> ![Clique aqui para acessar o próximo laboratório - Adicionando Agentes Externos ](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/4_adding_external_agents.md)
+<b>➜</b> ![Clique aqui para acessar o próximo laboratório - Adicionando Agentes Externos no watsonx Orchestrate](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/4_adding_external_agents.md)
