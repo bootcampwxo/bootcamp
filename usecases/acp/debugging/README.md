@@ -193,7 +193,9 @@ Agora vamos verificar que a correção funcionou enviando a mesma consulta e con
 
 ---
 
-## Parabéns! 🎉
+## Próximos Passos
+
+Parabéns! 🎉
 
 Você completou com sucesso o laboratório de Debugging! Agora você sabe como:
 
@@ -204,6 +206,9 @@ Você completou com sucesso o laboratório de Debugging! Agora você sabe como:
 - ✅ **Verificar** que a correção foi eficaz
 
 **Próximos Passos**:
+
 - Use o debugging regularmente durante o desenvolvimento para identificar problemas antes da produção
 - Configure alertas no Control Plane para ser notificado automaticamente quando agentes falharem
 - Combine debugging com avaliação automática (Lab 6) para um ciclo completo de qualidade
+
+<b>➜</b> ![Clique aqui para acessar o próximo laboratório - Avaliação Automática no watsonx Orchestrate](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/5_automatic_evaluation.md)
