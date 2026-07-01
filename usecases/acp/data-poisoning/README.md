@@ -325,8 +325,6 @@ Agora aplique o seu aprendizado no dia a dia, seguindo as boas práticas aprendi
 
 **Próximos Passos**:
 
-<b>➜</b> ![Esse Lab de guardrails é opcional, caso queira realizar, clique aqui](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/guardrails/README.md) <br>
-
 <b>➜</b> ![Clique aqui para navegar para o próximo lab](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/4_adding_external_agents.md)
 
 
