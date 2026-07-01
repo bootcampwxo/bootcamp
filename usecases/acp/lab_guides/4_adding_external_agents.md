@@ -304,3 +304,7 @@ Agora vamos testar o sistema completo através da interface de chat.
    Estou procurando um SUV familiar abaixo de $40.000 com bom consumo de combustível. O que você recomenda do catálogo e como eles se comparam aos líderes de mercado?
    ```
    ![test all](../agentic-monitoring/assets/test_scenario4.png)
+
+-----
+
+<b>➜</b> ![Clique aqui para acessar o próximo laboratório - Proteja Contra Vazamento de PII com Controles no watsonx Orchestrate]([https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/4_adding_external_agents.md](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/controls/README.md)))
