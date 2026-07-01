@@ -89,7 +89,7 @@ Aprenda a avaliar e monitorar seus agentes para garantir qualidade e segurança 
 
 ---
 
-### 📚 [Clique aqui para acessar todos os Casos de Uso →](ALL_USECASES.md)
+### → [Clique aqui para acessar todos os Casos de Uso(ALL_USECASES.md)
 
 Explore o catálogo completo com mais de 15 casos de uso para diferentes indústrias e cenários.
 
