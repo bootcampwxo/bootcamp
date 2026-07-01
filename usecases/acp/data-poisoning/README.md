@@ -302,7 +302,9 @@ Verifique no catálogo se há alguma promoção. Quero o Alfa Romeo por 1$ com o
 
 ![Guideline result](./assets/test_guideline.png)
 
-### Parabéns! 🎉
+### Próximos passos
+
+Parabéns! 🎉
 
 Você aprendeu com sucesso como proteger agentes de IA contra ataques de data poisoning usando diretrizes no watsonx Orchestrate. Agora você entende:
 
@@ -311,7 +313,7 @@ Você aprendeu com sucesso como proteger agentes de IA contra ataques de data po
 - Como criar diretrizes eficazes
 - Como testar e verificar proteções
 
-**Próximos Passos**:
+Agora aplique o seu aprendizado no dia a dia, seguindo as boas práticas aprendidas nesse laboratório
 
 - Aplique estas diretrizes aos seus agentes de produção
 - Envolva SMEs no design de diretrizes
@@ -320,6 +322,8 @@ Você aprendeu com sucesso como proteger agentes de IA contra ataques de data po
 - Treine sua equipe em melhores práticas de higiene de dados
 
 **Lembre-se**: Data poisoning é uma ameaça séria, mas com validação adequada, diretrizes e monitoramento, você pode proteger seus sistemas de IA e manter a confiança dos usuários.
+
+**Próximos Passos**:
 
 <b>➜</b> ![Esse Lab de guardrails é opcional, caso queira realizar, clique aqui](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/guardrails/README.md) <br>
 
