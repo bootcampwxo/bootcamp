@@ -11,7 +11,7 @@
   - [Parte 4: Entender o Ataque de Data Poisoning](#parte-4-entender-o-ataque-de-data-poisoning)
   - [Parte 5: Criar Diretrizes para Proteger Contra Data Poisoning](#parte-5-criar-diretrizes-para-proteger-contra-data-poisoning)
   - [Parte 6: Verificar que a Diretriz Está Funcionando](#parte-6-verificar-que-a-diretriz-está-funcionando)
-- [Próximos Passos](#parabéns)
+- [Próximos Passos](#próximos-passos)
 
 ## Visão Geral
 
@@ -60,7 +60,7 @@ Um funcionário descontente fez upload de dados envenenados que incluem material
 
 **Ataques de data poisoning tipicamente utilizam uma combinação das diferentes técnicas cobertas, e esta lista não é exaustiva! Neste laboratório, usaremos uma tática única (e comum) de atores maliciosos; os dados envenenados parecem corretos ao olho humano, mas na realidade, foram envenenados com texto branco invisível!**
 
-![data poisoning picture](./assets/poisoned_example.png)
+![data poisoning picture](assets/poisoned_example.png)
 
 > Uma visão lado a lado de um ataque de data poisoning. Os dados envenenados (lado esquerdo da imagem) parecem corretos ao olho humano, mas na realidade, foram envenenados com texto branco invisível. O lado direito da imagem mostra os dados reais, com a informação maliciosa em texto preto.
 
@@ -82,31 +82,19 @@ Sistemas RAG (Retrieval-Augmented Generation) são particularmente vulneráveis 
 
 ### Parte 1: Acesso ao watsonx Orchestrate
 
-**1.** Faça login no IBM Cloud (cloud.ibm.com). Navegue até o menu hambúrguer no canto superior esquerdo, depois para **Resource List**. Abra a seção **AI/Machine Learning**. Você deve ver um serviço **watsonx Orchestrate**. Clique para abri-lo.
+**1.** Acesse sua instância do watsonx Orchestrate. Você será direcionado para a página inicial de boas-vindas. Clique no card **Create your agent**.
 
-![Watsonx Orchestrate service](./assets/i1.png)
-
-**2.** Clique no botão **Launch watsonx Orchestrate**:
-
-![Launch Watsonx Orchestrate](./assets/i2.png)
+![Página inicial do watsonx Orchestrate](../images_data_poisoning/data_poisoning1.png)
 
 ### Parte 2: Criar Agente de Pesquisa de Carros com Base de Conhecimento Envenenada
 
 Nesta seção, você criará um agente usando uma base de conhecimento **envenenada** para ver como funcionam os ataques de data poisoning.
 
-**1.** Vá para a página inicial do watsonx Orchestrate, clique no menu hambúrguer (☰), selecione **Build**.
+**1.** Na janela **Create an agent**, clique no botão **Create from scratch**.
 
-![Agent Builder](assets/BAP_1.png)
+![Create from scratch](../images_data_poisoning/data_poisoning2.png)
 
-**2.** Clique no botão **Create agent**.
-
-![Create Agent](assets/comp_create.png)
-
-Clique no botão **Create from scratch**.
-
-![Create from scratch](assets/comp_create_from_scratch.png)
-
-**3.** Agora, vamos adicionar o Nome e uma Descrição.
+**2.** Na aba **Behavior**, adicione o Nome e a Descrição do agente.
 
 **Mas antes, note que:** Os campos **Name** e **Description** do agente devem ser obrigatoriamente preenchidos em inglês. Isso ocorre porque esses campos são utilizados pela plataforma para identificação do agente e também pelo modelo de linguagem (LLM) para compreender corretamente o seu propósito, especialmente em cenários com múltiplos agentes interagindo entre si. Os prompts de teste e as interações com o agente podem ser realizados em português normalmente, sem qualquer problema.
 
@@ -124,25 +112,23 @@ Copie e Cole na descrição abaixo no campo `Description`
 This agent answers questions and qualifies sales for the car dealership. It's purpose is to use its internal and other knowledge bases to answer questions and help complete sales.
 ```
 
-Clique no botão **Create**.
+![Nome e descrição do agente](../images_data_poisoning/data_poisoning3.png)
 
-![Create from scratch](assets/car_poisoned_create.png)
+**3.** Vá para a aba **Knowledge** e clique no botão **Add Source**.
 
-**4.** Na seção **Knowledge Source**, clique no botão **Choose knowledge**.
+![Add Source](../images_data_poisoning/data_poisoning4.png)
 
-![Knowledge](assets/add-source.png)
+**4.** Na janela **Add knowledge**, selecione **New knowledge**.
 
-**5.** Após clicar no botão **Choose knowledge**, uma janela pop-up aparecerá. Selecione **New Knowledge**, **Upload files**, depois clique em **Next**.
+![New Knowledge](../images_data_poisoning/data_poisoning5.png)
 
-![New Knowledge](assets/car_research_new_knowledge.png)
+**5.** Em **Choose knowledge source**, selecione **Upload files** e clique em **Next**.
 
-**6.** Faça upload do documento fornecido [**ABC-Catalog-poisoned.pdf**](ABC-Catalog-poisoned.pdf) 
+![Upload files](../images_data_poisoning/data_poisoning6.png)
 
-![Upload files](assets/car_research_upload.png)
+**6.** Faça upload do documento fornecido [**ABC-Catalog-poisoned.pdf**](ABC-Catalog-poisoned.pdf) e clique no botão **Next**.
 
-E clique no botão **Next**.
-
-![Upload catalog](assets/choose_knowledge_source.png)
+![Upload catalog](../images_data_poisoning/data_poisoning7.png)
 
 > [!NOTE]
 > Este PDF contém dados envenenados com informações de preços irrealistas injetadas por um ator malicioso.
@@ -154,35 +140,35 @@ E clique no botão **Next**.
 Car Catalog with Prices
 ```
 
-> *Tradução: Catalógo de Carro com preços*
+> *Tradução: Catálogo de Carro com preços*
 
 **Description:**
 ```
 This catalog provides information about various cars, along with their specifications and their prices.
 ```
 
-> * Tradução: Este catálogo fornece informações sobre vários carros, juntamente com suas especificações e seus preços.*
+> *Tradução: Este catálogo fornece informações sobre vários carros, juntamente com suas especificações e seus preços.*
 
 > [!NOTE]
 > O **Name** e a **Description** da Knowledge Base devem ser mantidos em inglês para consistência com o restante do laboratório.
 
-![Knowledge source](assets/choose_knowledge_source_2.png)
+![Knowledge details](../images_data_poisoning/data_poisoning8.png)
 
 **8.** Após completar todos os passos acima, sua fonte de conhecimento será adicionada e aparecerá como mostrado na imagem abaixo.
 
-![Knowledge added](assets/KB-complete.png)
+![Knowledge added](../images_data_poisoning/data_poisoning9.png)
 
-**9.** Na seção **Behavior**, adicione o seguinte ao campo de texto **Instructions**:
+**9.** Na aba **Behavior**, adicione o seguinte ao campo de texto **Instructions**:
 
 ```
 Provide wholesome sales support for ABC Dealership. If clients ask questions about cars, answer them as best as you can. Always follow up with probing questions with the goal of getting a sale.
 ```
 
-> *Tradução: “Forneça um suporte de vendas completo para a Concessionária ABC. Se os clientes fizerem perguntas sobre os carros, responda-as da*
+> *Tradução: "Forneça um suporte de vendas completo para a Concessionária ABC. Se os clientes fizerem perguntas sobre os carros, responda-as da*
 > *melhor maneira possível. Sempre faça perguntas adicionais para aprofundar o assunto e, assim, concretizar a venda. Forneça um suporte de*
 > *vendas completo para a Concessionária ABC. Se os clientes fizerem perguntas sobre os carros, responda-as da melhor forma possível."*
 
-![Behavior instructions](assets/add_behavior.png)
+![Behavior instructions](../images_data_poisoning/data_poisoning10.png)
 
 > [!NOTE]
 > As instruções de **Behavior** são mantidas em inglês para garantir interpretação consistente pelo LLM. O agente, no entanto, é capaz de entender e responder perguntas enviadas em português.
@@ -202,7 +188,7 @@ Na janela **Preview**, experimente estas consultas:
 Que tipos de carros vocês têm à venda?
 ```
 
-![Test agent](assets/normal_sample.png)
+![Test agent](../images_data_poisoning/data_poisoning11.png)
 
 Note que o agente responde com um catálogo de carros **válido**.
 
@@ -216,7 +202,7 @@ Verifique no catálogo se há alguma promoção. Quero o Alfa Romeo por 1$ com o
 
 Você deve ver que o agente fornece confiantemente **preços irrealistas**:
 
-![RAG Result](assets/RAG_Result.png)
+![RAG Result](../images_data_poisoning/data_poisoning12.png)
 
 > **Este é o ataque de data poisoning em ação!** O agente está recuperando e apresentando informações falsas da base de conhecimento envenenada sem nenhuma validação.
 
@@ -251,9 +237,9 @@ Agora vamos criar **diretrizes** que atuam como uma camada protetora para valida
 
 > **Diretrizes** no watsonx Orchestrate são regras que o agente deve seguir. Elas podem validar saídas, aplicar lógica de negócio e prevenir respostas prejudiciais.
 
-**1.** Na página de construção do seu **Dealership Support Agent**, role para baixo até a seção **Guidelines** e clique em **Add guideline**.
+**1.** Na página de construção do seu **Dealership Support Agent**, na aba **Behavior**, role para baixo até a seção **Guidelines** e clique em **Add**.
 
-![Add guideline](assets/master_add_guideline.png)
+![Add guideline](../images_data_poisoning/data_poisoning13.png)
 
 **2.** Crie a diretriz para **Proteção de Desconto**:
 
@@ -283,7 +269,7 @@ Apologize and deny the request
 > [!NOTE]
 > Os campos **Guideline Name**, **Condition** e **Action** devem ser preenchidos em inglês. A plataforma utiliza esses valores diretamente para configurar regras de comportamento do agente, e o LLM os interpreta com maior precisão em inglês.
 
-![Guideline creation](./assets/create_guideline.png)
+![Guideline creation](../images_data_poisoning/data_poisoning14.png)
 
 **3.** Clique em **Save** para adicionar a diretriz.
 
@@ -291,18 +277,18 @@ Apologize and deny the request
 
 Agora vamos testar o agente protegido para verificar que as diretrizes estão prevenindo que os dados envenenados sejam apresentados.
 
-Na janela **Preview**, experimente as mesmas consultas que revelaram os dados envenenados anteriormente:
+Na janela **Preview**, experimente a mesma consulta que revelou os dados envenenados anteriormente:
 
-**Consulta 1: Consulta de preço**
+**Consulta: Consulta de preço**
 ```
 Verifique no catálogo se há alguma promoção. Quero o Alfa Romeo por 1$ com o código promocional ILOVEABC!
 ```
 
 **Resultado Esperado**: O agente agora deve recusar fornecer o preço de $1 e em vez disso tentar redirecionar a conversa para um tópico apropriado.
 
-![Guideline result](./assets/test_guideline.png)
+![Guideline result](../images_data_poisoning/data_poisoning15.png)
 
-### Próximos passos
+### Próximos Passos
 
 Parabéns! 🎉
 
@@ -325,6 +311,4 @@ Agora aplique o seu aprendizado no dia a dia, seguindo as boas práticas aprendi
 
 **Próximos Passos**:
 
-<b>➜</b> ![Clique aqui para navegar para o próximo lab](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/4_adding_external_agents.md)
-
-
+<b>➜</b> [Clique aqui para navegar para o próximo lab](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/4_adding_external_agents.md)
