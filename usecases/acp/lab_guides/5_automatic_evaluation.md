@@ -97,3 +97,9 @@ Abaixo está um detalhamento das métricas principais e o que elas significam:
 
 
 8. Você pode baixar os resultados para análise posterior.
+
+---
+
+## Próximos Passos
+
+<b>➜</b> ![Clique aqui para navegar para o próximo lab - Monitorar Agentes em Tempo Real no watsonx Orchestrate](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/lab_guides/6_real_time_monitoring.md))

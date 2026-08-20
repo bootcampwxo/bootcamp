@@ -28,15 +28,12 @@ Agora vamos conectar o agente LangGraph externo que realiza buscas no Google por
 > [!TIP]
 > Este agente usa o protocolo Agent-to-Agent (A2A) para se comunicar com o watsonx Orchestrate. O instrutor já implantou este agente para você.
 
-1. Clique no link **Manage Agents** no menu breadcrumb no canto superior esquerdo.
+1. Na página inicial do watsonx Orchestrate, clique no card **Create your agent**.
 
+   ![Create your agent](images_adding_external_agents/adding_external_agents1.png)
 
-2. Clique no botão **Create agent**.
+2. Selecione **Create from scratch** e preencha o Nome e a Descrição do agente.
 
-   ![Create agent](../agentic-monitoring/assets/google_search_create.png)
-
-3. Selecione **Create from scratch**.
-   
    **Name**:
    ```
    Google Search Agent
@@ -51,53 +48,87 @@ Agora vamos conectar o agente LangGraph externo que realiza buscas no Google por
    > [!NOTE]
    > O **Name** e a **Description** do agente são mantidos em inglês. Eles são usados pelo agente mestre para tomar decisões de roteamento — manter em inglês garante consistência e precisão na orquestração multi-agente.
 
-   Clique no botão **Create**.
+   ![Google Search Agent criado](images_adding_external_agents/adding_external_agents2.png)
 
-   ![Create search agent](../agentic-monitoring/assets/google_search_create_agent.png)
+3. Na aba **Agents**, clique no botão **Add Agents**.
 
-4. Na seção **Agents**, clique no botão **Add agent**.
+   ![Add Agents](images_adding_external_agents/adding_external_agents3.png)
 
-   ![Add agent](../agentic-monitoring/assets/google_search_add_agent.png)
+4. Na janela **Add Agents**, selecione **Import**.
 
-5. Clique em **Import** e depois em **Add from external source**.
+   ![Import](images_adding_external_agents/adding_external_agents4.png)
 
-   ![Import agent](../agentic-monitoring/assets/google_search_import_agent.png)
+5. Selecione **External agent** como o tipo de agente e clique em **Next**.
 
-   ![Add external](../agentic-monitoring/assets/google_search_add_external.png)
+   ![Agent type - External agent](images_adding_external_agents/adding_external_agents5.png)
 
-6. Selecione **External agent via A2A standard**.
+6. Em **Register**, preencha os detalhes de conexão fornecidos pelo seu instrutor:
 
-7. Preencha os detalhes de conexão fornecidos pelo seu instrutor:
+   **External protocol**: Selecione **External agent via A2A standard**
 
-   **Endpoint URL**: (Obtenha do instrutor)
+   **A2A protocol version**: `0.3.0`
 
-   **Authentication Type**: Selecione **API Key**
-
-   **API Key Value**: (Obtenha do instrutor)
-
-   ![A2A configuration](../agentic-monitoring/assets/google_search_a2a_config.png)
+   **External agent's URL**: (Obtenha do instrutor)
 
    Role para baixo até a seção **Define new agent** e preencha os detalhes:
 
-   **Name**:
+   **Display name**:
    ```
    Web Search Agent
    ```
 
-   **Description**:
+   **Description of agent capabilities**:
    ```
    This agent connects to the Tavily service to perform a web search and return the top results.
    ```
    > *Este agente se conecta ao serviço Tavily para realizar uma busca na web e retornar os principais resultados.*
 
    > [!NOTE]
-   > O **Name** e a **Description** do agente importado são mantidos em inglês, pois identificam o agente dentro do sistema multi-agente.
+   > O **Display name** e a **Description** do agente importado são mantidos em inglês, pois identificam o agente dentro do sistema multi-agente.
 
-   ![Define new agent](../agentic-monitoring/assets/google_search_define_agent.png)
+   ![Register - detalhes do agente externo](images_adding_external_agents/adding_external_agents6.png)
 
-   Então clique em "Import Agent"
+   Clique em **Next**.
 
-8. Na seção **Behavior**, adicione as seguintes instruções:
+7. Em **Connect**, você verá que ainda não há nenhuma conexão A2A configurada. Clique em **Add connection**.
+
+   ![Connect - Add connection](images_adding_external_agents/adding_external_agents7.png)
+
+8. Preencha o **Connection ID** para identificar esta conexão:
+
+   ```
+   web-search-agent
+   ```
+
+   ![Define connection details](images_adding_external_agents/adding_external_agents8.png)
+
+   Clique em **Save and continue**.
+
+9. Uma janela de confirmação irá avisar que, uma vez adicionada, a conexão não pode ser renomeada ou excluída. Clique em **Continue**.
+
+   ![Confirmação de criação da conexão](images_adding_external_agents/adding_external_agents9.png)
+
+10. Em **Configure draft environment**, selecione **Authentication type**: **API Key**.
+
+    ![Configure draft environment - API Key](images_adding_external_agents/adding_external_agents10.png)
+
+11. Role para baixo até **Credential type**, selecione **Team credentials** e cole a **API Key** fornecida pelo seu instrutor. Clique em **Next**.
+
+    ![API Key e Team credentials](images_adding_external_agents/adding_external_agents11.png)
+
+12. Em **Configure live environment**, clique em **Paste draft configuration** para reutilizar a mesma configuração no ambiente live. Clique em **Finish**.
+
+    ![Configure live connection](images_adding_external_agents/adding_external_agents12.png)
+
+13. A conexão **web-search-agent** aparecerá na lista com autenticação **API Key** configurada tanto para **Draft** quanto para **Live**. Clique em **Done**.
+
+    ![Conexão adicionada com sucesso](images_adding_external_agents/adding_external_agents13.png)
+
+14. De volta à aba **Agents** do **Google Search Agent**, o **Web Search Agent** agora aparece como colaborador.
+
+    ![Web Search Agent adicionado](images_adding_external_agents/adding_external_agents14.png)
+
+15. Na aba **Behavior**, adicione as seguintes instruções:
 
     ```
     You are a car research specialist with access to real-time Google Search. You may use Google Search only for cars that are in our catalog.
@@ -119,35 +150,36 @@ Agora vamos conectar o agente LangGraph externo que realiza buscas no Google por
     If search returns no results for a catalog vehicle, inform the user and suggest alternative search terms.
     ```
 
-    ![Search agent behavior](../agentic-monitoring/assets/google_search_behavior.png)
+    ![Search agent behavior](images_adding_external_agents/adding_external_agents15.png)
 
-9. Teste o agente com estas consultas:
+16. Teste o agente com estas consultas:
 
     ```
     O que os proprietários dizem sobre o Porsche 911?
     ```
 
+    ![Test search agent - Porsche 911](images_adding_external_agents/adding_external_agents16.png)
+
     ```
     Encontre avaliações de usuários para o Toyota Camry
     ```
 
-    ![Test search agent](../agentic-monitoring/assets/google_test_porsche.png)
-    ![Test search agent](../agentic-monitoring/assets/google_test_camry.png)
+    ![Test search agent - Toyota Camry (fora do catálogo)](images_adding_external_agents/adding_external_agents17.png)
 
-
+    > [!NOTE]
+    > O Toyota Camry não faz parte do catálogo da concessionária, então o agente corretamente recusa a pesquisa e informa que não vende esse veículo.
 
 ### Parte 2: Criar Agente Mestre de Compra de Carros
 
 Agora vamos criar um agente orquestrador que roteia consultas de forma inteligente para o agente especializado apropriado.
 
-1. Clique em **Manage Agents** e depois em **Create agent**.
+1. Na página inicial do watsonx Orchestrate, clique no card **Create your agent**.
 
-   ![Create Agent](../agentic-monitoring/assets/comp_create.png)
+   ![Create your agent](images_adding_external_agents/adding_external_agents18.png)
 
    Clique no botão **Create from scratch**.
 
-   ![Create from scratch](../agentic-monitoring/assets/comp_create_from_scratch.png)
-
+   ![Create from scratch](images_adding_external_agents/adding_external_agents19.png)
 
 2. Digite os seguintes detalhes
 
@@ -165,26 +197,20 @@ Agora vamos criar um agente orquestrador que roteia consultas de forma inteligen
    > [!NOTE]
    > O **Name** e a **Description** do agente mestre são mantidos em inglês. As instruções de **Behavior** também permanecem em inglês para garantir que a lógica de roteamento funcione de forma confiável.
 
-   Clique no botão **Create**.
+   ![Master Car Buying Agent criado](images_adding_external_agents/adding_external_agents20.png)
 
-   ![Create master agent](../agentic-monitoring/assets/master_create_agent.png)
+3. Na aba **Agents**, clique no botão **Add Agents** e selecione **Local instance**.
 
-3. Na seção **Agents**, clique no botão **Add agent**.
+   ![Add Agents - Local instance](images_adding_external_agents/adding_external_agents21.png)
 
-   ![Add agents](../agentic-monitoring/assets/master_add_agent.png)
-
-4. Clique em **Add from local instance**.
-
-   ![Add local](../agentic-monitoring/assets/master_add_local.png)
-
-5. Selecione tanto o **Dealership Support Agent** (criado no laboratório de Data Poisoning — este é o agente de pesquisa do catálogo de carros) quanto o **Google Search Agent** (criado na Parte 1 acima), depois clique em **Add to Agent**.
+4. Selecione tanto o **Dealership Support Agent** (criado no laboratório de Data Poisoning — este é o agente de pesquisa do catálogo de carros) quanto o **Google Search Agent** (criado na Parte 1 acima), depois clique em **Add to agent**.
 
    > [!NOTE]
    > O **Dealership Support Agent** foi criado no laboratório anterior (Data Poisoning) e possui a base de conhecimento com o catálogo de veículos da ABC Dealership. Ele atuará como o agente especializado em pesquisa do catálogo neste sistema multi-agente.
 
-   ![Select agents](../agentic-monitoring/assets/master_add_agents.png)
+   ![Selecionar agentes](images_adding_external_agents/adding_external_agents22.png)
 
-6. Na seção **Behavior**, adicione a seguinte lógica de roteamento:
+5. Na seção **Behavior**, adicione a seguinte lógica de roteamento:
 
     ```
     You are the Master Car Buying Assistant. Your role is to route user queries to the appropriate specialized agent and synthesize responses.
@@ -227,50 +253,49 @@ Agora vamos criar um agente orquestrador que roteia consultas de forma inteligen
     
 
     
-![Master behavior](../agentic-monitoring/assets/master_behavior.png)
+![Master behavior](images_adding_external_agents/adding_external_agents23.png)
 
-7. Teste o agente mestre com várias consultas:
+6. Teste o agente mestre com várias consultas:
 
     ```
     Compare o Kia Nero com o Hyundai Kona Electric
     ```
 
+    ![Test master agent - comparação](images_adding_external_agents/adding_external_agents24.png)
+
     ```
     As avaliações dos proprietários são mais positivas para o Alfa Romeo Spider ou para o Porsche 911?
     ```
+
+    ![Test master agent - avaliações](images_adding_external_agents/adding_external_agents25.png)
 
     ```
     Mostre-me avaliações de usuários para o Tesla Model Y
     ```
 
+    ![Test master agent - Tesla (fora do catálogo)](images_adding_external_agents/adding_external_agents26.png)
 
-    ![Test master agent](../agentic-monitoring/assets/test_master_compare.png)
-    ![Test master agent](../agentic-monitoring/assets/test_master_reviews.png)
-    ![Test master agent](../agentic-monitoring/assets/test_master_tesla.png)
+7. Clique em **Deploy** e depois em **Deploy to Live** para tornar o agente ativo.
 
+    ![Deploy master](images_adding_external_agents/adding_external_agents27.png)
 
+    Revise o resumo de pré-implantação, incluindo as conexões que serão levadas para o ambiente live, e clique em **Deploy**.
 
-8. Clique em **Deploy** para tornar o agente ativo.
-
-    ![Deploy master](../agentic-monitoring/assets/master_deploy.png)
-    ![Deploy](../agentic-monitoring/assets/master_deploy_agent.png)
+    ![Pre-deployment summary](images_adding_external_agents/adding_external_agents28.png)
 
     Seu agente agora está **Live**!
-
-9. Clique em **Activate agent monitoring** quando solicitado.
-
-    ![Activate monitoring](../agentic-monitoring/assets/activate_monitoring.png)
 
 ### Parte 3: Testar Seus Agentes
 
 Agora vamos testar o sistema completo através da interface de chat.
 
-1. Clique em **IBM watsonx Orchestrate** no canto superior esquerdo da sua janela.
+1. No menu lateral esquerdo, clique em **Chat**.
 
+   ![Menu lateral - Chat](images_adding_external_agents/adding_external_agents29.png)
 
-2. Selecione o **Master Car Buying Agent** no menu dropdown.
+2. Selecione o **Master Car Buying Agent** no menu de agentes.
 
-   ![Select master](../agentic-monitoring/assets/chat_master.png)
+   ![Select master](images_adding_external_agents/adding_external_agents30.png)
 
 3. Experimente estes cenários de teste abrangentes:
 
@@ -278,29 +303,33 @@ Agora vamos testar o sistema completo através da interface de chat.
    ```
    Mostre-me todos os veículos elétricos do catálogo
    ```
-   ![test all](../agentic-monitoring/assets/test_scenario1.png)
+   ![test all](images_adding_external_agents/adding_external_agents31.png)
 
    **Cenário 2: Pesquisa Externa**
    ```
    O que os proprietários dizem sobre o Nissan Versa?
    ```
-   ![test all](../agentic-monitoring/assets/test_scenario2a.png)
+   ![test all](images_adding_external_agents/adding_external_agents32.png)
    
    ```
    O que os proprietários dizem sobre o BMW X5 2024?
    ```
 
-   ![test all](../agentic-monitoring/assets/test_scenario2b.png)
+   ![test all](images_adding_external_agents/adding_external_agents33.png)
 
 
    **Cenário 3: Consulta Híbrida Catálogo + Avaliação**
    ```
    O que os avaliadores dizem sobre o Porsche 911 e quais são suas especificações principais?
    ```
-   ![test all](../agentic-monitoring/assets/test_scenario3.png)
+   ![test all](images_adding_external_agents/adding_external_agents34.png)
 
    **Cenário 4: Consulta Complexa**
    ```
    Estou procurando um SUV familiar abaixo de $40.000 com bom consumo de combustível. O que você recomenda do catálogo e como eles se comparam aos líderes de mercado?
    ```
-   ![test all](../agentic-monitoring/assets/test_scenario4.png)
+   ![test all](images_adding_external_agents/adding_external_agents35.png)
+
+-----
+
+<b>➜</b> Clique aqui para acessar o próximo laboratório - Proteja Contra Vazamento de PII com Controles no watsonx Orchestrate](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/controls/README.md)

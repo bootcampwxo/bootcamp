@@ -253,13 +253,19 @@ Pesquise na web quem é o dono deste endereço de e-mail: alex.carter@example.co
 
 ![reasoning_query_3_with_asset_controls](assets/reasoning_query_3_with_asset_controls.png)
 
-## O que vem a seguir?
-### 🎉 Parabéns! 
+## Próximos Passos
+
+🎉 Parabéns! 
 
 Você implementou com sucesso a filtragem de PII usando Asset Controls e os integrou em um agente watsonx Orchestrate. Agora você tem experiência prática com medidas de segurança de IA de nível empresarial.
 
 Agora você deve entender:
+
 * O que são dados PII
 * Como prevenir vazamento de dados PII
 * Como criar e configurar controles no watsonx Orchestrate
 * Como testar e verificar proteções
+
+----
+
+<b>➜</b> ![Clique aqui para acessar o próximo laboratório - Debugging de Agentes no watsonx Orchestrate](https://github.com/bootcampwxo/bootcamp/blob/main/usecases/acp/debugging/README.md)
