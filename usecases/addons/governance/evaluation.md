@@ -14,7 +14,7 @@ Antes de executar avaliações, baixe o arquivo .csv abaixo que corresponde ao s
 
 Aqui estão alguns arquivos de teste de avaliação preparados para alguns dos casos de uso. NOTA: as últimas 3 queries e respostas são respostas detratoras projetadas para mostrar baixa qualidade de resposta:
 
-- [AskHR](../../ask-hr/assets/askhr-eval.csv)
+- [AskHR](../../ask-hr/assets/lab-data/askhr-eval.csv)
 - [Análise Competitiva](../../competitive-analysis/assets/comp-analysis-eval.csv)
 - [HR Talent](../../hr-talent/data/hr-talent-eval.csv)
 - [Product Scout](../../product-scout/knowledge/product-scout-eval.csv)

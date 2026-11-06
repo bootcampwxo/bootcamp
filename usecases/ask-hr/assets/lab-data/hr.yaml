@@ -1,27 +1,28 @@
 openapi: 3.0.0
 info:
-  title: HR Automation
-  description: API for retrieving employee details and updating profile information
+  title: Automação de RH
+  description: API para consultar dados de funcionários e atualizar informações de perfil
   version: 1.0.0
 servers:
-- url: https://hr-skills-app.1rqct68sp2fr.us-south.codeengine.appdomain.cloud
-  description: Production server
+- url: https://hr-skills.2gu5j6t579g6.ca-tor.codeengine.appdomain.cloud
+  description: Servidor de producao
 tags: []
 paths:
   "/user_profile_details/{name}":
     get:
-      summary: Get User Profile
+      operationId: obter_perfil_usuario
+      summary: Obter perfil do usuário
       description: |2-
-        
-        Get complete profile data of user. 
 
-        :param name: The user's name
-        :returns: The user's profile data, which includes address, user ID, name, time off balance, and title.
+        Obtém os dados completos do perfil do usuário.
+
+        :param name: Nome do usuário
+        :returns: Dados do perfil do usuário, incluindo endereço, ID, nome, saldo de folgas e cargo.
 
       parameters:
       - name: name
         in: path
-        description: The unique identifier of the user.
+        description: Nome do usuário (identificador único).
         required: true
         schema:
           type: string
@@ -41,26 +42,27 @@ paths:
                     type: string
                   time_off_balance:
                     type: integer
-          description: Successful Response
+          description: Resposta com sucesso
         '422':
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-          description: Validation Error
+          description: Erro de validação
   "/time-off-balance/{name}":
     get:
-      summary: Get Time Off Balance
+      operationId: obter_saldo_folgas
+      summary: Obter saldo de folgas
       description: |
-        Get time off balance data. 
+        Obtém o saldo de folgas do usuário.
 
-        :param name: The user's name
-        :returns: User's time off balance as a single string
-       
+        :param name: Nome do usuário
+        :returns: Saldo de folgas do usuário em uma única string
+
       parameters:
       - name: name
         in: path
-        description: The name of the user.
+        description: Nome do usuário.
         required: true
         schema:
           type: string
@@ -71,25 +73,26 @@ paths:
             application/json:
               schema:
                 type: string
-                description: Remaining time-off balance as a single string.
-          description: Successful Response
+                description: Saldo de folgas restante em uma única string.
+          description: Resposta com sucesso
         '422':
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-          description: Validation Error
+          description: Erro de validação
   "/request-time-off":
     post:
-      summary: Request Time Off
+      operationId: solicitar_folga
+      summary: Solicitar folga
       description: |2-
 
-        Request time off, apply for leaves. 
+        Solicita folga / registra um pedido de ausência.
 
-        :param name: user's name
-        :param from_date: Start date of time off, represented as a string in date format, e.g. 2025-05-22
-        :param to_date: End date of time off, represented as a string in date format, e.g. 2025-05-27
-        :returns: A confirmation message
+        :param name: Nome do usuário
+        :param from_date: Data de início da folga, no formato AAAA-MM-DD (ex.: 2025-05-22)
+        :param to_date: Data de término da folga, no formato AAAA-MM-DD (ex.: 2025-05-27)
+        :returns: Mensagem de confirmação
 
       responses:
         '200':
@@ -97,14 +100,14 @@ paths:
             application/json:
               schema:
                 type: string
-                description: Confirmation message as a single string.
-          description: Successful Response
+                description: Mensagem de confirmação em uma única string.
+          description: Resposta com sucesso
         '422':
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-          description: Validation Error
+          description: Erro de validação
       requestBody:
         required: true
         content:
@@ -113,14 +116,15 @@ paths:
               "$ref": "#/components/schemas/TimeOffRequest"
   "/update-title":
     put:
-      summary: Update Title
+      operationId: atualizar_cargo
+      summary: Atualizar cargo
       description: |
 
-        Update user's title. 
+        Atualiza o cargo do usuário.
 
-        :param name: User's name
-        :param new_title: User's new title
-        :returns: A confirmation message as a single string
+        :param name: Nome do usuário
+        :param new_title: Novo cargo do usuário
+        :returns: Mensagem de confirmação em uma única string
 
       responses:
         '200':
@@ -128,14 +132,14 @@ paths:
             application/json:
               schema:
                 type: string
-                description: Confirmation message as a single string.
-          description: Successful Response
+                description: Mensagem de confirmação em uma única string.
+          description: Resposta com sucesso
         '422':
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-          description: Validation Error
+          description: Erro de validação
       requestBody:
         required: true
         content:
@@ -144,14 +148,15 @@ paths:
               "$ref": "#/components/schemas/UpdateTitleRequest"
   "/update-address":
     put:
-      summary: Update Address
+      operationId: atualizar_endereco
+      summary: Atualizar endereço
       description: |2-
 
-        Update user's address. 
+        Atualiza o endereço do usuário.
 
-        :param name: User's name
-        :param new_address: User's new address
-        :returns: A confirmation message
+        :param name: Nome do usuário
+        :param new_address: Novo endereço do usuário
+        :returns: Mensagem de confirmação
 
       responses:
         '200':
@@ -159,14 +164,14 @@ paths:
             application/json:
               schema:
                 type: string
-                description: Confirmation message as a single string.
-          description: Successful Response
+                description: Mensagem de confirmação em uma única string.
+          description: Resposta com sucesso
         '422':
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-          description: Validation Error
+          description: Erro de validação
       requestBody:
         required: true
         content:
@@ -175,27 +180,38 @@ paths:
               "$ref": "#/components/schemas/UpdateAddressRequest"
   "/create-user":
     post:
+      operationId: criar_usuario
+      summary: Criar usuário
+      description: |2-
+
+        Cria um novo usuário no sistema de RH (uso administrativo).
+
+        :param name: Nome completo do usuário
+        :param time_off_balance: Saldo inicial de folgas, em dias
+        :param title: Cargo do usuário
+        :param address: Endereço do usuário
+        :returns: Mensagem de confirmação com o ID do usuário
+
       responses:
         '200':
           content:
             application/json:
               schema:
                 type: string
-                description: Confirmation message including user ID as a single string.
-          description: Successful Response
+                description: Mensagem de confirmação com o ID do usuário em uma única string.
+          description: Resposta com sucesso
         '422':
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-          description: Validation Error
+          description: Erro de validação
       requestBody:
         required: true
         content:
           application/json:
             schema:
               "$ref": "#/components/schemas/CreateUserRequest"
-      summary: Create User
 components:
   schemas:
     CreateUserRequest:
@@ -203,16 +219,16 @@ components:
       properties:
         name:
           type: string
-          description: Full name of the user.
+          description: Nome completo do usuário.
         time_off_balance:
           type: integer
-          description: Initial time-off balance in days.
+          description: Saldo inicial de folgas, em dias.
         title:
           type: string
-          description: Job title of the user.
+          description: Cargo do usuário.
         address:
           type: string
-          description: Address of the user.
+          description: Endereço do usuário.
       required:
       - name
       - time_off_balance
@@ -226,7 +242,7 @@ components:
           type: array
           items:
             "$ref": "#/components/schemas/ValidationError"
-          description: List of validation errors.
+          description: Lista de erros de validação.
           title: Detail
       title: HTTPValidationError
     TimeOffRequest:
@@ -234,14 +250,14 @@ components:
       properties:
         name:
           type: string
-          description: The name of the user.
+          description: Nome do usuário.
         from_date:
           type: string
-          description: Start date of the time-off request (YYYY-MM-DD).
+          description: Data de início da folga (AAAA-MM-DD).
           format: date
         to_date:
           type: string
-          description: End date of the time-off request (YYYY-MM-DD).
+          description: Data de término da folga (AAAA-MM-DD).
           format: date
       required:
       - name
@@ -253,10 +269,10 @@ components:
       properties:
         name:
           type: string
-          description: The name of the user.
+          description: Nome do usuário.
         new_address:
           type: string
-          description: The updated address of the user.
+          description: Novo endereço do usuário.
       required:
       - name
       - new_address
@@ -266,10 +282,10 @@ components:
       properties:
         name:
           type: string
-          description: The name of the user.
+          description: Nome do usuário.
         new_title:
           type: string
-          description: The updated job title of the user.
+          description: Novo cargo do usuário.
       required:
       - name
       - new_title
@@ -283,13 +299,13 @@ components:
             anyOf:
             - type: string
             - type: integer
-          description: The location of the error in the request.
+          description: Localização do erro na requisição.
         msg:
           type: string
-          description: A message describing the error.
+          description: Mensagem descrevendo o erro.
         type:
           type: string
-          description: The type of error.
+          description: Tipo do erro.
       required:
       - loc
       - msg
